@@ -26,9 +26,11 @@ class WebService extends \yii\base\Component
         if(!$this->authAccessToken()){
             throw new \yii\web\HttpException(200,'Method call failed the API Authentication',20101);
         }
-    	$parameter = $this->methodManage[$this->method]['parameter'];
+    	$parameter = $this->methodManage[$this->method]['parameter'];//获取注册的接口对应的参数--byfyq
     	$post = \Yii::$app->request->post();
- 		$parameterStr="";
+
+    	//拼接接口对应的方法需要的参数
+    	$parameterStr="";
 		while ($key = key($this->methodManage[$this->method]['parameter'])) {
             if(!isset($post[$key])){
                 if(isset($this->methodManage[$this->method]['parameter'][$key]['required'])){
@@ -37,23 +39,23 @@ class WebService extends \yii\base\Component
                         eval($evalStr);
                         $parameterStr = $parameterStr."$$key,";
                         next($this->methodManage[$this->method]['parameter']);
-                        continue; 
+                        continue;
                     }else{
                         throw new \yii\web\HttpException(200,"Missing parameter $key in method ".$this->method,20102);
                     }
                 }else{
                    throw new \yii\web\HttpException(200,"Missing parameter $key in method ".$this->method,20102);
                 }
-            }  
+            }
 		 	$evalStr = "$$key=".'$post[$key];';
 		 	eval($evalStr);
 		 	$parameterStr = $parameterStr."$$key,";
-		 	next($this->methodManage[$this->method]['parameter']);
+		 	next($this->methodManage[$this->method]['parameter']);//数组指针指向数组中下一个元素
 		}
-		$parameterStr = substr($parameterStr,0,-1);
+		$parameterStr = substr($parameterStr,0,-1);//去掉参数中最后一个符号：”,“--byfyq
 	//	return $parameterStr;
-    	$runStr = '$return[\'data\'] = $this->'.$this->methodManage[$this->method]['method']."($parameterStr);";
-    	eval($runStr);
+    	$runStr = '$return[\'data\'] = $this->'.$this->methodManage[$this->method]['method']."($parameterStr);";//构造字符串调用接口函数--byfyq
+    	eval($runStr);//解析字符串，调用请求的接口函数，返回值放到：$return['data']中--byfyq
         $return['code']=-1;
     	return $return;
     }
