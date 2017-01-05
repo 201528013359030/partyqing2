@@ -1,0 +1,726 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=1170" />
+    <meta name="save" content="history">
+    <link href="http://static.wanfangdata.com.cn/wfks/css/animate.min.css?v=201610091258" rel="stylesheet" />
+    <link href="http://static.wanfangdata.com.cn/wfks/css/global.min.css?v=201610091258" rel="stylesheet" />
+    <link href="/Content/css/c.min.css" rel="stylesheet" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="/favicon.ico" rel="apple-touch-icon" />
+    <!--[if lt IE 9 ]><link href="http://static.wanfangdata.com.cn/wfks/css/ltie9.min.css?v=201610091258" rel="stylesheet" /><![endif]-->
+    
+    <title>科技成果-万方数据知识服务平台</title>
+    <style>
+        .content-c .section-region .list .link-wraper{width:77px;}
+        .content-c .tb-list .tb-list-item .p-link{width:250px;}
+        .content-c .tb-list .tb-list-item .s-link{width:910px;}
+        .content-c .section .list .lv1{width: 256px;}
+        .content-c .section-subject .list .link-wraper{width: 277px;padding-right: 5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <!-- <div class="nav clear">
+            <a href="http://www.wanfangdata.com.cn/">
+                <img class="logo" src="http://static.wanfangdata.com.cn/wfks/img/logo_new.png" alt="" /></a>
+            <ul>
+                <li class="active fixed" data-target="search-wrap">检索</li>
+                <li id="navResource" data-target="resource-wrap">资源</li>
+                <li id="navService" data-target="service-wrap">服务</li>
+                <li class="profile"></li>
+            </ul>
+        </div>
+        <div class="width-wrap search-wrap active fixed">
+            <div class="panel search-panel clear">
+                <div class="drp res-drp clear">
+                    <div class="res-lb">
+                        <span id="res" class="lb">学术论文</span>
+                        <i class="icon-more"></i>
+                    </div>
+                    <div class="res-list bd pop" data-open=".res-lb">
+                        <span class="clear-shadow"></span>
+                        <ul class="resource clear"></ul>
+                        <ul class="library clear"></ul>
+                    </div>
+                </div>
+                <input class="search-input" type="search" name="q" autocomplete="off" />
+                <div id="adSearchBtn" class="icon-search-ad" type="button">
+		<div class="search-ad pop">
+                    <a target="_blank" id="adSearchLink" href="http://librarian.wanfangdata.com.cn/">跨库检索</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide?helpitem=searchepaper">检索帮助</a>
+                </div>
+		</div>
+                <button class="btn icon-search search-btn" type="submit"></button>
+                <div class="search-tip-field pop"></div>
+            </div>
+        </div>
+        <div class="width-wrap resource-wrap">
+            <div class="panel resource-panel"></div>
+        </div>
+        <div class="width-wrap service-wrap">
+            <div class="panel service-panel clear">
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzfu"></i>
+                        <h6 class="tt">增值服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://social.wanfangdata.com.cn/">万方学术圈</a>
+                        <a target="_blank" href="http://trend.wanfangdata.com.cn/">知识脉络分析</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/">查新/跨库检索</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/ScientificLiterature">科技文献分析</a>                        
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-gjlfu"></i>
+                        <h6 class="tt">工具类服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://check.wanfangdata.com.cn/">论文相似性检测</a>
+                        <a target="_blank" href="http://stats.wanfangdata.com.cn/">国家经济统计数据库</a>
+                        <a target="_blank" href="http://patentool.wanfangdata.com.cn/">专利工具</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-bjbzyfu"></i>
+                        <h6 class="tt">编辑部专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://stats.editors.wanfangdata.com.cn/">期刊统计分析与评价</a>
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/ResourceDescription/DOI">中文DOI</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/">优先出版</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/Regular">同步出版</a>
+                        <a target="_blank" href="http://editors.wanfangdata.com.cn/">编审平台</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzzyff"></i>
+                        <h6 class="tt">作者专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                        <a target="_blank" href="http://contribute.wanfangdata.com.cn/">投稿</a>
+                        <a target="_blank" href="http://oa.wanfangdata.com.cn/">OA论文托管</a>
+                    </div>
+                </div>
+                <div class="md last-md">
+                    <div class="hd clear">
+                        <i class="icon icon-yqzl"></i>
+                        <h6 class="tt">舆情专栏</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://subject.wanfangdata.com.cn/">专题</a>
+                        <a target="_blank" href="http://message.wanfangdata.com.cn/">科技动态</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width-wrap account-wrap">
+            <div class="panel account-panel clear">
+                <div class="top-link">
+                    <a class="login-link">登录</a>
+                    <a href="http://login.wanfangdata.com.cn/Register/Index">注册</a>
+                    <a href="http://login.wanfangdata.com.cn/Logout.aspx">退出</a>
+                </div>
+                <div class="account-container">
+                    <div class="account person-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=myorder">查看订单</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=mywallet">我的钱包</a>
+                            <a target="_blank" href="http://tran.wanfangdata.com.cn/Charge.aspx">充值</a>
+                            <a target="_blank" class="last-item" href="http://www.wanfangdata.com.cn/UserService?tab=edituser">个人信息管理</a>
+                        </span>
+                    </div>
+                    <div class="account group-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" class="order-link" href="http://istic.wanfangdata.com.cn/Order">查看订单</a>
+                            <a target="_blank" class="last-item group-center" href="http://www.wanfangdata.com.cn/Organization">服务站</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                            
+    
+        <div class="title-wraper">
+            <h1 class="title top-title">成果</h1>
+        </div> -->
+        <div class="desc desc-resource">中国科技成果数据库（China Scientific & Technological Achievements Database，CSTAD），收录始于1978年，来源于各省、市、部委鉴定后上报国家，科技部的科技成果及星火科技成果，涵盖新技术、新产品、新工艺、新材料、新设计等众多学科领域。</div>
+    
+    <div class="content content-c">
+        <div class="section clear">
+            <div class="title">行业分类</div>
+            <div class="bd">
+                
+                <div class="list" data-ajax-xmlpath="CstadTrade.xml" 
+                    data-ajax-pt='<a class="{2}" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=tradecode%3a%22{1}*%22">{0}</a>'
+                    data-ajax-st='<a class="link {2}" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=tradecode%3a%22{1}*%22">{0}</a>'>
+                    
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="A">
+                                    农、林、牧、渔业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="B">
+                                    采矿业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="C">
+                                    制造业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="D">
+                                    电力、燃气及水的生产和供应业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="E">
+                                    建筑业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="F">
+                                    交通运输、仓储和邮政业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="G">
+                                    信息传输、计算机服务和软件业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="H">
+                                    批发和零售业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="I">
+                                    住宿和餐饮业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="J">
+                                    金融业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="K">
+                                    房地产业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="L">
+                                    租赁和商务服务业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="M">
+                                    科学研究、技术服务和地质勘查业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="N">
+                                    水利、环境和公共设施管理业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="O">
+                                    居民服务和其他服务业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="P">
+                                    教育
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="Q">
+                                    卫生、社会保障和社会福利业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="R">
+                                    文化、体育和娱乐业
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper lv1">
+                                <a class="data-link link" data-value="S">
+                                    公共管理和社会组织
+                                </a>
+                            </span>
+                        
+                </div>
+                <div class="tb-list"></div>
+            </div>
+        </div>
+        <div class="section clear section-subject">
+            <div class="title">学科分类</div>
+            <div class="bd">
+                
+                <div class="list">
+                    
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22A*%22'>
+                                    马克思主义、列宁主义、毛泽东思想、邓小平理论
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22B*%22'>
+                                    哲学、宗教
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22Z*%22'>
+                                    综合性图书
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22N*%22'>
+                                    自然科学总论
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22O*%22'>
+                                    数理科学和化学
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22P*%22'>
+                                    天文学、地球科学
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22Q*%22'>
+                                    生物科学
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22R*%22'>
+                                    医学、卫生
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22S*%22'>
+                                    农业科学
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22T*%22'>
+                                    工业技术
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22U*%22'>
+                                    交通运输
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22V*%22'>
+                                    航空、航天
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22X*%22'>
+                                    环境科学、安全科学
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22C*%22'>
+                                    社会科学总论
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22D*%22'>
+                                    政治、法律
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22E*%22'>
+                                    军事
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22F*%22'>
+                                    经济
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22G*%22'>
+                                    文化、科学、教育、体育
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22H*%22'>
+                                    语言、文字
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22I*%22'>
+                                    文学
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22J*%22'>
+                                    艺术
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href='http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=CLCShort%3a%22K*%22'>
+                                    历史、地理
+                                </a>
+                            </span>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="section clear section-region">
+            <div class="title">地区分类</div>
+            <div class="bd">
+                
+                <div class="list">
+                    
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%8c%97%e4%ba%ac">
+                                    <t>北京</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%a4%a9%e6%b4%a5">
+                                    <t>天津</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b2%b3%e5%8c%97">
+                                    <t>河北</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%b1%b1%e8%a5%bf">
+                                    <t>山西</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%86%85%e8%92%99%e5%8f%a4">
+                                    <t>内蒙古</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e8%be%bd%e5%ae%81">
+                                    <t>辽宁</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%90%89%e6%9e%97">
+                                    <t>吉林</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e9%bb%91%e9%be%99%e6%b1%9f">
+                                    <t>黑龙江</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e4%b8%8a%e6%b5%b7">
+                                    <t>上海</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b1%9f%e8%8b%8f">
+                                    <t>江苏</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b5%99%e6%b1%9f">
+                                    <t>浙江</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%ae%89%e5%be%bd">
+                                    <t>安徽</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e7%a6%8f%e5%bb%ba">
+                                    <t>福建</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b1%9f%e8%a5%bf">
+                                    <t>江西</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%b1%b1%e4%b8%9c">
+                                    <t>山东</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b2%b3%e5%8d%97">
+                                    <t>河南</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b9%96%e5%8c%97">
+                                    <t>湖北</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b9%96%e5%8d%97">
+                                    <t>湖南</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%b9%bf%e4%b8%9c">
+                                    <t>广东</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%b9%bf%e8%a5%bf">
+                                    <t>广西</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%b5%b7%e5%8d%97">
+                                    <t>海南</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e9%87%8d%e5%ba%86">
+                                    <t>重庆</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%9b%9b%e5%b7%9d">
+                                    <t>四川</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e8%b4%b5%e5%b7%9e">
+                                    <t>贵州</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e4%ba%91%e5%8d%97">
+                                    <t>云南</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e8%a5%bf%e8%97%8f">
+                                    <t>西藏</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e9%99%95%e8%a5%bf">
+                                    <t>陕西</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e7%94%98%e8%82%83">
+                                    <t>甘肃</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e9%9d%92%e6%b5%b7">
+                                    <t>青海</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e5%ae%81%e5%a4%8f">
+                                    <t>宁夏</t>
+                                </a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Cstad.aspx?f=cstad.Cateogory&q=region%3a%e6%96%b0%e7%96%86">
+                                    <t>新疆</t>
+                                </a>
+                            </span>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="lt-bg"></div>
+        <div class="rt-bg"></div>
+        <div class="footer clear">
+            <div class="lt">
+                <div class="top">
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide">帮助</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/CustomerService/Services">客户服务</a>
+                    <a target="_blank" href="http://www.sojump.com/jq/4550749.aspx">问卷调查</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/AboutUs/index">关于我们</a>
+                    <a target="_blank" href="http://www.wanfang.com.cn/">公司首页</a>
+                    <a target="_blank" href="http://weibo.com/wanfangdata">平台微博</a>
+                    <a target="_blank" href="http://wanfangdata.zhiye.com/">加入我们</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/Sitemap">网站地图</a>
+                    <a id="langCN" data-lang="zn-CN" class="lang">简</a>
+                    <a id="langTW" data-lang="zn-TW" class="lang">繁</a>
+                    <a id="langEN" data-lang="EN" href="http://www.wanfangdata.com/" target="_blank">ENG</a>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/hlwcb.jpg">互联网出版许可证：新出网证(京)字042号</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/zhengshu_2.jpg">互联网药品信息服务资格证书号：(京)-经营性-2011-0017</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/stjmxkz2.jpg">信息网络传播视听节目许可证 许可证号：0108284 </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/icp.jpg">京ICP证：010071</a>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020237" ><img src="http://ad.wanfangdata.com.cn/images/gabeian.png" style="margin-right:2px;"/>京公网安备11010802020237号</a>
+<a target="_blank" href="http://ad.wanfangdata.com.cn/images/yunicp.jpg">万方数据知识资源云服务系统[简称：知识云服务平台]V1.0 证书号：软著登字第1016589号</a>
+                    </div>
+                    <p>万方数据知识服务平台--国家科技支撑计划资助项目（编号：2006BAH03B01）©北京万方数据股份有限公司  万方数据电子出版社</p>
+                </div>
+            </div>
+            <div class="rt">
+                <div class="top">
+                    <i class="icon icon-service"></i>
+                    <span>联系客服</span>
+                </div>
+                <ul class="contactus">
+                             <li><i class="contactus-online"></i><a onclick="onlineService('http://www.wanfangdata.com.cn/')">在线客服</a></li>
+                             <li><i class="contactus-tel"></i>4000115888</li>
+                             <li><i class="contactus-email"></i>service@wanfangdata.com.cn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" charset="utf-8" src="http://static.wanfangdata.com.cn/wfks/js/wf.service-1.3.js"></script>
+                            
+                            
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-ui-1.11.4.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.wanfangdata.com.cn/Config/index"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/js/global.min.js?v=201610091258"></script>
+        <script type="text/javascript">
+            (function () {
+                wf.header.resource.init({ id: 'cstad' });
+                wf.fixbox.init();
+                $('.content-c .data-link').click(function () {
+                    var $this = $(this);
+                    var $list = $this.parent().parent();
+                    var ajaxModel = {
+                        filePath: $list.data('ajax-xmlpath'),
+                        templ: $list.data('ajax-templ'),
+                        pt: $list.data('ajax-pt'),
+                        st: $list.data('ajax-st'),
+                        wrap: $list.data('ajax-wrap')
+                    };
+                    $.getJSON('XmlFetch.ashx', { filePath: ajaxModel.filePath, nodeValue: $this.data('value') }, function (result) {
+                        var html = [];
+                        $this.addClass('active');
+                        $list.find('.data-link').not($this).removeClass('active');
+                        var pushItems = function (arr, t, fun, wrap) {
+                            $.each(this, function () {
+                                if ($.isFunction(fun)) { fun(this, arr, t); }
+                                else { arr.push(t.format(this.Name, encodeURIComponent(this.Value), this.Buy === 'False' ? 'notbuy' : '')); }
+                            });
+                        }
+                        if (ajaxModel.templ) {
+                            pushItems.call(result.Children, html, ajaxModel.templ);
+                        } else {
+                            pushItems.call(result.Children, html, ajaxModel.pt, function (item, arr, pt) {
+                                var sls = [];
+                                pushItems.call(item.Children, sls, ajaxModel.st);
+                                html.push('<div class="tb-list-item clear">{0}</div>'.format('<span class="p-link">{0}</span>'.format(pt.format(item.Name, encodeURIComponent(item.Value), item.Buy === 'False' ? 'notbuy' : '')) + '<span class="s-link">{0}</span>'.format(sls.join('<span class="spliter"> | </span>'))));
+                            });
+                        }
+                        $list.next().html(html.join(''));
+                    });
+                });
+            })();
+        </script>
+    
+    <script type="text/javascript">
+        (function () {$('.content-c .data-link').first().click();})();
+    </script>
+
+    
+</body>
+</html>
+

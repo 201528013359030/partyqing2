@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>协同办公</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<style>
+	body{background:#fff;}
+</style>
+</head>
+
+<body  onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item top_nav_content_item_cur"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+
+	<div class="clearer"></div>
+	<div class="mt13" id="mt13">
+		<a href="javaScript:void(0);" id="20140822094404" onclick="menuOnclick('20140822094404')" subnav="20140822094404" class="left_nav_item left_nav_item_be left_nav_item_cur left_nav_item_on left_nav_item_be_on">日常办公</a>
+		<div class="left-subnav" navfor="20140822094404" pid="20140822094404" style="display: block;">
+			<a href="javaScript:void(0);" rel="../../oa/pending/myWork.xhtml?toolbarClose=true" id="20140822094490" onclick="menuChangeColor('20140822094490', '', '工作台', '../../oa/pending/myWork.xhtml?toolbarClose=true', '', '');" class="left-subnav-item cur" style="left: 0px;">工作台</a>
+			<a href="javaScript:void(0);" rel="../../plugins/workPlan/search.xhtml" id="20140822094492" onclick="menuChangeColor('20140822094492', '', '日程', '../../plugins/workPlan/search.xhtml', '', '');" class="left-subnav-item" style="left: 0px;">日程</a>
+			<a href="javaScript:void(0);" rel="../../release/jump.xhtml?formLogicId=138907760765854" id="20140822094494" onclick="menuChangeColor('20140822094494', '', '通讯录', '../../release/jump.xhtml?formLogicId=138907760765854', '', '');" class="left-subnav-item" style="left: 0px;">通讯录</a>
+			<a href="javaScript:void(0);" rel="../../oa/sticker/search.xhtml?formId=138905817064565" id="20140822094496" onclick="menuChangeColor('20140822094496', '', '记事本', '../../oa/sticker/search.xhtml?formId=138905817064565', '', '');" class="left-subnav-item" style="left: 0px;">记事本</a>
+			<a href="javaScript:void(0);" rel="../../yidong/android.html" id="20140822094498" onclick="menuChangeColor('20140822094498', '', '移动办公', '../../yidong/android.html', '', '');" class="left-subnav-item" style="left: 0px;">移动办公</a>
+			<a href="javaScript:void(0);" rel="../../mapPTool/V3.0.0_Base/map.jsp?LBSFlag=true" id="140911777815321" onclick="menuChangeColor('140911777815321', '', 'GPS定位', '../../mapPTool/V3.0.0_Base/map.jsp?LBSFlag=true', '', '');" class="left-subnav-item" style="left: 0px;">GPS定位</a>
+			<a href="javaScript:void(0);" rel="../../oa/ygrb/searchYgrb.xhtml" id="147858874411395" onclick="menuChangeColor('147858874411395', '', '员工日报', '../../oa/ygrb/searchYgrb.xhtml', '', '');" class="left-subnav-item" style="left: 0px;">员工日报</a>
+			<a href="javaScript:void(0);" rel="../../ygzb/list.xhtml" id="14785959536983" onclick="menuChangeColor('14785959536983', '', '员工周报', '../../ygzb/list.xhtml', '', '');" class="left-subnav-item" style="left: 0px;">员工周报</a>
+		</div>
+		<a href="javaScript:void(0);" id="20140822094406" onclick="menuOnclick('20140822094406')" subnav="20140822094406" class="left_nav_item left_nav_item_be">内部资讯</a>
+		<div class="left-subnav" navfor="20140822094406" pid="20140822094406" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094408" onclick="menuOnclick('20140822094408')" subnav="20140822094408" class="left_nav_item left_nav_item_be">互动交流</a>
+		<div class="left-subnav" navfor="20140822094408" pid="20140822094408" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094516" onclick="menuOnclick('20140822094516')" subnav="20140822094516" class="left_nav_item left_nav_item_be">人事类</a>
+		<div class="left-subnav" navfor="20140822094516" pid="20140822094516" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094518" onclick="menuOnclick('20140822094518')" subnav="20140822094518" class="left_nav_item left_nav_item_be">财务类</a>
+		<div class="left-subnav" navfor="20140822094518" pid="20140822094518" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094520" onclick="menuOnclick('20140822094520')" subnav="20140822094520" class="left_nav_item left_nav_item_be">行政类</a>
+		<div class="left-subnav" navfor="20140822094520" pid="20140822094520" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094522" onclick="menuOnclick('20140822094522')" subnav="20140822094522" class="left_nav_item left_nav_item_be">综合类</a>
+		<div class="left-subnav" navfor="20140822094522" pid="20140822094522" style=""></div>
+		<a href="javaScript:void(0);" id="2014082115111840" onclick="menuOnclick('2014082115111840')" subnav="2014082115111840" class="left_nav_item left_nav_item_be">会议纪要</a>
+		<div class="left-subnav" navfor="2014082115111840" pid="2014082115111840" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094414" onclick="menuOnclick('20140822094414')" subnav="20140822094414" class="left_nav_item left_nav_item_be">任务管理</a>
+		<div class="left-subnav" navfor="20140822094414" pid="20140822094414" style=""></div>
+		<a href="javaScript:void(0);" id="20140822094422" onclick="menuOnclick('20140822094422')" subnav="20140822094422" class="left_nav_item left_nav_item_be">统计查询</a>
+		<div class="left-subnav" navfor="20140822094422" pid="20140822094422" style=""></div>
+		<a href="javaScript:void(0);" id="141638826651045" onclick="menuOnclick('141638826651045')" subnav="141638826651045" class="left_nav_item left_nav_item_be">系统设置</a>
+		<div class="left-subnav" navfor="141638826651045" pid="141638826651045" style=""></div>
+	</div>
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+<div id="main_content" style="width: 98%;" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<!-- 我的桌面上方 -->
+<!-- 我的工作台 嵌套修改 HanXiaoOu -->
+<div id="main_content" style="width:98%" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<!-- 判断用户操作行为 -->
+<input type="hidden" name="flow" id="flow" value="待审批">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<!-- 我的桌面上方 -->
+<div id="topMyWork" style="display:block">
+<div id="myworkspace" class="wdgzt" style="display:block">
+<table width="95%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+
+<tbody>
+<tr>
+<td height="33">
+<span class="txt-blue-main f14 fb fl aside_area_desk">我的工作台</span>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td height="43" id="flowtd">
+
+<a href="/oaIndex/oa/pending/search.xhtml?toolbarClose=true" onclick="setSession(this.id);" id="t1" class="btn2 fl mr5"> <i id="t1_i1" class="btn2_left"></i> <span id="t1_span" class="btn2_content">&nbsp;待审批&nbsp;</span> <i id="t1_i2" class="btn2_right"></i> </a>
+
+<a href="/oaIndex/oa/applied/search.xhtml?toolbarClose=true" onclick="setSession(this.id);" id="t2" class="btn fl mr5"> <i id="t2_i1" class="btn_left"></i> <span id="t2_span" class="btn_content">&nbsp;我发起&nbsp;</span> <i id="t2_i2" class="btn_right"></i> </a>
+
+<a href="/oaIndex/oa/approved/search.xhtml?toolbarClose=true" onclick="setSession(this.id);" id="t3" class="btn fl mr5"> <i id="t3_i1" class="btn_left"></i> <span id="t3_span" class="btn_content">&nbsp;已审批&nbsp;</span> <i id="t3_i2" class="btn_right"></i> </a>
+
+<!-- 更多 -->
+
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- 我的工作台 -->
+<tr>
+<td width="100%" height="272" align="center" valign="top">
+
+
+<div class="jmesa"><div id="jmesaDIV">
+<table id="jmesa" border="0" cellpadding="0" cellspacing="0" class="table" width="100%">
+	<thead class="thead">
+	<tr class="header">
+		<td width="20%"><div>标题</div></td>
+		<td width="8%"><div>申请人</div></td>
+		<td width="12%"><div>申请时间</div></td>
+		<td width="10%"><div>当前执行人</div></td>
+		<td width="10%"><div>审批状态</div></td>
+		<td width="20%"><div>操作</div></td>
+	</tr>
+	</thead>
+	<tbody class="tbody">
+	<tr id="jmesa_row1" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td width="20%" style="text-align: left;padding-left:15px;">
+											    <label title="制造业提交的主计划申请">制造业提交的主计划申请</label>
+										    </td>
+		<td width="8%">
+											    <label title="制造业">制造业</label>
+										    </td>
+		<td width="12%">
+											    <label title="2016/06/15">2016/06/15</label>
+										    </td>
+		<td width="10%">
+											    <label title="赵志光">赵志光</label>
+										    </td>
+		<td width="10%">
+											    <label title="处理完成">处理完成</label>
+										    </td>
+		<td width="20%">
+										    	<a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/release/showAction.xhtml?fromUrlPath=workCenter&amp;formLogicId=139718365534339&amp;objLogicId=146596238037013&amp;dataTableLogicIds=[139288532175092]" onclick="createOverlayLoading();">详细&nbsp;&nbsp;</a><a href="#"><font color="grey">修改&nbsp;&nbsp;</font></a><a href="#"><font color="grey">撤销&nbsp;&nbsp;</font></a><a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/process/showPicOperaLogAction.xhtml?fromUrlPath=workCenter&amp;orgCode=CTSJ&amp;processId=139078987207875&amp;reportId=146596238037013&amp;tenantLogicId=138871747164527&amp;appLogicId=138657772492117&amp;appverLogicId=138657772492132&amp;status=1 ">流程&nbsp;&nbsp;</a><a href="#"><font color="grey">删除  </font></a>						   	    
+										    </td>
+	</tr>
+	<tr id="jmesa_row2" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td width="20%" style="text-align: left;padding-left:15px;">
+											    <label title="制造业的采购订单申请">制造业的采购订单申请</label>
+										    </td>
+		<td width="8%">
+											    <label title="制造业">制造业</label>
+										    </td>
+		<td width="12%">
+											    <label title="2016/06/15">2016/06/15</label>
+										    </td>
+		<td width="10%">
+											    <label title="赵志光">赵志光</label>
+										    </td>
+		<td width="10%">
+											    <label title="未处理">未处理</label>
+										    </td>
+		<td width="20%">
+										    	<a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/release/showAction.xhtml?fromUrlPath=workCenter&amp;formLogicId=139027382993774&amp;objLogicId=146578409864863&amp;dataTableLogicIds=[138629759698471]" onclick="createOverlayLoading();">详细&nbsp;&nbsp;</a><a href="#"><font color="grey">修改&nbsp;&nbsp;</font></a><a href="#" onclick="parent.myConfirm('确定撤销吗？','http://merm.ctcloud.com.cn:82/mrp/release/RollbackProcessAction.xhtml?fromUrlPath=workCenter&amp;procInstId=146578409864873&amp;workflowLogicId=140626593965664&amp;formLogicId=138717891878182&amp;objLogicId=146578409864863', 'window')" ;="">撤销&nbsp;&nbsp;</a><a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/process/showPicOperaLogAction.xhtml?fromUrlPath=workCenter&amp;orgCode=CTSJ&amp;processId=140626593965664&amp;reportId=146578409864863&amp;tenantLogicId=138871747164527&amp;appLogicId=138657772492122&amp;appverLogicId=138733144695326&amp;dataTableLogicIds={organTableLogicIds} ">流程&nbsp;&nbsp;</a><a href="#"><font color="grey">删除</font></a>						   	    
+										    </td>
+	</tr>
+	<tr id="jmesa_row3" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td width="20%" style="text-align: left;padding-left:15px;">
+											    <label title="制造业的采购订单申请">制造业的采购订单申请</label>
+										    </td>
+		<td width="8%">
+											    <label title="制造业">制造业</label>
+										    </td>
+		<td width="12%">
+											    <label title="2016/06/15">2016/06/15</label>
+										    </td>
+		<td width="10%">
+											    <label title="赵志光">赵志光</label>
+										    </td>
+		<td width="10%">
+											    <label title="未处理">未处理</label>
+										    </td>
+		<td width="20%">
+										    	<a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/release/showAction.xhtml?fromUrlPath=workCenter&amp;formLogicId=139027382993774&amp;objLogicId=146578409864845&amp;dataTableLogicIds=[138629759698471]" onclick="createOverlayLoading();">详细&nbsp;&nbsp;</a><a href="#"><font color="grey">修改&nbsp;&nbsp;</font></a><a href="#" onclick="parent.myConfirm('确定撤销吗？','http://merm.ctcloud.com.cn:82/mrp/release/RollbackProcessAction.xhtml?fromUrlPath=workCenter&amp;procInstId=146578409864852&amp;workflowLogicId=140626593965664&amp;formLogicId=138717891878182&amp;objLogicId=146578409864845', 'window')" ;="">撤销&nbsp;&nbsp;</a><a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/process/showPicOperaLogAction.xhtml?fromUrlPath=workCenter&amp;orgCode=CTSJ&amp;processId=140626593965664&amp;reportId=146578409864845&amp;tenantLogicId=138871747164527&amp;appLogicId=138657772492122&amp;appverLogicId=138733144695326&amp;dataTableLogicIds={organTableLogicIds} ">流程&nbsp;&nbsp;</a><a href="#"><font color="grey">删除</font></a>						   	    
+										    </td>
+	</tr>
+	<tr id="jmesa_row4" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td width="20%" style="text-align: left;padding-left:15px;">
+											    <label title="制造业提交的物料需求计划申请">制造业提交的物料需求计划申请</label>
+										    </td>
+		<td width="8%">
+											    <label title="制造业">制造业</label>
+										    </td>
+		<td width="12%">
+											    <label title="2016/06/12">2016/06/12</label>
+										    </td>
+		<td width="10%">
+											    <label title="赵志光">赵志光</label>
+										    </td>
+		<td width="10%">
+											    <label title="处理完成">处理完成</label>
+										    </td>
+		<td width="20%">
+										    	<a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/release/showAction.xhtml?fromUrlPath=workCenter&amp;formLogicId=139780680457865&amp;objLogicId=20160612382855&amp;dataTableLogicIds=[139530359931258]" onclick="createOverlayLoading();">详细&nbsp;&nbsp;</a><a href="#"><font color="grey">修改&nbsp;&nbsp;</font></a><a href="#"><font color="grey">撤销&nbsp;&nbsp;</font></a><a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/process/showPicOperaLogAction.xhtml?fromUrlPath=workCenter&amp;orgCode=CTSJ&amp;processId=139070248976518&amp;reportId=20160612382855&amp;tenantLogicId=138871747164527&amp;appLogicId=139519514843711&amp;appverLogicId=139519514843716&amp;status=1 ">流程&nbsp;&nbsp;</a><a href="#"><font color="grey">删除  </font></a>						   	    
+										    </td>
+	</tr>
+	<tr id="jmesa_row5" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td width="20%" style="text-align: left;padding-left:15px;">
+											    <label title="制造业提交的主计划申请">制造业提交的主计划申请</label>
+										    </td>
+		<td width="8%">
+											    <label title="制造业">制造业</label>
+										    </td>
+		<td width="12%">
+											    <label title="2016/06/12">2016/06/12</label>
+										    </td>
+		<td width="10%">
+											    <label title="赵志光">赵志光</label>
+										    </td>
+		<td width="10%">
+											    <label title="处理完成">处理完成</label>
+										    </td>
+		<td width="20%">
+										    	<a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/release/showAction.xhtml?fromUrlPath=workCenter&amp;formLogicId=139718365534339&amp;objLogicId=146571276361345&amp;dataTableLogicIds=[139288532175092]" onclick="createOverlayLoading();">详细&nbsp;&nbsp;</a><a href="#"><font color="grey">修改&nbsp;&nbsp;</font></a><a href="#"><font color="grey">撤销&nbsp;&nbsp;</font></a><a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/process/showPicOperaLogAction.xhtml?fromUrlPath=workCenter&amp;orgCode=CTSJ&amp;processId=139078987207875&amp;reportId=146571276361345&amp;tenantLogicId=138871747164527&amp;appLogicId=138657772492117&amp;appverLogicId=138657772492132&amp;status=1 ">流程&nbsp;&nbsp;</a><a href="#"><font color="grey">删除  </font></a>						   	    
+										    </td>
+	</tr>
+	<tr id="jmesa_row6" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td width="20%" style="text-align: left;padding-left:15px;" align="right">
+											    <label title="制造业提交的销售订单申请">制造业提交的销售订单申请</label>
+										    </td>
+		<td width="8%" align="right">
+											    <label title="制造业">制造业</label>
+										    </td>
+		<td width="12%" align="right">
+											    <label title="2016/06/12">2016/06/12</label>
+										    </td>
+		<td width="10%" align="right">
+											    <label title="赵志光">赵志光</label>
+										    </td>
+		<td width="10%" align="right">
+											    <label title="处理完成">处理完成</label>
+										    </td>
+		<td width="20%" align="right">
+										    	<a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/release/showAction.xhtml?fromUrlPath=workCenter&amp;formLogicId=139415937720318&amp;objLogicId=14657127636137&amp;dataTableLogicIds=[138796003192152]" onclick="createOverlayLoading();">详细&nbsp;&nbsp;</a><a href="#"><font color="grey">修改&nbsp;&nbsp;</font></a><a href="#"><font color="grey">撤销&nbsp;&nbsp;</font></a><a target="_parent" href="http://merm.ctcloud.com.cn:82/mrp/process/showPicOperaLogAction.xhtml?fromUrlPath=workCenter&amp;orgCode=CTSJ&amp;processId=140489004784388&amp;reportId=14657127636137&amp;tenantLogicId=138871747164527&amp;appLogicId=138796003192142&amp;appverLogicId=138796003192147&amp;status=1 ">流程&nbsp;&nbsp;</a><a href="#"><font color="grey">删除  </font></a>						   	    
+										    </td>
+	</tr>
+	</tbody>
+</table></div>
+<table id="toolbarTable" border="0" cellpadding="0" cellspacing="0" class="toolbarTable" width="100%">
+	<tbody class="toolbarTbody">
+	<tr class="statusBar">
+		<td align="left" colspan="6">1 - 6 条 / 共 6 条</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+
+
+</td>
+</tr>
+<!-- 我的工作台结束 -->
+
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<!-- 我的桌面上方结束 -->
+<!-- 我的桌面下方 -->
+<!-- 我的工作台 嵌套修改 HanXiaoOu -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<table width="95%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<!-- 我的邮件开始 -->
+<table width="48.8%" class="fl" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+
+<td height="33"><span class="txt-blue-main f14 fb fl">我的任务</span>
+<a href="#" onclick="parent.parent.changeMenuByLogicId(201408211511244, '141635990868154');" class="fr pr5">更多</a>
+</td>
+</tr>
+<tr>
+<td width="100%" height="362" valign="top" align="center">
+<!--   邮件功能暂时注释掉 -->
+
+<form id="jmesaForm" name="jmesaForm" action="/oaIndex/kenb/searchFolder.xhtml?logicParent=0" method="post" target="_parent">
+
+<div class="jmesa">
+<div id="jmesaDIV">
+<table id="jmesa" border="0" cellpadding="0" cellspacing="0" class="table" width="100%">
+<thead class="thead">
+<tr class="header">
+<td width="60">
+<div>状态</div>
+</td>
+<td width="29%">
+<div>任务名称</div>
+</td>
+<td width="24%">
+<div>进度</div>
+</td>
+<td width="25%">
+<div>计划完成时间</div>
+</td>
+<td width="50px">
+<div>操作</div>
+</td>
+</tr>
+</thead>
+<tbody class="tbody">
+</tbody>
+</table>
+</div>
+<table id="toolbarTable" border="0" cellpadding="0" cellspacing="0" class="toolbarTable" width="100%">
+<tbody class="toolbarTbody">
+<tr class="statusBar toolbar" style="display: none;">
+<td colspan="1">
+<table border="0" cellpadding="0" cellspacing="1" id="saas_TableToolbar">
+<tbody>
+<tr>
+<td style="width:75px"><img src="/oaIndex/saas/plugins/table/images/firstPageDisabled.png" alt="首页"></td>
+<td style="width:75px"><img src="/oaIndex/saas/plugins/table/images/prevPageDisabled.png" alt="上一页"></td>
+<td style="width:75px"><img src="/oaIndex/saas/plugins/table/images/nextPageDisabled.png" alt="下一页"></td>
+<td style="width:75px"><img src="/oaIndex/saas/plugins/table/images/lastPageDisabled.png" alt="尾页"></td>
+<td style="display:none"><img src="/oaIndex/saas/plugins/table/images/separator.gif" alt="Separator"></td>
+<td style="width:50px">
+<select name="maxRows" onchange="jQuery.jmesa.setMaxRowsToLimit('jmesa', this.options[this.selectedIndex].value);onInvokeAction('jmesa','max_rows')">
+<option value="5">5 </option>
+<option value="10">10 </option>
+<option value="15" selected="selected">15 </option>
+<option value="20">20 </option>
+<option value="25">25 </option>
+<option value="50">50 </option>
+<option value="100">100 </option>
+<option value="200">200 </option>
+<option value="500">500 </option>
+<option value="1000">1000 </option>
+</select>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="right" colspan="1">没有找到记录。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</form>
+
+</td>
+</tr>
+</tbody>
+</table>
+<!-- 我的日程 -->
+<table width="48.8%" class="fr" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="100%" align="center">
+
+<div id="main_content" style="width:98%" class="fl">
+<form action="" id="jmesaForm" method="post"></form>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<table width="95%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td height="33">
+<div style="width:98%;">
+<a href="javascript:void(0)" onclick="searchWorkPlan()">
+<span class="txt-blue-main f14 fb fl" style="color:#2b4454; font-size: 14px;  font-weight: bold;">我的日程</span>
+
+</a>
+<!-- 通用按钮 end -->
+<a id="workPlan_more" class="fr pr5" href="javascript:void(0)" onclick="searchWorkPlan()" style="float: right; display: block;">更多</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="border1">
+<div class="main_item_title_th" style="overflow:visible;">
+<div class="fl pl10 textC" style="width:238px;">
+<a href="javascript:void(0)" class="fr btn_arrow_right" onclick="prevTrigger()" style="float:right"></a>
+<a href="javascript:void(0)" class=" fl btn_arrow_left" onclick="nextTrigger()" style="float:left"></a>
+<a href="javascript:void(0)" onclick="gotoToday()" style=" width:80%; color:#2b4454">
+<span id="riqiText">2016/12/12</span>
+</a>
+</div>
+<!--日历-->
+<div style="float:left">
+<a href="javascript:void(0)" id="btn_time" class=" btn_time ml5" onclick="WdatePicker({el:'schedule_date',dateFmt:'yyyy-MM-dd',errDealMode:2,autoPickDate:true});return false;">
+<input type="text" id="schedule_date" name="schedule_date" onchange="gotoDate1(this)" onfocus="gotoDate1(this)" style="width: 0px;border: 0px;height: 0px;">
+</a>
+<div class="qipao_dialog">日历</div>
+</div>
+<!-- 日期文本的显示 
+<div style="float:left ">
+	<span id="riqiText"></span>
+</div>-->
+<!--选人-->
+<div style="position:relative; float:right ">
+<a href="javascript:selectUserByTree();" id="btn_xuanren" class="btn_setting mr15"></a>
+<div class="qipao_dialog" style="left:-34px;">查看他人日程</div>
+</div>
+
+<!--增加-->
+<div style="position:relative;  float:right ">
+<a href="javascript:void(0)" onclick="initSaveWorkPlan()" id="btn_new_richeng" class="btn_add mr5"></a>
+<div class="qipao_dialog" style="left: -30px; display: none;">新建日程</div>
+</div>
+</div>
+<table style="width:97%; padding-left:5%;" class="pt11 pb11 fc overflow">
+<tbody>
+<tr>
+<td style="width:2%;">
+<ul class="richeng_tab fl">
+<a href="javascript:void(0)" onclick="dayTrigger(this)" class="richeng_tab_current richeng_tab_li mt10" id="showDay" style="width:100%">日</a>
+<a href="javascript:void(0)" onclick="weekTrigger(this)" class="richeng_tab_li" style="width:100%">周</a>
+<a href="javascript:void(0)" onclick="monthTrigger(this)" class="richeng_tab_li" style="width:100%">月</a>
+</ul>
+</td>
+<td style="width:89%;">
+<!-- 崔龙 2014-06-19 功能：360浏览器 我的日程样式有误-->
+<!-- suxn 2016-06-01 功能：我的工作台我的任务与我的日程高度不一致 调整高度-->
+<div class="padding10 border1 fl overflow mt10" style="width:95%; height:300px; background:#fff; position: relative">
+<!-- 日历插件 -->
+<div id="calendar" style="margin: 0px auto; float: none; width: 97%; height: 287px;" class="fc fc-ltr">
+<table class="fc-header" style="width: 100%; display: none;">
+<tbody>
+<tr>
+<td class="fc-header-left"><span class="fc-button fc-button-prev fc-state-default fc-corner-left" unselectable="on"><span class="fc-text-arrow">‹</span></span><span class="fc-button fc-button-today fc-state-default fc-state-disabled" unselectable="on">今天</span><span class="fc-button fc-button-next fc-state-default fc-corner-right" unselectable="on"><span class="fc-text-arrow">›</span></span>
+</td>
+<td class="fc-header-center"><span class="fc-header-title"><h2>2016/12/12</h2></span></td>
+<td class="fc-header-right"><span class="fc-button fc-button-month fc-state-default fc-corner-left" unselectable="on">月</span><span class="fc-button fc-button-agendaWeek fc-state-default" unselectable="on">周</span><span class="fc-button fc-button-agendaDay fc-state-default fc-corner-right fc-state-active" unselectable="on">日</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fc-content" style="position: relative;">
+<div class="fc-view fc-view-agendaDay fc-agenda" style="position:relative" unselectable="on">
+<table style="width:100%" class="fc-agenda-days fc-border-separate" cellspacing="0">
+<thead>
+<tr class="fc-first fc-last">
+<th class="fc-agenda-axis fc-widget-header fc-first" style="width: 50px;">&nbsp;</th>
+<th class="fc-mon fc-col0 fc-widget-header">星期一 12/12</th>
+<th class="fc-agenda-gutter fc-widget-header fc-last" style="width: 15px;">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="fc-first fc-last">
+<th class="fc-agenda-axis fc-widget-header fc-first">&nbsp;</th>
+<td class="fc-col0 fc-mon fc-widget-content fc-state-highlight fc-today">
+<div style="height: 440px;">
+<div class="fc-day-content">
+<div style="position:relative">&nbsp;</div>
+</div>
+</div>
+</td>
+<td class="fc-agenda-gutter fc-widget-content fc-last" style="width: 15px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div style="position: absolute; z-index: 2; left: 0px; width: 100%; top: 18px;">
+<div style="position: absolute; width: 100%; overflow-x: hidden; overflow-y: auto; height: 440px;">
+<div style="position:relative;width:100%;overflow:hidden">
+<div class="fc-event-container" style="position:absolute;z-index:8;top:0;left:0"></div>
+<table class="fc-agenda-slots" style="width:100%" cellspacing="0">
+<tbody>
+<tr class="fc-slot0 ">
+<th class="fc-agenda-axis fc-widget-header" style="width: 50px;">01:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot1 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot2 ">
+<th class="fc-agenda-axis fc-widget-header">02:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot3 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot4 ">
+<th class="fc-agenda-axis fc-widget-header">03:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot5 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot6 ">
+<th class="fc-agenda-axis fc-widget-header">04:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot7 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot8 ">
+<th class="fc-agenda-axis fc-widget-header">05:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot9 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot10 ">
+<th class="fc-agenda-axis fc-widget-header">06:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot11 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot12 ">
+<th class="fc-agenda-axis fc-widget-header">07:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot13 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot14 ">
+<th class="fc-agenda-axis fc-widget-header">08:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot15 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot16 ">
+<th class="fc-agenda-axis fc-widget-header">09:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot17 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot18 ">
+<th class="fc-agenda-axis fc-widget-header">10:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot19 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot20 ">
+<th class="fc-agenda-axis fc-widget-header">11:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot21 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot22 ">
+<th class="fc-agenda-axis fc-widget-header">12:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot23 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot24 ">
+<th class="fc-agenda-axis fc-widget-header">13:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot25 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot26 ">
+<th class="fc-agenda-axis fc-widget-header">14:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot27 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot28 ">
+<th class="fc-agenda-axis fc-widget-header">15:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot29 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot30 ">
+<th class="fc-agenda-axis fc-widget-header">16:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot31 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot32 ">
+<th class="fc-agenda-axis fc-widget-header">17:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot33 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot34 ">
+<th class="fc-agenda-axis fc-widget-header">18:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot35 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot36 ">
+<th class="fc-agenda-axis fc-widget-header">19:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot37 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot38 ">
+<th class="fc-agenda-axis fc-widget-header">20:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot39 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot40 ">
+<th class="fc-agenda-axis fc-widget-header">21:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot41 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot42 ">
+<th class="fc-agenda-axis fc-widget-header">22:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot43 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot44 ">
+<th class="fc-agenda-axis fc-widget-header">23:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot45 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot46 ">
+<th class="fc-agenda-axis fc-widget-header">00:00</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+<tr class="fc-slot47 fc-minor">
+<th class="fc-agenda-axis fc-widget-header">&nbsp;</th>
+<td class="fc-widget-content">
+<div style="position:relative">&nbsp;</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+<!-- 我的日程结束 -->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- 我的桌面下方结束 -->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

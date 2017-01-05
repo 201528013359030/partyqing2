@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>协同办公</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<style>
+	body{background:#fff;}
+</style>
+</head>
+
+<body onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item top_nav_content_item_cur"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+
+<!--左侧菜单-->
+
+<!--end 左侧菜单-->
+
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+<div id="main_content" style="width: 98%;" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+
+<!-- 中间内容 -->
+
+<!-- end 中间内容 -->
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

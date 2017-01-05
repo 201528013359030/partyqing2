@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote{margin:0; padding:0;}
+body { font:12px "tahoma" ,"微软雅黑", "宋体",san-serif; color:#3e2d1b; background:#fff;text-size-adjust:none; height:100%  }
+html {height:100%;}
+h1, h2, h3, h4, h5, h6 ,em,i{ font-size:12px; font-weight:normal }
+h1{ font-size:36px; text-align:center}
+a { text-decoration:none; color:#215278 }
+	a:hover { text-decoration: none; color: #02123f }
+ul, li { list-style:none; }
+fieldset, img { border:none; }
+img{  overflow:hidden;}
+legend { display:none; }
+em,cite,th,i,b,q,blockquote{ font-style:normal; }
+input, textarea, select, button { font:12px Verdana,Helvetica,Arial,sans-serif; }
+table, table tr, table td{border-collapse:collapse;}
+/****** yubo 20160531 修改统一字体 **********/
+table,td,tr,th {
+ font-size:12px;
+}
+
+/****************************** 基础样式 *********************************************/
+	/*对齐*/
+	.fl{ float:left}
+	.fr{ float:right}
+	.fc{ margin:0 auto;}
+	
+	/* 显示隐藏 */
+	html .hidden,html tab_con{ display:none}
+	html .visible{ display:block}
+	
+	html .clearer{clear:both;}
+	
+	.table_solid_gray{ border:1px solid #dbdbdb;}
+	.table_solid_gray td, .table_solid_gray th{border:1px solid #dbdbdb;}
+	
+	.overflow{ overflow:hidden}	
+/**********************************文字***********************************************/
+	/* 字号 */	
+	html .f10{ font-size:10px;}
+	html .f11{ font-size:11px;}
+	html .f12{ font-size:12px;}
+	html .f14{ font-size:14px;}
+	html .f16{ font-size:16px;}
+	html .f18{ font-size:18px;}
+	html .f22{ font-size:22px;}
+	html .f30{ font-size:30px;}
+	
+	/* 加粗 */
+	html .fb{font-weight:bold}	
+	
+	/* 加粗 */
+	html .fn{font-weight:normal}	
+		
+	/* 文字对齐 */	
+	.textL{ text-align:left}
+	.textC{ text-align: center}
+	.textR{ text-align: right; padding-right:2px;}
+		
+	/* 行间距 */
+	.lineHeight16{ line-height:16px;}
+	.lineHeight18{ line-height:18px;}
+	.lineHeight20{ line-height:20px;}
+	.lineHeight22{ line-height:22px;}
+	.lineHeight24{ line-height:24px;}
+	.lineHeight25{ line-height:25px;}
+	.lineHeight26{ line-height:26px;}
+	.lineHeight28{ line-height:28px;}
+	.lineHeight30{ line-height:30px;}
+	.lineHeight32{ line-height:32px;}
+	.lineHeight34{ line-height:34px;}
+	.lineHeight36{ line-height:36px;}
+	.lineHeight38{ line-height:38px;}
+	.lineHeight40{ line-height:40px;}
+	.lineHeight50{ line-height:50px;}
+	
+	/* 颜色 */
+	html .txt-black,html .txt-black a,html a.txt-black{color:#484848}
+	html a.txt-black:hover{ text-decoration:none; color: #151515 }
+	
+	/* 列表页条数统计灰 */
+	html .txt-black-list,html .txt-black-list a,html a.txt-black-list{color:#9b9b9b}
+	html a.txt-black-list:hover{ text-decoration:none; color: #9b9b9b }
+	
+	/* 表单错误提示红 */
+	html .txt-red-form-error,html .txt-red-form-error a,html a.txt-red-form-error{color:#d83d13}
+	html a.txt-red-form-error:hover{ text-decoration:none; color: #d83d13 }
+	
+	
+	/* 首页main标题蓝 */
+	html .txt-blue-main,html .txt-blue-main a,html a.txt-blue-main{color:#2b4454}
+	html a.txt-blue-main:hover{ text-decoration:none; color: #2b4454 }
+	
+	/* 列表页翻页部分连接蓝 */
+	html .txt-blue-list,html .txt-blue-list a,html a.txt-blue-list{color:#0862a8}
+	html a.txt-blue-list:hover{ text-decoration:none; color: #004276 }
+	
+	
+	
+	
+	
+	/* 通用纯白 */
+	html .txt-white,html .txt-white a,html a.txt-white{color:#fff}
+	html a.txt-white:hover{ text-decoration:none; color: #fff }
+	
+	html .txt-white-login,html .txt-white-login a,html a.txt-white-login{color:#6c86bc}
+	html a.txt-white-login:hover{ text-decoration:none; color: #6c86bc }
+	
+	
+	/* 通用top_welcome白 */
+	html .txt-white-welcome,html .txt-white-welcome a,html a.txt-white-welcome{color:#c2c3c3}
+	html a.txt-white-welcome:hover{ text-decoration:none; color: #151515 }
+	
+	/* 通用top_nav白 */
+	html .txt-white-nav,html .txt-white-nav a,html a.txt-white-nav{color:#c2c3c3}
+	html a.txt-white-nav:hover{ text-decoration:none; color: #c2c3c3 }
+	
+	
+	
+	/* 删除线  */
+	.through{ text-decoration:line-through}	
+	
+	/* 字体 */
+	.fontsong{font-family:"宋体"}
+	.fontnum{font-family:Tahoma, Geneva, sans-serif}
+	
+/********************************距离控制***********************************/		
+	/* 间隔 */
+	.bk3{ height:3px;}	
+	.bk5{ height:5px;}
+	.bk8{ height:8px;}
+	.bk11{ height:11px;}
+	.bk13{ height:13px;}
+	.bk24{ height:24px;}
+	
+	
+	/* padding */
+	.padding10{padding:10px;}
+	
+	/* padding-top */
+	.pt3{ padding-top:3px}	
+	.pt5{ padding-top:5px}	
+	.pt8{ padding-top:8px}
+	.pt11{ padding-top:11px}
+	.pt13{ padding-top:13px}
+	.pt15{ padding-top:15px}
+	.pt48{ padding-top:48px}
+	
+	/* padding-left */
+	.pl5{ padding-left:5px;}
+	.pl10{padding-left:10px;}
+	.pl15{ padding-left:15px;}
+	.pl16{padding-left:16px;}
+	.pl20{ padding-left:20px;}
+	.pl25{ padding-left:25px;}
+	.pl30{ padding-left:30px;}
+	.pl40{ padding-left:40px;}
+	.pl5p{ padding-left:5%}
+	.pl11p{ padding-left:11%}
+	.pl26p{ padding-left:26%;}
+	
+	
+	
+	/* padding-right */
+	.pr5{ padding-right:5px;}
+	.pr10{padding-right:10px;}
+	.pr15{ padding-right:15px;}
+	
+	/* padding-bottom */
+	.pb15{ padding-bottom:15px}	
+	.pb32{ padding-bottom:32px}	
+	.pb43{ padding-bottom:43px}	
+	
+	/* margin-top */
+	.mt3{margin-top:3px;}
+	.mt5{margin-top:5px;}
+	.mt8{margin-top:8px;}
+	.mt10{margin-top:10px;}
+	.mt13{margin-top:13px;}
+	
+	/* margin-left */
+	.ml10{margin-left:10px;}
+	.ml16{margin-left:16px;}
+	
+	/* margin-right */
+	.mr3{margin-right:3px;}
+	.mr5{margin-right:5px;}
+	.mr8{margin-right:8px;}
+	.mr15{margin-right:15px;}
+	.mr30{margin-right:30px;}
+	
+	/* margin-bottom */
+	.mb3{ margin-bottom:3px;}
+	.mb5{ margin-bottom:5px;}
+	.mb10{ margin-bottom:10px;}
+	.mb15{ margin-bottom:15px;}
+	.mb10p{ margin-bottom:10%}
+	
+	.display-inline{display:inline}
+	
+
+
+/* 边框线   2014.1.6 崔涛*/ 
+	.border1{ border:1px solid #cdcdcd;}
+	.border2{ border:1px solid #c3d6e1;}
+	
+	.table_solid_gray td{ border:1px solid #ccc}
+	
+	.table_dashed_gray{ border:1px solid #eaeaea;}
+	.table_dashed_gray td{border:1px dashed #e9e9e9;}
+	
+	.table_dashed_blue{ border:1px solid #bacbdf}
+	.table_dashed_blue td{ border:1px dashed #cfd9e4;}
+	
+	.boreder_dashed_gray{ border-bottom:1px dashed #e9e9e9}
+	
+	/* table tr 变虚线 */
+	.table_dashed_blue_tr{ border:1px solid #becee1}
+	.table_dashed_blue_tr tr{ border:1px dashed #cfd9e4}
+	/* table tr 变虚线 end */
+	
+	.table_nodashed{ border:0}
+	.table_nodashed td{ border:none; border:0}
+
+
+	
+
+
+/*-----------------------------------------提交页面---成功--失败--提示---------------------------------------------------------*/
+.oa_submit_success_div {
+ width:598px;
+ height:432px;
+ border:1px solid #dedede;
+ margin:0 auto;
+ background-color:#fafafa;
+}
+.oa_submit_success_div_top {
+ height:276px;
+ padding-top:20px; 
+ border-bottom:1px solid #eaeaea;
+}
+.oa_submit_success_div_bottom {
+ height:103px;
+ border:1px solid #fafafa;
+ border-top-color:#fff;
+ background-color:#f6f6f6;
+ padding-top:30px;
+}
+.oa_submit_success_div p {
+ height:20px;
+ letter-spacing:1px;
+ font:15px/20px 微软雅黑; 
+}
+.oa_submit_success_div p em {
+ height:20px;
+ font:15px/20px 微软雅黑; 
+ color:#3b8ae9;
+ padding:0 5px;
+}
+.oa_submit_success_div_bottom ul {
+ height:38px;
+ float:left;
+ margin-top:25px;
+ width:596px;
+ text-align:center
+}
+.oa_submit_success_div_bottom ul li {
+ margin-right:8px;
+ margin-left:8px;
+ display:inline
+}
+.oa_submit_success_div_bottom ul li a {
+ height:38px;
+ display:inline-block;
+ width:96px;
+ color:#656565;
+ text-align:center;
+ font:15px/38px 微软雅黑;
+ background:url(../images/oa_blank_button1.jpg) no-repeat;
+}
+.oa_submit_success_div_bottom ul li a:hover {
+ height:38px;
+ color:#fff;
+ background:url(../images/oa_mouse_over_the_button_1.jpg) no-repeat;
+}
+.oa_submit_success_div_bottom ul li a:focus {
+ color:#fff;
+ background:url(../images/oa_mouse_over_the_button_1.jpg) no-repeat;
+}
+
+
+/*-----------------------------------------提交页面---成功--失败--提示-----------------------------------------------------*/
+
+.input-border-no {
+	border:0px;
+	background: none;
+}
+.input-number {
+	text-align: right;
+	float: right;
+}
+.input-95 {
+	width: 95%;
+}
+
+.div-border {
+	overflow: hidden; 
+	background-color: #fff; 
+	border: #aaaaaa 1px solid
+}
+.input-80 {
+	width: 80%;
+}
+
+

@@ -1,0 +1,3131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>车间管理</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main2.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<link rel="stylesheet" type="text/css" href="../css/workCenterList.css">
+
+<style>
+	body{background:#fff;}
+ 
+.table_bar_bg {
+	width: 32px;
+	height: 21px;
+	padding: 0 1px;
+	background: url(../images/mrp_gzzx_bar_bg.jpg) no-repeat;
+}
+
+.gongzuozhongxin_item_title_th {
+	background: url(../images/main_title.jpg) repeat-x 0 0;
+	color: #2b4454;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+}
+ 
+.tab_list3{ float:left; height:29px;}
+.tab_list3 li{ float:left; height:29px; margin-right:10px; line-height:29px; border-bottom:none; cursor:pointer; overflow:hidden; }
+.tab_list3 li a{ display:inline-block; height:29px; padding-left:13px; background:url(../images/tab-list2.png) 0 -64px no-repeat; overflow:hidden; zoom:1;}
+.tab_list3 li a span{ display:inline-block; height:29px; padding-left:13px; background:url(../images/tab-list2.png) 0 -96px no-repeat; clear:both;zoom:1; vertical-align:top}
+.tab_list3 .current{ height:30px;}
+.tab_list3 .current a{ position:relative; background:url(../images/tab-list2.png) 0 0 no-repeat; height:30px; margin-bottom:-1px; z-index:9;}
+.tab_list3 .current a span{ height:30px; background:url(../images/tab-list2.png) 0 -32px no-repeat;}
+</style>
+</head>
+
+<body onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item  top_nav_content_item_cur"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+	
+    <div class="clearer"></div>
+    <div class="mt13" id="mt13"><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/workCenter/searchWorkCenter.xhtml" id="141869251523363" onclick="menuFnClick('141869251523363', '', '车间管控台', 'http://merm.ctcloud.com.cn:82/mrp/workCenter/searchWorkCenter.xhtml', '', '');" subnav="141869251523363" class="left_nav_item left_nav_item_cur left_nav_item_on left_nav_item_null_on">车间管控台</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/task/searchTaskAndSel.xhtml" id="20140822094682" onclick="menuFnClick('20140822094682', '', '任务接收', 'http://merm.ctcloud.com.cn:82/mrp/task/searchTaskAndSel.xhtml', '', '');" subnav="20140822094682" class="left_nav_item">任务接收</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=141352425065565" id="141869251523381" onclick="menuFnClick('141869251523381', '', '任务分派', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=141352425065565', '', '');" subnav="141869251523381" class="left_nav_item">任务分派</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=141446596645019" id="141869251523386" onclick="menuFnClick('141869251523386', '', '任务领料', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=141446596645019', '', '');" subnav="141869251523386" class="left_nav_item">任务领料</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=141465933682536" id="20140822094684" onclick="menuFnClick('20140822094684', '', '完工报告', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=141465933682536', '', '');" subnav="20140822094684" class="left_nav_item">完工报告</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/initSave.xhtml?formLogicId=141291766742923" id="141869251523397" onclick="menuFnClick('141869251523397', '', '临时任务', 'http://merm.ctcloud.com.cn:82/mrp/release/initSave.xhtml?formLogicId=141291766742923', '', '');" subnav="141869251523397" class="left_nav_item">临时任务</a></div>
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+<div id="main_content" style="width: 98%;" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+
+<!-- 中间内容 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+        <td align="center" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+			    <tbody><tr>
+			        <td height="70" valign="middle"><span class="txt-blue-main f14 fb fl">车间管控台</span></td>
+			    </tr>
+       			<tr>
+               		<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                   			<tbody><tr>
+                                <td><ul class="tab_list3">
+                                 		<li class="current"><a href="/mrp/workCenter/searchWorkCenter.xhtml">&nbsp;工作中心能力&nbsp;<span></span></a></li>
+					                 	<li><a href="/mrp/release/initSave.xhtml?formLogicId=141561289022869">&nbsp;任务进度查看&nbsp;<span></span></a></li>
+					                 	           
+       								</ul>
+                                </td>
+                            </tr>
+                          	<tr>
+								<td align="center" valign="top">
+									<div class="padding10 border1">
+		    							<table width="100%" border="0" cellspacing="0" cellpadding="0">            
+       										<tbody><tr>
+        										<td><form id="workCenterListForm" action="/mrp/workCenter/searchWorkCenter.xhtml"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="border1" style="table-layout:fixed; border-collapse:separate; background:#ebebeb;">					                					
+               											<tbody><tr>
+               												<td width="80" height="43" align="left" class="pl10 txt-blue-main fb">开始时间：</td>
+                 											<td width="170" align="left"><input type="text" class="Wdate" id="beginDay" name="beginDay" readonly="readonly" value="2016-12-01" onclick="WdatePicker({Date:'#F{$dp.$D(\'beginDay\')}'})" style="width: 150px;line-height:25px; height: 25px"></td>
+                 											<td width="80" height="43" align="left" class="pl10 txt-blue-main fb">天数选择：</td>
+                 											<td width="170" align="left"><input type="text" class="form_input" onkeyup="searchTaskCenter_keyUp()" name="days" id="days" onchange="checkDays();" value="31" style="width:150px;"></td>
+                 											<td width="80" height="43" align="left"><!-- 查询按钮 --><a class="btn5 fl" href="javascript:void(0);" onclick="searchTaskCenter()"> <i class="btn5_left"></i> <span class="btn5_content">&nbsp;搜&nbsp;索&nbsp;</span> <i class="btn5_right"></i> </a><!-- 查询按钮 end --></td>
+                 											<td height="43" align="right"><div class="fr">
+			                    								<div class="table_bar4 h_comm"></div>
+                 												<p class="mr5 h_comm">超负荷</p>
+				                    							<div class="table_bar3 h_comm"></div>
+				                    							<p class="mr5 h_comm">多任务</p>
+				                    							<div class="table_bar2 h_comm"></div>
+				                    							<p class="mr5 h_comm">正常生产</p>
+				                    							<div class="table_bar1 h_comm"></div>
+				                    							<p class="mr5 h_comm">公休日</p></div>
+				              								</td>
+              											</tr>
+              											<tr>
+              												<td colspan="6">
+              													<input name="tableType" id="tableType" value="任务状态" type="hidden">
+              												</td>
+              											</tr>
+            										</tbody></table></form></td>
+       										</tr>
+           									<tr>
+            									<td height="24"></td>
+       										</tr>
+        									
+											<tr>
+												<td height="272" align="left" valign="top">
+													<div class="padding10 border1" style="height:450px; overflow:hidden; position:relative;">
+														<div style="width:99%; height:450px; overflow:auto; margin:10px; position:absolute; left:0; top:0">
+					  										<!--table宽度为固定值，通过js计算获得 -->
+															<table id="data_table" border="0" cellspacing="3" cellpadding="0" class="border1" style="table-layout: fixed; border-collapse: separate; background: rgb(255, 255, 255); width: 1066px;">
+					  											<colgroup><col width="120" align="center">
+					    										
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    											
+						    											
+						    											<col width="34" align="center">
+					    												
+						    																				    			
+					    											
+				    											
+					    										</colgroup><tbody><tr class="gongzuozhongxin_item_title_th">
+					    										
+					    											
+					      												<td align="center" style="font-size:12px">工作中心</td>									    				
+					    											
+					    											
+					    										
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/01
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/02
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/03
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/04
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/05
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/06
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/07
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/08
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/09
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/10
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/11
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/12
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/13
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/14
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/15
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/16
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/17
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/18
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/19
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/20
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/21
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/22
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/23
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/24
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/25
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/26
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/27
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/28
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/29
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/30
+						        																		        			
+				        											
+				    												</td>
+				      											
+				        											<td align="center" style="font-size:12px;">
+						         									
+			        												
+					        											
+							        									
+						    											12/31
+						        																		        			
+				        											
+				    												</td>
+				      											
+					    										</tr>
+				  											
+																
+																	<tr id="tr_0" class="gongzuozhongxin_item_content_tr2">
+																<td align="center" style="font-size:12px">		
+																	          
+																				
+																	
+																		<!-- 不带超链接的 -->
+																		热处理车间
+																		
+																					                    	
+						 										</td>
+						 										
+					    											
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-01');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-02');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-05');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-06');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-07');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-08');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-09');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('热处理车间','2016-12-12');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="热处理车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																
+																</tr>
+						       									
+																	<tr id="tr_1" class="gongzuozhongxin_item_content_tr2">
+																<td align="center" style="font-size:12px">		
+																	          
+																				
+																	
+																		<!-- 不带超链接的 -->
+																		装配车间
+																		
+																					                    	
+						 										</td>
+						 										
+					    											
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-01');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-02');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-05');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-06');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-07');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-08');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-09');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('装配车间','2016-12-12');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="装配车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																
+																</tr>
+						       									
+																	<tr id="tr_2" class="gongzuozhongxin_item_content_tr2">
+																<td align="center" style="font-size:12px">		
+																	          
+																				
+																	
+																		<!-- 不带超链接的 -->
+																		机加车间
+																		
+																					                    	
+						 										</td>
+						 										
+					    											
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-01');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-02');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-05');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-06');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-07');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-08');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-09');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('机加车间','2016-12-12');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="机加车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																
+																</tr>
+						       									
+																	<tr id="tr_3" class="gongzuozhongxin_item_content_tr2">
+																<td align="center" style="font-size:12px">		
+																	          
+																				
+																	
+																		<!-- 不带超链接的 -->
+																		铆焊车间
+																		
+																					                    	
+						 										</td>
+						 										
+					    											
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-01');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-02');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-05');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-06');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-07');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-08');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-09');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('铆焊车间','2016-12-12');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="铆焊车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																
+																</tr>
+						       									
+																	<tr id="tr_4" class="gongzuozhongxin_item_content_tr2">
+																<td align="center" style="font-size:12px">		
+																	          
+																				
+																	
+																		<!-- 不带超链接的 -->
+																		涂装车间
+																		
+																					                    	
+						 										</td>
+						 										
+					    											
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-01');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-02');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-05');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-06');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-07');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-08');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-09');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																				
+																					<div onclick="showTask('涂装车间','2016-12-12');" class="table_bar4" style="height:17px;width:100%;"></div>
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																					
+																					
+																									                    			
+																			
+																			
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																	<td title="涂装车间">
+																		<div class="table_bar_bg">
+																		
+																			
+																			
+																			
+																				
+																					<div class="table_bar1" style="width: 97%;height: 17px;"></div>
+																				
+																				
+																																					
+																			
+																		
+																		</div></td>
+						    										
+																
+																</tr>
+						       									
+															
+					    									</tbody></table>
+														</div>
+													</div>
+												</td>
+											</tr>
+      									</tbody></table>
+									</div>
+								</td>
+							</tr>
+                        </tbody></table></td>      
+            	</tr>
+        	</tbody></table></td>
+    </tr>
+    <tr>
+        <td height="24"></td>
+	</tr>
+</tbody></table>
+<!-- end 中间内容 -->
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

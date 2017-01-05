@@ -1,0 +1,1021 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=1170" />
+    <meta name="save" content="history">
+    <link href="http://static.wanfangdata.com.cn/wfks/css/animate.min.css?v=201610091258" rel="stylesheet" />
+    <link href="http://static.wanfangdata.com.cn/wfks/css/global.min.css?v=201610091258" rel="stylesheet" />
+    <link href="/Content/css/c.min.css" rel="stylesheet" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="/favicon.ico" rel="apple-touch-icon" />
+    <!--[if lt IE 9 ]><link href="http://static.wanfangdata.com.cn/wfks/css/ltie9.min.css?v=201610091258" rel="stylesheet" /><![endif]-->
+    
+    <title>中外专利-万方数据知识服务平台</title>
+    <style>
+        .strengthen{display:block;padding:10px;margin-bottom:25px;background-color: #fdfdfd;-moz-box-shadow: inset 0 0 5px rgba(2,2,2,.3);-webkit-box-shadow: inset 0 0 5px rgba(2,2,2,.3);box-shadow: inset 0 0 5px rgba(2,2,2,.3);}
+        .strengthen .strengthen-icon{float:left;width:50px;margin:0 33px;}
+        .strengthen .strengthen-icon img{margin-left: 3px;width:41px;height: 47px;}
+        .strengthen .strengthen-icon .text{font-family:'Microsoft YaHei';font-size:16px;color:#00938c;font-weight: 700;margin-left: -1px;}
+        .strengthen .strengthen-desc{float:left;width:810px;color:#999;line-height:30px;padding: 10px 0;}
+        .strengthen .strengthen-desc em{font-weight:700;}
+        .content-c .tb-list .tb-list-item .link{width:302px;padding:0 5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <!-- <div class="nav clear">
+            <a href="http://www.wanfangdata.com.cn/">
+                <img class="logo" src="http://static.wanfangdata.com.cn/wfks/img/logo_new.png" alt="" /></a>
+            <ul>
+                <li class="active fixed" data-target="search-wrap">检索</li>
+                <li id="navResource" data-target="resource-wrap">资源</li>
+                <li id="navService" data-target="service-wrap">服务</li>
+                <li class="profile"></li>
+            </ul>
+        </div>
+        <div class="width-wrap search-wrap active fixed">
+            <div class="panel search-panel clear">
+                <div class="drp res-drp clear">
+                    <div class="res-lb">
+                        <span id="res" class="lb">学术论文</span>
+                        <i class="icon-more"></i>
+                    </div>
+                    <div class="res-list bd pop" data-open=".res-lb">
+                        <span class="clear-shadow"></span>
+                        <ul class="resource clear"></ul>
+                        <ul class="library clear"></ul>
+                    </div>
+                </div>
+                <input class="search-input" type="search" name="q" autocomplete="off" />
+                <div id="adSearchBtn" class="icon-search-ad" type="button">
+		<div class="search-ad pop">
+                    <a target="_blank" id="adSearchLink" href="http://librarian.wanfangdata.com.cn/">跨库检索</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide?helpitem=searchepaper">检索帮助</a>
+                </div>
+		</div>
+                <button class="btn icon-search search-btn" type="submit"></button>
+                <div class="search-tip-field pop"></div>
+            </div>
+        </div>
+        <div class="width-wrap resource-wrap">
+            <div class="panel resource-panel"></div>
+        </div>
+        <div class="width-wrap service-wrap">
+            <div class="panel service-panel clear">
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzfu"></i>
+                        <h6 class="tt">增值服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://social.wanfangdata.com.cn/">万方学术圈</a>
+                        <a target="_blank" href="http://trend.wanfangdata.com.cn/">知识脉络分析</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/">查新/跨库检索</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/ScientificLiterature">科技文献分析</a>                        
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-gjlfu"></i>
+                        <h6 class="tt">工具类服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://check.wanfangdata.com.cn/">论文相似性检测</a>
+                        <a target="_blank" href="http://stats.wanfangdata.com.cn/">国家经济统计数据库</a>
+                        <a target="_blank" href="http://patentool.wanfangdata.com.cn/">专利工具</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-bjbzyfu"></i>
+                        <h6 class="tt">编辑部专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://stats.editors.wanfangdata.com.cn/">期刊统计分析与评价</a>
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/ResourceDescription/DOI">中文DOI</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/">优先出版</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/Regular">同步出版</a>
+                        <a target="_blank" href="http://editors.wanfangdata.com.cn/">编审平台</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzzyff"></i>
+                        <h6 class="tt">作者专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                        <a target="_blank" href="http://contribute.wanfangdata.com.cn/">投稿</a>
+                        <a target="_blank" href="http://oa.wanfangdata.com.cn/">OA论文托管</a>
+                    </div>
+                </div>
+                <div class="md last-md">
+                    <div class="hd clear">
+                        <i class="icon icon-yqzl"></i>
+                        <h6 class="tt">舆情专栏</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://subject.wanfangdata.com.cn/">专题</a>
+                        <a target="_blank" href="http://message.wanfangdata.com.cn/">科技动态</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width-wrap account-wrap">
+            <div class="panel account-panel clear">
+                <div class="top-link">
+                    <a class="login-link">登录</a>
+                    <a href="http://login.wanfangdata.com.cn/Register/Index">注册</a>
+                    <a href="http://login.wanfangdata.com.cn/Logout.aspx">退出</a>
+                </div>
+                <div class="account-container">
+                    <div class="account person-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=myorder">查看订单</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=mywallet">我的钱包</a>
+                            <a target="_blank" href="http://tran.wanfangdata.com.cn/Charge.aspx">充值</a>
+                            <a target="_blank" class="last-item" href="http://www.wanfangdata.com.cn/UserService?tab=edituser">个人信息管理</a>
+                        </span>
+                    </div>
+                    <div class="account group-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" class="order-link" href="http://istic.wanfangdata.com.cn/Order">查看订单</a>
+                            <a target="_blank" class="last-item group-center" href="http://www.wanfangdata.com.cn/Organization">服务站</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                            
+    
+        <div class="title-wraper">
+            <h1 class="title top-title">专利</h1>
+        </div> -->
+        <div class="desc desc-resource">中外专利数据库（Wanfang Patent Database，WFPD），收录始于1985年，4500余万项专利，年增25万条，11国：中国、美国、澳大利亚、加拿大、瑞士、德国、法国、英国、日本、韩国、俄罗斯；两组织为：世界专利组织、欧洲专利局。</div>
+    
+    <div class="content content-c">
+        <a href="http://patentool.wanfangdata.com.cn/" class="strengthen clear">
+            <div class="strengthen-icon">
+                <img src="Images/strengthen-logo.png" alt="" />
+                <span class="text">加强版</span>
+            </div>
+            <div class="strengthen-desc">
+                <em>万方数据patentool</em>-- 专利工具是基于专利文献资源特色开发的一个提供综合性服务的应用工具类产品，支持不同精确度的检索，可以提供多种维度的专利分析指标；并允许用户对专利文献数据进行自助标引，同时可以对用户关心的专利范围进行跟踪预警。
+            </div>
+        </a>
+        <div class="section clear">
+        <div class="title">IPC国际专利分类</div>        
+        <div class="bd">
+          <div class="tb-list">
+              
+            
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A%22'
+                        >
+                        人类生活必需
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="农业；林业；畜牧业；狩猎；诱捕；捕鱼" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A01%22'
+                            >
+                            农业；林业；畜牧业；狩猎；诱捕；捕鱼
+                        </a>
+                    
+                        <a title="焙烤；制作或处理面团的设备；焙烤用面团" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A21%22'
+                            >
+                            焙烤；制作或处理面团的设备；焙烤用面团
+                        </a>
+                    
+                        <a title="屠宰；肉品处理；家禽或鱼的加工" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A22%22'
+                            >
+                            屠宰；肉品处理；家禽或鱼的加工
+                        </a>
+                    
+                        <a title="其他类不包含的食品或食料；及其处理" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A23%22'
+                            >
+                            其他类不包含的食品或食料；及其处理
+                        </a>
+                    
+                        <a title="烟草；雪茄烟；纸烟；吸烟者用品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A24%22'
+                            >
+                            烟草；雪茄烟；纸烟；吸烟者用品
+                        </a>
+                    
+                        <a title="服装" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A41%22'
+                            >
+                            服装
+                        </a>
+                    
+                        <a title="帽类制品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A42%22'
+                            >
+                            帽类制品
+                        </a>
+                    
+                        <a title="鞋类" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A43%22'
+                            >
+                            鞋类
+                        </a>
+                    
+                        <a title="服饰缝纫用品；珠宝" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A44%22'
+                            >
+                            服饰缝纫用品；珠宝
+                        </a>
+                    
+                        <a title="手携物品或旅行品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A45%22'
+                            >
+                            手携物品或旅行品
+                        </a>
+                    
+                        <a title="刷类制品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A46%22'
+                            >
+                            刷类制品
+                        </a>
+                    
+                        <a title="家具；家庭用的物品或设备；咖啡磨；香料磨；一般吸尘器" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A47%22'
+                            >
+                            家具；家庭用的物品或设备；咖啡磨；香料磨；一般吸尘器
+                        </a>
+                    
+                        <a title="医学或兽医学；卫生学" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A61%22'
+                            >
+                            医学或兽医学；卫生学
+                        </a>
+                    
+                        <a title="救生；消防" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A62%22'
+                            >
+                            救生；消防
+                        </a>
+                    
+                        <a title="运动；游戏；娱乐活动" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A63%22'
+                            >
+                            运动；游戏；娱乐活动
+                        </a>
+                    
+                        <a title="本部其他类目中不包括的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22A99%22'
+                            >
+                            本部其他类目中不包括的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B%22'
+                        >
+                        作业、运输
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="分离；混合：一般的物理或化学的方法或装置" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B01%22'
+                            >
+                            分离；混合：一般的物理或化学的方法或装置
+                        </a>
+                    
+                        <a title="破碎、磨粉或粉碎；谷物碾磨的预处理" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B02%22'
+                            >
+                            破碎、磨粉或粉碎；谷物碾磨的预处理
+                        </a>
+                    
+                        <a title="用液体或用风力摇床或风力跳汰机分离固体物料；从固体物料或流体中分离固体物料的磁或静电分离；高压电场分离" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B03%22'
+                            >
+                            用液体或用风力摇床或风力跳汰机分离固体物料；从固体物料或流体中分离固体物料的磁或静电分离；高压电场分离
+                        </a>
+                    
+                        <a title="用于实现物理或化学工艺过程的离心装置或离心机" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B04%22'
+                            >
+                            用于实现物理或化学工艺过程的离心装置或离心机
+                        </a>
+                    
+                        <a title="一般喷射或雾化；对表面涂覆液体或其他流体的一般方法" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B05%22'
+                            >
+                            一般喷射或雾化；对表面涂覆液体或其他流体的一般方法
+                        </a>
+                    
+                        <a title="一般机械振动的发生或传递" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B06%22'
+                            >
+                            一般机械振动的发生或传递
+                        </a>
+                    
+                        <a title="将固体从固体中分离；分选" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B07%22'
+                            >
+                            将固体从固体中分离；分选
+                        </a>
+                    
+                        <a title="清洁" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B08%22'
+                            >
+                            清洁
+                        </a>
+                    
+                        <a title="固体废物的处理；被污染土壤的再生" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B09%22'
+                            >
+                            固体废物的处理；被污染土壤的再生
+                        </a>
+                    
+                        <a title="基本上无切削的金属机械加工；金属冲压" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B21%22'
+                            >
+                            基本上无切削的金属机械加工；金属冲压
+                        </a>
+                    
+                        <a title="铸造；粉末冶金" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B22%22'
+                            >
+                            铸造；粉末冶金
+                        </a>
+                    
+                        <a title="机床；不包含在其他类目中的金属加工" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B23%22'
+                            >
+                            机床；不包含在其他类目中的金属加工
+                        </a>
+                    
+                        <a title="磨削；抛光" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B24%22'
+                            >
+                            磨削；抛光
+                        </a>
+                    
+                        <a title="手动工具；轻便机动工具；手动器械的手柄；车间设备；机械手" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B25%22'
+                            >
+                            手动工具；轻便机动工具；手动器械的手柄；车间设备；机械手
+                        </a>
+                    
+                        <a title="手动切割工具；切割；切断" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B26%22'
+                            >
+                            手动切割工具；切割；切断
+                        </a>
+                    
+                        <a title="木材或类似材料的加工或保存；一般钉钉机或钉U形钉机" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B27%22'
+                            >
+                            木材或类似材料的加工或保存；一般钉钉机或钉U形钉机
+                        </a>
+                    
+                        <a title="加工水泥、黏土或石料" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B28%22'
+                            >
+                            加工水泥、黏土或石料
+                        </a>
+                    
+                        <a title="塑料的加工；一般处于塑性状态物质的加工" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B29%22'
+                            >
+                            塑料的加工；一般处于塑性状态物质的加工
+                        </a>
+                    
+                        <a title="压力机" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B30%22'
+                            >
+                            压力机
+                        </a>
+                    
+                        <a title="纸品制作；纸的加工" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B31%22'
+                            >
+                            纸品制作；纸的加工
+                        </a>
+                    
+                        <a title="层状产品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B32%22'
+                            >
+                            层状产品
+                        </a>
+                    
+                        <a title="印刷；排版机；打字机；模印机" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B41%22'
+                            >
+                            印刷；排版机；打字机；模印机
+                        </a>
+                    
+                        <a title="装订；图册；文件夹；特种印刷品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B42%22'
+                            >
+                            装订；图册；文件夹；特种印刷品
+                        </a>
+                    
+                        <a title="书写或绘图器具；办公用品" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B43%22'
+                            >
+                            书写或绘图器具；办公用品
+                        </a>
+                    
+                        <a title="装饰艺术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B44%22'
+                            >
+                            装饰艺术
+                        </a>
+                    
+                        <a title="一般车辆" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B60%22'
+                            >
+                            一般车辆
+                        </a>
+                    
+                        <a title="铁路" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B61%22'
+                            >
+                            铁路
+                        </a>
+                    
+                        <a title="无轨陆用车辆" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B62%22'
+                            >
+                            无轨陆用车辆
+                        </a>
+                    
+                        <a title="船舶或其他水上船只；与船有关的设备" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B63%22'
+                            >
+                            船舶或其他水上船只；与船有关的设备
+                        </a>
+                    
+                        <a title="飞行器；航空；宇宙航行" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B64%22'
+                            >
+                            飞行器；航空；宇宙航行
+                        </a>
+                    
+                        <a title="输送；包装；贮存；搬运薄的或细丝状材料" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B65%22'
+                            >
+                            输送；包装；贮存；搬运薄的或细丝状材料
+                        </a>
+                    
+                        <a title="卷扬；提升；牵引" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B66%22'
+                            >
+                            卷扬；提升；牵引
+                        </a>
+                    
+                        <a title="开启或封闭瓶子、罐或类似的容器；液体的贮运" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B67%22'
+                            >
+                            开启或封闭瓶子、罐或类似的容器；液体的贮运
+                        </a>
+                    
+                        <a title="鞍具；家具罩面" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B68%22'
+                            >
+                            鞍具；家具罩面
+                        </a>
+                    
+                        <a title="微观结构技术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B81%22'
+                            >
+                            微观结构技术
+                        </a>
+                    
+                        <a title="超微技术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B82%22'
+                            >
+                            超微技术
+                        </a>
+                    
+                        <a title="本部其他类目中不包括的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22B99%22'
+                            >
+                            本部其他类目中不包括的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C%22'
+                        >
+                        化学、冶金
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="无机化学" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C01%22'
+                            >
+                            无机化学
+                        </a>
+                    
+                        <a title="水、废水、污水或污泥的处理" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C02%22'
+                            >
+                            水、废水、污水或污泥的处理
+                        </a>
+                    
+                        <a title="玻璃；矿棉或渣棉" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C03%22'
+                            >
+                            玻璃；矿棉或渣棉
+                        </a>
+                    
+                        <a title="水泥；混凝土；人造石；陶瓷；耐火材料" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C04%22'
+                            >
+                            水泥；混凝土；人造石；陶瓷；耐火材料
+                        </a>
+                    
+                        <a title="肥料；肥料制造" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C05%22'
+                            >
+                            肥料；肥料制造
+                        </a>
+                    
+                        <a title="炸药；火柴" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C06%22'
+                            >
+                            炸药；火柴
+                        </a>
+                    
+                        <a title="有机化学" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C07%22'
+                            >
+                            有机化学
+                        </a>
+                    
+                        <a title="有机高分子化合物；其制备或化学加工；以其为基料的组合物" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C08%22'
+                            >
+                            有机高分子化合物；其制备或化学加工；以其为基料的组合物
+                        </a>
+                    
+                        <a title="染料；涂料；抛光剂；天然树脂；黏合剂；其他类目不包含的组合物；其他类目不包含的材料的应用" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C09%22'
+                            >
+                            染料；涂料；抛光剂；天然树脂；黏合剂；其他类目不包含的组合物；其他类目不包含的材料的应用
+                        </a>
+                    
+                        <a title="石油、煤气及炼焦工业；含一氧化碳的工业气体；燃料；润滑剂；泥煤" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C10%22'
+                            >
+                            石油、煤气及炼焦工业；含一氧化碳的工业气体；燃料；润滑剂；泥煤
+                        </a>
+                    
+                        <a title="动物或植物油、脂、脂肪物质或蜡；由此制取的脂肪酸；洗涤剂；蜡烛" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C11%22'
+                            >
+                            动物或植物油、脂、脂肪物质或蜡；由此制取的脂肪酸；洗涤剂；蜡烛
+                        </a>
+                    
+                        <a title="生物化学；啤酒；烈性酒；果汁酒；醋；微生物学；酶学；突变或遗传工程" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C12%22'
+                            >
+                            生物化学；啤酒；烈性酒；果汁酒；醋；微生物学；酶学；突变或遗传工程
+                        </a>
+                    
+                        <a title="糖工业" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C13%22'
+                            >
+                            糖工业
+                        </a>
+                    
+                        <a title="小原皮；大原皮；毛皮；皮革" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C14%22'
+                            >
+                            小原皮；大原皮；毛皮；皮革
+                        </a>
+                    
+                        <a title="铁的冶金" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C21%22'
+                            >
+                            铁的冶金
+                        </a>
+                    
+                        <a title="冶金；黑色或有色金属合金；合金或有色金属的处理" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C22%22'
+                            >
+                            冶金；黑色或有色金属合金；合金或有色金属的处理
+                        </a>
+                    
+                        <a title="对金属材料的镀覆；用金属材料对材料的镀覆；表面化学处理；金属材料的扩散处理；真空蒸发法、溅射法、离子注入法或化学气相沉积法的一般镀覆；金属材料腐蚀或积垢的一般抑制" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C23%22'
+                            >
+                            对金属材料的镀覆；用金属材料对材料的镀覆；表面化学处理；金属材料的扩散处理；真空蒸发法、溅射法、离子注入法或化学气相沉积法的一般镀覆；金属材料腐蚀或积垢的一般抑制
+                        </a>
+                    
+                        <a title="电解或电泳工艺；其所用设备" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C25%22'
+                            >
+                            电解或电泳工艺；其所用设备
+                        </a>
+                    
+                        <a title="晶体生长" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C30%22'
+                            >
+                            晶体生长
+                        </a>
+                    
+                        <a title="组合技术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C40%22'
+                            >
+                            组合技术
+                        </a>
+                    
+                        <a title="本部其他类目不包括的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22C99%22'
+                            >
+                            本部其他类目不包括的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D%22'
+                        >
+                        纺织、造纸
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="天然或人造的线或纤维；纺纱或纺丝" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D01%22'
+                            >
+                            天然或人造的线或纤维；纺纱或纺丝
+                        </a>
+                    
+                        <a title="纱线；纱线或绳索的机械整理；整经或络经" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D02%22'
+                            >
+                            纱线；纱线或绳索的机械整理；整经或络经
+                        </a>
+                    
+                        <a title="织造" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D03%22'
+                            >
+                            织造
+                        </a>
+                    
+                        <a title="编织；花边制作；针织；饰带；非织造布" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D04%22'
+                            >
+                            编织；花边制作；针织；饰带；非织造布
+                        </a>
+                    
+                        <a title="缝纫；绣花；簇绒" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D05%22'
+                            >
+                            缝纫；绣花；簇绒
+                        </a>
+                    
+                        <a title="织物等的处理；洗涤；其他类不包括的柔性材料" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D06%22'
+                            >
+                            织物等的处理；洗涤；其他类不包括的柔性材料
+                        </a>
+                    
+                        <a title="绳；除电缆以外的缆索" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D07%22'
+                            >
+                            绳；除电缆以外的缆索
+                        </a>
+                    
+                        <a title="造纸；纤维素的生产" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D21%22'
+                            >
+                            造纸；纤维素的生产
+                        </a>
+                    
+                        <a title="本部其他类不包含的主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22D99%22'
+                            >
+                            本部其他类不包含的主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E%22'
+                        >
+                        固定建筑物
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="道路、铁路或桥梁的建筑" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E01%22'
+                            >
+                            道路、铁路或桥梁的建筑
+                        </a>
+                    
+                        <a title="水利工程；基础；疏浚" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E02%22'
+                            >
+                            水利工程；基础；疏浚
+                        </a>
+                    
+                        <a title="给水；排水" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E03%22'
+                            >
+                            给水；排水
+                        </a>
+                    
+                        <a title="建筑物" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E04%22'
+                            >
+                            建筑物
+                        </a>
+                    
+                        <a title="锁；钥匙；门窗零件；保险箱" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E05%22'
+                            >
+                            锁；钥匙；门窗零件；保险箱
+                        </a>
+                    
+                        <a title="一般门、窗、百叶窗或卷辊遮帘；梯子" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E06%22'
+                            >
+                            一般门、窗、百叶窗或卷辊遮帘；梯子
+                        </a>
+                    
+                        <a title="土层或岩石的钻进；采矿" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E21%22'
+                            >
+                            土层或岩石的钻进；采矿
+                        </a>
+                    
+                        <a title="本部其他类目不包括的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22E99%22'
+                            >
+                            本部其他类目不包括的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F%22'
+                        >
+                        机械工程、照明、采暖、武器、爆破
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="一般机器或发动机；一般的发动机装置；蒸汽机" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F01%22'
+                            >
+                            一般机器或发动机；一般的发动机装置；蒸汽机
+                        </a>
+                    
+                        <a title="燃烧发动机；热气或燃烧生成物的发动机装置" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F02%22'
+                            >
+                            燃烧发动机；热气或燃烧生成物的发动机装置
+                        </a>
+                    
+                        <a title="液力机械或液力发动机；风力、弹力或重力发动机；不包含在其他类目中的产生机械动力或反推力的发动机" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F03%22'
+                            >
+                            液力机械或液力发动机；风力、弹力或重力发动机；不包含在其他类目中的产生机械动力或反推力的发动机
+                        </a>
+                    
+                        <a title="液体变容式机械；液体泵或弹性流体泵" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F04%22'
+                            >
+                            液体变容式机械；液体泵或弹性流体泵
+                        </a>
+                    
+                        <a title="流体压力执行机构；一般液压技术和气动技术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F15%22'
+                            >
+                            流体压力执行机构；一般液压技术和气动技术
+                        </a>
+                    
+                        <a title="工程元件或部件；为产生和保持机器或设备的有效运行的一般措施；一般绝热" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F16%22'
+                            >
+                            工程元件或部件；为产生和保持机器或设备的有效运行的一般措施；一般绝热
+                        </a>
+                    
+                        <a title="气体或液体的贮存或分配" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F17%22'
+                            >
+                            气体或液体的贮存或分配
+                        </a>
+                    
+                        <a title="照明" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F21%22'
+                            >
+                            照明
+                        </a>
+                    
+                        <a title="蒸汽的发生" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F22%22'
+                            >
+                            蒸汽的发生
+                        </a>
+                    
+                        <a title="燃烧设备；燃烧方法" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F23%22'
+                            >
+                            燃烧设备；燃烧方法
+                        </a>
+                    
+                        <a title="供热；炉灶；通风" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F24%22'
+                            >
+                            供热；炉灶；通风
+                        </a>
+                    
+                        <a title="制冷或冷却；加热和制冷的联合系统；热泵系统；冰的制造或储存；气体的液化或固化" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F25%22'
+                            >
+                            制冷或冷却；加热和制冷的联合系统；热泵系统；冰的制造或储存；气体的液化或固化
+                        </a>
+                    
+                        <a title="干燥" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F26%22'
+                            >
+                            干燥
+                        </a>
+                    
+                        <a title="炉；窑；烘烤炉；蒸馏炉" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F27%22'
+                            >
+                            炉；窑；烘烤炉；蒸馏炉
+                        </a>
+                    
+                        <a title="一般热交换" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F28%22'
+                            >
+                            一般热交换
+                        </a>
+                    
+                        <a title="武器" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F41%22'
+                            >
+                            武器
+                        </a>
+                    
+                        <a title="弹药；爆破" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F42%22'
+                            >
+                            弹药；爆破
+                        </a>
+                    
+                        <a title="本部其他类目不包括的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22F99%22'
+                            >
+                            本部其他类目不包括的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G%22'
+                        >
+                        物理
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="测量；测试" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G01%22'
+                            >
+                            测量；测试
+                        </a>
+                    
+                        <a title="光学" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G02%22'
+                            >
+                            光学
+                        </a>
+                    
+                        <a title="摄影术；电影术；利用了光波以外其他波的类似技术；电记录术；全息摄影术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G03%22'
+                            >
+                            摄影术；电影术；利用了光波以外其他波的类似技术；电记录术；全息摄影术
+                        </a>
+                    
+                        <a title="测时学" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G04%22'
+                            >
+                            测时学
+                        </a>
+                    
+                        <a title="控制；调节" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G05%22'
+                            >
+                            控制；调节
+                        </a>
+                    
+                        <a title="计算；推算；计数" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G06%22'
+                            >
+                            计算；推算；计数
+                        </a>
+                    
+                        <a title="核算装置" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G07%22'
+                            >
+                            核算装置
+                        </a>
+                    
+                        <a title="信号装置" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G08%22'
+                            >
+                            信号装置
+                        </a>
+                    
+                        <a title="教育；密码术；显示；广告；印鉴" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G09%22'
+                            >
+                            教育；密码术；显示；广告；印鉴
+                        </a>
+                    
+                        <a title="乐器；声学" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G10%22'
+                            >
+                            乐器；声学
+                        </a>
+                    
+                        <a title="信息存储" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G11%22'
+                            >
+                            信息存储
+                        </a>
+                    
+                        <a title="仪器的零部件" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G12%22'
+                            >
+                            仪器的零部件
+                        </a>
+                    
+                        <a title="核物理；核工程" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G21%22'
+                            >
+                            核物理；核工程
+                        </a>
+                    
+                        <a title="不包含在本部其他类目中的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22G99%22'
+                            >
+                            不包含在本部其他类目中的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+          
+            <div class="tb-list-item clear">
+                <span class="p-link">
+                    <a href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H%22'
+                        >
+                        电学
+                    </a>
+                        </span>
+                <span class="s-link">
+                
+                        <a title="基本电气元件" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H01%22'
+                            >
+                            基本电气元件
+                        </a>
+                    
+                        <a title="发电、变电或配电" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H02%22'
+                            >
+                            发电、变电或配电
+                        </a>
+                    
+                        <a title="基本电子电路" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H03%22'
+                            >
+                            基本电子电路
+                        </a>
+                    
+                        <a title="电通信技术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H04%22'
+                            >
+                            电通信技术
+                        </a>
+                    
+                        <a title="其他类目不包含的电技术" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H05%22'
+                            >
+                            其他类目不包含的电技术
+                        </a>
+                    
+                        <a title="本部中其他类目不包括的技术主题" class="link" href='http://s.wanfangdata.com.cn/Patent.aspx?f=patent.Cateogory&q=class%3a%22H99%22'
+                            >
+                            本部中其他类目不包括的技术主题
+                        </a>
+                    
+            </span>
+          </div>
+           
+        </div>
+        </div>
+</div>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="lt-bg"></div>
+        <div class="rt-bg"></div>
+        <div class="footer clear">
+            <div class="lt">
+                <div class="top">
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide">帮助</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/CustomerService/Services">客户服务</a>
+                    <a target="_blank" href="http://www.sojump.com/jq/4550749.aspx">问卷调查</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/AboutUs/index">关于我们</a>
+                    <a target="_blank" href="http://www.wanfang.com.cn/">公司首页</a>
+                    <a target="_blank" href="http://weibo.com/wanfangdata">平台微博</a>
+                    <a target="_blank" href="http://wanfangdata.zhiye.com/">加入我们</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/Sitemap">网站地图</a>
+                    <a id="langCN" data-lang="zn-CN" class="lang">简</a>
+                    <a id="langTW" data-lang="zn-TW" class="lang">繁</a>
+                    <a id="langEN" data-lang="EN" href="http://www.wanfangdata.com/" target="_blank">ENG</a>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/hlwcb.jpg">互联网出版许可证：新出网证(京)字042号</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/zhengshu_2.jpg">互联网药品信息服务资格证书号：(京)-经营性-2011-0017</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/stjmxkz2.jpg">信息网络传播视听节目许可证 许可证号：0108284 </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/icp.jpg">京ICP证：010071</a>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020237" ><img src="http://ad.wanfangdata.com.cn/images/gabeian.png" style="margin-right:2px;"/>京公网安备11010802020237号</a>
+<a target="_blank" href="http://ad.wanfangdata.com.cn/images/yunicp.jpg">万方数据知识资源云服务系统[简称：知识云服务平台]V1.0 证书号：软著登字第1016589号</a>
+                    </div>
+                    <p>万方数据知识服务平台--国家科技支撑计划资助项目（编号：2006BAH03B01）©北京万方数据股份有限公司  万方数据电子出版社</p>
+                </div>
+            </div>
+            <div class="rt">
+                <div class="top">
+                    <i class="icon icon-service"></i>
+                    <span>联系客服</span>
+                </div>
+                <ul class="contactus">
+                             <li><i class="contactus-online"></i><a onclick="onlineService('http://www.wanfangdata.com.cn/')">在线客服</a></li>
+                             <li><i class="contactus-tel"></i>4000115888</li>
+                             <li><i class="contactus-email"></i>service@wanfangdata.com.cn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" charset="utf-8" src="http://static.wanfangdata.com.cn/wfks/js/wf.service-1.3.js"></script>
+                            
+                            
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-ui-1.11.4.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.wanfangdata.com.cn/Config/index"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/js/global.min.js?v=201610091258"></script>
+        <script type="text/javascript">
+            (function () {
+                wf.header.resource.init({ id: 'patent' });
+                wf.fixbox.init();
+                $('.content-c .data-link').click(function () {
+                    var $this = $(this);
+                    var $list = $this.parent().parent();
+                    var ajaxModel = {
+                        filePath: $list.data('ajax-xmlpath'),
+                        templ: $list.data('ajax-templ'),
+                        pt: $list.data('ajax-pt'),
+                        st: $list.data('ajax-st'),
+                        wrap: $list.data('ajax-wrap')
+                    };
+                    $.getJSON('XmlFetch.ashx', { filePath: ajaxModel.filePath, nodeValue: $this.data('value') }, function (result) {
+                        var html = [];
+                        $this.addClass('active');
+                        $list.find('.data-link').not($this).removeClass('active');
+                        var pushItems = function (arr, t, fun, wrap) {
+                            $.each(this, function () {
+                                if ($.isFunction(fun)) { fun(this, arr, t); }
+                                else { arr.push(t.format(this.Name, encodeURIComponent(this.Value), this.Buy === 'False' ? 'notbuy' : '')); }
+                            });
+                        }
+                        if (ajaxModel.templ) {
+                            pushItems.call(result.Children, html, ajaxModel.templ);
+                        } else {
+                            pushItems.call(result.Children, html, ajaxModel.pt, function (item, arr, pt) {
+                                var sls = [];
+                                pushItems.call(item.Children, sls, ajaxModel.st);
+                                html.push('<div class="tb-list-item clear">{0}</div>'.format('<span class="p-link">{0}</span>'.format(pt.format(item.Name, encodeURIComponent(item.Value), item.Buy === 'False' ? 'notbuy' : '')) + '<span class="s-link">{0}</span>'.format(sls.join('<span class="spliter"> | </span>'))));
+                            });
+                        }
+                        $list.next().html(html.join(''));
+                    });
+                });
+            })();
+        </script>
+    
+    
+</body>
+</html>
+

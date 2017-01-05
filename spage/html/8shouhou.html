@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>售后服务</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main4.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<style>
+	body{background:#fff;}
+</style>
+</head>
+
+<body onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item top_nav_content_item_cur"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+	
+    <div class="clearer"></div>
+    <div class="mt13" id="mt13"><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/workStation/fwqqdjd/search.xhtml?formLogicId=139875844278114&amp;qjLogicId=138899601646939&amp;wcLogicId=139029681712271&amp;ccLogicId=141567657626634&amp;zskLogicId=140194735845316" id="201408211511318" onclick="menuFnClick('201408211511318', '', '客户服务首页', 'http://merm.ctcloud.com.cn:82/crm/workStation/fwqqdjd/search.xhtml?formLogicId=139875844278114&amp;qjLogicId=138899601646939&amp;wcLogicId=139029681712271&amp;ccLogicId=141567657626634&amp;zskLogicId=140194735845316', '', '');" subnav="201408211511318" class="left_nav_item left_nav_item_cur left_nav_item_on left_nav_item_null_on">客户服务首页</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139875844278114" id="201408211511320" onclick="menuFnClick('201408211511320', '', '派单管理', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139875844278114', '', '');" subnav="201408211511320" class="left_nav_item">派单管理</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=140434701292145" id="201408211511338" onclick="menuFnClick('201408211511338', '', '微信请求', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=140434701292145', '', '');" subnav="201408211511338" class="left_nav_item">微信请求</a><a href="javaScript:void(0);" id="14271612805454" onclick="menuOnclick('14271612805454')" subnav="14271612805454" class="left_nav_item left_nav_item_be">工单处理</a><div class="left-subnav" navfor="14271612805454" pid="14271612805454" style=""></div><a href="javaScript:void(0);" id="201408211511324" onclick="menuOnclick('201408211511324')" subnav="201408211511324" class="left_nav_item left_nav_item_be">备件管理</a><div class="left-subnav" navfor="201408211511324" pid="201408211511324" style=""></div><a href="javaScript:void(0);" id="142046818723427" onclick="menuOnclick('142046818723427')" subnav="142046818723427" class="left_nav_item left_nav_item_be">事件管理</a><div class="left-subnav" navfor="142046818723427" pid="142046818723427" style=""></div><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=140194735845384" id="201408211511080" onclick="menuFnClick('201408211511080', '', '知 识 库', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=140194735845384', '', '');" subnav="201408211511080" class="left_nav_item">知 识 库</a><a href="javaScript:void(0);" id="142716122264343" onclick="menuOnclick('142716122264343')" subnav="142716122264343" class="left_nav_item left_nav_item_be">工具管理</a><div class="left-subnav" navfor="142716122264343" pid="142716122264343" style=""></div><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139815306448442" id="201408211511334" onclick="menuFnClick('201408211511334', '', '服务合同管理', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139815306448442', '', '');" subnav="201408211511334" class="left_nav_item">服务合同管理</a><a href="javaScript:void(0);" id="141863196056076" onclick="menuOnclick('141863196056076')" subnav="141863196056076" class="left_nav_item left_nav_item_be">统计查询</a><div class="left-subnav" navfor="141863196056076" pid="141863196056076" style=""></div><a href="javaScript:void(0);" id="141863196056084" onclick="menuOnclick('141863196056084')" subnav="141863196056084" class="left_nav_item left_nav_item_be">系统设置</a><div class="left-subnav" navfor="141863196056084" pid="141863196056084" style=""></div></div>
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+<div id="main_content" style="width: 98%;" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+
+<!-- 中间内容 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td height="24" align="center" valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+  	<td align="center" valign="top">
+    	<table width="95%" border="0" cellspacing="0" cellpadding="0">
+        	<tbody><tr>
+                <td>
+                	<ul class="tablist2" id="tab03">
+                    	<li class="cur">
+                        	<a href="#">
+                        	    
+                        	    <br>
+                        	    
+                            	<p>未处理</p>                                
+							    	                                
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                        	    
+                        	    <br>
+                        	    
+                            	<p>全部</p>
+                                
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                        	    
+							    <br>
+							    	
+                            	<p>超期</p>
+                            							    
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                        	    
+							     <br>
+							    	
+                            	<p>已处理</p>                            	
+                            						    
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="fl" style="background:#fff; width:92%; margin-left:-1px;">
+                    	<div class="border1 padding10" style="min-height:308px;">
+                            <table id="tabc" width="100%" class="tabc03">
+                                <tbody><tr>
+                                    <td height="44">
+                                        <ul class="tablist3" id="tab04">
+                                            <li class="cur">
+                                                <a href="#">全部</a>
+                                            </li>
+                                            <li class="qq">
+                                                <a href="#">
+                                                    <span></span>&nbsp;请求                                                   		
+                                                </a>
+                                            </li>
+                                            <li class="gz">
+                                                <a href="#">
+                                                    <span></span>&nbsp;故障                                                    
+                                                </a>
+                                            </li>
+                                            <li class="zx">
+                                                <a href="#">
+                                                    <span></span>&nbsp;咨询                                                   
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:;" onclick="more('tab04');" class="fr">更多»</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="table041" width="100%" class="border1 tabc04" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab041" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>
+                                                                                                                                 
+                                         </tbody></table>
+                                         <table id="table042" width="100%" class="border1 tabc04 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab042" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                        </tbody></table>                                      
+                                       	<table id="table043" width="100%" class="border1 tabc04 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab043" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>
+                                       	 <table id="table044" width="100%" class="border1 tabc04 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab044" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>                                       
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                            <table id="tabc1" width="100%" class="tabc03 hidden">
+                                <tbody><tr>
+                                    <td height="44">
+                                        <ul class="tablist3" id="tab05">
+                                            <li class="cur">
+                                                <a href="#">全部</a>
+                                            </li>
+                                            <li class="qq">
+                                                <a href="#">
+                                                    <span></span>&nbsp;请求                                                 
+                                                </a>
+                                            </li>
+                                            <li class="gz">
+                                                <a href="#">
+                                                    <span></span>&nbsp;故障
+                                                    
+                                                </a>
+                                            </li>
+                                            <li class="zx">
+                                                <a href="#">
+                                                    <span></span>&nbsp;咨询                                                 
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:;" onclick="more('tab05');" class="fr">更多»</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="table051" width="100%" class="border1 tabc05" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab051" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                
+                                         </tbody></table>
+                                         <table id="table052" width="100%" class="border1 tabc05 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab052" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                        </tbody></table>                                      
+                                       	<table id="table053" width="100%" class="border1 tabc05 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab053" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>
+                                       	 <table id="table054" width="100%" class="border1 tabc05 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab054" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table> 
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                            <table id="tabc2" width="100%" class="tabc03 hidden">
+                                <tbody><tr>
+                                    <td height="44">
+                                        <ul class="tablist3" id="tab06">
+                                            <li class="cur">
+                                                <a href="#">全部</a>
+                                            </li>
+                                            <li class="qq">
+                                                <a href="#">
+                                                    <span></span>&nbsp;请求
+                                                   
+                                                </a>
+                                            </li>
+                                            <li class="gz">
+                                                <a href="#">
+                                                    <span></span>&nbsp;故障
+                                                    
+                                                </a>
+                                            </li>
+                                            <li class="zx">
+                                                <a href="#">
+                                                    <span></span>&nbsp;咨询                                                    
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:;" onclick="more('tab06');" class="fr">更多»</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    	<table id="table061" width="100%" class="border1 tabc06" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab061" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>
+                                         <table id="table062" width="100%" class="border1 tabc06 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab062" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>                                      
+                                       	<table id="table063" width="100%" class="border1 tabc06 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab063" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                
+                                         </tbody></table>
+                                       	 <table id="table064" width="100%" class="border1 tabc06 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab064" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>                                         
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                            <table id="tabc3" width="100%" class="tabc03 hidden">
+                                <tbody><tr>
+                                    <td height="44">
+                                        <ul class="tablist3" id="tab07">
+                                            <li class="cur">
+                                                <a href="#">全部</a>
+                                            </li>
+                                            <li class="qq">
+                                                <a href="#">
+                                                    <span></span>&nbsp;请求                                                   
+                                                </a>
+                                            </li>
+                                            <li class="gz">
+                                                <a href="#">
+                                                    <span></span>&nbsp;故障
+                                                    
+                                                </a>
+                                            </li>
+                                            <li class="zx">
+                                                <a href="#">
+                                                    <span></span>&nbsp;咨询                                                    
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:;" onclick="more('tab07');" class="fr">更多»</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="table071" width="100%" class="border1 tabc07" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab071" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>
+                                         <table id="table072" width="100%" class="border1 tabc07 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab072" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>                                      
+                                       	 <table id="table073" width="100%" class="border1 tabc07 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab073" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                                 
+                                         </tbody></table>
+                                       	 <table id="table074" width="100%" class="border1 tabc07 hidden" style="table-layout:fixed;">
+                                            <colgroup><col width="15%">
+                                            <col width="8%">
+                                            <col>
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="6%">
+                                            <col width="10%">
+                                            <col width="6%">
+                                            </colgroup><tbody><tr id="tab074" class="main_item_title_th">
+                                                <th>问题标题</th>
+                                                <th>申请人</th>
+                                                <th>申请时间</th>
+                                                <th>单位</th>
+                                                <th>时长</th>
+                                                <th>优先级</th>
+                                                <th>服务类型</th>
+                                                <th>操作</th>
+                                            </tr>                                                                                                                              
+                                         </tbody></table>   
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>   
+                </td>
+            </tr>
+            <tr>
+            	<td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                	<table width="100%">
+                    	<tbody><tr>
+                        	<td align="center" valign="top">
+                            	<table width="98%">
+                                    <tbody><tr>
+                                        <td height="40">
+                                            <span class="txt-blue-main f14 fb fl">最新知识库</span>
+                                            <ul class="tablist3 study" id="tab08" style="float:right;">
+                                                <li class="cur">
+                                                    <a href="#">全部</a>
+                                                </li>
+                                                <li class="study-off">
+                                                    <a href="#">
+                                                        <span></span>&nbsp;学过                                                      
+                                                    </a>
+                                                </li>
+                                                <li class="study-on">
+                                                    <a href="#">
+                                                        <span></span>&nbsp;未学过                                                       
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table id="table081" width="100%" border="0" cellspacing="0" cellpadding="0" class="border1 tabc08" style="table-layout:fixed;">
+                    							<tbody><tr class="main_item_title_th" id="tab081">
+                    	 							 <th>日期</th>
+                    								 <th>关键字</th>
+                          							 <th>状态</th>                          
+                       							 </tr>
+                        					
+                                            	            
+										         	  <tr data="show" class="main_item_content_tr1">
+										        
+										        
+                           							 <td align="center">2016-05-20</td>
+                           							 <td align="left">050201</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    						
+								    							<div class="study-on"><span></span>未学过</div>
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	
+										                    
+										         	  <tr data="show" class="main_item_content_tr2">
+										        
+                           							 <td align="center">2016-05-19</td>
+                           							 <td align="left">453</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    						
+								    							<div class="study-on"><span></span>未学过</div>
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	            
+										         	  <tr data="show" class="main_item_content_tr1">
+										        
+										        
+                           							 <td align="center">2016-05-19</td>
+                           							 <td align="left">22</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    						
+								    							<div class="study-on"><span></span>未学过</div>
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	
+										                    
+										         	  <tr data="show" class="main_item_content_tr2">
+										        
+                           							 <td align="center">2016-05-19</td>
+                           							 <td align="left">11</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    						
+								    							<div class="study-on"><span></span>未学过</div>
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	            
+										         	  <tr data="show" class="main_item_content_tr1">
+										        
+										        
+                           							 <td align="center">2016-05-19</td>
+                           							 <td align="left">051901</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    						
+								    							<div class="study-on"><span></span>未学过</div>
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	
+										                    
+										         	  <tr data="show" class="main_item_content_tr2">
+										        
+                           							 <td align="center">2016-05-19</td>
+                           							 <td align="left">0519</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    							<div class="study-off"><span></span>学过</div>
+								    						
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	            
+										         	  <tr data="show" class="main_item_content_tr1">
+										        
+										        
+                           							 <td align="center">2016-05-18</td>
+                           							 <td align="left">111</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    						
+								    							<div class="study-on"><span></span>未学过</div>
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	
+										                    
+										         	  <tr data="show" class="main_item_content_tr2">
+										        
+                           							 <td align="center">2015-03-25</td>
+                           							 <td align="left">aa</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    							<div class="study-off"><span></span>学过</div>
+								    						
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	            
+										         	  <tr data="show" class="main_item_content_tr1">
+										        
+										        
+                           							 <td align="center">2015-03-16</td>
+                           							 <td align="left">asdas</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    							<div class="study-off"><span></span>学过</div>
+								    						
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                                            	
+										                    
+										         	  <tr data="show" class="main_item_content_tr2">
+										        
+                           							 <td align="center">2015-03-16</td>
+                           							 <td align="left">sda</td>
+                           							
+                          							 <td align="center">
+                          								
+								    						
+								    							<div class="study-off"><span></span>学过</div>
+								    						
+								    						
+								    					
+                          							 </td>                            
+           										</tr>
+                       						 
+                    						</tbody></table>      
+                    						
+                    						<table id="table082" width="100%" border="0" cellspacing="0" cellpadding="0" class="border1 tabc08 hidden" style="table-layout:fixed;">
+                    							<tbody><tr class="main_item_title_th" id="tab082">
+                    	 							 <th>日期</th>
+                    								 <th>关键字</th>
+                          							 <th>状态</th>                          
+                       							 </tr>
+                    						</tbody></table>             
+                    						<table id="table083" width="100%" border="0" cellspacing="0" cellpadding="0" class="border1 tabc08 hidden" style="table-layout:fixed;">
+                    							<tbody><tr class="main_item_title_th" id="tab083">
+                    	 							 <th>日期</th>
+                    								 <th>关键字</th>
+                          							 <th>状态</th>                          
+                       							 </tr>                       					
+                    						</tbody></table>                     
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        	<td width="25%" align="center" valign="top">
+                            	<table width="98%">
+                                    <tbody><tr>
+                                        <td height="40" align="right">
+                                            <span class="txt-blue-main f14 fb fl">工程师状态</span>
+                                            <input type="hidden" id="gcszt" name="gcszt" value="1">
+                                            <label class="mr5"><input type="radio" name="peo-type" onclick="ztChange('1')" checked="" value="1" class="mr3 vertical_middle">工程师</label>
+                                            <label class="mr5"><input type="radio" name="peo-type" onclick="ztChange('2')" value="2" class="mr3 vertical_middle">专家</label>
+                                       	</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="100%" class="border1" style="table-layout:fixed;">
+                                                <colgroup><col width="50%">
+                                                <col>
+                                                </colgroup><tbody><tr style="background:#f2f1f1; border-bottom:1px solid #dbdbdb;">
+                                                    <td align="right" height="33" colspan="2" style="padding:0 10px">                                                    	
+                                                    	<ul id="tab09" class="tablist1">
+                                                            <li class="cur"><a href="javascript:;">今天</a></li>
+                                                            <li><a href="javascript:;">明天</a></li>
+                                                            <li><a href="javascript:;">指定日期</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                	<td height="26" align="left" colspan="2" style="border-bottom:1px solid #dbdbdb;">
+                                                    	&nbsp;&nbsp;&nbsp;<label class="engineer-no"><span></span>不可用</label><span id="busy"></span>
+                                                        <label class="engineer-busy"><span></span>忙碌</label><span id="nobusy"></span>
+                                                        <label class="engineer-use"><span></span>可用</label><span id="free">【2】</span>
+                                                    </td>
+                                                </tr>
+                                           </tbody></table>
+                                           <div class="border1" style="height:303px; border-top:none; overflow-y:auto; overflow-x:hidden;">
+                                           <table width="100%" id="ryTable" style="table-layout:fixed;">
+                                           		<colgroup><col width="50%">
+                                                <col>
+                                                </colgroup><tbody><tr id="ryzt">
+                                                	<td height="0" align="left" colspan="2" style="border-bottom:1px solid #dbdbdb;">                                                    	
+                                                    </td>
+                                                </tr>                                                     
+                                                 
+                                                  <tr class="main_item_content_tr1">
+                                                  	<td align="left" class="pl10" title="姓名:曹崧, 擅长内容: VG36连接器、CGJ接触体2w, 工作年限:">    
+                                                    
+                                                    
+                                                                                                   
+                                                    	<label class="engineer-use">
+                                                    
+                                                    <span></span>曹崧</label></td>
+                                                    <td align="left" class="word_hidden pl10" title="空闲">空闲</td>
+                                                 </tr>                           	               
+									            
+                                                  <tr class="main_item_content_tr1">
+                                                  	<td align="left" class="pl10" title="姓名:迂  旺, 擅长内容: VG36连接器、CGJ接触体2w, 工作年限:">    
+                                                    
+                                                    
+                                                                                                   
+                                                    	<label class="engineer-use">
+                                                    
+                                                    <span></span>迂  旺</label></td>
+                                                    <td align="left" class="word_hidden pl10" title="空闲">空闲</td>
+                                                 </tr>                           	               
+									           									            
+                                            </tbody></table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                              </td>
+                        	<td align="center" valign="top">
+                            	<table width="98%">
+                                    <tbody><tr>
+                                        <td height="40" align="right">
+                                            <span class="txt-blue-main f14 fb fl">工程师接单数量</span>
+                                       	</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="100%" class="border1" style="table-layout:fixed;">
+                                                <tbody><tr style="background:#f2f1f1; border-bottom:1px solid #dbdbdb;">
+                                                    <td align="right" height="33" style="padding:0 10px">
+                                               
+                                                    	<ul id="tab10" class="tablist1">
+                                                            <li class="cur"><a href="javascript:;">今天</a></li>
+                                                            <li><a href="javascript:;">昨天</a></li>
+                                                            <li><a href="javascript:;">指定日期</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                	<td id="order">
+                                                	 <img src="../images/bg-nodata.png" width="100%">
+                                                	</td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td width="315" align="center" valign="top" style="display:none" id="right-area">
+        <!--右侧面板-->
+        <div class="right_aside overflow fl">
+            <div class="aside_area">
+                <div class="aside_area_title">
+                    <h3 class="aside_area_title_h3">请求来源统计</h3>
+                </div>
+                <div class="aside_area_info">
+                    <ul id="tab01" class="tablist1">
+                        <li class="cur"><a href="javascript:;">今天</a></li>
+                        <li><a href="javascript:;">昨天</a></li>
+                        <li><a href="javascript:;">指定日期</a></li>
+                    </ul>
+                    <div id="tabc01">
+                        <div>                        
+                           <iframe id="qqly" name="qqly" src="/crm/workStation/fwqq/searchByQqly.jsp?index=0" frameborder="0" width="285" height="270"></iframe>
+                        </div>
+                    </div>
+                </div>	
+                <div class="aside_area_title">
+                    <h3 class="aside_area_title_h3">请求类型统计</h3>
+                </div>
+                <div class="aside_area_info">
+                    <ul id="tab02" class="tablist1">
+                        <li class="cur"><a href="javascript:;">今天</a></li>
+                        <li><a href="javascript:;">昨天</a></li>
+                        <li><a href="javascript:;">指定日期</a></li>
+                    </ul>
+                    <div id="tabc02">
+                        <div>
+                           <iframe id="qqlx" name="qqlx" frameborder="0" src="/crm/workStation/fwqq/searchByLx.jsp?index=0" width="285" height="270"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--右侧面板 end-->
+    </td>
+  </tr>
+  <tr>
+    <td height="24" align="center" valign="top">&nbsp;<input type="hidden" id="searchHQL" name="searchHQL" value="">
+    <input type="hidden" id="ztsj" name="ztsj" value="">
+    <input type="hidden" id="jdsj" name="jdsj" value="">    
+    <input type="hidden" id="lyks" name="lyks" value="">
+    <input type="hidden" id="lyjs" name="lyjs" value="">
+    <input type="hidden" id="lxks" name="lxks" value="">
+    <input type="hidden" id="lxjs" name="lxjs" value="">
+    </td>
+  </tr>
+</tbody></table>
+<!-- end 中间内容 -->
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

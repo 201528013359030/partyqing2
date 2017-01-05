@@ -1,0 +1,1941 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=1170" />
+    <meta name="save" content="history">
+    <link href="http://static.wanfangdata.com.cn/wfks/css/animate.min.css?v=201610091258" rel="stylesheet" />
+    <link href="http://static.wanfangdata.com.cn/wfks/css/global.min.css?v=201610091258" rel="stylesheet" />
+    <link href="/Content/css/c.min.css" rel="stylesheet" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="/favicon.ico" rel="apple-touch-icon" />
+    <!--[if lt IE 9 ]><link href="http://static.wanfangdata.com.cn/wfks/css/ltie9.min.css?v=201610091258" rel="stylesheet" /><![endif]-->
+    
+    <title>中外标准-万方数据知识服务平台</title>
+
+</head>
+<body>
+    <div class="header">
+        <!-- <div class="nav clear">
+            <a href="http://www.wanfangdata.com.cn/">
+                <img class="logo" src="http://static.wanfangdata.com.cn/wfks/img/logo_new.png" alt="" /></a>
+            <ul>
+                <li class="active fixed" data-target="search-wrap">检索</li>
+                <li id="navResource" data-target="resource-wrap">资源</li>
+                <li id="navService" data-target="service-wrap">服务</li>
+                <li class="profile"></li>
+            </ul>
+        </div>
+        <div class="width-wrap search-wrap active fixed">
+            <div class="panel search-panel clear">
+                <div class="drp res-drp clear">
+                    <div class="res-lb">
+                        <span id="res" class="lb">学术论文</span>
+                        <i class="icon-more"></i>
+                    </div>
+                    <div class="res-list bd pop" data-open=".res-lb">
+                        <span class="clear-shadow"></span>
+                        <ul class="resource clear"></ul>
+                        <ul class="library clear"></ul>
+                    </div>
+                </div>
+                <input class="search-input" type="search" name="q" autocomplete="off" />
+                <div id="adSearchBtn" class="icon-search-ad" type="button">
+		<div class="search-ad pop">
+                    <a target="_blank" id="adSearchLink" href="http://librarian.wanfangdata.com.cn/">跨库检索</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide?helpitem=searchepaper">检索帮助</a>
+                </div>
+		</div>
+                <button class="btn icon-search search-btn" type="submit"></button>
+                <div class="search-tip-field pop"></div>
+            </div>
+        </div>
+        <div class="width-wrap resource-wrap">
+            <div class="panel resource-panel"></div>
+        </div>
+        <div class="width-wrap service-wrap">
+            <div class="panel service-panel clear">
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzfu"></i>
+                        <h6 class="tt">增值服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://social.wanfangdata.com.cn/">万方学术圈</a>
+                        <a target="_blank" href="http://trend.wanfangdata.com.cn/">知识脉络分析</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/">查新/跨库检索</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/ScientificLiterature">科技文献分析</a>                        
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-gjlfu"></i>
+                        <h6 class="tt">工具类服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://check.wanfangdata.com.cn/">论文相似性检测</a>
+                        <a target="_blank" href="http://stats.wanfangdata.com.cn/">国家经济统计数据库</a>
+                        <a target="_blank" href="http://patentool.wanfangdata.com.cn/">专利工具</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-bjbzyfu"></i>
+                        <h6 class="tt">编辑部专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://stats.editors.wanfangdata.com.cn/">期刊统计分析与评价</a>
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/ResourceDescription/DOI">中文DOI</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/">优先出版</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/Regular">同步出版</a>
+                        <a target="_blank" href="http://editors.wanfangdata.com.cn/">编审平台</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzzyff"></i>
+                        <h6 class="tt">作者专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                        <a target="_blank" href="http://contribute.wanfangdata.com.cn/">投稿</a>
+                        <a target="_blank" href="http://oa.wanfangdata.com.cn/">OA论文托管</a>
+                    </div>
+                </div>
+                <div class="md last-md">
+                    <div class="hd clear">
+                        <i class="icon icon-yqzl"></i>
+                        <h6 class="tt">舆情专栏</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://subject.wanfangdata.com.cn/">专题</a>
+                        <a target="_blank" href="http://message.wanfangdata.com.cn/">科技动态</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width-wrap account-wrap">
+            <div class="panel account-panel clear">
+                <div class="top-link">
+                    <a class="login-link">登录</a>
+                    <a href="http://login.wanfangdata.com.cn/Register/Index">注册</a>
+                    <a href="http://login.wanfangdata.com.cn/Logout.aspx">退出</a>
+                </div>
+                <div class="account-container">
+                    <div class="account person-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=myorder">查看订单</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=mywallet">我的钱包</a>
+                            <a target="_blank" href="http://tran.wanfangdata.com.cn/Charge.aspx">充值</a>
+                            <a target="_blank" class="last-item" href="http://www.wanfangdata.com.cn/UserService?tab=edituser">个人信息管理</a>
+                        </span>
+                    </div>
+                    <div class="account group-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" class="order-link" href="http://istic.wanfangdata.com.cn/Order">查看订单</a>
+                            <a target="_blank" class="last-item group-center" href="http://www.wanfangdata.com.cn/Organization">服务站</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                            
+    
+        <div class="title-wraper">
+            <h1 class="title top-title">标准</h1>
+        </div> -->
+        <div class="desc desc-resource">中外标准数据库（Wanfang Standards Database，WFSD），收录37万余条，全文数据来源于国家指定标准出版单位，专有出版，文摘数据来自中国标准化研究院国家标准馆，数据权威。</div>
+    
+    <div class="content content-c">
+        
+        
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A*%22"
+                            >综合
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A0*%22"
+                                            >标准化管理与一般规定
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A1*%22"
+                                            >经济、文化
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A2*%22"
+                                            >基础标准
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A4*%22"
+                                            >基础科学
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A5*%22"
+                                            >计量
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A6*%22"
+                                            >标准物质
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A7*%22"
+                                            >测绘
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A8*%22"
+                                            >标志、包装、运输、贮存
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22A9*%22"
+                                            >社会公共安全
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22B*%22"
+                            >农业、林业
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22B0*%22"
+                                            >农业、林业综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22B1*%22"
+                                            >土壤与肥料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BA*%22"
+                                            >植物保护
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BB*%22"
+                                            >粮食与饲料作物
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BC*%22"
+                                            >经济作物
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BD*%22"
+                                            >畜牧
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BE*%22"
+                                            >水产、渔业
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BF*%22"
+                                            >林业
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22BG*%22"
+                                            >农、林机械与设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C*%22"
+                            >医药、卫生、劳动保护
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C0*%22"
+                                            >医药、卫生、劳动保护综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C1*%22"
+                                            >医药
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C3*%22"
+                                            >医疗器械
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C5*%22"
+                                            >卫生
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C6*%22"
+                                            >劳动安全技术
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C7*%22"
+                                            >劳动保护管理
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C8*%22"
+                                            >消防
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22C9*%22"
+                                            >制药、安全机械与设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D*%22"
+                            >矿业
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D0*%22"
+                                            >矿业综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D1*%22"
+                                            >地质矿产勘察与开发
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D2*%22"
+                                            >固体燃料矿
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D3*%22"
+                                            >黑色金属矿
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D4*%22"
+                                            >有色金属矿
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D5*%22"
+                                            >非金属矿
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D8*%22"
+                                            >地质勘探设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22D9*%22"
+                                            >矿山机械设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E*%22"
+                            >石油
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E0*%22"
+                                            >石油综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E1*%22"
+                                            >石油勘探、开发与集输
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E2*%22"
+                                            >石油、天然气
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E3*%22"
+                                            >石油产品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E6*%22"
+                                            >石油产品添加剂
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22E9*%22"
+                                            >石油勘探、开发与集输设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F*%22"
+                            >能源、核技术
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F0*%22"
+                                            >能源、核技术综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F1*%22"
+                                            >能源
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F2*%22"
+                                            >电力
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F4*%22"
+                                            >核材料、核燃料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F5*%22"
+                                            >同位素与放射源
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F6*%22"
+                                            >核反应堆
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F7*%22"
+                                            >辐射防护与监测
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F8*%22"
+                                            >核仪器与核探测器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22F9*%22"
+                                            >低能加速器
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22G*%22"
+                            >化工
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22G0*%22"
+                                            >化工综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22G1*%22"
+                                            >无机化工原料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GA*%22"
+                                            >有机化工原料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GB*%22"
+                                            >化肥、农药
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GC*%22"
+                                            >合成材料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GD*%22"
+                                            >橡胶制品及其辅助材料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GE*%22"
+                                            >涂料、颜料、染料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GF*%22"
+                                            >化学试剂
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GG*%22"
+                                            >化学助剂、表面活性剂、催化剂、水处理剂
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GH*%22"
+                                            >信息用化学品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GI*%22"
+                                            >其他化工产品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22GJ*%22"
+                                            >化工机械与设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H*%22"
+                            >冶金
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H0*%22"
+                                            >冶金综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H1*%22"
+                                            >金属化学分析方法
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H2*%22"
+                                            >金属理化性能实验方法
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H3*%22"
+                                            >冶金原料与辅助材料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H4*%22"
+                                            >钢铁产品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H6*%22"
+                                            >有色金属及其合金产品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H7*%22"
+                                            >粉末冶金
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H8*%22"
+                                            >半金属与半导体材料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22H9*%22"
+                                            >冶金机械设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J*%22"
+                            >机械
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J0*%22"
+                                            >机械综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J1*%22"
+                                            >通用零部件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J3*%22"
+                                            >加工工艺
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J4*%22"
+                                            >工艺装备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J5*%22"
+                                            >金属切削机床
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J6*%22"
+                                            >通用加工工艺
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J7*%22"
+                                            >通用机械与设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22J9*%22"
+                                            >活塞式内燃机与其他动力设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K*%22"
+                            >电工
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K0*%22"
+                                            >电工综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K1*%22"
+                                            >电工材料和通用零件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K2*%22"
+                                            >旋转电机
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K3*%22"
+                                            >低压电器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K4*%22"
+                                            >输变电设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K5*%22"
+                                            >发电用动力设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K6*%22"
+                                            >电气设备与器具
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K7*%22"
+                                            >电气照明
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K8*%22"
+                                            >电源
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22K9*%22"
+                                            >电工生产设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22L*%22"
+                            >电子元器件与信息技术
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22L0*%22"
+                                            >电子元器件与信息技术综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22L1*%22"
+                                            >电子元件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22L3*%22"
+                                            >电真空器件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22L4*%22"
+                                            >半导体分立器件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22L5*%22"
+                                            >光电子器件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22LA*%22"
+                                            >微电路
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22LB*%22"
+                                            >计算机
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22LC*%22"
+                                            >信息处理技术
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22LD*%22"
+                                            >电子测量与仪器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22LE*%22"
+                                            >电子设备专用材料、零件、结构件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22LF*%22"
+                                            >电子工业生产设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M*%22"
+                            >通信、广播
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M0*%22"
+                                            >通信、广播综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M1*%22"
+                                            >通信网
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M3*%22"
+                                            >通信设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M5*%22"
+                                            >雷达、导航、遥控、遥测、天线
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M6*%22"
+                                            >广播、电视网
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M7*%22"
+                                            >广播、电视设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M8*%22"
+                                            >邮政
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22M9*%22"
+                                            >通信、广播设备生产机械
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N*%22"
+                            >仪器、仪表
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N0*%22"
+                                            >仪器、仪表综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N1*%22"
+                                            >工业自动化仪表与控制装置
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N2*%22"
+                                            >电工仪器仪表
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N3*%22"
+                                            >光学仪器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N4*%22"
+                                            >电影、照相、缩微、复印设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N5*%22"
+                                            >物质成分分析仪器与环境监测仪器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N6*%22"
+                                            >实验室仪器与真空仪器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N7*%22"
+                                            >试验机与无损探伤仪器
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22N9*%22"
+                                            >其他仪器仪表
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22P*%22"
+                            >工程建设
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22P0*%22"
+                                            >工程建设综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22P1*%22"
+                                            >工程勘察与岩土工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PA*%22"
+                                            >工程抗震、工程防火、人防工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PB*%22"
+                                            >工程结构
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PC*%22"
+                                            >工业与民用建筑工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PD*%22"
+                                            >给水、排水工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PE*%22"
+                                            >供热、供气、空调及制冷工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PF*%22"
+                                            >城乡规划与市政工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PG*%22"
+                                            >水利、水电工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PH*%22"
+                                            >电力、核工业工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PI*%22"
+                                            >交通运输工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PJ*%22"
+                                            >原材料工业及通信、广播工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PK*%22"
+                                            >机电制造业工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PL*%22"
+                                            >农林业及轻纺工业工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PM*%22"
+                                            >工业设备安装工程
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22PN*%22"
+                                            >施工机械设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q*%22"
+                            >建材
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q0*%22"
+                                            >建材综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q1*%22"
+                                            >建材产品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q3*%22"
+                                            >陶瓷、玻璃
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q4*%22"
+                                            >耐火材料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q5*%22"
+                                            >炭素材料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q6*%22"
+                                            >其他非金属矿制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q7*%22"
+                                            >建筑构配件与设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q8*%22"
+                                            >公用与市政建设器材设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Q9*%22"
+                                            >建材机械与设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R*%22"
+                            >公路、水路运输
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R0*%22"
+                                            >公路、水路运输综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R1*%22"
+                                            >公路运输
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R2*%22"
+                                            >水路运输
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R3*%22"
+                                            >船舶维护与修理
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R4*%22"
+                                            >港口装卸
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R5*%22"
+                                            >救助、打捞与潜水
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R6*%22"
+                                            >航道与航标
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22R8*%22"
+                                            >交通管理
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S*%22"
+                            >铁路
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S0*%22"
+                                            >铁路综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S1*%22"
+                                            >铁路建筑设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S3*%22"
+                                            >机车车辆通用标准
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S4*%22"
+                                            >机车
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S5*%22"
+                                            >铁路车辆
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S6*%22"
+                                            >铁路信号
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S7*%22"
+                                            >铁路通信
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S8*%22"
+                                            >牵引供电
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22S9*%22"
+                                            >铁路运输
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22T*%22"
+                            >车辆
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22T0*%22"
+                                            >车辆综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22T1*%22"
+                                            >汽车发动机
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22T2*%22"
+                                            >汽车底盘与车身
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22T3*%22"
+                                            >车辆通用零部件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TA*%22"
+                                            >车用电子、电气设备与仪表
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TB*%22"
+                                            >汽车
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TC*%22"
+                                            >专用汽车
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TD*%22"
+                                            >拖拉机
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TE*%22"
+                                            >挂车
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TF*%22"
+                                            >摩托车
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22TG*%22"
+                                            >无轨电车与其他车辆
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U*%22"
+                            >船舶
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U0*%22"
+                                            >船舶综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U1*%22"
+                                            >船舶总体
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U2*%22"
+                                            >舾装设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U3*%22"
+                                            >船舶专用装备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U4*%22"
+                                            >船用主辅机
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U5*%22"
+                                            >船舶管路附件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U6*%22"
+                                            >船舶电气、观通、导航设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U8*%22"
+                                            >船舶制造工艺装备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22U9*%22"
+                                            >造船专用工艺设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22V*%22"
+                            >航空、航天
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22V0*%22"
+                                            >航空、航天综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22V1*%22"
+                                            >航空、航天材料与工艺
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22V2*%22"
+                                            >航空器与航天器零部件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22V3*%22"
+                                            >航空发动机及其附件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22VA*%22"
+                                            >航空器及其附件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22VB*%22"
+                                            >航空运输与地面设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22VC*%22"
+                                            >航天器及其附件
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22VD*%22"
+                                            >航天地面设备
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22VE*%22"
+                                            >航空器与航天器制造用设备
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W*%22"
+                            >纺织
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W0*%22"
+                                            >纺织综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W1*%22"
+                                            >棉纺织
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W2*%22"
+                                            >毛纺织
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W3*%22"
+                                            >麻纺织
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W4*%22"
+                                            >丝纺织
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22W5*%22"
+                                            >化学纤维
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22WA*%22"
+                                            >纺织制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22WB*%22"
+                                            >针织
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22WC*%22"
+                                            >印染制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22WD*%22"
+                                            >纺织机械与器具
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22X*%22"
+                            >食品
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22X0*%22"
+                                            >食品综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22X1*%22"
+                                            >食品加工与制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22X3*%22"
+                                            >制糖与糖制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XA*%22"
+                                            >制盐
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XB*%22"
+                                            >食品添加剂与食用香料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XC*%22"
+                                            >饮料
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XD*%22"
+                                            >食品发酵、酿造
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XE*%22"
+                                            >罐头
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XF*%22"
+                                            >特种食品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XG*%22"
+                                            >制烟
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22XH*%22"
+                                            >食品加工机械
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Y*%22"
+                            >轻工、文化与生活用品
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Y0*%22"
+                                            >轻工、文化与生活用品综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Y1*%22"
+                                            >钟表、自行车、缝纫机
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Y2*%22"
+                                            >日用玻璃、陶瓷、搪瓷、塑料制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Y3*%22"
+                                            >造纸
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Y4*%22"
+                                            >日用化工品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YA*%22"
+                                            >皮革加工与制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YB*%22"
+                                            >文教、体育、娱乐用品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YC*%22"
+                                            >家用电器、日用机具
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YD*%22"
+                                            >五金制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YE*%22"
+                                            >服装、鞋、帽与其他缝制品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YF*%22"
+                                            >家具
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YG*%22"
+                                            >工艺美术品与其他日用品
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22YH*%22"
+                                            >轻工机械
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section clear">
+                    <div class="title">
+                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Z*%22"
+                            >环境保护
+                        </a>
+                    </div>
+                    <div class="bd">
+                        <div class="list">
+                            
+                            
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Z0*%22"
+                                            >环境保护综合
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Z1*%22"
+                                            >环境保护采样、分析测试方法
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Z5*%22"
+                                            >环境质量标准
+                                        </a>
+                                    </span>
+                                
+                                    <span class="link-wraper">
+                                        <a class="link" href="http://s.wanfangdata.com.cn/Standard.aspx?f=Standard.Cateogory&q=ChClassSort%3a%22Z6*%22"
+                                            >污染物排放标准
+                                        </a>
+                                    </span>
+                                
+                        </div>
+                    </div>
+                </div>
+            
+    </div>
+
+    <div class="footer-wrap">
+        <div class="lt-bg"></div>
+        <div class="rt-bg"></div>
+        <div class="footer clear">
+            <div class="lt">
+                <div class="top">
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide">帮助</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/CustomerService/Services">客户服务</a>
+                    <a target="_blank" href="http://www.sojump.com/jq/4550749.aspx">问卷调查</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/AboutUs/index">关于我们</a>
+                    <a target="_blank" href="http://www.wanfang.com.cn/">公司首页</a>
+                    <a target="_blank" href="http://weibo.com/wanfangdata">平台微博</a>
+                    <a target="_blank" href="http://wanfangdata.zhiye.com/">加入我们</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/Sitemap">网站地图</a>
+                    <a id="langCN" data-lang="zn-CN" class="lang">简</a>
+                    <a id="langTW" data-lang="zn-TW" class="lang">繁</a>
+                    <a id="langEN" data-lang="EN" href="http://www.wanfangdata.com/" target="_blank">ENG</a>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/hlwcb.jpg">互联网出版许可证：新出网证(京)字042号</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/zhengshu_2.jpg">互联网药品信息服务资格证书号：(京)-经营性-2011-0017</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/stjmxkz2.jpg">信息网络传播视听节目许可证 许可证号：0108284 </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/icp.jpg">京ICP证：010071</a>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020237" ><img src="http://ad.wanfangdata.com.cn/images/gabeian.png" style="margin-right:2px;"/>京公网安备11010802020237号</a>
+<a target="_blank" href="http://ad.wanfangdata.com.cn/images/yunicp.jpg">万方数据知识资源云服务系统[简称：知识云服务平台]V1.0 证书号：软著登字第1016589号</a>
+                    </div>
+                    <p>万方数据知识服务平台--国家科技支撑计划资助项目（编号：2006BAH03B01）©北京万方数据股份有限公司  万方数据电子出版社</p>
+                </div>
+            </div>
+            <div class="rt">
+                <div class="top">
+                    <i class="icon icon-service"></i>
+                    <span>联系客服</span>
+                </div>
+                <ul class="contactus">
+                             <li><i class="contactus-online"></i><a onclick="onlineService('http://www.wanfangdata.com.cn/')">在线客服</a></li>
+                             <li><i class="contactus-tel"></i>4000115888</li>
+                             <li><i class="contactus-email"></i>service@wanfangdata.com.cn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" charset="utf-8" src="http://static.wanfangdata.com.cn/wfks/js/wf.service-1.3.js"></script>
+                            
+                            
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-ui-1.11.4.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.wanfangdata.com.cn/Config/index"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/js/global.min.js?v=201610091258"></script>
+        <script type="text/javascript">
+            (function () {
+                wf.header.resource.init({ id: 'standard' });
+                wf.fixbox.init();
+                $('.content-c .data-link').click(function () {
+                    var $this = $(this);
+                    var $list = $this.parent().parent();
+                    var ajaxModel = {
+                        filePath: $list.data('ajax-xmlpath'),
+                        templ: $list.data('ajax-templ'),
+                        pt: $list.data('ajax-pt'),
+                        st: $list.data('ajax-st'),
+                        wrap: $list.data('ajax-wrap')
+                    };
+                    $.getJSON('XmlFetch.ashx', { filePath: ajaxModel.filePath, nodeValue: $this.data('value') }, function (result) {
+                        var html = [];
+                        $this.addClass('active');
+                        $list.find('.data-link').not($this).removeClass('active');
+                        var pushItems = function (arr, t, fun, wrap) {
+                            $.each(this, function () {
+                                if ($.isFunction(fun)) { fun(this, arr, t); }
+                                else { arr.push(t.format(this.Name, encodeURIComponent(this.Value), this.Buy === 'False' ? 'notbuy' : '')); }
+                            });
+                        }
+                        if (ajaxModel.templ) {
+                            pushItems.call(result.Children, html, ajaxModel.templ);
+                        } else {
+                            pushItems.call(result.Children, html, ajaxModel.pt, function (item, arr, pt) {
+                                var sls = [];
+                                pushItems.call(item.Children, sls, ajaxModel.st);
+                                html.push('<div class="tb-list-item clear">{0}</div>'.format('<span class="p-link">{0}</span>'.format(pt.format(item.Name, encodeURIComponent(item.Value), item.Buy === 'False' ? 'notbuy' : '')) + '<span class="s-link">{0}</span>'.format(sls.join('<span class="spliter"> | </span>'))));
+                            });
+                        }
+                        $list.next().html(html.join(''));
+                    });
+                });
+            })();
+        </script>
+    
+    
+</body>
+</html>
+

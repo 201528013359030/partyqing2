@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>供应链管理</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main2.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<style>
+	body{background:#fff;}
+</style>
+</head>
+
+<body onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item top_nav_content_item_cur"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+	
+    <div class="clearer"></div>
+    <div class="mt13" id="mt13"><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/buy/searchBuyAcceptTask.xhtml" id="20140822094820" onclick="menuFnClick('20140822094820', '', '采购任务接收', 'http://merm.ctcloud.com.cn:82/mrp/buy/searchBuyAcceptTask.xhtml', '', '');" subnav="20140822094820" class="left_nav_item left_nav_item_cur left_nav_item_on left_nav_item_null_on">采购任务接收</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/buy/searchBuyDisTask.xhtml" id="20140822094822" onclick="menuFnClick('20140822094822', '', '采购任务分派', 'http://merm.ctcloud.com.cn:82/mrp/buy/searchBuyDisTask.xhtml', '', '');" subnav="20140822094822" class="left_nav_item">采购任务分派</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/purchase/initMyPurchaseTask.xhtml" id="20140822094626" onclick="menuFnClick('20140822094626', '', '采购任务列表', 'http://merm.ctcloud.com.cn:82/mrp/purchase/initMyPurchaseTask.xhtml', '', '');" subnav="20140822094626" class="left_nav_item">采购任务列表</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=13871793349688&amp;appVerLogicId=138733144695326" id="20140822094474" onclick="menuFnClick('20140822094474', '', '采购订单', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=13871793349688&amp;appVerLogicId=138733144695326', '138733144695326', '');" subnav="20140822094474" class="left_nav_item">采购订单</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138718705354615" id="20140822094472" onclick="menuFnClick('20140822094472', '', '采购订单审批', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138718705354615', '138733144695326', '138657772492122');" subnav="20140822094472" class="left_nav_item">采购订单审批</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139467751696868" id="20140822094470" onclick="menuFnClick('20140822094470', '', '采购订单查看', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139467751696868', '', '');" subnav="20140822094470" class="left_nav_item">采购订单查看</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139461045223494" id="20140822094468" onclick="menuFnClick('20140822094468', '', '采购到货确认', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139461045223494', '', '');" subnav="20140822094468" class="left_nav_item">采购到货确认</a><a href="javaScript:void(0);" id="20140822094462" onclick="menuOnclick('20140822094462')" subnav="20140822094462" class="left_nav_item left_nav_item_be">采购验收</a><div class="left-subnav" navfor="20140822094462" pid="20140822094462" style=""></div><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139530348132830" id="20140822094464" onclick="menuFnClick('20140822094464', '', '采购合同维护', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139530348132830', '', '');" subnav="20140822094464" class="left_nav_item">采购合同维护</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138629976289022" id="20140822094478" onclick="menuFnClick('20140822094478', '', '供应商资料维护', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138629976289022', '', '');" subnav="20140822094478" class="left_nav_item">供应商资料维护</a><a href="javaScript:void(0);" id="143683594217680" onclick="menuOnclick('143683594217680')" subnav="143683594217680" class="left_nav_item left_nav_item_be">外协订单过程</a><div class="left-subnav" navfor="143683594217680" pid="143683594217680" style=""></div><a href="javaScript:void(0);" id="145863252392355" onclick="menuOnclick('145863252392355')" subnav="145863252392355" class="left_nav_item left_nav_item_be">外协审价定价</a><div class="left-subnav" navfor="145863252392355" pid="145863252392355" style=""></div><a href="javaScript:void(0);" id="143683594217682" onclick="menuOnclick('143683594217682')" subnav="143683594217682" class="left_nav_item left_nav_item_be">外协采购管理</a><div class="left-subnav" navfor="143683594217682" pid="143683594217682" style=""></div><a href="javaScript:void(0);" id="143683594217684" onclick="menuOnclick('143683594217684')" subnav="143683594217684" class="left_nav_item left_nav_item_be">外协供应商库存</a><div class="left-subnav" navfor="143683594217684" pid="143683594217684" style=""></div><a href="javaScript:void(0);" id="143683594217686" onclick="menuOnclick('143683594217686')" subnav="143683594217686" class="left_nav_item left_nav_item_be">外协质量管理</a><div class="left-subnav" navfor="143683594217686" pid="143683594217686" style=""></div><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139460640585999" id="20140822094628" onclick="menuFnClick('20140822094628', '', '外协询价', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=139460640585999', '', '');" subnav="20140822094628" class="left_nav_item">外协询价</a></div>
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+<div id="main_content" style="width: 98%;" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+
+<!-- 中间内容 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width:1060px">
+		<tbody><tr>
+			<td align="center" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+					<tbody><tr>
+						<td width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width: 1060px">
+								<tbody><tr>
+									<td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tbody><tr>
+												<td width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+																	<tbody><tr>
+																		<td id="tab_box"><!--列表-->
+																			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																				<tbody><tr>
+																					<th align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+																							<tbody><tr>
+																								<td height="70" valign="middle"><span class="txt-blue-main f14 fb fl">接收采购任务</span> <a class="btn5 fr ml16" onclick="acceptTask();"> <i class="btn5_left"></i> <span class="btn5_content">&nbsp;接&nbsp;收&nbsp;任&nbsp;务&nbsp;</span> <i class="btn5_right"></i> </a> </td>
+																							</tr>
+																						</tbody></table></th>
+																				</tr>
+																				<tr>
+																					<td>
+																						<table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="min-width:1060px">
+																							<tbody><tr>
+																								<td id="tab_box"><!--列表-->
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									
+																																									
+																											
+																														
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																												
+																	    																										
+																												
+																																																										
+																										
+																									<div class="jmesa"><div id="jmesaDIV">
+<table id="jmesa" border="0" cellpadding="0" cellspacing="0" class="table" width="100%">
+	<thead class="thead">
+	<tr class="header">
+		<td><div><input type="checkbox" name="jmesaCheckBox" id="jmesaCheckBox" onclick="cheClick(this)" checked="checked"></div></td>
+		<td><div>MPS批次</div></td>
+		<td><div>任务号</div></td>
+		<td style="text-align: left;"><div>物料编号</div></td>
+		<td style="text-align: left;"><div>物料名称</div></td>
+		<td><div>需求日期</div></td>
+		<td style="text-align: right;"><div>采购数量</div></td>
+		<td><div>库存单位</div></td>
+		<td><div>计划开始时间</div></td>
+		<td><div>计划结束时间</div></td>
+		<td><div>任务状态</div></td>
+		<td><div>任务下达人</div></td>
+	</tr>
+	</thead>
+	<tbody class="tbody">
+	<tr id="jmesa_row1" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264067" checked="checked" value="146597143264067">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606155688">RW201606155688</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060131">2060131</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="车座">车座</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="280.00">280.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row2" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264093" checked="checked" value="146597143264093">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606158404">RW201606158404</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="3129518">3129518</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="前叉">前叉</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="280.00">280.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row3" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264095" checked="checked" value="146597143264095">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606151527">RW201606151527</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="6081100">6081100</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="螺母">螺母</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row4" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264097" checked="checked" value="146597143264097">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606159065">RW201606159065</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="3021183">3021183</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="前轴管">前轴管</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="280.00">280.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-03">2016-06-03</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row5" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264099" checked="checked" value="146597143264099">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606152711">RW201606152711</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="3022135">3022135</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="前轴孔夹">前轴孔夹</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="280.00">280.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-03">2016-06-03</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row6" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="14659714757141" checked="checked" value="14659714757141">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606154796">RW201606154796</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="3021915">3021915</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="前花盘">前花盘</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-03">2016-06-03</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row7" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597147571411" checked="checked" value="146597147571411">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606153878">RW201606153878</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060127">2060127</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="齿轮">齿轮</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row8" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="14659714757143" checked="checked" value="14659714757143">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606158653">RW201606158653</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060123">2060123</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="脚蹬">脚蹬</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row9" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="14659714757145" checked="checked" value="14659714757145">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606154767">RW201606154767</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060124">2060124</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="中轴">中轴</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row10" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="14659714757147" checked="checked" value="14659714757147">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606156129">RW201606156129</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060125">2060125</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="链条">链条</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="280.00">280.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row11" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264091" checked="checked" value="146597143264091">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606158222">RW201606158222</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="6052200">6052200</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="垫圈">垫圈</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="1120.00">1120.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-07">2016-06-07</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row12" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264089" checked="checked" value="146597143264089">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606157580">RW201606157580</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="3029219">3029219</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="前轴档">前轴档</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-03">2016-06-03</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row13" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264087" checked="checked" value="146597143264087">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606152786">RW201606152786</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="3022271">3022271</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="前防尘盖">前防尘盖</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="560.00">560.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-03">2016-06-03</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row14" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264069" checked="checked" value="146597143264069">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606153226">RW201606153226</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060132">2060132</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="车锁">车锁</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="280.00">280.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="个">个</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-13">2016-06-13</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	<tr id="jmesa_row15" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td>
+																													<input type="checkbox" name="listCheck" id="146597143264071" checked="checked" value="146597143264071">
+																												</td>
+		<td style="text-align:center;">
+																													<label title="Mps2016061514050739">Mps2016061514050739</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="RW201606154420">RW201606154420</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="2060134">2060134</label>
+																												</td>
+		<td style="text-align:left;">
+																													<label title="铝管">铝管</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																												</td>
+		<td style="text-align:right;">
+																													<label title="960.00">960.00</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="千克">千克</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-06">2016-06-06</label>
+																												</td>
+		<td style="text-align:center;">
+																													<label title="2016-06-09">2016-06-09</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="已下达">已下达</label>
+																	    										</td>
+		<td style="text-align:center;">
+																													<label title="赵志光">赵志光</label>
+																												</td>
+	</tr>
+	</tbody>
+</table></div>
+<table id="toolbarTable" border="0" cellpadding="0" cellspacing="0" class="toolbarTable" width="100%">
+	<tbody class="toolbarTbody">
+	<tr class="statusBar toolbar">
+		<td colspan="1">
+		<table border="0" cellpadding="0" cellspacing="1" id="saas_TableToolbar">
+			<tbody><tr>
+				<td style="width:75px"><img src="../images/firstPageDisabled.png" alt="首页"></td>
+				<td style="width:75px"><img src="../images/prevPageDisabled.png" alt="上一页"></td>
+				<td style="width:75px"><img src="../images/nextPage.png" title="下一页" alt="下一页" onclick="javascript:jQuery.jmesa.setPageToLimit('jmesa','2');onInvokeAction('jmesa','next_page')"></td>
+				<td style="width:75px"><img src="../images/lastPage.png" title="尾页" alt="尾页" onclick="javascript:jQuery.jmesa.setPageToLimit('jmesa','2');onInvokeAction('jmesa','last_page')"></td>
+				<td style="display:none"><img src="../images/separator.gif" alt="Separator"></td>
+				<td style="width:50px"><select name="maxRows" onchange="jQuery.jmesa.setMaxRowsToLimit('jmesa', this.options[this.selectedIndex].value);onInvokeAction('jmesa','max_rows')">
+				<option value="5">5 </option><option value="10">10 </option><option value="15" selected="selected">15 </option><option value="20">20 </option><option value="25">25 </option><option value="50">50 </option><option value="100">100 </option><option value="200">200 </option><option value="500">500 </option><option value="1000">1000 </option>
+				</select></td>
+			</tr>
+		</tbody></table>
+		</td>
+		<td align="right" colspan="1">1 - 15 条 / 共 23 条</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	try {;
+	jQuery.jmesa.addTableFacade('jmesa');
+	jQuery.jmesa.setMaxRowsToLimit('jmesa','15');
+	jQuery.jmesa.setTotalRowsToLimit('jmesa','23');
+	jQuery.jmesa.setPageToLimit('jmesa','1');
+	jQuery.jmesa.setOnInvokeAction('jmesa','onInvokeAction');
+	jQuery.jmesa.setOnInvokeExportAction('jmesa','onInvokeExportAction');
+	jQuery.jmesa.setContextPath('jmesa','/mrp');
+	} catch (e) {};
+});
+</script>
+																								</td>
+																							</tr>
+																							   <tr>
+																							      <td height="24" align="center" valign="top">&nbsp;</td>
+																							  </tr>				  
+																					     </tbody></table>
+																					</td>
+																				</tr>
+																			</tbody></table></td>
+																	</tr>
+																</tbody></table></td>
+														</tr>
+													</tbody></table></td>
+											</tr>
+										</tbody></table></td>
+								</tr>
+							</tbody></table></td>
+					</tr>
+				</tbody></table></td>
+		</tr>
+		<tr>
+			<td height="24" align="center" valign="top">&nbsp;</td>
+		</tr>
+	</tbody></table>
+<!-- end 中间内容 -->
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

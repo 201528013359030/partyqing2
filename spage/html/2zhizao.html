@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>制造数据管理</title>
+<link rel="stylesheet" type="text/css" href="../css/jquery.ui.autocomplete.css">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main2.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<link rel="stylesheet" type="text/css" href="../css/zTreeStyle.css">
+<style>
+	body{background:#fff;}
+</style>
+</head>
+
+<body onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item top_nav_content_item_cur"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+	
+    <div class="clearer"></div>
+    <div class="mt13" id="mt13"><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=14135335928028" id="20140822094476" onclick="menuFnClick('20140822094476', '', '物料主文件维护', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=14135335928028', '', '');" subnav="20140822094476" class="left_nav_item left_nav_item_cur left_nav_item_on left_nav_item_null_on">物料主文件维护</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138629967659352" id="20140822094632" onclick="menuFnClick('20140822094632', '', 'BOM查看', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138629967659352', '', '');" subnav="20140822094632" class="left_nav_item">BOM查看</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=146157772489974" id="146173843863338" onclick="menuFnClick('146173843863338', '', 'BOM维护', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=146157772489974', '', '');" subnav="146173843863338" class="left_nav_item">BOM维护</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/bom/ToBomViews.xhtml" id="20140822094634" onclick="menuFnClick('20140822094634', '', 'BOM可视化', 'http://merm.ctcloud.com.cn:82/mrp/bom/ToBomViews.xhtml', '', '');" subnav="20140822094634" class="left_nav_item">BOM可视化</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/plugins/holiday/initWeekday.xhtml" id="20140822094636" onclick="menuFnClick('20140822094636', '', '工厂日历维护', 'http://merm.ctcloud.com.cn:82/mrp/plugins/holiday/initWeekday.xhtml', '', '');" subnav="20140822094636" class="left_nav_item">工厂日历维护</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138553724832824" id="20140822094638" onclick="menuFnClick('20140822094638', '', '工作中心维护', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138553724832824', '', '');" subnav="20140822094638" class="left_nav_item">工作中心维护</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138561868032812" id="20140822094640" onclick="menuFnClick('20140822094640', '', '工艺路线维护', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138561868032812', '', '');" subnav="20140822094640" class="left_nav_item">工艺路线维护</a><a href="javaScript:void(0);" id="141802341145235" onclick="menuOnclick('141802341145235')" subnav="141802341145235" class="left_nav_item left_nav_item_be">系统设置</a><div class="left-subnav" navfor="141802341145235" pid="141802341145235" style=""></div></div>
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width:1060px">
+  <tbody><tr>
+    <td height="24" align="center" valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+  <td align="center">
+  	<table width="95%" border="0" cellspacing="0" cellpadding="0" class="border1">
+  		<tbody><tr>
+  			<td style="white-space:nowrap">
+  				<div id="left-area" style="position: relative; float: left; width: 20%; height: 709px;">
+  					<div id="btn-show" class="lstate-off">
+  					</div>
+  					<div class="respone-table" width="15%" style="display: block;">
+  					<table width="100%" class="fl" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+	  					<tbody><tr>
+	  						<td valign="top" height="100%">
+	  							<input type="hidden" name="productId" id="productId" value="null">
+								<table id="saas_form_table" name="saas_form_table" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" style="border-right:1px solid #dbdbdb; table-layout:fixed;">	      
+									<tbody><tr>
+										<td height="33" align="left" style="background:#ebebeb; border-bottom:1px dashed #bacbdf"><span class="txt-blue-main f14 fb pl10">物料分类码</span></td>
+									</tr>
+									<tr>
+										<td width="100%" align="left" valign="top">
+											<!-- 列表左上放按钮 -->
+											<div style="height:674px; width:100%; overflow:auto;background:#ebebeb">
+												<!-- ztree树 -->
+												<div class="zTreeDemoBackground left">
+													<ul id="myTree" class="tree" style="height:669px;"><li id="myTree_1" treenode=""><button type="button" id="myTree_1_switch" title="" class="switch_root_open" treenode_switch="" onfocus="this.blur();"></button><a id="myTree_1_a" treenode_a="" onclick="" target="_blank" style=""><button type="button" id="myTree_1_ico" title="" treenode_ico="" onfocus="this.blur();" class=" ico_open" style="background:url(../images/org.gif) 0 0 no-repeat;"></button><span id="myTree_1_span">中国科学院沈阳计算技术研究所有限公司</span></a><ul id="myTree_1_ul" class="" style="display:block"><li id="myTree_2" treenode=""><button type="button" id="myTree_2_switch" title="" class="switch_center_open" treenode_switch="" onfocus="this.blur();"></button><a id="myTree_2_a" treenode_a="" onclick="" target="_blank" style=""><button type="button" id="myTree_2_ico" title="" treenode_ico="" onfocus="this.blur();" class=" ico_open" style="background:url(../images/dept.png) 0 0 no-repeat;"></button><span id="myTree_2_span">电机</span></a><ul id="myTree_2_ul" class="line" style="display:block"></ul></li><li id="myTree_3" treenode=""><button type="button" id="myTree_3_switch" title="" class="switch_bottom_open" treenode_switch="" onfocus="this.blur();"></button><a id="myTree_3_a" treenode_a="" onclick="" target="_blank" style=""><button type="button" id="myTree_3_ico" title="" treenode_ico="" onfocus="this.blur();" class=" ico_open" style="background:url(../images/dept.png) 0 0 no-repeat;"></button><span id="myTree_3_span">自行车</span></a><ul id="myTree_3_ul" class="" style="display:block"></ul></li></ul></li></ul>
+												</div>                      	
+												<!-- ztree树 END-->
+											</div>
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+	  					</tr>
+	  				</tbody></table>
+  					
+  					</div>
+  					
+  				</div>
+				<div style="width:80%; float: left;">
+					<table id="lefttable" width="100%" border="0" cellspacing="0" cellpadding="0" class="fl" >
+ 					<tbody><tr>
+ 						<td valign="top">
+ 							
+ 							<!--列表-->
+ 							
+ 							<div class="" style="display: none; position: absolute;"><div class="aui_outer"><table class="aui_border"><tbody><tr><td class="aui_nw"></td><td class="aui_n"></td><td class="aui_ne"></td></tr><tr><td class="aui_w"></td><td class="aui_c"><div class="aui_inner"><table class="aui_dialog"><tbody><tr><td colspan="2" class="aui_header"><div class="aui_titleBar"><div class="aui_title" style="cursor: move;"></div><a class="aui_close" href="javascript:/*artDialog*/;">×</a></div></td></tr><tr><td class="aui_icon" style="display: none;"><div class="aui_iconBg" style="background: none;"></div></td><td class="aui_main" style="width: auto; height: auto;"><div class="aui_content" style="padding: 20px 25px;"></div></td></tr><tr><td colspan="2" class="aui_footer"><div class="aui_buttons" style="display: none;"></div></td></tr></tbody></table></div></td><td class="aui_e"></td></tr><tr><td class="aui_sw"></td><td class="aui_s"></td><td class="aui_se" style="cursor: se-resize;"></td></tr></tbody></table></div></div>
+<form name="138629967659377" id="138629967659377" action="?null" method="post">
+	
+	<input type="hidden" id="searchHQL" name="searchHQL" value="">
+	<input type="hidden" id="locationFlag" name="" value="1">
+	<input type="hidden" id="classId" name="classId" value="">
+	<input id="delClassId" value="null" type="hidden">
+	<!-- 动态加载JSP -->
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+		<tbody><tr>
+			<td align="center" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+					<tbody><tr>
+						<td width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+									<td><table width="100%" border="0" cellspacing="1" cellpadding="0">
+											<tbody><tr>
+												<td><!--列表-->
+													<table width="100%" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<th colspan="4" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+																	<tbody><tr>
+																		<td height="70" valign="middle"><span class="txt-blue-main f14 fb fl">物料主文件列表</span></td>
+																		<td align="right">物料编号：</td>
+																		<td height="30" width="500"><a class="btn5 fr" onclick="del();" target="mainFrame" id="delbutton"><i class="btn5_left"></i><span class="btn5_content">&nbsp;删&nbsp;除&nbsp;</span><i class="btn5_right"></i></a><a class="btn5 fr mr15" onclick="add();" target="mainFrame" id="addbutton"><i class="btn5_left"></i><span class="btn5_content">&nbsp;新&nbsp;建&nbsp;</span><i class="btn5_right"></i></a>
+																			<div class="fr" style="width:350px; text-align:left;">
+																				<input type="text" class="ui-combogrid-background" id="ctmrp_itemdate_view" name="ctmrp_itemdate_view" style="width: 75%;"><input id="PRPLAIL_orderNo_hidden" name="PRPLAIL_orderNo_hidden" class="ui-combogrid fr mr15" type="hidden" multiselect="false" valirequired="false" codetype="ctmrp_itemdate" condition="itemNO" secondtype="name" thirdtype="format" checkauth="false" value="" style="display: none;">
+																				<a class="btn5 fr mr15" onclick="searchQuery();" target="mainFrame"><i class="btn5_left"></i><span class="btn5_content">&nbsp;搜&nbsp;索&nbsp;</span><i class="btn5_right"></i></a></div></td>
+																	</tr>
+																</tbody></table></th>
+														</tr>
+														<tr>
+														
+															<td>
+																		
+																<div class="jmesa"><div id="jmesaDIV">
+<table id="jmesa" border="0" cellpadding="0" cellspacing="0" class="table">
+	<thead class="thead">
+	<tr class="header">
+		<td style="width:2%;"><input id="wlCheckBox" onclick="wlcheck(this)" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;"><div>物料编号</div></td>
+		<td style="text-align: left;width:15%;padding-left: 10px;"><div>物料名称</div></td>
+		<td style="text-align: left;width:15%; padding-left: 10px;"><div>规格型号</div></td>
+		<td style="width:6%;"><div>来源码</div></td>
+		<td style="text-align: right;width:8%; padding-right: 5px;"><div>现有库存</div></td>
+		<td style="width:8%;"><div>计量单位</div></td>
+		<td style="width:6%"><div>计划价</div></td>
+		<td style="width:10%"><div>工艺路线</div></td>
+		<td style="width:10%;"><div>操作</div></td>
+	</tr>
+	</thead>
+	<tbody class="tbody">
+	<tr id="jmesa_row1" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="148030261840714" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281112460001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="苫布">苫布</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">米</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(148030261840714);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(148030261840714);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row2" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="14803026184079" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281112260001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="帐篷支架">帐篷支架</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(14803026184079);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(14803026184079);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row3" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="14803026184074" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281112010001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="场地照明灯">场地照明灯</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(14803026184074);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(14803026184074);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row4" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="147850954842699" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281110180001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="棉被">棉被</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(147850954842699);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(147850954842699);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row5" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="147850954842694" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281109450001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="消毒液">消毒液</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(147850954842694);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(147850954842694);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row6" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="147850954842689" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281109170001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="帐篷">帐篷</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(147850954842689);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(147850954842689);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row7" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="147850954842683" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">WL201611281106570001</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="救灾物资包A">救灾物资包A</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;" title="4*4*4">4*4*4</td>
+		<td style="width:6%;">自制件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">99.00</td>
+		<td style="width:8%;">套</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">自行车系统加工工艺</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(147850954842683);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(147850954842683);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row8" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537500033911" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060135</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="支架">支架</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;" title="26">26</td>
+		<td style="width:6%;">自制件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">支架加工工艺</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537500033911);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537500033911);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row9" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351389" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060134</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="铝管">铝管</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;" title="6061">6061</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">1,350.00</td>
+		<td style="width:8%;">千克</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351389);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351389);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row10" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351379" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060133</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="车后架">车后架</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;" title="26">26</td>
+		<td style="width:6%;">自制件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">车后架加工工艺</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351379);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351379);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row11" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351374" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060132</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="车锁">车锁</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">30.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351374);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351374);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row12" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351369" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060131</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="车座">车座</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">30.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351369);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351369);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row13" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351364" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060130</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="车架">车架</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;" title="26">26</td>
+		<td style="width:6%;">自制件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">车架加工工艺</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351364);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351364);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row14" class="even" onmouseover="this.className='highlight'" onmouseout="this.className='even'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351354" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060129</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="车闸">车闸</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351354);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351354);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	<tr id="jmesa_row15" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="width:2%;"><input name="wlItemCheckBox" value="146537299351349" type="checkbox"></td>
+		<td style="text-align: left;width:10%; padding-left: 10px;">2060128</td>
+		<td style="text-align: left;width:15%;padding-left: 10px;" title="车把">车把</td>
+		<td style="text-align: left;width:15%; padding-left: 10px;">&nbsp;</td>
+		<td style="width:6%;">采购件</td>
+		<td style="text-align: right;width:8%;padding-right: 5px;">0.00</td>
+		<td style="width:8%;">个</td>
+		<td style="width:6%">0.00</td>
+		<td style="width:10%">&nbsp;</td>
+		<td style="width:10%;"><a href="javascript:void(0);" onclick="edit(146537299351349);"><img src="../images/edit.gif">修改</a><a href="javascript:void(0);" onclick="detail(146537299351349);"><img src="../images/view.gif">详细</a>  <a href="#"><font color="grey"><img src="../images/edit.gif">定位</font></a></td>
+	</tr>
+	</tbody>
+</table></div>
+<table id="toolbarTable" border="0" cellpadding="0" cellspacing="0" class="toolbarTable">
+	<tbody class="toolbarTbody">
+	<tr class="statusBar toolbar">
+		<td colspan="1">
+		<table border="0" cellpadding="0" cellspacing="1" id="saas_TableToolbar">
+			<tbody><tr>
+				<td style="width:75px"><img src="../images/firstPageDisabled.png" alt="首页"></td>
+				<td style="width:75px"><img src="../images/prevPageDisabled.png" alt="上一页"></td>
+				<td style="width:75px"><img src="../images/nextPage.png" title="下一页" alt="下一页" onclick="javascript:jQuery.jmesa.setPageToLimit('jmesa','2');onInvokeAction('jmesa','next_page')"></td>
+				<td style="width:75px"><img src="../images/lastPage.png" title="尾页" alt="尾页" onclick="javascript:jQuery.jmesa.setPageToLimit('jmesa','19');onInvokeAction('jmesa','last_page')"></td>
+				<td style="display:none"><img src="../images/separator.gif" alt="Separator"></td>
+				<td style="width:50px"><select name="maxRows" onchange="jQuery.jmesa.setMaxRowsToLimit('jmesa', this.options[this.selectedIndex].value);onInvokeAction('jmesa','max_rows')">
+				<option value="5">5 </option><option value="10">10 </option><option value="15" selected="selected">15 </option><option value="20">20 </option><option value="25">25 </option><option value="50">50 </option><option value="100">100 </option><option value="200">200 </option><option value="500">500 </option><option value="1000">1000 </option>
+				</select></td>
+			<td style="width: 50px;"><select id="yema" name="yema" onchange="jumpyema()" style="width:60px;height:17px"><option value="1" selected="selected">第1页</option><option value="2">第2页</option><option value="3">第3页</option><option value="4">第4页</option><option value="5">第5页</option><option value="6">第6页</option><option value="7">第7页</option><option value="8">第8页</option><option value="9">第9页</option><option value="10">第10页</option><option value="11">第11页</option><option value="12">第12页</option><option value="13">第13页</option><option value="14">第14页</option><option value="15">第15页</option><option value="16">第16页</option><option value="17">第17页</option><option value="18">第18页</option><option value="19">第19页</option></select></td></tr>
+		</tbody></table>
+		</td>
+		<td align="right" colspan="1">1 - 15 条 / 共 283 条</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	try {;
+	jQuery.jmesa.addTableFacade('jmesa');
+	jQuery.jmesa.setMaxRowsToLimit('jmesa','15');
+	jQuery.jmesa.setTotalRowsToLimit('jmesa','283');
+	jQuery.jmesa.setPageToLimit('jmesa','1');
+	jQuery.jmesa.setOnInvokeAction('jmesa','onInvokeAction');
+	jQuery.jmesa.setOnInvokeExportAction('jmesa','onInvokeExportAction');
+	jQuery.jmesa.setContextPath('jmesa','/mrp');
+	} catch (e) {};
+});
+</script>
+<input type="hidden" id="formLogicId" name="formLogicId" value="138629967659377">
+<input type="hidden" id="parameterList" name="parameterList" value="{'refButton':'false','delButton':'false','searchButton':'false','tablePage':'false','timeRef':'false','tableName':'','tableLogicId':'138597212290633','sqltype':'0','selectSql':'U0VMRUNUK0NPTkNBVCUyOCUyN1dMTk8lMkIlMjclMkMrJTI3JTI3JTJDK2FwcGluZm8uTE9HSUNfSUQlMjkrJUU1JUE0JTlBJUU5JTgwJTg5JUU2JUExJTg2JTJDYXBwaW5mby5pdGVtTk8rJUU3JTg5JUE5JUU2JTk2JTk5JUU3JUJDJTk2JUU1JThGJUI3JTJDYXBwaW5mby5uYW1lKyVFNyU4OSVBOSVFNiU5NiU5OSVFNSU5MCU4RCVFNyVBNyVCMCUyQ2FwcGluZm8uZm9ybWF0KyVFOCVBNyU4NCVFNiVBMCVCQyVFNSU5RSU4QiVFNSU4RiVCNyUyQyUyOFNFTEVDVCt6bS5TRUxFQ1RfTkFNRStGUk9NKyU3Qm9yZ2FuLmNvZGUlN0Rfc2luZ2xlX3NlbGVjdCt6bStXSEVSRSt6bS5TRUxFQ1RfQ09OVEVOVCslM0QrYXBwaW5mby5zdGF0dXMrYW5kK3ptLlNFTEVDVF9UWVBFKyUzRCslMjdseW0lMjclMjkrJUU2JTlEJUE1JUU2JUJBJTkwJUU3JUEwJTgxJTJDYXBwaW5mby5vbkhhbmRCYWxhbmNlKyVFNyU4RSVCMCVFNiU5QyU4OSVFNSVCQSU5MyVFNSVBRCU5OCUyQ2FwcGluZm8udW5pdHMrJUU4JUFFJUExJUU5JTg3JThGJUU1JThEJTk1JUU0JUJEJThEJTJDYXBwaW5mby5wbGFuQ29zdCslRTglQUUlQTElRTUlODglOTIlRTQlQkIlQjclMkMlMjhzZWxlY3QrYS4lNjBuYW1lJTYwK2Zyb20rJTdCb3JnYW4uY29kZSU3RF9jdG1ycF9yb3V0aW5nK2ErV0hFUkUrYS5yb3V0aW5nTm8lM0RhcHBpbmZvLnJvdXRpbmdObyUyOSslRTUlQjclQTUlRTglODklQkElRTglQjclQUYlRTclQkElQkYlMkNDT05DQVQlMjglMDlDT05DQVQlMjglMjclM0NhK2hyZWYlM0RqYXZhc2NyaXB0JTNBdm9pZCUyODAlMjklM0Irb25jbGljayUzRGVkaXQlMjglMjclMkNhcHBpbmZvLmxvZ2ljX2lkJTJDJTI3JTI5JTNCJTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmElM0UlMjclMjklMkNDT05DQVQlMjglMjclM0NhK2hyZWYlM0RqYXZhc2NyaXB0JTNBdm9pZCUyODAlMjklM0Irb25jbGljayUzRGRldGFpbCUyOCUyNyUyQ2FwcGluZm8ubG9naWNfaWQlMkMrJTI3JTI5JTNCJTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRnZpZXcuZ2lmKyUyRiUzRSVFOCVBRiVBNiVFNyVCQiU4NiUzQyUyRmElM0UlMjcrJTI5JTJDJTI3JTI3JTJDJTI3KyslMjclMkMlMjgrQ0FTRStXSEVOKyUyOGFwcGluZm8uQ0xBU1NOTytMSUtFKyUyNzAwMSUyNSUyNyUyOStUSEVOKyUyOCtDT05DQVQlMjgrJTI3JTNDYStocmVmJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGbWFwJTJGc2VhcmNoUHJvZHVjdEJ5UHJvZHVjZUxvZ2ljSWQueGh0bWwlM0Zmb3JtTG9naWNJZCUzRDEzODYyOTk2NzY1OTM3MiUyNm9iakxvZ2ljSWQlM0QlMjclMkMrYXBwaW5mby5sb2dpY19pZCUyQyslMjclMjZkYXRhVGFibGVMb2dpY0lkcyUzRCU1QjEzODYyOTc0NzI1MTUxNCU1RCtvbmNsaWNrJTNEY3JlYXRlT3ZlcmxheUxvYWRpbmclMjglMjklM0IlM0UlM0NpbWcrc3JjJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGaW1hZ2VzJTJGZWRpdC5naWYrJTJGJTNFJUU1JUFFJTlBJUU0JUJEJThEJTNDJTJGYSUzRSUyNyslMjkrJTI5K0VMU0UrJTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCtjb2xvciUzRGdyZXklM0UlM0NpbWcrc3JjJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGaW1hZ2VzJTJGZWRpdC5naWYrJTJGJTNFJUU1JUFFJTlBJUU0JUJEJThEJTNDJTJGZm9udCUzRSUzQyUyRmElM0UlMjcrRU5EKyUyOSslMjkrJUU2JTkzJThEJUU0JUJEJTlDK0ZST00rJTdCb3JnYW4uY29kZSU3RF8lN0JkYi5uYW1lJTdEX0lURU1EQVRBK2FwcGluZm8rK1dIRVJFKzErJTNEKzErT1JERVIrQlkrYXBwaW5mby5jcmVhdGVfdGltZStERVND8fe3f07dc17c56209ab7f365ca42771d'}">
+<script type="text/javascript">
+	function onInvokeAction(id) {
+		$.jmesa.setExportToLimit(id, '');
+		$.jmesa.createHiddenInputFieldsForLimitAndSubmit(id);
+	}
+	function onInvokeExportAction(id) {
+		var parameterString = $.jmesa.createParameterStringForLimit(id);
+		post("http://merm.ctcloud.com.cn:82/mrp//release/list.xhtml?"+parameterString, jQuery.parseJSON("{\"formLogicId\":\"138629967659377\",\"parameterList\":\"{'refButton':'false','delButton':'false','searchButton':'false','tablePage':'false','timeRef':'false','tableName':'','tableLogicId':'138597212290633','sqltype':'0','selectSql':'U0VMRUNUK0NPTkNBVCUyOCUyN1dMTk8lMkIlMjclMkMrJTI3JTI3JTJDK2FwcGluZm8uTE9HSUNfSUQlMjkrJUU1JUE0JTlBJUU5JTgwJTg5JUU2JUExJTg2JTJDYXBwaW5mby5pdGVtTk8rJUU3JTg5JUE5JUU2JTk2JTk5JUU3JUJDJTk2JUU1JThGJUI3JTJDYXBwaW5mby5uYW1lKyVFNyU4OSVBOSVFNiU5NiU5OSVFNSU5MCU4RCVFNyVBNyVCMCUyQ2FwcGluZm8uZm9ybWF0KyVFOCVBNyU4NCVFNiVBMCVCQyVFNSU5RSU4QiVFNSU4RiVCNyUyQyUyOFNFTEVDVCt6bS5TRUxFQ1RfTkFNRStGUk9NKyU3Qm9yZ2FuLmNvZGUlN0Rfc2luZ2xlX3NlbGVjdCt6bStXSEVSRSt6bS5TRUxFQ1RfQ09OVEVOVCslM0QrYXBwaW5mby5zdGF0dXMrYW5kK3ptLlNFTEVDVF9UWVBFKyUzRCslMjdseW0lMjclMjkrJUU2JTlEJUE1JUU2JUJBJTkwJUU3JUEwJTgxJTJDYXBwaW5mby5vbkhhbmRCYWxhbmNlKyVFNyU4RSVCMCVFNiU5QyU4OSVFNSVCQSU5MyVFNSVBRCU5OCUyQ2FwcGluZm8udW5pdHMrJUU4JUFFJUExJUU5JTg3JThGJUU1JThEJTk1JUU0JUJEJThEJTJDYXBwaW5mby5wbGFuQ29zdCslRTglQUUlQTElRTUlODglOTIlRTQlQkIlQjclMkMlMjhzZWxlY3QrYS4lNjBuYW1lJTYwK2Zyb20rJTdCb3JnYW4uY29kZSU3RF9jdG1ycF9yb3V0aW5nK2ErV0hFUkUrYS5yb3V0aW5nTm8lM0RhcHBpbmZvLnJvdXRpbmdObyUyOSslRTUlQjclQTUlRTglODklQkElRTglQjclQUYlRTclQkElQkYlMkNDT05DQVQlMjglMDlDT05DQVQlMjglMjclM0NhK2hyZWYlM0RqYXZhc2NyaXB0JTNBdm9pZCUyODAlMjklM0Irb25jbGljayUzRGVkaXQlMjglMjclMkNhcHBpbmZvLmxvZ2ljX2lkJTJDJTI3JTI5JTNCJTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmElM0UlMjclMjklMkNDT05DQVQlMjglMjclM0NhK2hyZWYlM0RqYXZhc2NyaXB0JTNBdm9pZCUyODAlMjklM0Irb25jbGljayUzRGRldGFpbCUyOCUyNyUyQ2FwcGluZm8ubG9naWNfaWQlMkMrJTI3JTI5JTNCJTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRnZpZXcuZ2lmKyUyRiUzRSVFOCVBRiVBNiVFNyVCQiU4NiUzQyUyRmElM0UlMjcrJTI5JTJDJTI3JTI3JTJDJTI3KyslMjclMkMlMjgrQ0FTRStXSEVOKyUyOGFwcGluZm8uQ0xBU1NOTytMSUtFKyUyNzAwMSUyNSUyNyUyOStUSEVOKyUyOCtDT05DQVQlMjgrJTI3JTNDYStocmVmJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGbWFwJTJGc2VhcmNoUHJvZHVjdEJ5UHJvZHVjZUxvZ2ljSWQueGh0bWwlM0Zmb3JtTG9naWNJZCUzRDEzODYyOTk2NzY1OTM3MiUyNm9iakxvZ2ljSWQlM0QlMjclMkMrYXBwaW5mby5sb2dpY19pZCUyQyslMjclMjZkYXRhVGFibGVMb2dpY0lkcyUzRCU1QjEzODYyOTc0NzI1MTUxNCU1RCtvbmNsaWNrJTNEY3JlYXRlT3ZlcmxheUxvYWRpbmclMjglMjklM0IlM0UlM0NpbWcrc3JjJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGaW1hZ2VzJTJGZWRpdC5naWYrJTJGJTNFJUU1JUFFJTlBJUU0JUJEJThEJTNDJTJGYSUzRSUyNyslMjkrJTI5K0VMU0UrJTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCtjb2xvciUzRGdyZXklM0UlM0NpbWcrc3JjJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGaW1hZ2VzJTJGZWRpdC5naWYrJTJGJTNFJUU1JUFFJTlBJUU0JUJEJThEJTNDJTJGZm9udCUzRSUzQyUyRmElM0UlMjcrRU5EKyUyOSslMjkrJUU2JTkzJThEJUU0JUJEJTlDK0ZST00rJTdCb3JnYW4uY29kZSU3RF8lN0JkYi5uYW1lJTdEX0lURU1EQVRBK2FwcGluZm8rK1dIRVJFKzErJTNEKzErT1JERVIrQlkrYXBwaW5mby5jcmVhdGVfdGltZStERVND8fe3f07dc17c56209ab7f365ca42771d'}\"} ") ); 
+	}
+	function onInvokeCustomFilterAction(id,aa,self) {
+		$("#floatTable_138629967659377").css({
+			top: $("img[alt='搜索/排序']", $("#138629967659377")).offset().top + 20,
+			left: $("img[alt='搜索/排序']", $("#138629967659377")).offset().left
+		}).show();
+	}
+	function hideFloatTable(self) {
+		$(self).hide();
+	}
+	$(document).ready(function() {
+		$(document).on("click", function() {
+			hideFloatTable($("#floatTable_138629967659377"));
+		}); 
+	});
+</script>
+</td>
+														</tr>
+													</tbody></table></td>
+											</tr>
+										</tbody></table></td>
+								</tr>
+							</tbody></table></td>
+					</tr>
+				</tbody></table></td>
+		</tr>
+	</tbody></table>
+</form>
+
+
+<div style="z-index: 99; top: 0px; left: 0px; width: 485px; display: none;"></div><div id="combogird_div_ctmrp_itemdate" style="z-index: 9999; width: 485px; display: none;"><div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_combogird_table_ctmrp_itemdate" dir="ltr" style="width: 760px;"><div class="ui-widget-overlay jqgrid-overlay" id="lui_combogird_table_ctmrp_itemdate"></div><div class="loading ui-state-default ui-state-active" id="load_combogird_table_ctmrp_itemdate" style="display: none;">读取中...</div><div class="ui-jqgrid-view" id="gview_combogird_table_ctmrp_itemdate" style="width: 760px;"><div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix" style="display: none;"><a role="link" href="javascript:void(0)" class="ui-jqgrid-titlebar-close HeaderButton" style="right: 0px;"><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title"></span></div><div class="ui-state-default ui-jqgrid-hdiv" style="width: 760px;"><div class="ui-jqgrid-hbox"><table class="ui-jqgrid-htable" style="width:759px" role="grid" aria-labelledby="gbox_combogird_table_ctmrp_itemdate" cellspacing="0" cellpadding="0" border="0"><thead><tr class="ui-jqgrid-labels" role="rowheader"><th id="combogird_table_ctmrp_itemdate_rn" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 25px;"><div id="jqgh_combogird_table_ctmrp_itemdate_rn"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="combogird_table_ctmrp_itemdate_paramView1" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 35px; display: none;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_combogird_table_ctmrp_itemdate_paramView1" class="ui-jqgrid-sortable">logic_id<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="combogird_table_ctmrp_itemdate_paramView2" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 163px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_combogird_table_ctmrp_itemdate_paramView2" class="ui-jqgrid-sortable">物料编码<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="combogird_table_ctmrp_itemdate_paramView3" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 163px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_combogird_table_ctmrp_itemdate_paramView3" class="ui-jqgrid-sortable">规格型号<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="combogird_table_ctmrp_itemdate_paramView4" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 408px;"><div id="jqgh_combogird_table_ctmrp_itemdate_paramView4" class="ui-jqgrid-sortable">物料名称<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th></tr></thead></table></div></div><div class="ui-jqgrid-bdiv" style="height: 100%; width: 760px;"><div style="position:relative;"><div></div><table id="combogird_table_ctmrp_itemdate" tabindex="1" cellspacing="0" cellpadding="0" border="0" role="grid" aria-multiselectable="false" aria-labelledby="gbox_combogird_table_ctmrp_itemdate" class="ui-jqgrid-btable" style="width: 759px;"><tbody><tr class="jqgfirstrow" role="row" style="height:auto"><td role="gridcell" style="height:0px;width:25px;"></td><td role="gridcell" style="height:0px;width:35px;display:none;"></td><td role="gridcell" style="height:0px;width:163px;"></td><td role="gridcell" style="height:0px;width:163px;"></td><td role="gridcell" style="height:0px;width:408px;"></td></tr></tbody></table></div></div></div><div class="ui-jqgrid-resize-mark" id="rs_mcombogird_table_ctmrp_itemdate">&nbsp;</div><div id="combogrid_pager_ctmrp_itemdate" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr" style="width: 760px;"><div id="pg_combogrid_pager_ctmrp_itemdate" class="ui-pager-control" role="group"><table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table" style="width:100%;table-layout:fixed;height:100%;" role="row"><tbody><tr><td id="combogrid_pager_ctmrp_itemdate_left" align="left"><table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table navtable" style="float:left;table-layout:auto;"><tbody><tr><td class="ui-pg-button ui-corner-all" title="刷新表格" id="refresh_combogird_table_ctmrp_itemdate"><div class="ui-pg-div"><span class="ui-icon ui-icon-refresh"></span></div></td></tr></tbody></table></td><td id="combogrid_pager_ctmrp_itemdate_center" align="center" style="white-space: pre; width: 234px;"><table cellspacing="0" cellpadding="0" border="0" style="table-layout:auto;" class="ui-pg-table"><tbody><tr><td id="first_combogrid_pager_ctmrp_itemdate" class="ui-pg-button ui-corner-all"><span class="ui-icon ui-icon-seek-first"></span></td><td id="prev_combogrid_pager_ctmrp_itemdate" class="ui-pg-button ui-corner-all"><span class="ui-icon ui-icon-seek-prev"></span></td><td class="ui-pg-button ui-state-disabled" style="width:4px;"><span class="ui-separator"></span></td><td dir="ltr"> <input class="ui-pg-input" type="text" size="2" maxlength="7" value="0" role="textbox"> 共 <span id="sp_1_combogrid_pager_ctmrp_itemdate"></span> 页</td><td class="ui-pg-button ui-state-disabled" style="width:4px;"><span class="ui-separator"></span></td><td id="next_combogrid_pager_ctmrp_itemdate" class="ui-pg-button ui-corner-all"><span class="ui-icon ui-icon-seek-next"></span></td><td id="last_combogrid_pager_ctmrp_itemdate" class="ui-pg-button ui-corner-all"><span class="ui-icon ui-icon-seek-end"></span></td><td dir="ltr"><select class="ui-pg-selbox" role="listbox"><option role="option" value="10" selected="selected">10</option><option role="option" value="20">20</option><option role="option" value="30">30</option></select></td></tr></tbody></table></td><td id="combogrid_pager_ctmrp_itemdate_right" align="right"><div dir="ltr" style="text-align:right" class="ui-paging-info"></div></td></tr></tbody></table></div></div></div></div><div class="ui-widget ui-widget-content ui-corner-all ui-jqdialog" id="alertmod" dir="ltr" tabindex="-1" role="dialog" aria-labelledby="alerthd" aria-hidden="true" style="width: 200px; height: auto; z-index: 950; overflow: hidden; top: 329px; left: 419.5px;"><div class="ui-jqdialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" id="alerthd" style="cursor: move;"><span class="ui-jqdialog-title" style="float: left;">&nbsp;</span><a href="javascript:void(0)" class="ui-jqdialog-titlebar-close ui-corner-all" style="right: 0.3em;"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-jqdialog-content ui-widget-content" id="alertcnt"><div>&nbsp;</div><span tabindex="0"><span tabindex="-1" id="jqg_alrt"></span></span></div><div class="jqResize ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"></div></div><audio controls="controls" style="display: none;"></audio><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"></div>
+ 							
+ 							
+ 							<!--end 列表-->
+ 							
+ 						</td>
+ 					</tr>
+ 				</tbody></table>
+				</div>
+			</td>				
+  		</tr>		
+    </tbody></table>
+  </td>
+  </tr>
+  <tr>
+    <td height="24" align="center" valign="top">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

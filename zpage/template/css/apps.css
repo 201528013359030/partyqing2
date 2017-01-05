@@ -1,0 +1,78 @@
+﻿.modal-dialog{ z-index:9999;}
+
+body{ font-family: Microsoft Yahei;}
+ul,li{ padding: 0; margin: 0; list-style: none;}
+.mergeRow{ margin-left: 0; margin-right: 0;}
+.mergeRow [class^=col-]{ padding-left: 0; padding-right: 0;}
+
+.col-red{ color: #f30;}
+.col-blue{ color: #0862A8;}
+.btn-darkblue{ background:#003865; color:#fff;}
+.btn-darkblue.focus,.btn-darkblue:focus{color:#fff;background-color:#003865;}
+.btn-darkblue:hover{color:#fff; background-color:#0F3E62;}
+.navbar-toggle{ background:#eee;}
+.navbar-toggle .icon-bar{ background:#fff;}
+
+.imgBlock{ display: block; margin: 0 auto;}
+
+.topwrap{ background:#19527F; }
+.infos{ padding:42px 68px 0 68px;}
+.page-header{border-left: 10px #95BBEC solid; font-size:18px; font-weight: bold; padding-left:20px;}
+
+.company{ background:#f5f5f5;}
+
+/*.goodsList{}*/
+.goodsCenter{ width:202px; height: 222px; display:table;
+    text-align:center; display: inline-block; vertical-align: top; margin:0 10px; margin-bottom:20px; -webkit-tap-highlight-color: transparent;}
+.goodsCenter .goodsIteam{ width:200px; height: 180px; display:table;  vertical-align:middle; border:1px #ddd solid; margin-bottom:10px; overflow: hidden;}
+.goodsCenter .goodsIteam:hover{ border-color: #95BBEC;}
+.goodsCenter .goodsIteam span{ display:table-cell; vertical-align:middle;}
+.goodsCenter .name{ display: block; text-align: center; font-weight: bold; height: 24px; overflow: hidden; color:#333;}
+.goodsCenter .name:hover{color:#1A4374; text-decoration: none;}
+
+/*.comanyList{}*/
+.companyCenter{ width:182px; height: 120px;display:table;
+    text-align:center; display: inline-block; vertical-align: top; margin:0 20px; margin-bottom:20px;-webkit-tap-highlight-color: transparent; overflow: hidden;}
+.companyCenter .companyIteam{ width:180px; height: 118px; display:table;  vertical-align:middle; border:1px #ddd solid; overflow: hidden;}
+.companyCenter .companyIteam span{ display:table-cell; vertical-align:middle;}
+
+.contactBox{background:#f8f8f8;}
+.contactUl{padding-top: 20px;}
+.contactUl li{height: 34px;}
+.contactUl li .name{ display: inline-block; width: 100px; font-family: Microsoft Yahei; font-weight:bold;}
+
+.footer{ height: 34px; line-height: 30px; margin-top:30px; background:#19527F; color:#fff;}
+
+.infos_pic,
+.contact_pic{ height: 260px;}
+
+.modalInfo {border-radius: 0; -webkit-border-radius: 0;}
+.modalInfo .modal-header{ background:#2282CC; color: #fff;}
+.modalInfoUl{padding-top: 20px;}
+.modalInfoUl li{line-height: 34px;}
+.modalInfoUl li .name{ display: inline-block; width:80px; font-family: Microsoft Yahei; font-weight:bold;}
+.details{ margin-top: 20px;}
+.extCon p{ padding:0 20px;}
+.extCon img{ display: block; margin:0 auto; max-width: 100%;}
+
+.go_back_top{width: 40px; height: 40px; position: fixed; right: 10px; bottom:10px;}
+
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+	.infos{padding:20px;}
+	.infos_pic,
+	.contact_pic{ width: 100%; height: auto;}
+	
+	.goodsList,
+	.comanyList{ text-align: center;}
+	.contactUl{ padding:0 20px;}
+}
+
+
+
+
+
+
+
+
+
+

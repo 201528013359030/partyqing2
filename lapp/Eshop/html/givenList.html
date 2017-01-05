@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>企业微门户</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/apps.css">
+<!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+<![endif]-->
+    
+  
+</head>
+<body>
+<div class="topwrap">
+	<div class="container text-right zyhead">
+		 
+	</div>
+</div>
+<a name="top" id="top"></a>
+<div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="###" class="navbar-brand" id="providerhref"> </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+           <li>
+          <a id="companyhref" href="javascript:void(0)">首页</a>
+        </li>
+        <li class="active">
+          <a id="aboutUshref" href="#aboutUs">公司简介</a>
+        </li>
+        <li>
+          <a id="givenMsghref"  href="#givenMsg">供应信息</a>
+        </li>
+           <li>
+          <a id="needMsghref"  href="#needMsg">需求信息</a>
+        </li>
+        <li>
+          <a id="comanyPichref"  href="#comanyPic">公司相册</a>
+        </li>
+        <li>
+          <a id="contactUshref" href="#contactUs">联系我们</a>
+        </li>
+      </ul>
+      
+    </nav>
+</div>
+<div class="container">
+	<div class="banner">
+		<img src="../images/subanner.jpg" class="img-responsive">
+	</div>
+</div>
+<div class="container">
+	<a name="givenMsg" id="givenMsg" ></a>
+	<div class="position">当前位置：<a id="companyhref2" href="#">首页</a> &gt; <a id="givenMsghref2" href="#">产品供应</a></div>
+	<div class="goodsList" id="goodsList">
+	 
+ 
+	</div>
+	
+</div>
+
+<div class="container text-center">
+	<nav>
+	  <div class="zytcdPageCode" id="pagination">  
+      </div>  
+      <!--  
+	  <ul class="pagination">
+	    <li><a href="#">&laquo;</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">5</a></li>
+	    <li><a href="#">&raquo;</a></li>
+	  </ul>
+	  -->
+	</nav>
+</div>
+
+<div class="container">
+	<div class="footer text-center">
+		copyRight &copy; 铁西(开发区)工业云
+	</div>
+</div>
+
+<div class="go_back_top">
+	<a href="#top"><img src="../images/up.png"></a>	
+</div>
+
+<!--模态窗口商品展示-->
+<div id="productModal" class="modal fade productModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modalInfo">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><a href="" id="productsuphref">供应信息</a></h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class="col-md-4 col-sm-12">
+      			<div class="pics">
+      				<img id="image0" src="../images/default_qi.jpg" class="img-responsive">
+      			</div>
+      		</div>
+      		<div class="col-md-8 col-sm-12">
+      			<ul class="modalInfoUl">
+    
+ 
+
+ 	<li><span class="name">产品编号：</span><span id="number"></span></li>
+							<li><span class="name">产品标题：</span><span id="title"></span></li>
+									<li><span class="name">产品类型：</span><span id="typeStr"></span></li>
+							<li><span class="name">供应商：</span><span id="provider"></span></li>
+							<li><span class="name">报价：</span><span id="quote"></span></li>
+							<li><span class="name">品牌 ：</span><span id="brand"></span></li>
+							<li><span class="name">型号 ：</span><span id="model"></span></li>
+							<li><span class="name">规格：</span><span id="standard"></span></li>
+								<li><span class="name">所在地 ：</span><span id="location"></span></li>
+						 
+										<li><span class="name">联系电话  ：</span><span id="contact_tel"></span></li>
+											<li><span class="name">联系人：</span><span id="contact_name"></span></li>
+										 
+														<li><span class="name">创建时间：</span><span id="createTime"></span></li>
+													
+							
+						</ul>
+      		</div>
+      	</div>
+      	<div class="details">
+      		<div class="line"><img src="../images/line.png" class="img-responsive"></div>
+       
+      			<div class="extCon" id="detail">
+      		 
+      			 
+      				 
+      			
+      		</div>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link href="../js/lightbox/lightbox.min.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/lightbox/lightbox.min.js"></script>
+    <script src="../js/jquery.page.js"></script> 
+    <script src="../js/config.js"></script>
+<script src="../js/apps.js"></script>
+</body>
+ 
+<div  id="tpl_productsuplist" style="display:none;">
+		<a href="javascript:void(0);" class="goodsCenter" data-toggle="modal"  onclick="showproductsupDetail({Id},'productModal');"> 
+			<p class="goodsIteam">
+				<span><img src="{small_url}" class="img-responsive"></span>
+			</p>
+			<p class="name"><span class="col-blue"></span>{title}</p>
+		</a>
+ 
+	</div> 
+</html>

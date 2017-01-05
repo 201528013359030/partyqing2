@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>销售管理</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/top.css">
+<link rel="stylesheet" type="text/css" href="../css/left.css">
+<link rel="stylesheet" type="text/css" href="../css/main3.css">
+<link rel="stylesheet" type="text/css" href="../css/jmesa.css">
+<link rel="stylesheet" type="text/css" href="../css/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../css/main_bottom.css">
+<style>
+	body{background:#fff;}
+</style>
+</head>
+
+<body onload="contextHeight()" onresize="contextHeight()">
+
+<div id="layout-top" region="north" border="false" style="height: 73px;" class="top_frame">
+<!-- 顶段 -->
+
+<!-- LOGO -->
+<div class="top_logo">
+	<div class="top_logo_e fontnum f11 txt-white">Version 4.0</div>
+	<div class="top_logo_img"><img src="../images/OAlogo.png"></div>
+</div>
+<!-- LOGO END -->
+
+<!-- top_right -->
+<div class="top_right">
+	<!-- top_mail -->
+
+	<a href="#" style="text-align: center; line-height: 40px; font-size: 8px; font-weight: bold; display: block;" id="top_message_icon_pic" class="top_mail">
+	</a>
+	<!-- top_mail end -->
+	<!-- top_welcome -->
+	<div class="top_welcome txt-white-welcome">
+		<div class="top_welcome-l"></div>
+		<div class="top_welcome-c">您好
+			<a href="javaScript:void(0);">制造业</a>,您上次的登录时间是:今天 08:11
+			<a href="javascript:void(0)" onclick="initEditPassword()"> <img src="../images/top_welcome_icon_xg.png" width="12" height="12" alt=""> 修改密码 </a>
+			<a href="#" onclick="loginOut()"> <img src="../images/top_welcome_icon_tc.png" width="15" height="12" alt=""> 退出系统 </a>
+		</div>
+		<div class="top_welcome-r"></div>
+	</div>
+	<!-- top_welcome end -->
+	<div class="clearer"></div>
+	<!-- top_nav -->
+	<div class="top_nav">
+		<a href="#" class="top_nav_left" onclick="turnLeft(1)"></a>
+		<div id="top_nav_content" class="top_nav_content" style="width:576px;overflow-x:hidden;position: relative; white-space:nowrap; overflow-y:hidden;">
+			<a href="1xietong.html" id="a1" name="141635990868154" class="top_nav_content_item"><span id="dh1">协同办公</span></a>
+			<a href="2zhizao.html" id="a2" name="20140822094436" class="top_nav_content_item"><span id="dh2">制造数据管理</span></a>
+			<a href="3xiaoshou.html" id="a3" name="201408211511104" class="top_nav_content_item top_nav_content_item_cur"><span id="dh3">销售管理</span></a>
+			<a href="4kucun.html" id="a4" name="20140822094402" class="top_nav_content_item"><span id="dh4">库存管理</span></a>
+			<a href="5shengchan.html" id="a5" name="20140822094428" class="top_nav_content_item"><span id="dh5">生产计划管理</span></a>
+			<a href="6gongying.html" id="a6" name="145862415105532" class="top_nav_content_item"><span id="dh6">供应链管理</span></a>
+			<a href="7chejian.html" id="a7" name="20140822094434"  class="top_nav_content_item"><span id="dh7">车间管理</span></a>
+			<a href="8shouhou.html" id="a8" name="201408211511106"  class="top_nav_content_item"><span id="dh8">售后服务</span></a>
+		</div>
+		<a href="#" class="top_nav_right" onclick="turnRight(1)"></a>
+		<div class="top-subnav-btn">
+			<ul class="top-subnav" id="topSubnav">
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=20140822094434" onclick="leftQuick(this)" id="q7" name="20140822094434"><span id="dh8">车间管理</span></a>
+				</li>
+				<li>
+					<a href="javaScript:void(0);" rel="/oaIndex/oa/V3.0.0_Base/leftMenu.jsp?isgzt=0&amp;appLogicId=201408211511106" onclick="leftQuick(this)" id="q8" name="201408211511106"><span id="dh9">售后服务</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top_nav end -->
+</div>
+<!-- top_right end -->
+
+</div>
+
+<div style="float: left; width: 160px; height: 851px; background:#2e92de;" id="iframe_left_div">
+<div class="left_nav">
+	
+    <div class="clearer"></div>
+    <div class="mt13" id="mt13"><a href="javaScript:void(0);" id="201408211511312" onclick="menuOnclick('201408211511312')" subnav="201408211511312" class="left_nav_item left_nav_item_be left_nav_item_cur left_nav_item_on left_nav_item_be_on">客户管理</a><div class="left-subnav" navfor="201408211511312" pid="201408211511312" style="display: block;"><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139996803967149" id="201408211511340" onclick="menuChangeColor('201408211511340', '', '客户档案', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139996803967149', '', '');" class="left-subnav-item cur" style="left: 0px;">客户档案</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139996985982870" id="201408211511342" onclick="menuChangeColor('201408211511342', '', '联系人档案', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=139996985982870', '', '');" class="left-subnav-item" style="left: 0px;">联系人档案</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/khda/searchCheck.xhtml?keHuFormLogicId=140359197460933" id="201408211511344" onclick="menuChangeColor('201408211511344', '', '客户转移', 'http://merm.ctcloud.com.cn:82/crm/khda/searchCheck.xhtml?keHuFormLogicId=140359197460933', '', '');" class="left-subnav-item" style="left: 0px;">客户转移</a><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=140014935267125" id="14612025252528" onclick="menuChangeColor('14612025252528', '', '潜在客户', 'http://merm.ctcloud.com.cn:82/crm/release/jump.xhtml?formLogicId=140014935267125', '', '');" class="left-subnav-item" style="left: 0px;">潜在客户</a></div><a href="javaScript:void(0);" id="146120252525217" onclick="menuOnclick('146120252525217')" subnav="146120252525217" class="left_nav_item left_nav_item_be">订单管理</a><div class="left-subnav" navfor="146120252525217" pid="146120252525217" style=""></div><a href="javaScript:void(0);" rel="http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138726739070350" id="201408211511022" onclick="menuFnClick('201408211511022', '', '合同管理', 'http://merm.ctcloud.com.cn:82/mrp/release/jump.xhtml?formLogicId=138726739070350', '', '');" subnav="201408211511022" class="left_nav_item">合同管理</a><a href="javaScript:void(0);" id="146373633794875" onclick="menuOnclick('146373633794875')" subnav="146373633794875" class="left_nav_item left_nav_item_be">市场营销</a><div class="left-subnav" navfor="146373633794875" pid="146373633794875" style=""></div><a href="javaScript:void(0);" id="146120252525246" onclick="menuOnclick('146120252525246')" subnav="146120252525246" class="left_nav_item left_nav_item_be">销售线索</a><div class="left-subnav" navfor="146120252525246" pid="146120252525246" style=""></div><a href="javaScript:void(0);" id="201408211511314" onclick="menuOnclick('201408211511314')" subnav="201408211511314" class="left_nav_item left_nav_item_be">营销资料</a><div class="left-subnav" navfor="201408211511314" pid="201408211511314" style=""></div><a href="javaScript:void(0);" id="141863196056060" onclick="menuOnclick('141863196056060')" subnav="141863196056060" class="left_nav_item left_nav_item_be">查询统计</a><div class="left-subnav" navfor="141863196056060" pid="141863196056060" style=""></div><a href="javaScript:void(0);" id="141863196056071" onclick="menuOnclick('141863196056071')" subnav="141863196056071" class="left_nav_item left_nav_item_be">系统设置</a><div class="left-subnav" navfor="141863196056071" pid="141863196056071" style=""></div></div>
+</div>
+</div>
+
+<div id="iframe_center" style="overflow: hidden; margin-left:160px; background:#fff;">
+<div id="main_content" style="width: 98%;" class="fl">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" valign="top">
+
+<!-- 中间内容 -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td height="24" align="center" valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="80%"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+        <!-- <tr>
+          <td height="33"><span class="txt-blue-main f14 fb fl">库存管理</span></td>
+        </tr> -->
+        <tbody><tr>
+          <td width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+                  <td height="43"><!-- 通用按钮 -->                      
+	                  <span class="txt-blue-main f14 fb fl">客户档案</span>
+	                  <div class="fr"> 
+	                  <a href="/crm/release/initSave.xhtml?formLogicId=140003568282862" class="btn_liucheng_new fl">新建</a> 
+	                  <span class="fl btn_liucheng_line"></span> 
+	                  <a href="#" id="liucheng_search" class="btn_liucheng_search fl">搜索</a>
+	                  </div>
+                  </td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+        <tr>
+          <td width="100%" align="center">
+			  
+			   		
+			    
+			    
+			    
+			    
+			    
+			    
+		        
+			  <div class="jmesa"><div id="jmesaDIV">
+<table id="jmesa" border="0" cellpadding="0" cellspacing="0" class="table" style="table-layout: fixed;">
+	<thead class="thead">
+	<tr class="header">
+		<td style="text-align: left; padding-left: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 14%;"><div>单位编号</div></td>
+		<td style="text-align: left; padding-left: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 8%;"><div>单位名称</div></td>
+		<td style="width: 8%;"><div>销售员</div></td>
+		<td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 7%;"><div>所属行业</div></td>
+		<td style="width: 6%;"><div>来源</div></td>
+		<td style="width: 8%;"><div>主要联系人</div></td>
+		<td style="width: 6%;"><div>客户级别</div></td>
+		<td style="width: 7%;"><div>联系电话</div></td>
+		<td style="width: 10%;"><div>创建日期</div></td>
+		<td style="width: 26%;"><div>操作</div></td>
+	</tr>
+	</thead>
+	<tbody class="tbody">
+	<tr id="jmesa_row1" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
+		<td style="text-align: left;padding-left: 15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width: 80px;" class="word_hidden pl5" title="201606kh000002">201606kh000002</td>
+		<td style="text-align: left;padding-left: 15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width: 80px;" title="东海电子" class="word_hidden pl5">东海电子</td>
+		<td style="width: 80px;">制造业</td>
+		<td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width: 80px;" title="计算机服务和软件业" class="word_hidden pl5">计算机服务和软件业</td>
+		<td style="width: 80px;" class="word_hidden pl5" title="客户介绍">客户介绍</td>
+		<td style="width: 60px;" class="word_hidden pl5" title="张三">张三</td>
+		<td style="width: 80px;">重要</td>
+		<td style="width: 90px;" class="word_hidden pl5" title="13566666666">13566666666</td>
+		<td style="width: 80px;">2016-06-12</td>
+		<td style="width: 240px;"><a href="/crm/release/showAction.xhtml?formLogicId=140013515337556&amp;objLogicId=146537301058381&amp;dataTableLogicIds=[139996198509333]" onclick="createOverlayLoading();"><img src="../images/view.gif">详细</a><a href="/crm/release/initEdit.xhtml?formLogicId=140003568282862&amp;objLogicId=146537301058381&amp;dataTableLogicIds=[139996198509333]" onclick="createOverlayLoading();"><img src="../images/edit.gif">修改</a><a href="#" onclick="myConfirm('确定要删除吗？','/crm/khda/updateKh.xhtml?formLogicId=140013515337556&amp;flag=del&amp;objLogicId=146537301058381','window');"><img src="../images/delete.gif">删除</a><a href="#" onclick="showSaleOrders('201606kh000002');"> 查看订单</a><a href="#" onclick="showCompact('201606kh000002');"> 查看合同</a></td>
+	</tr>
+	</tbody>
+</table></div>
+<table id="toolbarTable" border="0" cellpadding="0" cellspacing="0" class="toolbarTable">
+	<tbody class="toolbarTbody">
+	<tr class="statusBar toolbar">
+		<td colspan="1">
+		<table border="0" cellpadding="0" cellspacing="1" id="saas_TableToolbar">
+			<tbody><tr>
+				<td style="width:75px"><img src="../images/firstPageDisabled.png" alt="首页"></td>
+				<td style="width:75px"><img src="../images/prevPageDisabled.png" alt="上一页"></td>
+				<td style="width:75px"><img src="../images/nextPageDisabled.png" alt="下一页"></td>
+				<td style="width:75px"><img src="../images/lastPageDisabled.png" alt="尾页"></td>
+				<td style="display:none"><img src="../images/separator.gif" alt="Separator"></td>
+				<td style="width:50px"><select name="maxRows" onchange="jQuery.jmesa.setMaxRowsToLimit('jmesa', this.options[this.selectedIndex].value);onInvokeAction('jmesa','max_rows')">
+				<option value="5">5 </option><option value="10">10 </option><option value="15" selected="selected">15 </option><option value="20">20 </option><option value="25">25 </option><option value="50">50 </option><option value="100">100 </option><option value="200">200 </option><option value="500">500 </option><option value="1000">1000 </option>
+				</select></td>
+			</tr>
+		</tbody></table>
+		</td>
+		<td align="right" colspan="1">1 - 1 条 / 共 1 条</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	try {;
+	jQuery.jmesa.addTableFacade('jmesa');
+	jQuery.jmesa.setMaxRowsToLimit('jmesa','15');
+	jQuery.jmesa.setTotalRowsToLimit('jmesa','1');
+	jQuery.jmesa.setPageToLimit('jmesa','1');
+	jQuery.jmesa.setOnInvokeAction('jmesa','onInvokeAction');
+	jQuery.jmesa.setOnInvokeExportAction('jmesa','onInvokeExportAction');
+	jQuery.jmesa.setContextPath('jmesa','/crm');
+	} catch (e) {};
+});
+</script>
+<input type="hidden" id="formLogicId" name="formLogicId" value="139996803967149">
+<input type="hidden" id="parameterList" name="parameterList" value="{'refButton':'false','delButton':'false','searchButton':'false','tablePage':'false','timeRef':'false','tableName':'','tableLogicId':'140004434514012','sqltype':'0','selectSql':'U0VMRUNUK2FwcGluZm8uQ1VTVE9NRVJOTyslRTUlOEQlOTUlRTQlQkQlOEQlRTclQkMlOTYlRTUlOEYlQjclMkNhcHBpbmZvLm5hbWUrJUU1JThEJTk1JUU0JUJEJThEJUU1JTkwJThEJUU3JUE3JUIwJTJDYXBwaW5mby5CRUxPTkdfUEVSU09OX05BTUUrJUU5JTk0JTgwJUU1JTk0JUFFJUU1JTkxJTk4JTJDYXBwaW5mby5pbmR1c3RyeSslRTYlODklODAlRTUlQjElOUUlRTglQTElOEMlRTQlQjglOUElMkNhcHBpbmZvLmNvbWVmcm9tKyVFNiU5RCVBNSVFNiVCQSU5MCUyQ2x4cmRhLmNvbnRhY3RzKyVFNCVCOCVCQiVFOCVBNiU4MSVFOCU4MSU5NCVFNyVCMyVCQiVFNCVCQSVCQSUyQ2FwcGluZm8uQ0xJRU5UUkFUSU5HKyVFNSVBRSVBMiVFNiU4OCVCNyVFNyVCQSVBNyVFNSU4OCVBQiUyQ2x4cmRhLk1PQklMRVBIT05FKyVFOCU4MSU5NCVFNyVCMyVCQiVFNyU5NCVCNSVFOCVBRiU5RCUyQ2FwcGluZm8uQ1JFQVRFX1RJTUUrJUU1JTg4JTlCJUU1JUJCJUJBJUU2JTk3JUE1JUU2JTlDJTlGJTJDQ09OQ0FUJTI4Q09OQ0FUJTI4JTI3JTNDYStocmVmJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGcmVsZWFzZSUyRnNob3dBY3Rpb24ueGh0bWwlM0Zmb3JtTG9naWNJZCUzRDE0MDAxMzUxNTMzNzU1NiUyNm9iakxvZ2ljSWQlM0QlMjclMkNhcHBpbmZvLmxvZ2ljX2lkJTJDJTI3JTI2ZGF0YVRhYmxlTG9naWNJZHMlM0QlNUIxMzk5OTYxOTg1MDkzMzMlNUQrb25jbGljayUzRGNyZWF0ZU92ZXJsYXlMb2FkaW5nJTI4JTI5JTNCJTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRnZpZXcuZ2lmKyUyRiUzRSVFOCVBRiVBNiVFNyVCQiU4NiUzQyUyRmElM0UlMjclMjklMkMlMjhDQVNFK2FwcGluZm8ud29ya2Zsb3dfc3RhdHVzK1dIRU4rJTI3JUU2JTlDJUFBJUU1JUE0JTg0JUU3JTkwJTg2JTI3K1RIRU4rJTI4JTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCsrY29sb3IlM0RncmV5JTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmZvbnQlM0UlM0MlMkZhJTNFJTI3JTI5K1dIRU4rJTI3JUU1JUE0JTg0JUU3JTkwJTg2JUU0JUI4JUFEJTI3K1RIRU4rJTI4JTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCsrY29sb3IlM0RncmV5JTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmZvbnQlM0UlM0MlMkZhJTNFJTI3JTI5K1dIRU4rJTI3JUU1JUE0JTg0JUU3JTkwJTg2JUU1JUFFJThDJUU2JTg4JTkwJTI3K1RIRU4rJTI4JTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCsrY29sb3IlM0RncmV5JTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmZvbnQlM0UlM0MlMkZhJTNFJTI3JTI5K0VMU0UrQ09OQ0FUJTI4JTI3JTNDYStocmVmJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGcmVsZWFzZSUyRmluaXRFZGl0LnhodG1sJTNGZm9ybUxvZ2ljSWQlM0QxNDAwMDM1NjgyODI4NjIlMjZvYmpMb2dpY0lkJTNEJTI3JTJDYXBwaW5mby5sb2dpY19pZCUyQyUyNyUyNmRhdGFUYWJsZUxvZ2ljSWRzJTNEJTVCMTM5OTk2MTk4NTA5MzMzJTVEK29uY2xpY2slM0RjcmVhdGVPdmVybGF5TG9hZGluZyUyOCUyOSUzQiUzRSUzQ2ltZytzcmMlM0QlN0Jjb250ZXh0Um9vdFBhdGglN0QlMkZpbWFnZXMlMkZlZGl0LmdpZislMkYlM0UlRTQlQkYlQUUlRTYlOTQlQjklM0MlMkZhJTNFJTI3JTI5K0VORCUyOSUyQyUyOENPTkNBVCUyOCUyNyUzQ2EraHJlZiUzRCUyMytvbkNsaWNrJTNEbXlDb25maXJtJTI4JTVDJTI3JUU3JUExJUFFJUU1JUFFJTlBJUU4JUE2JTgxJUU1JTg4JUEwJUU5JTk5JUE0JUU1JTkwJTk3JUVGJUJDJTlGJTVDJTI3JTJDJTVDJTI3JTdCY29udGV4dFJvb3RQYXRoJTdEJTJGa2hkYSUyRnVwZGF0ZUtoLnhodG1sJTNGZm9ybUxvZ2ljSWQlM0QxNDAwMTM1MTUzMzc1NTYlMjZmbGFnJTNEZGVsJTI2b2JqTG9naWNJZCUzRCUyNyUyQ2FwcGluZm8ubG9naWNfaWQlMkMlMjclNUMlMjclMkMlNUMlMjd3aW5kb3clNUMlMjclMjklM0IlM0UlM0NpbWcrc3JjJTNELi4lMkZpbWFnZXMlMkZkZWxldGUuZ2lmKyUyRiUzRSVFNSU4OCVBMCVFOSU5OSVBNCUzQyUyRmElM0UlMjclMjklMjklMkNDT05DQVQlMjglMjclM0NhK2hyZWYlM0QlMjMrb25DbGljayUzRHNob3dTYWxlT3JkZXJzJTI4JTVDJTI3JTI3JTJDYXBwaW5mby5jdXN0b21lck5vJTJDJTI3JTVDJTI3JTI5JTNCJTNFKyVFNiU5RiVBNSVFNyU5QyU4QiVFOCVBRSVBMiVFNSU4RCU5NSUzQyUyRmElM0UlMjclMjklMkNDT05DQVQlMjglMjclM0NhK2hyZWYlM0QlMjMrb25DbGljayUzRHNob3dDb21wYWN0JTI4JTVDJTI3JTI3JTJDYXBwaW5mby5jdXN0b21lck5vJTJDJTI3JTVDJTI3JTI5JTNCJTNFKyVFNiU5RiVBNSVFNyU5QyU4QiVFNSU5MCU4OCVFNSU5MCU4QyUzQyUyRmElM0UlMjclMjklMjkrJUU2JTkzJThEJUU0JUJEJTlDK0ZST00rJTdCb3JnYW4uY29kZSU3RF8lN0JkYi5uYW1lJTdEX0NVU1RPTUVSK2FwcGluZm8rTEVGVCtKT0lOKyU3Qm9yZ2FuLmNvZGUlN0RfJTdCZGIubmFtZSU3RF9LSExYUitraGx4citPTithcHBpbmZvLkxPR0lDX0lEKyUzRCtraGx4ci5raGlkK0xFRlQrSk9JTislN0Jvcmdhbi5jb2RlJTdEXyU3QmRiLm5hbWUlN0RfTFhSREErbHhyZGErT04ra2hseHIubHhyaWQrJTNEK2x4cmRhLkxPR0lDX0lEK0FORCtseHJkYS5NQUlOQ09OVEFDVFMrJTNEKyUyNyVFNiU5OCVBRiUyNysrV0hFUkUrMSslM0QrMStPUkRFUitCWSthcHBpbmZvLmNyZWF0ZV90aW1lK0RFU0M=2aab7fdb9405719451aa011c65c55d56'}">
+<script type="text/javascript">
+	function onInvokeAction(id) {
+		$.jmesa.setExportToLimit(id, '');
+		$.jmesa.createHiddenInputFieldsForLimitAndSubmit(id);
+	}
+	function onInvokeExportAction(id) {
+		var parameterString = $.jmesa.createParameterStringForLimit(id);
+		post("http://merm.ctcloud.com.cn:82/crm//release/list.xhtml?"+parameterString, jQuery.parseJSON("{\"formLogicId\":\"139996803967149\",\"parameterList\":\"{'refButton':'false','delButton':'false','searchButton':'false','tablePage':'false','timeRef':'false','tableName':'','tableLogicId':'140004434514012','sqltype':'0','selectSql':'U0VMRUNUK2FwcGluZm8uQ1VTVE9NRVJOTyslRTUlOEQlOTUlRTQlQkQlOEQlRTclQkMlOTYlRTUlOEYlQjclMkNhcHBpbmZvLm5hbWUrJUU1JThEJTk1JUU0JUJEJThEJUU1JTkwJThEJUU3JUE3JUIwJTJDYXBwaW5mby5CRUxPTkdfUEVSU09OX05BTUUrJUU5JTk0JTgwJUU1JTk0JUFFJUU1JTkxJTk4JTJDYXBwaW5mby5pbmR1c3RyeSslRTYlODklODAlRTUlQjElOUUlRTglQTElOEMlRTQlQjglOUElMkNhcHBpbmZvLmNvbWVmcm9tKyVFNiU5RCVBNSVFNiVCQSU5MCUyQ2x4cmRhLmNvbnRhY3RzKyVFNCVCOCVCQiVFOCVBNiU4MSVFOCU4MSU5NCVFNyVCMyVCQiVFNCVCQSVCQSUyQ2FwcGluZm8uQ0xJRU5UUkFUSU5HKyVFNSVBRSVBMiVFNiU4OCVCNyVFNyVCQSVBNyVFNSU4OCVBQiUyQ2x4cmRhLk1PQklMRVBIT05FKyVFOCU4MSU5NCVFNyVCMyVCQiVFNyU5NCVCNSVFOCVBRiU5RCUyQ2FwcGluZm8uQ1JFQVRFX1RJTUUrJUU1JTg4JTlCJUU1JUJCJUJBJUU2JTk3JUE1JUU2JTlDJTlGJTJDQ09OQ0FUJTI4Q09OQ0FUJTI4JTI3JTNDYStocmVmJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGcmVsZWFzZSUyRnNob3dBY3Rpb24ueGh0bWwlM0Zmb3JtTG9naWNJZCUzRDE0MDAxMzUxNTMzNzU1NiUyNm9iakxvZ2ljSWQlM0QlMjclMkNhcHBpbmZvLmxvZ2ljX2lkJTJDJTI3JTI2ZGF0YVRhYmxlTG9naWNJZHMlM0QlNUIxMzk5OTYxOTg1MDkzMzMlNUQrb25jbGljayUzRGNyZWF0ZU92ZXJsYXlMb2FkaW5nJTI4JTI5JTNCJTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRnZpZXcuZ2lmKyUyRiUzRSVFOCVBRiVBNiVFNyVCQiU4NiUzQyUyRmElM0UlMjclMjklMkMlMjhDQVNFK2FwcGluZm8ud29ya2Zsb3dfc3RhdHVzK1dIRU4rJTI3JUU2JTlDJUFBJUU1JUE0JTg0JUU3JTkwJTg2JTI3K1RIRU4rJTI4JTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCsrY29sb3IlM0RncmV5JTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmZvbnQlM0UlM0MlMkZhJTNFJTI3JTI5K1dIRU4rJTI3JUU1JUE0JTg0JUU3JTkwJTg2JUU0JUI4JUFEJTI3K1RIRU4rJTI4JTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCsrY29sb3IlM0RncmV5JTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmZvbnQlM0UlM0MlMkZhJTNFJTI3JTI5K1dIRU4rJTI3JUU1JUE0JTg0JUU3JTkwJTg2JUU1JUFFJThDJUU2JTg4JTkwJTI3K1RIRU4rJTI4JTI3JTNDYStocmVmJTNEJTIzJTNFJTNDZm9udCsrY29sb3IlM0RncmV5JTNFJTNDaW1nK3NyYyUzRCU3QmNvbnRleHRSb290UGF0aCU3RCUyRmltYWdlcyUyRmVkaXQuZ2lmKyUyRiUzRSVFNCVCRiVBRSVFNiU5NCVCOSUzQyUyRmZvbnQlM0UlM0MlMkZhJTNFJTI3JTI5K0VMU0UrQ09OQ0FUJTI4JTI3JTNDYStocmVmJTNEJTdCY29udGV4dFJvb3RQYXRoJTdEJTJGcmVsZWFzZSUyRmluaXRFZGl0LnhodG1sJTNGZm9ybUxvZ2ljSWQlM0QxNDAwMDM1NjgyODI4NjIlMjZvYmpMb2dpY0lkJTNEJTI3JTJDYXBwaW5mby5sb2dpY19pZCUyQyUyNyUyNmRhdGFUYWJsZUxvZ2ljSWRzJTNEJTVCMTM5OTk2MTk4NTA5MzMzJTVEK29uY2xpY2slM0RjcmVhdGVPdmVybGF5TG9hZGluZyUyOCUyOSUzQiUzRSUzQ2ltZytzcmMlM0QlN0Jjb250ZXh0Um9vdFBhdGglN0QlMkZpbWFnZXMlMkZlZGl0LmdpZislMkYlM0UlRTQlQkYlQUUlRTYlOTQlQjklM0MlMkZhJTNFJTI3JTI5K0VORCUyOSUyQyUyOENPTkNBVCUyOCUyNyUzQ2EraHJlZiUzRCUyMytvbkNsaWNrJTNEbXlDb25maXJtJTI4JTVDJTI3JUU3JUExJUFFJUU1JUFFJTlBJUU4JUE2JTgxJUU1JTg4JUEwJUU5JTk5JUE0JUU1JTkwJTk3JUVGJUJDJTlGJTVDJTI3JTJDJTVDJTI3JTdCY29udGV4dFJvb3RQYXRoJTdEJTJGa2hkYSUyRnVwZGF0ZUtoLnhodG1sJTNGZm9ybUxvZ2ljSWQlM0QxNDAwMTM1MTUzMzc1NTYlMjZmbGFnJTNEZGVsJTI2b2JqTG9naWNJZCUzRCUyNyUyQ2FwcGluZm8ubG9naWNfaWQlMkMlMjclNUMlMjclMkMlNUMlMjd3aW5kb3clNUMlMjclMjklM0IlM0UlM0NpbWcrc3JjJTNELi4lMkZpbWFnZXMlMkZkZWxldGUuZ2lmKyUyRiUzRSVFNSU4OCVBMCVFOSU5OSVBNCUzQyUyRmElM0UlMjclMjklMjklMkNDT05DQVQlMjglMjclM0NhK2hyZWYlM0QlMjMrb25DbGljayUzRHNob3dTYWxlT3JkZXJzJTI4JTVDJTI3JTI3JTJDYXBwaW5mby5jdXN0b21lck5vJTJDJTI3JTVDJTI3JTI5JTNCJTNFKyVFNiU5RiVBNSVFNyU5QyU4QiVFOCVBRSVBMiVFNSU4RCU5NSUzQyUyRmElM0UlMjclMjklMkNDT05DQVQlMjglMjclM0NhK2hyZWYlM0QlMjMrb25DbGljayUzRHNob3dDb21wYWN0JTI4JTVDJTI3JTI3JTJDYXBwaW5mby5jdXN0b21lck5vJTJDJTI3JTVDJTI3JTI5JTNCJTNFKyVFNiU5RiVBNSVFNyU5QyU4QiVFNSU5MCU4OCVFNSU5MCU4QyUzQyUyRmElM0UlMjclMjklMjkrJUU2JTkzJThEJUU0JUJEJTlDK0ZST00rJTdCb3JnYW4uY29kZSU3RF8lN0JkYi5uYW1lJTdEX0NVU1RPTUVSK2FwcGluZm8rTEVGVCtKT0lOKyU3Qm9yZ2FuLmNvZGUlN0RfJTdCZGIubmFtZSU3RF9LSExYUitraGx4citPTithcHBpbmZvLkxPR0lDX0lEKyUzRCtraGx4ci5raGlkK0xFRlQrSk9JTislN0Jvcmdhbi5jb2RlJTdEXyU3QmRiLm5hbWUlN0RfTFhSREErbHhyZGErT04ra2hseHIubHhyaWQrJTNEK2x4cmRhLkxPR0lDX0lEK0FORCtseHJkYS5NQUlOQ09OVEFDVFMrJTNEKyUyNyVFNiU5OCVBRiUyNysrV0hFUkUrMSslM0QrMStPUkRFUitCWSthcHBpbmZvLmNyZWF0ZV90aW1lK0RFU0M=2aab7fdb9405719451aa011c65c55d56'}\"} ") ); 
+	}
+	function onInvokeCustomFilterAction(id,aa,self) {
+		$("#floatTable_139996803967149").css({
+			top: $("img[alt='搜索/排序']", $("#139996803967149")).offset().top + 20,
+			left: $("img[alt='搜索/排序']", $("#139996803967149")).offset().left
+		}).show();
+	}
+	function hideFloatTable(self) {
+		$(self).hide();
+	}
+	$(document).ready(function() {
+		$(document).on("click", function() {
+			hideFloatTable($("#floatTable_139996803967149"));
+		}); 
+	});
+</script>
+
+	      </td>
+        </tr>
+      </tbody></table>
+     </td>
+      <td width="20%" align="right" valign="top">
+          <!--右侧面板-->
+          <div class="right_aside overflow fl mr10" style="width:95%">
+            <div class="aside_area">                
+                 <!-- 最近对手 -->	
+                 
+					
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<title>对手minList</title>
+<link href="/crm/css/main.css" rel="stylesheet" type="text/css">
+<link href="/crm/css/reset.css" rel="stylesheet" type="text/css">
+
+
+	<div class="aside_area_title">
+		<h3 class="aside_area_title_h3">竟争对手</h3>
+		<a class="fr pr10" onclick="jzdsList();" href="javascript:void(0);">更多</a>
+	</div>
+	<ul class="aside_area_info" id="oppcontent">
+		
+			
+			<li class="aside_area_info_li"> 				
+				<a title="1111" href="javascript:;" class="word_hidden aside_area_info_li_a" style="cusor:pointer" onclick="javascript:jzds('141379149329863')">1111</a>
+				<span class="fr aside_area_info_li_span" style="width:40%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="采矿业">采矿业</span>
+			</li>		
+			
+			<li class="aside_area_info_li"> 				
+				<a title="234" href="javascript:;" class="word_hidden aside_area_info_li_a" style="cusor:pointer" onclick="javascript:jzds('141559747202712')">234</a>
+				<span class="fr aside_area_info_li_span" style="width:40%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="采矿业">采矿业</span>
+			</li>		
+			
+			<li class="aside_area_info_li"> 				
+				<a title="34234" href="javascript:;" class="word_hidden aside_area_info_li_a" style="cusor:pointer" onclick="javascript:jzds('141559747202723')">34234</a>
+				<span class="fr aside_area_info_li_span" style="width:40%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="牧业">牧业</span>
+			</li>		
+			
+			<li class="aside_area_info_li"> 				
+				<a title="fe3fefef" href="javascript:;" class="word_hidden aside_area_info_li_a" style="cusor:pointer" onclick="javascript:jzds('141835697785128')">fe3fefef</a>
+				<span class="fr aside_area_info_li_span" style="width:40%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="建造业">建造业</span>
+			</li>		
+			
+		
+	</ul>
+	<script>
+		function jzds(tj){
+			 window.location.href=contextRootPath+"/release/showAction.xhtml?formLogicId=140011858612525&objLogicId="+tj+"&dataTableLogicIds=[140006036160943]";
+		}
+		function jzdsList(){
+			 window.location.href=contextRootPath+"/release/jump.xhtml?formLogicId=140011858612551";
+		}
+	</script>
+
+ 
+              </div>
+          </div>
+          <!--右侧面板 end-->
+       </td>
+  </tr>
+  <tr>
+    <td height="24" align="center" valign="top">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<!-- end 中间内容 -->
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="main_bottom" style="padding: 0px 15px 0px 20px; overflow: hidden; width:100%; height: 38px; position: fixed; left: 0; bottom: 0; z-index: 999;">
+    <div class="main_bottom_copyright" style="margin-top: 8px;">
+    </div>
+</div>
+
+</div>
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/momo.js"></script>
+
+</body>
+
+</html>

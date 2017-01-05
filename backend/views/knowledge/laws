@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=1170" />
+    <meta name="save" content="history">
+    <link href="http://static.wanfangdata.com.cn/wfks/css/animate.min.css?v=201610091258" rel="stylesheet" />
+    <link href="../web/css/wf/global.min.css" rel="stylesheet" />
+    <link href="../web/css/wf/c.min.css" rel="stylesheet" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="/favicon.ico" rel="apple-touch-icon" />
+    <!--[if lt IE 9 ]><link href="http://static.wanfangdata.com.cn/wfks/css/ltie9.min.css?v=201610091258" rel="stylesheet" /><![endif]-->
+    
+    <title>法律法规-万方数据知识服务平台</title>
+    <link href="../web/css/wf/nstr-1.1.0.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div class="header" style="padding-top: 0px;width: 100%;backgroud:#ffffff url();">
+        <!-- <div class="nav clear">
+            <a href="http://www.wanfangdata.com.cn/">
+                <img class="logo" src="http://static.wanfangdata.com.cn/wfks/img/logo_new.png" alt="" /></a>
+            <ul>
+                <li class="active fixed" data-target="search-wrap">检索</li>
+                <li id="navResource" data-target="resource-wrap">资源</li>
+                <li id="navService" data-target="service-wrap">服务</li>
+                <li class="profile"></li>
+            </ul>
+        </div> -->
+        <div class="width-wrap search-wrap active fixed">
+            <div class="panel search-panel clear">
+                <div class="drp res-drp clear">
+                    <div class="res-lb">
+                        <span id="res" class="lb">学术论文</span>
+                        <i class="icon-more"></i>
+                    </div>
+                    <div class="res-list bd pop" data-open=".res-lb">
+                        <span class="clear-shadow"></span>
+                        <ul class="resource clear"></ul>
+                        <ul class="library clear"></ul>
+                    </div>
+                </div>
+                <input class="search-input" type="search" name="q" autocomplete="off" />
+                <div id="adSearchBtn" class="icon-search-ad" type="button">
+		<div class="search-ad pop">
+                    <a target="_blank" id="adSearchLink" href="http://librarian.wanfangdata.com.cn/">跨库检索</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide?helpitem=searchepaper">检索帮助</a>
+                </div>
+		</div>
+                <button class="btn icon-search search-btn" type="submit"></button>
+                <div class="search-tip-field pop"></div>
+            </div>
+        </div>
+        <div class="width-wrap resource-wrap">
+            <div class="panel resource-panel"></div>
+        </div>
+        <div class="width-wrap service-wrap">
+            <div class="panel service-panel clear">
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzfu"></i>
+                        <h6 class="tt">增值服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://social.wanfangdata.com.cn/">万方学术圈</a>
+                        <a target="_blank" href="http://trend.wanfangdata.com.cn/">知识脉络分析</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/">查新/跨库检索</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/ScientificLiterature">科技文献分析</a>                        
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-gjlfu"></i>
+                        <h6 class="tt">工具类服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://check.wanfangdata.com.cn/">论文相似性检测</a>
+                        <a target="_blank" href="http://stats.wanfangdata.com.cn/">国家经济统计数据库</a>
+                        <a target="_blank" href="http://patentool.wanfangdata.com.cn/">专利工具</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-bjbzyfu"></i>
+                        <h6 class="tt">编辑部专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://stats.editors.wanfangdata.com.cn/">期刊统计分析与评价</a>
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/ResourceDescription/DOI">中文DOI</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/">优先出版</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/Regular">同步出版</a>
+                        <a target="_blank" href="http://editors.wanfangdata.com.cn/">编审平台</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzzyff"></i>
+                        <h6 class="tt">作者专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                        <a target="_blank" href="http://contribute.wanfangdata.com.cn/">投稿</a>
+                        <a target="_blank" href="http://oa.wanfangdata.com.cn/">OA论文托管</a>
+                    </div>
+                </div>
+                <div class="md last-md">
+                    <div class="hd clear">
+                        <i class="icon icon-yqzl"></i>
+                        <h6 class="tt">舆情专栏</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://subject.wanfangdata.com.cn/">专题</a>
+                        <a target="_blank" href="http://message.wanfangdata.com.cn/">科技动态</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width-wrap account-wrap">
+            <div class="panel account-panel clear">
+                <div class="top-link">
+                    <a class="login-link">登录</a>
+                    <a href="http://login.wanfangdata.com.cn/Register/Index">注册</a>
+                    <a href="http://login.wanfangdata.com.cn/Logout.aspx">退出</a>
+                </div>
+                <div class="account-container">
+                    <div class="account person-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=myorder">查看订单</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=mywallet">我的钱包</a>
+                            <a target="_blank" href="http://tran.wanfangdata.com.cn/Charge.aspx">充值</a>
+                            <a target="_blank" class="last-item" href="http://www.wanfangdata.com.cn/UserService?tab=edituser">个人信息管理</a>
+                        </span>
+                    </div>
+                    <div class="account group-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" class="order-link" href="http://istic.wanfangdata.com.cn/Order">查看订单</a>
+                            <a target="_blank" class="last-item group-center" href="http://www.wanfangdata.com.cn/Organization">服务站</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                            
+    	<!--
+        <div class="title-wraper">
+            <h1 class="title top-title">法规</h1>
+        </div> -->
+        <div class="desc desc-resource">中国法律法规数据库（China Laws & Regulations Database，CLRD），收录始于1949年，数据源自国家信息中心，权威、专业，涵盖国家法律法规、行政法规、地方法规、国际条约及惯例、司法解释、合同范本等。</div>
+    
+    <div class="content content-c">
+        <div class="section clear">
+            <div class="title">效力级别</div>
+            <div class="bd">
+                <div class="list">
+                    
+                    
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e6%b3%95%e5%be%8b">法律</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e5%8f%b8%e6%b3%95%e8%a7%a3%e9%87%8a">司法解释</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e8%a1%8c%e6%94%bf%e6%b3%95%e8%a7%84">行政法规</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e7%9c%81%e7%ba%a7%e5%9c%b0%e6%96%b9%e6%80%a7%e6%b3%95%e8%a7%84">省级地方性法规</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e8%be%83%e5%a4%a7%e5%b8%82%e5%9c%b0%e6%96%b9%e6%80%a7%e6%b3%95%e8%a7%84">较大市地方性法规</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e5%9c%b0%e6%96%b9%e6%94%bf%e5%ba%9c%e8%a7%84%e7%ab%a0">地方政府规章</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e9%83%a8%e9%97%a8%e8%a7%84%e7%ab%a0">部门规章</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e9%83%a8%e9%97%a8%e8%a7%84%e8%8c%83%e6%80%a7%e6%96%87%e4%bb%b6">部门规范性文件</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e7%bb%8f%e6%b5%8e%e7%89%b9%e5%8c%ba%e6%b3%95%e8%a7%84">经济特区法规</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e8%87%aa%e6%b2%bb%e6%9d%a1%e4%be%8b%e5%92%8c%e5%8d%95%e8%a1%8c%e6%9d%a1%e4%be%8b">自治条例和单行条例</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e5%9c%b0%e6%96%b9%e8%a7%84%e8%8c%83%e6%80%a7%e6%96%87%e4%bb%b6">地方规范性文件</a>
+                            </span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=effectlevel%3a%e5%85%b6%e4%bb%96%e8%a7%84%e8%8c%83%e6%80%a7%e6%96%87%e4%bb%b6">其他规范性文件</a>
+                            </span>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="section clear">
+            <div class="title">内容分类</div>
+            <div class="bd">
+                <div class="list">
+                    
+                    
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aGJFL">国家法律</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aGJTY">国际条约</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aXZFG">行政法规</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aCPWS">人民法院裁判文书</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aSFJS">司法解释</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aGBAL">最高人民法院公报案例</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aBMGZ">部门规章</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aFLWS">法律文书样式</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aDFFG">地方法规规章</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aGAT">港澳台法律法规</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aHTFB">合同范本</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aWGFL">外国法律</a></span>
+                        
+                            <span class="link-wraper">
+                                <a class="link" href="http://s.wanfangdata.com.cn/Claw.aspx?f=claw.Cateogory&q=DBID%3aZCCJ">仲裁裁决案例</a></span>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="footer-wrap">
+        <div class="lt-bg"></div>
+        <div class="rt-bg"></div>
+        <div class="footer clear">
+            <div class="lt">
+                <div class="top">
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide">帮助</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/CustomerService/Services">客户服务</a>
+                    <a target="_blank" href="http://www.sojump.com/jq/4550749.aspx">问卷调查</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/AboutUs/index">关于我们</a>
+                    <a target="_blank" href="http://www.wanfang.com.cn/">公司首页</a>
+                    <a target="_blank" href="http://weibo.com/wanfangdata">平台微博</a>
+                    <a target="_blank" href="http://wanfangdata.zhiye.com/">加入我们</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/Sitemap">网站地图</a>
+                    <a id="langCN" data-lang="zn-CN" class="lang">简</a>
+                    <a id="langTW" data-lang="zn-TW" class="lang">繁</a>
+                    <a id="langEN" data-lang="EN" href="http://www.wanfangdata.com/" target="_blank">ENG</a>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/hlwcb.jpg">互联网出版许可证：新出网证(京)字042号</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/zhengshu_2.jpg">互联网药品信息服务资格证书号：(京)-经营性-2011-0017</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/stjmxkz2.jpg">信息网络传播视听节目许可证 许可证号：0108284 </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/icp.jpg">京ICP证：010071</a>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020237" ><img src="http://ad.wanfangdata.com.cn/images/gabeian.png" style="margin-right:2px;"/>京公网安备11010802020237号</a>
+<a target="_blank" href="http://ad.wanfangdata.com.cn/images/yunicp.jpg">万方数据知识资源云服务系统[简称：知识云服务平台]V1.0 证书号：软著登字第1016589号</a>
+                    </div>
+                    <p>万方数据知识服务平台--国家科技支撑计划资助项目（编号：2006BAH03B01）©北京万方数据股份有限公司  万方数据电子出版社</p>
+                </div>
+            </div>
+            <div class="rt">
+                <div class="top">
+                    <i class="icon icon-service"></i>
+                    <span>联系客服</span>
+                </div>
+                <ul class="contactus">
+                             <li><i class="contactus-online"></i><a onclick="onlineService('http://www.wanfangdata.com.cn/')">在线客服</a></li>
+                             <li><i class="contactus-tel"></i>4000115888</li>
+                             <li><i class="contactus-email"></i>service@wanfangdata.com.cn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    -->
+<script type="text/javascript" charset="utf-8" src="http://static.wanfangdata.com.cn/wfks/js/wf.service-1.3.js"></script>
+                            
+                            
+    
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-ui-1.11.4.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.wanfangdata.com.cn/Config/index"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/js/global.min.js?v=201610091258"></script>
+        <script type="text/javascript">
+            (function () {
+                wf.header.resource.init({ id: 'claw' });
+                wf.fixbox.init();
+                $('.content-c .data-link').click(function () {
+                    var $this = $(this);
+                    var $list = $this.parent().parent();
+                    var ajaxModel = {
+                        filePath: $list.data('ajax-xmlpath'),
+                        templ: $list.data('ajax-templ'),
+                        pt: $list.data('ajax-pt'),
+                        st: $list.data('ajax-st'),
+                        wrap: $list.data('ajax-wrap')
+                    };
+                    $.getJSON('XmlFetch.ashx', { filePath: ajaxModel.filePath, nodeValue: $this.data('value') }, function (result) {
+                        var html = [];
+                        $this.addClass('active');
+                        $list.find('.data-link').not($this).removeClass('active');
+                        var pushItems = function (arr, t, fun, wrap) {
+                            $.each(this, function () {
+                                if ($.isFunction(fun)) { fun(this, arr, t); }
+                                else { arr.push(t.format(this.Name, encodeURIComponent(this.Value), this.Buy === 'False' ? 'notbuy' : '')); }
+                            });
+                        }
+                        if (ajaxModel.templ) {
+                            pushItems.call(result.Children, html, ajaxModel.templ);
+                        } else {
+                            pushItems.call(result.Children, html, ajaxModel.pt, function (item, arr, pt) {
+                                var sls = [];
+                                pushItems.call(item.Children, sls, ajaxModel.st);
+                                html.push('<div class="tb-list-item clear">{0}</div>'.format('<span class="p-link">{0}</span>'.format(pt.format(item.Name, encodeURIComponent(item.Value), item.Buy === 'False' ? 'notbuy' : '')) + '<span class="s-link">{0}</span>'.format(sls.join('<span class="spliter"> | </span>'))));
+                            });
+                        }
+                        $list.next().html(html.join(''));
+                    });
+                });
+            })();
+        </script>
+    
+    
+</body>
+</html>
+

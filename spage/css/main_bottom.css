@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/**************************main_bottom*******************************/
+.main_bottom{
+	background:url(../images/main_bottom_bg.gif) repeat-x;
+	height:58px;
+	overflow:hidden;
+}
+
+/* main_bottom_nav_cur */
+.bottom_nav_cur{
+	 float: left;
+	 margin-right:2px;
+	 overflow:hidden;
+	 display:inline;
+}
+.bottom_nav_cur_left{
+	background:url(../images/main_bottom_nav_left_cur.png) no-repeat;
+	width:3px;
+	height:27px;
+	line-height:27px;
+	overflow:hidden;
+	float:left;
+}
+.bottom_nav_cur_right{
+	background:url(../images/main_bottom_nav_right_cur.png) no-repeat;
+	width:3px;
+	height:27px;
+	line-height:27px;
+	overflow:hidden;
+	float:left;
+}
+.bottom_nav_cur_content{
+	background:url(../images/main_bottom_nav_bg_cur.jpg) repeat-x;
+	text-align:center;
+	height:27px;
+	line-height:27px;
+	padding:0 3px 0 10px;
+	display:block;	
+	float:left;
+}
+.bottom_nav_cur_content_a{
+	color:#005aa0;
+	display:inline;
+	float:left;
+}
+	.bottom_nav_cur_content_a:hover{
+		color:#00355f;
+	}
+.bottom_nav_cur_close{
+	background:url(../images/imgBg.png) no-repeat -486px 0;
+	width:12px;
+	height:11px;
+	float:left;
+	display:block;
+	position:relative;
+}
+
+/* main_bottom_nav */
+.bottom_nav{
+	 float: left;
+	 margin-right:2px;
+	 overflow:hidden;
+	 display:inline;
+}
+.bottom_nav_left{
+	background:url(../images/main_bottom_nav_left.png) no-repeat;
+	width:3px;
+	height:27px;
+	line-height:27px;
+	overflow:hidden;
+	float:left;
+}
+.bottom_nav_right{
+	background:url(../images/main_bottom_nav_right.png) no-repeat;
+	width:3px;
+	height:27px;
+	line-height:27px;
+	overflow:hidden;
+	float:left;
+}
+.bottom_nav_content{
+	background:url(../images/main_bottom_nav_bg.png) repeat-x;
+	text-align:center;
+	min-width:30px;
+	height:27px;
+	line-height:27px;
+	padding:0 5px 0 5px;
+	display:block;
+	float:left;
+}
+.bottom_nav_content_a{
+	color:#62737e;
+	display:inline;
+}
+	.bottom_nav_content_a:hover{
+		color:#003557;
+	}
+
+
+
+.main_bottom_copyright{
+	float:right;
+}

@@ -1,0 +1,93 @@
+.modal-dialog{ z-index:9999;}
+.navbar-brand{ font-size:16px; font-weight: bold;}
+body{ font-family: Microsoft Yahei;}
+ul,li{ padding: 0; margin: 0; list-style: none;}
+.mergeRow{ margin-left: 0; margin-right: 0;}
+.mergeRow [class^=col-]{ padding-left: 0; padding-right: 0;}
+
+.col-red{ color: #f30;}
+.col-blue{ color: #0862A8;}
+.btn-darkblue{ background:#003865; color:#fff;}
+.btn-darkblue.focus,.btn-darkblue:focus{color:#fff;background-color:#003865;}
+.btn-darkblue:hover{color:#fff; background-color:#0F3E62;}
+.navbar-toggle{ background:#eee;}
+.navbar-toggle .icon-bar{ background:#fff;}
+
+.imgBlock{ display: block; margin: 0 auto;}
+
+.topwrap{ background:#19527F; }
+.infos{ padding:42px 68px 0 68px;}
+.page-header{border-left: 10px #95BBEC solid; font-size:18px; font-weight: bold; padding-left:20px;}
+
+.company{ background:#f5f5f5;}
+
+/*.goodsList{}*/
+.goodsCenter{ width:202px; height: 222px; display:table;
+    text-align:center; display: inline-block; vertical-align: top; margin:0 10px; margin-bottom:20px; -webkit-tap-highlight-color: transparent;}
+.goodsCenter .goodsIteam{ width:200px; height: 180px; display:table;  vertical-align:middle; border:1px #ddd solid; margin-bottom:10px; overflow: hidden;}
+.goodsCenter .goodsIteam:hover{ border-color: #95BBEC;}
+.goodsCenter .goodsIteam span{ display:table-cell; vertical-align:middle;}
+.goodsCenter .name{ display: block; text-align: center; font-weight: bold; height: 24px; overflow: hidden; color:#333;}
+.goodsCenter .name:hover{color:#1A4374; text-decoration: none;}
+
+/*.comanyList{}*/
+.companyCenter{ width:182px; height: 120px;display:table;
+    text-align:center; display: inline-block; vertical-align: top; margin:0 20px; margin-bottom:20px;-webkit-tap-highlight-color: transparent; overflow: hidden;}
+.companyCenter .companyIteam{ width:180px; height: 118px; display:table;  vertical-align:middle; border:1px #ddd solid; overflow: hidden;}
+.companyCenter .companyIteam span{ display:table-cell; vertical-align:middle;}
+
+.contactBox{background:#f8f8f8;}
+.contactUl{padding-top: 20px;}
+.contactUl li{height: 34px;}
+.contactUl li .name{ display: inline-block; width: 100px; font-family: Microsoft Yahei; font-weight:bold;}
+
+.footer{ height: 34px; line-height: 30px; margin-top:30px; background:#19527F; color:#fff;}
+
+.infos_pic,
+.contact_pic{ height: 260px;}
+
+.modalInfo {border-radius: 0; -webkit-border-radius: 0;}
+.modalInfo .modal-header{ background:#2282CC; color: #fff;}
+.modalInfoUl{padding-top: 20px;}
+.modalInfoUl li{line-height: 34px;}
+.modalInfoUl li .name{ display: inline-block; font-family: Microsoft Yahei; font-weight:bold;}
+.details{ margin-top: 20px;}
+.extCon p{ padding:0 20px;}
+.extCon img{ display: block; margin:0 auto; max-width: 100%;}
+
+.go_back_top{width: 40px; height: 40px; position: fixed; right: 10px; bottom:10px;}
+
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+	.infos{padding:20px;}
+	.infos_pic,
+	.contact_pic{ width: 100%; height: auto;}
+	
+	.goodsList,
+	.comanyList{ text-align: center;}
+	.contactUl{ padding:0 20px;}
+	.goodsList, .comanyList{ text-align: left;}
+	.goodsCenter{ width: 42%; height: 124px;}
+	.goodsCenter .goodsIteam{ width: 100%; height: 80px;}
+	
+	.companyCenter{ width: 42%; height:104px; margin:0 10px; }
+	.companyCenter .companyIteam{ width: 100%; height:90px; margin-bottom:10px;}
+}
+
+.position{ padding-left: 10px; height: 44px; line-height: 42px;}
+
+
+
+//zy css
+   .zytcdPageCode{padding: 15px 20px;text-align: left;color: #ccc;}  
+    .zytcdPageCode a{display: inline-block;color: #428bca;display: inline-block;height: 25px;  
+    line-height: 25px;    padding: 0 10px;border: 1px solid #ddd;    margin: 0 2px;border-radius: 4px;vertical-align: middle;}  
+    .zytcdPageCode a:hover{text-decoration: none;border: 1px solid #428bca;}  
+    .zytcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;  
+    margin: 0 2px;color: #fff;background-color: #428bca;    border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}  
+    .zytcdPageCode span.disabled{    display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;  
+    margin: 0 2px;    color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}  
+  
+
+
+
+

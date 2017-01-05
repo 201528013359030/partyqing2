@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=1170" />
+    <meta name="save" content="history">
+    <link href="http://static.wanfangdata.com.cn/wfks/css/animate.min.css?v=201610091258" rel="stylesheet" />
+    <link href="http://static.wanfangdata.com.cn/wfks/css/global.min.css?v=201610091258" rel="stylesheet" />
+    <link href="/Content/css/c.min.css" rel="stylesheet" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link href="/favicon.ico" rel="apple-touch-icon" />
+    <!--[if lt IE 9 ]><link href="http://static.wanfangdata.com.cn/wfks/css/ltie9.min.css?v=201610091258" rel="stylesheet" /><![endif]-->
+    
+    <title>科技报告-万方数据知识服务平台</title>
+    <link href="/CSS/nstr-1.1.0.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <style type="text/css">
+            .nstr-cn .show .sub-subject,.nstr-cn .click-show .sub-subject{border-top:5px solid #497baf;height:565px;}
+            .nstr-cn .show .sub-subject a,.nstr-cn .click-show .sub-subject a{*height:auto;}
+            .nstr-cn .sub-subject{filter:alpha(opacity=100);-moz-opacity:1;-webkit-opacity:1;opacity: 1;border:none; }
+            .nstr-cn .subject .disable,.nstr-cn .subject .click-disable{color:#c4c4c4;}
+            .nstr-cn .subject .disable .icon,.nstr-cn .subject .click-disable .icon{background-position:-34px 0;background-color:#ccc;}
+            .nstr-cn .subject .disable:hover .icon,.nstr-cn .subject .click-disable:hover .icon{width:28px;height:28px;background-color:#ccc;margin: 22px 20px 0 16px;background-position:-34px 0;}
+        </style>
+    <![endif]-->    
+
+</head>
+<body>
+    <div class="header">
+        <div class="nav clear">
+            <a href="http://www.wanfangdata.com.cn/">
+                <img class="logo" src="http://static.wanfangdata.com.cn/wfks/img/logo_new.png" alt="" /></a>
+            <ul>
+                <li class="active fixed" data-target="search-wrap">检索</li>
+                <li id="navResource" data-target="resource-wrap">资源</li>
+                <li id="navService" data-target="service-wrap">服务</li>
+                <li class="profile"></li>
+            </ul>
+        </div>
+        <div class="width-wrap search-wrap active fixed">
+            <div class="panel search-panel clear">
+                <div class="drp res-drp clear">
+                    <div class="res-lb">
+                        <span id="res" class="lb">学术论文</span>
+                        <i class="icon-more"></i>
+                    </div>
+                    <div class="res-list bd pop" data-open=".res-lb">
+                        <span class="clear-shadow"></span>
+                        <ul class="resource clear"></ul>
+                        <ul class="library clear"></ul>
+                    </div>
+                </div>
+                <input class="search-input" type="search" name="q" autocomplete="off" />
+                <div id="adSearchBtn" class="icon-search-ad" type="button">
+		<div class="search-ad pop">
+                    <a target="_blank" id="adSearchLink" href="http://librarian.wanfangdata.com.cn/">跨库检索</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide?helpitem=searchepaper">检索帮助</a>
+                </div>
+		</div>
+                <button class="btn icon-search search-btn" type="submit"></button>
+                <div class="search-tip-field pop"></div>
+            </div>
+        </div>
+        <div class="width-wrap resource-wrap">
+            <div class="panel resource-panel"></div>
+        </div>
+        <div class="width-wrap service-wrap">
+            <div class="panel service-panel clear">
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzfu"></i>
+                        <h6 class="tt">增值服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://social.wanfangdata.com.cn/">万方学术圈</a>
+                        <a target="_blank" href="http://trend.wanfangdata.com.cn/">知识脉络分析</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/">查新/跨库检索</a>
+                        <a target="_blank" href="http://librarian.wanfangdata.com.cn/ScientificLiterature">科技文献分析</a>                        
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-gjlfu"></i>
+                        <h6 class="tt">工具类服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://check.wanfangdata.com.cn/">论文相似性检测</a>
+                        <a target="_blank" href="http://stats.wanfangdata.com.cn/">国家经济统计数据库</a>
+                        <a target="_blank" href="http://patentool.wanfangdata.com.cn/">专利工具</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-bjbzyfu"></i>
+                        <h6 class="tt">编辑部专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://stats.editors.wanfangdata.com.cn/">期刊统计分析与评价</a>
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/ResourceDescription/DOI">中文DOI</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/">优先出版</a>
+                        <a target="_blank" href="http://publish.wanfangdata.com.cn/Regular">同步出版</a>
+                        <a target="_blank" href="http://editors.wanfangdata.com.cn/">编审平台</a>
+                    </div>
+                </div>
+                <div class="md">
+                    <div class="hd clear">
+                        <i class="icon icon-zzzyff"></i>
+                        <h6 class="tt">作者专用服务</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                        <a target="_blank" href="http://contribute.wanfangdata.com.cn/">投稿</a>
+                        <a target="_blank" href="http://oa.wanfangdata.com.cn/">OA论文托管</a>
+                    </div>
+                </div>
+                <div class="md last-md">
+                    <div class="hd clear">
+                        <i class="icon icon-yqzl"></i>
+                        <h6 class="tt">舆情专栏</h6>
+                    </div>
+                    <div class="bd">
+                        <a target="_blank" href="http://subject.wanfangdata.com.cn/">专题</a>
+                        <a target="_blank" href="http://message.wanfangdata.com.cn/">科技动态</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width-wrap account-wrap">
+            <div class="panel account-panel clear">
+                <div class="top-link">
+                    <a class="login-link">登录</a>
+                    <a href="http://login.wanfangdata.com.cn/Register/Index">注册</a>
+                    <a href="http://login.wanfangdata.com.cn/Logout.aspx">退出</a>
+                </div>
+                <div class="account-container">
+                    <div class="account person-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=myorder">查看订单</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=citenotice">引用通知</a>
+                            <a target="_blank" href="http://www.wanfangdata.com.cn/UserService?tab=mywallet">我的钱包</a>
+                            <a target="_blank" href="http://tran.wanfangdata.com.cn/Charge.aspx">充值</a>
+                            <a target="_blank" class="last-item" href="http://www.wanfangdata.com.cn/UserService?tab=edituser">个人信息管理</a>
+                        </span>
+                    </div>
+                    <div class="account group-account">
+                        <i class="icon icon-point"></i>
+                        <span class="display-name"></span>
+                        <span class="my-link">
+                            <a target="_blank" class="order-link" href="http://istic.wanfangdata.com.cn/Order">查看订单</a>
+                            <a target="_blank" class="last-item group-center" href="http://www.wanfangdata.com.cn/Organization">服务站</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                            
+    
+        <div class="title-wraper">
+            <h1 class="title top-title">科技报告</h1>
+        </div>
+        <div class="desc desc-resource">中文科技报告，收录始于1966年，源于中华人民共和国科学技术部，20000余份，外文科技报告，收录始于1958年，美国政府四大科技报告（AD、DE、NASA、PB），1100000余份。</div>
+    
+    <div class="content-wraper">
+        <div class="content">
+            <div class="section">
+                <div class="title sub-title">
+                    <span class="text">中文科技报告</span>
+                    <img src="Images/nstr-split.png" alt="" />
+                    <span class="desc">中华人民共和国科学技术部已公开的中文科技报告20000余份，数据将陆续增加。</span>
+                </div>
+                <div class="nstr-cn clearfloat">
+                    <div class="subject">
+                        
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+DBID%3aCHI&f=subjectCatagory'>国家科技重大专项</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%89%be%e6%bb%8b%e7%97%85%e5%92%8c%e7%97%85%e6%af%92%e6%80%a7%e8%82%9d%e7%82%8e%e7%ad%89%e9%87%8d%e5%a4%a7%e4%bc%a0%e6%9f%93%e7%97%85%e9%98%b2%e6%b2%bb%22+DBID%3aCHI&f=subjectCatagory'>艾滋病和病毒性肝炎等重大传染病防治</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%a4%a7%e5%9e%8b%e5%85%88%e8%bf%9b%e5%8e%8b%e6%b0%b4%e5%a0%86%e5%8f%8a%e9%ab%98%e6%b8%a9%e6%b0%94%e5%86%b7%e5%a0%86%e6%a0%b8%e7%94%b5%e7%ab%99%22+DBID%3aCHI&f=subjectCatagory'>大型先进压水堆及高温气冷堆核电站</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%a4%a7%e5%9e%8b%e6%b2%b9%e6%b0%94%e7%94%b0%e5%8f%8a%e7%85%a4%e5%b1%82%e6%b0%94%e5%bc%80%e5%8f%91%22+DBID%3aCHI&f=subjectCatagory'>大型油气田及煤层气开发</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e9%ab%98%e6%a1%a3%e6%95%b0%e6%8e%a7%e6%9c%ba%e5%ba%8a%e4%b8%8e%e5%9f%ba%e7%a1%80%e5%88%b6%e9%80%a0%e6%8a%80%e6%9c%af%22+DBID%3aCHI&f=subjectCatagory'>高档数控机床与基础制造技术</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%a0%b8%e5%bf%83%e7%94%b5%e5%ad%90%e5%99%a8%e4%bb%b6%e3%80%81%e9%ab%98%e7%ab%af%e9%80%9a%e7%94%a8%e8%8a%af%e7%89%87%e5%8f%8a%e5%9f%ba%e7%a1%80%e8%bd%af%e4%bb%b6%22+DBID%3aCHI&f=subjectCatagory'>核心电子器件、高端通用芯片及基础软件</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%9e%81%e5%a4%a7%e8%a7%84%e6%a8%a1%e9%9b%86%e6%88%90%e7%94%b5%e8%b7%af%e5%88%b6%e9%80%a0%e6%8a%80%e6%9c%af%e5%8f%8a%e6%88%90%e5%a5%97%e5%b7%a5%e8%89%ba%22+DBID%3aCHI&f=subjectCatagory'>极大规模集成电路制造技术及成套工艺</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%b0%b4%e4%bd%93%e6%b1%a1%e6%9f%93%e6%8e%a7%e5%88%b6%e4%b8%8e%e6%b2%bb%e7%90%86%22+DBID%3aCHI&f=subjectCatagory'>水体污染控制与治理</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%96%b0%e4%b8%80%e4%bb%a3%e5%ae%bd%e5%b8%a6%e6%97%a0%e7%ba%bf%e7%a7%bb%e5%8a%a8%e9%80%9a%e4%bf%a1%22+DBID%3aCHI&f=subjectCatagory'>新一代宽带无线移动通信</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e9%87%8d%e5%a4%a7%e6%96%b0%e8%8d%af%e5%88%9b%e5%88%b6%22+DBID%3aCHI&f=subjectCatagory'>重大新药创制</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e9%87%8d%e5%a4%a7%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%bd%ac%e5%9f%ba%e5%9b%a0%e7%94%9f%e7%89%a9%e6%96%b0%e5%93%81%e7%a7%8d%e5%9f%b9%e8%82%b2%22+DBID%3aCHI&f=subjectCatagory'>转基因生物新品种培育</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+DBID%3aCHI&f=subjectCatagory'>国家重点基础研究发展计划</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%9d%90%e6%96%99%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>材料科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%81%a5%e5%ba%b7%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>健康科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%83%bd%e6%ba%90%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>能源科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%86%9c%e4%b8%9a%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>农业科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%bf%a1%e6%81%af%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>信息科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%88%b6%e9%80%a0%e4%b8%8e%e5%b7%a5%e7%a8%8b%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>制造与工程科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e5%89%8d%e6%b2%bf%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>重大科学前沿领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%b5%84%e6%ba%90%e7%8e%af%e5%a2%83%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>资源环境科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e7%82%b9%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%bb%bc%e5%90%88%e4%ba%a4%e5%8f%89%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>综合交叉科学领域</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+DBID%3aCHI&f=subjectCatagory'>国家高技术研究发展计划</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9c%b0%e7%90%83%e8%a7%82%e6%b5%8b%e4%b8%8e%e5%af%bc%e8%88%aa%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>地球观测与导航技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%b5%b7%e6%b4%8b%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>海洋技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%94%9f%e7%89%a9%e5%92%8c%e5%8c%bb%e8%8d%af%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>生物和医药技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%85%88%e8%bf%9b%e8%83%bd%e6%ba%90%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>先进能源技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%85%88%e8%bf%9b%e5%88%b6%e9%80%a0%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>先进制造技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%8e%b0%e4%bb%a3%e4%ba%a4%e9%80%9a%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>现代交通技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%8e%b0%e4%bb%a3%e5%86%9c%e4%b8%9a%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>现代农业技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%96%b0%e6%9d%90%e6%96%99%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>新材料技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%bf%a1%e6%81%af%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>信息技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%ab%98%e6%8a%80%e6%9c%af%e7%a0%94%e7%a9%b6%e5%8f%91%e5%b1%95%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%b5%84%e6%ba%90%e7%8e%af%e5%a2%83%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>资源环境技术领域</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+DBID%3aCHI&f=subjectCatagory'>国家科技支撑计划</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%9d%90%e6%96%99%22+DBID%3aCHI&f=subjectCatagory'>材料</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9f%8e%e9%95%87%e5%8c%96%e4%b8%8e%e5%9f%8e%e5%b8%82%e5%8f%91%e5%b1%95%22+DBID%3aCHI&f=subjectCatagory'>城镇化与城市发展</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%9d%91%e9%95%87%e5%bb%ba%e8%ae%be%22+DBID%3aCHI&f=subjectCatagory'>村镇建设</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%85%ac%e5%85%b1%e5%ae%89%e5%85%a8%e4%b8%8e%e5%85%b6%e4%bb%96%e7%a4%be%e4%bc%9a%e4%ba%8b%e4%b8%9a%22+DBID%3aCHI&f=subjectCatagory'>公共安全与其他社会事业</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%8e%af%e5%a2%83%22+DBID%3aCHI&f=subjectCatagory'>环境</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%ba%a4%e9%80%9a%e8%bf%90%e8%be%93%22+DBID%3aCHI&f=subjectCatagory'>交通运输</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%83%bd%e6%ba%90%22+DBID%3aCHI&f=subjectCatagory'>能源</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%86%9c%e4%b8%9a%22+DBID%3aCHI&f=subjectCatagory'>农业</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%ba%ba%e5%8f%a3%e4%b8%8e%e5%81%a5%e5%ba%b7%22+DBID%3aCHI&f=subjectCatagory'>人口与健康</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%bf%a1%e6%81%af%e4%ba%a7%e4%b8%9a%e4%b8%8e%e7%8e%b0%e4%bb%a3%e6%9c%8d%e5%8a%a1%e4%b8%9a%22+DBID%3aCHI&f=subjectCatagory'>信息产业与现代服务业</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%88%b6%e9%80%a0%e4%b8%9a%22+DBID%3aCHI&f=subjectCatagory'>制造业</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e6%8a%80%e6%94%af%e6%92%91%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%b5%84%e6%ba%90%22+DBID%3aCHI&f=subjectCatagory'>资源</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+DBID%3aCHI&f=subjectCatagory'>国家国际科技合作专项</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%9d%90%e6%96%99%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>材料科学技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9c%b0%e7%90%83%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>地球科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%b7%a5%e7%a8%8b%e4%b8%8e%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>工程与技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e7%ae%a1%e7%90%86%22+DBID%3aCHI&f=subjectCatagory'>国际科技合作管理</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%8c%96%e5%ad%a6%e4%b8%8e%e5%8c%96%e5%b7%a5%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>化学与化工领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%8e%af%e5%a2%83%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>环境科学技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%ba%a4%e9%80%9a%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>交通科学技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%83%bd%e6%ba%90%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>能源科学技术领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%89%8d%e6%b2%bf%e4%b8%8e%e4%ba%a4%e5%8f%89%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>前沿与交叉领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%94%9f%e5%91%bd%e7%a7%91%e5%ad%a6%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>生命科学领域</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e5%9b%bd%e9%99%85%e7%a7%91%e6%8a%80%e5%90%88%e4%bd%9c%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e4%bf%a1%e6%81%af%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%22+DBID%3aCHI&f=subjectCatagory'>信息科学技术领域</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+DBID%3aCHI&f=subjectCatagory'>国家重大科学仪器设备开发专项</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%a4%a7%e6%b0%94%e6%8e%a2%e6%b5%8b%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>大气探测仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9c%b0%e7%90%83%e6%8e%a2%e6%b5%8b%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>地球探测仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%88%86%e6%9e%90%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>分析仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%b5%b7%e6%b4%8b%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>海洋仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%a0%b8%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>核仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e6%bf%80%e5%85%89%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>激光器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%ae%a1%e9%87%8f%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>计量仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%89%b9%e7%a7%8d%e6%a3%80%e6%b5%8b%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>特种检测仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%89%a9%e7%90%86%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>物理性能测试仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%8c%bb%e5%ad%a6%e7%a7%91%e7%a0%94%e4%bb%aa%e5%99%a8%22+DBID%3aCHI&f=subjectCatagory'>医学科研仪器</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e4%bb%aa%e5%99%a8%e8%ae%be%e5%a4%87%e5%bc%80%e5%8f%91%e4%b8%93%e9%a1%b9%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%85%b6%e4%bb%96%22+DBID%3aCHI&f=subjectCatagory'>其他</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e5%a5%96%e5%8a%b1%e9%a1%b9%e7%9b%ae%22+DBID%3aCHI&f=subjectCatagory'>国家科学技术奖励项目</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e5%a5%96%e5%8a%b1%e9%a1%b9%e7%9b%ae%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9b%bd%e5%ae%b6%e6%8a%80%e6%9c%af%e5%8f%91%e6%98%8e%e5%a5%96%22+DBID%3aCHI&f=subjectCatagory'>国家技术发明奖</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e5%a5%96%e5%8a%b1%e9%a1%b9%e7%9b%ae%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e8%bf%9b%e6%ad%a5%e5%a5%96%22+DBID%3aCHI&f=subjectCatagory'>国家科学技术进步奖</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e7%a7%91%e5%ad%a6%e6%8a%80%e6%9c%af%e5%a5%96%e5%8a%b1%e9%a1%b9%e7%9b%ae%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%9b%bd%e5%ae%b6%e8%87%aa%e7%84%b6%e7%a7%91%e5%ad%a6%e5%a5%96%22+DBID%3aCHI&f=subjectCatagory'>国家自然科学奖</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                                <div class="subject-item title">
+                                    <span class="icon"></span>
+                                    <span class="tt" data-href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+DBID%3aCHI&f=subjectCatagory'>国家重大科学研究计划</span>
+                                    <div class="sub-subject">
+                                        
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e8%9b%8b%e7%99%bd%e8%b4%a8%e7%a0%94%e7%a9%b6%22+DBID%3aCHI&f=subjectCatagory'>蛋白质研究</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%8f%91%e8%82%b2%e4%b8%8e%e7%94%9f%e6%ae%96%e7%a0%94%e7%a9%b6%22+DBID%3aCHI&f=subjectCatagory'>发育与生殖研究</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%b9%b2%e7%bb%86%e8%83%9e%e7%a0%94%e7%a9%b6%22+DBID%3aCHI&f=subjectCatagory'>干细胞研究</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e9%87%8f%e5%ad%90%e8%b0%83%e6%8e%a7%e7%a0%94%e7%a9%b6%22+DBID%3aCHI&f=subjectCatagory'>量子调控研究</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e7%ba%b3%e7%b1%b3%e7%a0%94%e7%a9%b6%22+DBID%3aCHI&f=subjectCatagory'>纳米研究</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e5%85%a8%e7%90%83%e5%8f%98%e5%8c%96%e7%a0%94%e7%a9%b6%22+DBID%3aCHI&f=subjectCatagory'>全球变化研究</a>
+                                            
+                                                <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e8%ae%a1%e5%88%92%e5%90%8d%e7%a7%b0%3a%22%e5%9b%bd%e5%ae%b6%e9%87%8d%e5%a4%a7%e7%a7%91%e5%ad%a6%e7%a0%94%e7%a9%b6%e8%ae%a1%e5%88%92%22+%e6%8a%80%e6%9c%af%e9%a2%86%e5%9f%9f%3a%22%e9%87%8d%e8%a6%81%e4%bc%a0%e6%9f%93%e7%97%85%e5%9f%ba%e7%a1%80%e7%a0%94%e7%a9%b6%e4%b8%93%e9%a2%98%22+DBID%3aCHI&f=subjectCatagory'>重要传染病基础研究专题</a>
+                                            
+                                    </div>
+                                </div>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="title sub-title">
+                    <span class="text">外文科技报告</span>
+                    <img src="Images/nstr-split.png" alt="" />
+                    <span class="desc">美国政府四大科技报告AD、DE、NASA、PB，共计1100000余份，数据将陆续增加。</span>
+                </div>
+                <!-- <ul class="nstr-en clearfloat">
+                    <li class="ad">
+                        <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e6%8a%a5%e5%91%8a%e7%b1%bb%e5%9e%8b%3aAD+DBID%3aENG&f=subjectCatagory'>
+                            <span class="title">AD</span>
+                            <span class="sub-title">美国国防部AD报告</span>
+                        </a>
+                    </li>
+                    <li class="de">
+                        <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e6%8a%a5%e5%91%8a%e7%b1%bb%e5%9e%8b%3aDE+DBID%3aENG&f=subjectCatagory'>
+                            <span class="title">DE</span>
+                            <span class="sub-title">美国能源部DE报告</span>
+                        </a>
+                    </li>
+                    <li class="nasa">
+                        <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e6%8a%a5%e5%91%8a%e7%b1%bb%e5%9e%8b%3aNASA+DBID%3aENG&f=subjectCatagory'>
+                            <span class="title">NASA</span>
+                            <span class="sub-title">美国航空航天局NASA报告</span>
+                        </a>
+                    </li>
+                    <li class="pb">
+                        <a target="_blank" href='http://s.wanfangdata.com.cn/NSTR.aspx?q=%e6%8a%a5%e5%91%8a%e7%b1%bb%e5%9e%8b%3aPB+DBID%3aENG&f=subjectCatagory'>
+                            <span class="title">PB</span>
+                            <span class="sub-title">美国商务部PB报告</span>
+                        </a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="lt-bg"></div>
+        <div class="rt-bg"></div>
+        <div class="footer clear">
+            <div class="lt">
+                <div class="top">
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/NewGuide">帮助</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/CustomerService/Services">客户服务</a>
+                    <a target="_blank" href="http://www.sojump.com/jq/4550749.aspx">问卷调查</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/AboutUs/index">关于我们</a>
+                    <a target="_blank" href="http://www.wanfang.com.cn/">公司首页</a>
+                    <a target="_blank" href="http://weibo.com/wanfangdata">平台微博</a>
+                    <a target="_blank" href="http://wanfangdata.zhiye.com/">加入我们</a>
+                    <a target="_blank" href="http://www.wanfangdata.com.cn/Sitemap">网站地图</a>
+                    <a id="langCN" data-lang="zn-CN" class="lang">简</a>
+                    <a id="langTW" data-lang="zn-TW" class="lang">繁</a>
+                    <a id="langEN" data-lang="EN" href="http://www.wanfangdata.com/" target="_blank">ENG</a>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/hlwcb.jpg">互联网出版许可证：新出网证(京)字042号</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/zhengshu_2.jpg">互联网药品信息服务资格证书号：(京)-经营性-2011-0017</a>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/stjmxkz2.jpg">信息网络传播视听节目许可证 许可证号：0108284 </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://ad.wanfangdata.com.cn/images/icp.jpg">京ICP证：010071</a>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020237" ><img src="http://ad.wanfangdata.com.cn/images/gabeian.png" style="margin-right:2px;"/>京公网安备11010802020237号</a>
+<a target="_blank" href="http://ad.wanfangdata.com.cn/images/yunicp.jpg">万方数据知识资源云服务系统[简称：知识云服务平台]V1.0 证书号：软著登字第1016589号</a>
+                    </div>
+                    <p>万方数据知识服务平台--国家科技支撑计划资助项目（编号：2006BAH03B01）©北京万方数据股份有限公司  万方数据电子出版社</p>
+                </div>
+            </div>
+            <div class="rt">
+                <div class="top">
+                    <i class="icon icon-service"></i>
+                    <span>联系客服</span>
+                </div>
+                <ul class="contactus">
+                             <li><i class="contactus-online"></i><a onclick="onlineService('http://www.wanfangdata.com.cn/')">在线客服</a></li>
+                             <li><i class="contactus-tel"></i>4000115888</li>
+                             <li><i class="contactus-email"></i>service@wanfangdata.com.cn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" charset="utf-8" src="http://static.wanfangdata.com.cn/wfks/js/wf.service-1.3.js"></script>
+                            
+                            
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/lib/jquery-ui-1.11.4.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.wanfangdata.com.cn/Config/index"></script>
+    <script type="text/javascript" src="http://static.wanfangdata.com.cn/wfks/js/global.min.js?v=201610091258"></script>
+        <script type="text/javascript">
+            (function () {
+                wf.header.resource.init({ id: 'nstr' });
+                wf.fixbox.init();
+                $('.content-c .data-link').click(function () {
+                    var $this = $(this);
+                    var $list = $this.parent().parent();
+                    var ajaxModel = {
+                        filePath: $list.data('ajax-xmlpath'),
+                        templ: $list.data('ajax-templ'),
+                        pt: $list.data('ajax-pt'),
+                        st: $list.data('ajax-st'),
+                        wrap: $list.data('ajax-wrap')
+                    };
+                    $.getJSON('XmlFetch.ashx', { filePath: ajaxModel.filePath, nodeValue: $this.data('value') }, function (result) {
+                        var html = [];
+                        $this.addClass('active');
+                        $list.find('.data-link').not($this).removeClass('active');
+                        var pushItems = function (arr, t, fun, wrap) {
+                            $.each(this, function () {
+                                if ($.isFunction(fun)) { fun(this, arr, t); }
+                                else { arr.push(t.format(this.Name, encodeURIComponent(this.Value), this.Buy === 'False' ? 'notbuy' : '')); }
+                            });
+                        }
+                        if (ajaxModel.templ) {
+                            pushItems.call(result.Children, html, ajaxModel.templ);
+                        } else {
+                            pushItems.call(result.Children, html, ajaxModel.pt, function (item, arr, pt) {
+                                var sls = [];
+                                pushItems.call(item.Children, sls, ajaxModel.st);
+                                html.push('<div class="tb-list-item clear">{0}</div>'.format('<span class="p-link">{0}</span>'.format(pt.format(item.Name, encodeURIComponent(item.Value), item.Buy === 'False' ? 'notbuy' : '')) + '<span class="s-link">{0}</span>'.format(sls.join('<span class="spliter"> | </span>'))));
+                            });
+                        }
+                        $list.next().html(html.join(''));
+                    });
+                });
+            })();
+        </script>
+    
+    <script type="text/javascript">
+        (function ($) {
+            var ActiveModel = function () {
+                var DISABLE_CLS = 'disable';
+                var hide = function () {
+                    this.removeClass(DISABLE_CLS)
+                        .siblings().removeClass(DISABLE_CLS)
+                                   .removeClass('click-' + DISABLE_CLS);
+                };
+                var isIE = function () {
+                    var b = document.createElement('b')
+                    b.innerHTML = '<!--[if IE]><i></i><![endif]-->'
+                    return b.getElementsByTagName('i').length === 1
+                }();
+                return {
+                    clone: function ($item, pre) {
+                        var cloneData = $item.clone();
+                        if (isIE) {
+                            cloneData.addClass('ie-show');
+                        } else {
+                            var offset = $item.offset();
+                            if (pre) {
+                                cloneData.css({ top: offset.top - 325, left: 0 });
+                            }
+                        }
+                        $item.before(cloneData.addClass(pre + 'show'));
+                        cloneData.find('.tt').click(function () {
+                            window.open($(this).data('href'));
+                        });
+                        $item.addClass(pre + DISABLE_CLS);
+                    },
+                    show: function ($item) {
+                        if ($item.hasClass(DISABLE_CLS) || $item.hasClass('click-'+DISABLE_CLS)) { return; }
+                        $('.subject .show,.subject .click-show').remove();
+                        hide.call($item);
+                        this.clone($item, 'click-');
+                    },
+                    init: function () {
+                        this.clone($('.nstr-cn .subject-item:first-child'), '');
+                        return this;
+                    }
+                };
+            };
+            var activeModel = ActiveModel().init();
+            $.each($('.nstr-cn .subject-item').not('.show'), function () {
+                var $this = $(this);
+                $this.click(function () {
+                    activeModel.show($(this));
+                });
+            });
+        }(jQuery));
+    </script>
+
+    
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+/*.cont2{width:100%;height:auto; margin:auto;background-color:#f1f1f1;}*/
+.cont2_le{width:100%; height:auto;  padding:0px; padding-left:20px; padding-right:20px;font-size:14px; color:#333;line-height:24px;}
+
+/*     新闻页  新闻列表          */
+
+.cont6_le_k{width:100%; height:auto;border:none;border-top:solid 1px #d3d3d3;}
+.cont6_le_k1{width:100%; height:130px; padding-top:20px;padding-bottom:20px;border:none;border-bottom:dashed 1px #d3d3d3;}
+.cont6_le_k1_1{width:66px; height:110px;float:left;}
+.cont6_le_k1_1_top{width:66px; height:63px;float:left; background-color:#f1f1f1;font-size:30px; color:#333; line-height:63px; text-align:center}
+.cont6_le_k1_1_bot{width:66px; height:24px;float:left; margin-top:1px; background-color:#f1f1f1;font-size:14px; color:#333; line-height:24px; text-align:center}
+
+.cont6_le_k1_2{width:800px; height:90px;float:left; margin-left:15px; display:inline; position:relative}
+.cont6_le_k1_21{width:800px; height:22px;float:left;font-size:18px; color:#333; line-height:22px;}
+.cont6_le_k1_21 a{color:#333;}
+.cont6_le_k1_21 a:hover{color:#00b7ef;}
+.cont6_le_k1_22{width:850px; height:44px;float:left; padding-top:4px;font-size:14px; color:#666; line-height:20px; overflow:hidden;}
+.cont6_le_k1_22 a{color:#00b7ef;}
+.cont6_le_k1_22 a:hover{color:#00b7ef;}
+.cont6_le_k1_23{width:500px; height:20px;float:left;font-size:14px; color:#999; line-height:20px;}
+.cont6_le_k1_24{width:auto; height:20px; position:absolute; right:0px; bottom:2px; padding-left:20px;font-size:14px; color:#666; line-height:20px; background:url(../images/zixun_icon.png) 0px 5px no-repeat}

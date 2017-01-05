@@ -1,0 +1,431 @@
+<div class="pageloading" style="display:block;"><img src="../images/loading.gif"><p>加载中</p></div>
+<div id="page_innerContent" class="page_innerContent" style="display: none;">
+	<div id="pmInfo" class="content-padded conTitle clearfix" >
+		<div  class="conTitle clearfix" >
+		中国科学院计算技术研究所有限公司<br>		
+		<span class="small fl">创建日期：2016-11-23</span>
+		<span class="small fr">访问量：111</span>
+		</div>
+	</div>
+	<div class="row-tab-thin"></div>
+	
+	<div class="weui_tab companyTab" id='page-ptr-navbar'>
+		<div class="weui_navbar">
+			<div data-tabs='#tab1' class="weui_navbar_item weui_bar_item_on">基本信息</div>
+			<div data-tabs='#tab2' class="weui_navbar_item">经济数据</div>
+			<div data-tabs='#tab3' class="weui_navbar_item">历史记录</div>
+		</div>
+		<div class="weui_tab_bd">
+			<div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">
+				<div class="companyInfo">					
+					<div class="iteam">
+						<span class="columName">注 册 号</span>
+						<span class="columCon">154896587</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">营业收入(万元)</span>
+						<span class="columCon">154</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">法定代表人</span>
+						<span class="columCon">王大锤</span>	
+					</div>
+				</div>
+			</div>
+			<div id="tab2" class="weui_tab_bd_item">
+			 
+		<ul id="pmTab2">
+			<li   class="companyTab2 companyTitle"><span class="item1 ">类型</span><span class="item2">年份</span><span class="item3">金额(亿元)</span></li>
+		    <li   class="companyTab2"  style="display:none;"><span class="item1 ">经济状况</span><span class="item2">2016</span><span class="item3">2212.3</span></li>
+		
+		</ul> 
+			 
+			</div>
+			<div id="tab3" class="weui_tab_bd_item" >
+						<div class="companyInfo" style="display:none;">	
+							<div class="companyTitle"><span class="item1 ">更新日期:{updateTime}</span><span class="item1 ">更新者:{updateOperator}</span></div>
+					<div class="iteam">
+						<span class="columName">公司名称</span>
+						<span class="columCon" >{cName}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">公司简介</span>
+						<span class="columCon">{intro}}</span>	
+					</div>
+							<div class="iteam">
+						<span class="columName">地理位置</span>
+						<span class="columCon">{position}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">占地面积</span>
+						<span class="columCon">{space}平方米</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">主营产品</span>
+						<span class="columCon">{products}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">就业人员</span>
+						<span class="columCon">{employees}人</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">产值</span>
+						<span class="columCon">{production}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">投资总额</span>
+						<span class="columCon">{investments}亿元/人民币</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">税收及近3年经营状况</span>
+						<span class="columCon">{taxes}</span>	
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+		
+</div>
+
+
+
+	<div  id="tpl_pmInfo" class="content-padded conTitle clearfix"  style="display:none;">
+		{cName}<br>		
+		<span class="small fl">成立日期：{foundingTime}</span>
+		<span class="small fr"> </span>
+		 
+	</div>
+ 
+	
+ 
+ 
+ 
+		
+	
+	 
+	
+	 
+				<div id="tpl_tab1" class="companyInfo" style="display:none;">	
+						<div class="companyInfo">	
+								<div class="iteam">
+						<span class="columName">注册号 </span>
+						<span class="columCon">{regMark}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">法定代表人</span>
+						<span class="columCon">{legalRep}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">占地面积</span>
+						<span class="columCon">{space}平方米</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">营业收入(万元)</span>
+						<span class="columCon">{production}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">从业人数</span>
+						<span class="columCon">{employees}人</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">企业类型</span>
+						<span class="columCon">{typeStr}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">地址</span>
+						<span class="columCon" style="line-height:1" >{position}<a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary open-popup companysite"   style="
+    vertical-align: top;" data-target="#full"  onclick="geocoder('{ccName}');">位置</a></span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">行业门类</span>
+						<span class="columCon">{industryClassStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">所属行业</span>
+						<span class="columCon">{ofIndustryStr}</span>	
+					</div>
+			 
+					<div class="iteam">
+						<span class="columName">企业状态</span>
+						<span class="columCon">{statusStr}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">登记注册类型</span>
+						<span class="columCon">{regTypeStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">企业规模</span>
+						<span class="columCon">{scaleStr}</span>	
+					</div>
+					 <div class="iteam">
+						<span class="columName">功能区</span>
+						<span class="columCon">{domainStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">所在区域</span>
+						<span class="columCon">{localRegionStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">公开联系人</span>
+						<span class="columCon">{publicContacts}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">公开联系方式</span>
+						<span class="columCon">{publicPhone}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">企业名称(简称)</span>
+						<span class="columCon">{shortName}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">邮箱</span>
+						<span class="columCon">{publicEmail}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">网址</span>
+						<span class="columCon">{publicUrl}</span>	
+					</div>
+			  	<div class="iteam">
+						<span class="columName">资产总额</span>
+						<span class="columCon">{assets}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">负债总额</span>
+						<span class="columCon">{debts}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">投资总额</span>
+						<span class="columCon">{investments}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">纳税总额</span>
+						<span class="columCon">{taxes}</span>	
+					</div>
+				 
+				</div>
+			 	 
+	 <div id="tpl_pmTab2"  style="display:none;">	
+			 <li      class="companyTab2" ><span class="item1 ">{type}</span><span class="item2">{ofyear}</span><span class="item3">{value}</span></li>
+		
+		</div>
+		
+		<div id="tpl_pmTab3" class="weui_tab_bd_item" style="display:none;">
+						<div class="companyInfo">	
+							<div class="companyTitle"><span class="tab3item1 ">成立日期：{foundingTime}</span></div>
+					<div class="iteam">
+						<span class="columName">公司名称</span>
+						<span class="columCon">{cName}</span>	
+					</div>
+									<div class="iteam">
+						<span class="columName">注册号 </span>
+						<span class="columCon">{regMark}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">法定代表人</span>
+						<span class="columCon">{legalRep}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">占地面积</span>
+						<span class="columCon">{space}平方米</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">营业收入(万元)</span>
+						<span class="columCon">{production}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">从业人数</span>
+						<span class="columCon">{employees}人</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">企业类型</span>
+						<span class="columCon">{typeStr}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">地址</span>
+						<span class="columCon">{position}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">行业门类</span>
+						<span class="columCon">{industryClassStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">所属行业</span>
+						<span class="columCon">{ofIndustryStr}</span>	
+					</div>
+			 
+					<div class="iteam">
+						<span class="columName">企业状态</span>
+						<span class="columCon">{statusStr}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">登记注册类型</span>
+						<span class="columCon">{regTypeStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">企业规模</span>
+						<span class="columCon">{scaleStr}</span>	
+					</div>
+					 <div class="iteam">
+						<span class="columName">功能区</span>
+						<span class="columCon">{domainStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">所在区域</span>
+						<span class="columCon">{localRegionStr}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">公开联系人</span>
+						<span class="columCon">{publicContacts}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">公开联系方式</span>
+						<span class="columCon">{publicPhone}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">企业名称(简称)</span>
+						<span class="columCon">{shortName}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">邮箱</span>
+						<span class="columCon">{publicEmail}</span>	
+					</div>
+					<div class="iteam">
+						<span class="columName">网址</span>
+						<span class="columCon">{publicUrl}</span>	
+					</div>
+			 	<div class="iteam">
+						<span class="columName">资产总额</span>
+						<span class="columCon">{assets}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">负债总额</span>
+						<span class="columCon">{debts}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">投资总额</span>
+						<span class="columCon">{investments}</span>	
+					</div>
+						<div class="iteam">
+						<span class="columName">纳税总额</span>
+						<span class="columCon">{taxes}</span>	
+					</div>
+				</div>
+			</div>
+
+<div id="full" class="weui-popup-container" style="display: none;">
+ 
+	<div class="weui-popup-modal">
+	 
+
+		<article class="weui_article">
+		 
+			<section>
+			 
+			<div id="container"  > </div> 
+		 <script type="text/javascript">
+    var map = new AMap.Map("container", {
+        resizeEnable: true
+    });
+    function geocoder() {
+        var geocoder = new AMap.Geocoder({
+            city: "010", //城市，默认：“全国”
+            radius: 1000 //范围，默认：500
+        });
+        //地理编码,返回地理编码结果
+        geocoder.getLocation("北京市海淀区苏州街", function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+                geocoder_CallBack(result);
+            }
+        });
+    }
+    function addMarker(i, d) {
+        var marker = new AMap.Marker({
+            map: map,
+            position: [ d.location.getLng(),  d.location.getLat()]
+        });
+        var infoWindow = new AMap.InfoWindow({
+            content: d.formattedAddress,
+            offset: {x: 0, y: -30}
+        });
+        marker.on("mouseover", function(e) {
+            infoWindow.open(map, marker.getPosition());
+        });
+    }
+    //地理编码返回结果展示
+    function geocoder_CallBack(data) {
+        var resultStr = "";
+        //地理编码结果数组
+        var geocode = data.geocodes;
+        for (var i = 0; i < geocode.length; i++) {
+            //拼接输出html
+            resultStr += "<span style=\"font-size: 12px;padding:0px 0 4px 2px; border-bottom:1px solid #C1FFC1;\">" + "<b>地址</b>：" + geocode[i].formattedAddress + "" + "&nbsp;&nbsp;<b>的地理编码结果是:</b><b>&nbsp;&nbsp;&nbsp;&nbsp;坐标</b>：" + geocode[i].location.getLng() + ", " + geocode[i].location.getLat() + "" + "<b>&nbsp;&nbsp;&nbsp;&nbsp;匹配级别</b>：" + geocode[i].level + "</span>";
+            addMarker(i, geocode[i]);
+        }
+        map.setFitView();
+        document.getElementById("result").innerHTML = resultStr;
+    }
+</script>
+<div id="tip">
+    
+    <span id="result"></span>
+</div>
+			</section>
+			<section>
+				<a href="javascript:;" class="weui_btn weui_btn_plain_primary close-popup">关闭</a>
+			</section>
+		</article>
+	</div>
+</div>
+	
+ <script type="text/javascript">
+ $("#container").height($(window).height()-140);
+    var map = new AMap.Map("container", {
+        resizeEnable: true
+    });
+    function geocoder(name) {
+     
+        var geocoder = new AMap.Geocoder({
+            city: "024", //城市，默认：“全国”
+            radius: 1000 //范围，默认：500
+        });
+        //地理编码,返回地理编码结果
+        geocoder.getLocation(name, function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+                geocoder_CallBack(result);
+            }
+        });
+    }
+    function addMarker(i, d) {
+        var marker = new AMap.Marker({
+            map: map,
+            position: [ d.location.getLng(),  d.location.getLat()]
+        });
+        var infoWindow = new AMap.InfoWindow({
+            content: d.formattedAddress,
+            offset: {x: 0, y: -30}
+        });
+        infoWindow.open(map, marker.getPosition());
+        
+        marker.on("mouseover", function(e) {
+            infoWindow.open(map, marker.getPosition());
+        });
+         
+    }
+    //地理编码返回结果展示
+    function geocoder_CallBack(data) {
+        var resultStr = "";
+        //地理编码结果数组
+        var geocode = data.geocodes;
+        for (var i = 0; i < geocode.length; i++) {
+            //拼接输出html
+             //resultStr += "<span style=\"font-size: 12px;padding:0px 0 4px 2px; border-bottom:1px solid #C1FFC1;\">" + "<b>地址</b>：" + geocode[i].formattedAddress + "" + "&nbsp;&nbsp;<b>的地理编码结果是:</b><b>&nbsp;&nbsp;&nbsp;&nbsp;坐标</b>：" + geocode[i].location.getLng() + ", " + geocode[i].location.getLat() + "" + "<b>&nbsp;&nbsp;&nbsp;&nbsp;匹配级别</b>：" + geocode[i].level + "</span>";
+            addMarker(i, geocode[i]);
+        }
+        map.setFitView();
+         //document.getElementById("result").innerHTML = resultStr;
+    }
+    
+</script>
+ 
