@@ -5,10 +5,10 @@ use common\models\IctWebService;
 //use backend\models\UserBackend;
 use Yii;
 use yii\base\Object;
- 
+
 
 class Edus  extends \common\models\WebService{
-	function __construct(){		
+	function __construct(){
         parent::init();
         parent::registerApi("edu.list.get",
             "getEduList",
@@ -16,14 +16,15 @@ class Edus  extends \common\models\WebService{
                 "info"=>['type'=>'string'],
             ],
             false
-        );         
+        );
     }
- 
- 
+
+
     public function getEduList($info){
- 
-    	//Yii::$app->response->format = Response::FORMAT_JSON;   
-    	//$info='{"uid":"","limit":1,"offset":1,"id":"2","detail":"1"}'; 	
+//     	die("23");
+
+    	//Yii::$app->response->format = Response::FORMAT_JSON;
+    	//$info='{"uid":"","limit":1,"offset":1,"id":"2","detail":"1"}';
 
 		$info = json_decode($info,true);
 		//$limit = isset($info["limit"]) ? $info["limit"] : 10;
@@ -83,60 +84,61 @@ class Edus  extends \common\models\WebService{
     		$list2 = $command->queryAll();
     		$sq0="select * from djleaplan where endtime<'".$time."'";//已结束
     		$command = $connection->createCommand($sq0);
-    		$list3 = $command->queryAll();    		    	
+    		$list3 = $command->queryAll();
     	}
     	//$sq0="select * from (select * from djleaplan d1 where starttime<'".$time."' and endtime>'".$time."') union all ".
     	//"select * from (select * from djleaplan d2 where starttime>'".$time."') union all ".
     	//"select * from (select * from djleaplan d3 where endtime<'".$time."')";
-    	
+
     	//$sq0="select * from djleaplan where eid='".$eid[1]."' and partyoid='".$partyoid."' and ORDER BY starttime<'".$time."' desc LIMIT 0,".$search_count."";
     	$list = array_merge($list1,$list2,$list3);
-    	
+
+
+
     	$return['list'] = $list;
     	//print_r($list);exit;
     	return $return;
-    
+
         $model = new ActionEs();
         $return = $model->getEsinfoList($info);
-        
+
         return  $return;
     }
     public function getEsmessageList($info){
     	//不获取公司不存在的商铺
-    
-    	 
+
+
     	$model = new ActionEs();
     	$return = $model->getEsmessageList($info);
-    
+
     	return  $return;
     }
     public function getEsmessageCreate($info){
     	//不获取公司不存在的商铺
-     
-    	 
+
+
     			$model = new ActionEs();
     	$return = $model->getEsmessageCreate($info);
-    
+
     	return  $return;
     }
     public function getProductsupList($info){
-    	 
-    	 
-    
+
+
+
     	$model = new ActionEs();
     	$return = $model->getProductsupList($info);
-    
+
     	return  $return;
     }
     public function getProductreqList($info){
     	//不获取公司不存在的商铺
-    
-    
+
+
     	$model = new ActionEs();
     	$return = $model->getProductreqList($info);
-    
+
     	return  $return;
     }
- 
+
 }
-	

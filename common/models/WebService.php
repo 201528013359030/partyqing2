@@ -28,6 +28,9 @@ class WebService extends \yii\base\Component
         }
     	$parameter = $this->methodManage[$this->method]['parameter'];//获取注册的接口对应的参数--byfyq
     	$post = \Yii::$app->request->post();
+//     	$return['data']=$post;
+//     	return $return;
+//     	die();
 
     	//拼接接口对应的方法需要的参数
     	$parameterStr="";

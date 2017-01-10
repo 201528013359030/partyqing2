@@ -22,7 +22,7 @@ class Curl
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HEADER         => false,
         CURLOPT_VERBOSE        => true,
-        CURLOPT_AUTOREFERER    => true,         
+        CURLOPT_AUTOREFERER    => true,
         CURLOPT_CONNECTTIMEOUT => 30,
         CURLOPT_TIMEOUT        => 30,
         CURLOPT_SSL_VERIFYPEER => false,
@@ -99,7 +99,7 @@ class Curl
     public function buildUrl($url, $data = array())
     {
         $parsed = parse_url($url);
-        
+
         isset($parsed['query']) ? parse_str($parsed['query'], $parsed['query']) : $parsed['query'] = array();
 
         $params = isset($parsed['query']) ? $data + $parsed['query'] : $data;
@@ -124,7 +124,7 @@ class Curl
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
 
-        $output = curl_exec($ch);
+        $output = curl_exec($ch); //curl_exec — 执行一个cURL会话 --fyq
 
         $this->_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
@@ -170,7 +170,7 @@ class Curl
     public function put($url, $data = null, $params = array(), $debug = false)
     {
         $url = $this->buildUrl($url, $params);
-        
+
         $f = fopen('php://temp', 'rw+');
         fwrite($f, $data);
         rewind($f);
@@ -186,7 +186,7 @@ class Curl
     public function patch($url, $data = array(), $params = array(), $debug = false)
     {
         $url = $this->buildUrl($url, $params);
-        
+
         $options = $this->getOptions();
         $options[CURLOPT_CUSTOMREQUEST] = 'PATCH';
         $options[CURLOPT_POSTFIELDS] = $data;
@@ -197,7 +197,7 @@ class Curl
     public function delete($url, $params = array(), $debug = false)
     {
         $url = $this->buildUrl($url, $params);
-        
+
         $options = $this->getOptions();
         $options[CURLOPT_CUSTOMREQUEST] = 'DELETE';
 

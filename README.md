@@ -52,3 +52,13 @@ environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
+
+网上答题 资料汇总模块完成，前台界面在lapp文件夹下，partyStudy: 资料汇总 ，wap:网上答题，
+
+
+资料汇总：
+
+http://host/partyqing2/lapp/partyStudy/html/main.html?serverIp=http://192.168.139.54&uid=6@17&planid=2
+网上答题：
+
+http://host/partyqing2/lapp/wap/html/main.html?serverIp=http://host&uid=6@3&planid=2
