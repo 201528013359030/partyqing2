@@ -341,6 +341,10 @@ class Leaquestions  extends \common\models\WebService{
     	Yii::$app->session['user.eid'] = $eid[1];
     	$limit = 15;
     	$offset = ($p-1)*$limit;
+
+    	//答题总人数
+//     	$answerList  = DjleaquestionList::find()->where(['bankID'=>$id])->groupBy(['uid'])->asArray()->all();
+
     	$oid = Memberlist::findOne(['guid'=>$uid]);
 
     	if($oid){
@@ -351,6 +355,11 @@ class Leaquestions  extends \common\models\WebService{
     		$count = DjleaquestionBank::find()->where(['deleteflag'=>0,'eid'=>$eid[1],'bankflag'=>'0','planid'=>$planid])->count();
     	}
     	foreach ($list as $key => $value) {
+
+    		//答题总人数
+    		$answerList  = DjleaquestionList::find()->where(['bankID'=>$value['bankid']])->groupBy(['uid'])->asArray()->all();
+    		$list[$key]['answerCount'] = count($answerList);
+
     		if($value['sender']){
     			$list[$key]['oname'] = $value['sender'];
     		}else{
