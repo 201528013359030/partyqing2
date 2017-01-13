@@ -181,11 +181,11 @@ var commonFunction = {
 			async : false,  
 			success:function(data){
 //				alert("result:" +JSON.stringify(data));
-				data=data.result;
+//				data=data.result;
 				//服务器返回响应	
 //				alert("33");
-				if(data.c==0){				
-					value= data.d;
+				if(data.status==0){				
+					value= data.result;
 					
 				}else{
 					value="error_"+data.m+"_"+data.c;					
