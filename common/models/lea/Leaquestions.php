@@ -392,10 +392,11 @@ class Leaquestions  extends \common\models\WebService{
 
     	$searchtitle = isset($info["searchtitle"]) ? $info["searchtitle"] : null;
     	$planid = isset($info['planid']) ? $info['planid'] : null; //学习计划id
+    	$uid = isset($info['uid']) ? $info['uid'] : null; //学习计划id
 
     	$connection = Yii::$app->db;
     	$connection->open();  //初始化数据库
-    	$uid =\Yii::$app->session['user.id'];
+//     	$uid =\Yii::$app->session['user.id'];
 
     	$return['c'] = 0;
     	$return['m'] = '';
@@ -429,6 +430,10 @@ class Leaquestions  extends \common\models\WebService{
     	$count=count($list);
 
     	foreach ($list as $key => $value) {
+    		//答题总人数
+    		$answerList  = DjleaquestionList::find()->where(['bankID'=>$value['bankid']])->groupBy(['uid'])->asArray()->all();
+    		$list[$key]['answerCount'] = count($answerList);
+
     		if($value['sender']){
     			$list[$key]['oname'] = $value['sender'];
     		}else{

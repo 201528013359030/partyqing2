@@ -19,7 +19,7 @@ if(bh<480){
 }
 
 //获取首页列表
-function setListIteam(page){
+function setMaterialListIteam(page){
 //	var info ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
@@ -37,6 +37,11 @@ function setListIteam(page){
 	};
 	//获取数据
 	var getList = commonFunction.getJsonResult(arr);//返回值为数组 --fyq
+	
+	if(!JSON.stringify(getList).length){
+		commonFunction.load_page("#page_innerContent");
+		return ;
+	}
 	if( /error/.test(getList) ){
 //		alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
@@ -44,8 +49,16 @@ function setListIteam(page){
 		return false;
 	}
 	
-//	console.log("moudle"+JSON.stringify(getList));
+	console.log("moudle: "+JSON.stringify(getList));
 //	return ;
+	
+	if(JSON.stringify(getList).length<=52){
+		$(".resultEnd").hide();
+		$(".resultEnd_nodata").show();
+		$("#J_listGroup").attr({"style":"text-align:center;"});
+		$("#J_listGroup").html("友情提示: 没有用户 "+NATIVE_UID+" 的相关数据!");
+		return false;
+	}
 	
 			
 	//生成页面
@@ -81,9 +94,11 @@ function setListIteam(page){
 	
 	//判断显示是否可以继续加载下一页
 	//先算一下一共有几页
-	var totalpage = Math.ceil(getList.count/limit_home);
+//	var totalpage = Math.ceil(getList.count/limit_home);
+//	console.log(totalpage+" "+page_home);
 	//如果数据小于limit 则不能继续翻页 下拉加载
-	if( getList.length<limit_home||getList.count==1||totalpage==page_home ){
+//	if( getList.count<limit_home||getList.count==1||totalpage==page_home ){
+	if( getList.count<limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
 		flag_home = false;
@@ -97,7 +112,7 @@ function setListIteam(page){
 
 
 //首页列表页面中搜索
-function setSearchListIteam(searchtitle){
+function setMaterialSearchListIteam(searchtitle){
 //	var info ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
@@ -156,9 +171,11 @@ function setSearchListIteam(searchtitle){
 	
 	//判断显示是否可以继续加载下一页
 	//先算一下一共有几页
-	var totalpage = Math.ceil(getList.length/limit_home);
-	//如果数据小于limit 则不能继续翻页
-	if( getList.length<limit_home||getList.length==1||totalpage==page_home ){
+//	var totalpage = Math.ceil(getList.length/limit_home);
+//	//如果数据小于limit 则不能继续翻页
+//	if( getList.length<limit_home||getList.length==1||totalpage==page_home ){
+	console.log(getList.length);
+	if( getList.length < limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
 		flag_home = false;
@@ -723,6 +740,16 @@ function setQuestionListIteam(page){
 		console.log("获取专题getList报错："+getList);
 		return false;
 	}
+	console.log(JSON.stringify(getList).length);
+	
+	if(JSON.stringify(getList).length==2){
+		$(".resultEnd").hide();
+		$(".resultEnd_nodata").show();
+		$("#J_listGroup").attr({"style":"text-align:center;"});
+		$("#J_listGroup").html("友情提示：没有用户 "+NATIVE_UID+" 的相关数据!");
+		return false;
+		return false;
+	}
 	
 	console.log(JSON.stringify(getList));
 //	return ;
@@ -755,9 +782,10 @@ function setQuestionListIteam(page){
 	
 	//判断显示是否可以继续加载下一页
 	//先算一下一共有几页
-	var totalpage = Math.ceil(getList[0].count/limit_home);
-	//如果数据小于limit 则不能继续翻页 下拉加载
-	if( getList.length<limit_home||getList[0].count==1||totalpage==page_home ){
+//	var totalpage = Math.ceil(getList[0].count/limit_home);
+//	//如果数据小于limit 则不能继续翻页 下拉加载
+//	if( getList[0].count<limit_home||getList[0].count==1||totalpage==page_home ){
+	if( getList[0].count<limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
 		flag_home = false;
@@ -811,7 +839,8 @@ function setQuestionSearchListIteam(searchtitle){
 			.replace( /\{questionnum\}/g,getList[i].questionnum )
 			.replace( /\{title\}/g,getList[i].title )
 			.replace( /\{oname\}/g,getList[i].oname )
-			.replace( /\{createtime\}/g,getList[i].createtime.split(" ")[0] );
+			.replace( /\{createtime\}/g,getList[i].createtime.split(" ")[0] )
+			.replace( /\{answerCount\}/g,getList[i].answerCount);
 		html.push(html_iteam); //push()	向数组的末尾添加一个或更多元素，并返回新的长度。 --fyq
 	}
 	
@@ -825,9 +854,10 @@ function setQuestionSearchListIteam(searchtitle){
 	
 	//判断显示是否可以继续加载下一页
 	//先算一下一共有几页
-	var totalpage = Math.ceil(getList[0].count/limit_home);
-	//如果数据小于limit 则不能继续翻页
-	if( getList.length<limit_home||getList[0].count==1||totalpage==page_home ){
+//	var totalpage = Math.ceil(getList[0].count/limit_home);
+//	//如果数据小于limit 则不能继续翻页
+//	if( getList.length<limit_home||getList[0].count==1||totalpage==page_home ){
+	if( getList[0].count<limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
 		flag_home = false;
