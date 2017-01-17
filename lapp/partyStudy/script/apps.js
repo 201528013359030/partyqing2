@@ -108,12 +108,14 @@ partyStudyMaterialSummary.init = function(){
 }
 
 var partyStudyMaterialContent = {};
+
 partyStudyMaterialContent.partial = "../html/temp/partyStudyMaterialContent.html";
 partyStudyMaterialContent.init = function(){
 	$("#page-title").html("资料汇总");
     miniSPA.render("partyStudyMaterialContent");
-    setContent(partyStudyMaterialContent.parame);
+     var planid = setContent(partyStudyMaterialContent.parame);
     commonFunction.load_page("#page_innerContent");
+    setCount(partyStudyMaterialContent.parame,planid);
 
 }
 

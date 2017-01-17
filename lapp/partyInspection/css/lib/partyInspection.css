@@ -1,0 +1,230 @@
+/*背景为灰色*/
+.party-gray-box{
+    font-family:"微软雅黑";
+    width:100%;
+    height:100%;
+    background:#eeeeee;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+/*学习教育首页partyStudyList*/
+.party-study-banner img{
+    width:100%;
+    border:none;
+    margin:0;
+    padding:0;
+}
+.party-study-banner{
+    margin-bottom:0;
+    background:#fff;
+}
+.party-study-department{
+    padding:0 0 6px 10px;
+    margin-bottom:12px;
+    font-size:15px;
+    background:#fff;
+}
+.party-study-list-box{
+    display:block;
+    text-decoration:none;
+    margin-bottom:12px;
+}
+.party-study-list{
+    width:94%;
+    background:#fff;
+    margin:auto;
+    border-radius:10px 40px 40px 10px;
+    position:relative;
+}
+.party-study-list1-box{
+    height:66px;
+    width:60px;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:10px 0 0 10px;
+    overflow:hidden;
+}
+.party-study-list2{
+    padding:10px 50px 10px 54px;
+    font-size:16px;
+    color:#333333;
+}
+.party-study-list2-2{
+    font-size:13px;
+    color:#999999;
+    margin-top:4px;
+}
+.party-study-list3{
+    width:46px;
+    height:46px;
+    position:absolute;
+    top:50%;
+    margin-top:-23px;
+    right:12px;
+    background:#f55a5b;
+    border-radius:40px;
+    text-decoration:none;
+    font-size:15px;
+    color:#fff;
+    line-height:46px;
+    text-align:center;
+}
+.party-study-notStart{
+    background:#f77a00;
+}
+.party-study-list3f{
+    background:#bfbfbf;
+}
+
+/*学习教育第二页partyStudyItem*/
+.party-item-title{
+    font-size:16px;
+    color:#333333;
+    padding-left:4px;
+    margin-bottom:6px;
+}
+.party-item-icon{
+    text-align:center;
+    font-size:13px;
+    text-decoration:none;
+    color:#333333;
+}
+.party-item-icon-img{
+    display:block;
+    width:58px;
+    height:58px;
+    margin:3px auto;
+}
+
+.party-item-tasks-head{
+    margin:16px 10px 10px 10px;
+    overflow:hidden;
+    padding-bottom:4px;
+    border-bottom:solid 1px #e6e6e6;
+}
+.party-item-tasks-name{
+    float:left;
+}
+.party-item-tasks-more{
+    float:right;
+    font-size:12px;
+    color:#999;
+    margin-top:4px;
+}
+.party-item-look{
+    overflow:hidden;
+    font-size:12px;
+    color:#999;
+}
+.party-item-look-left{
+    float:left;
+    font-size:12px;
+    color:#999;
+}
+.party-item-look-right{
+    float:right;
+    font-size:12px;
+    color:#999;
+    padding-right:6px;
+}
+.party-item-experience{
+    font-size:12px;
+    line-height:16px;
+    float:right;
+    margin-right:2px;
+    padding:0 5px;
+    background:#ce2124;
+    color:white;
+    border-radius:3px;
+}
+
+.party-item-time{
+    display:inline-block;
+    width:52px;
+}
+.party-item-icon-eye{
+    vertical-align:middle;
+    padding-bottom:2px;
+}
+.party-task-title{
+    font-family:"微软雅黑";
+    font-size:15px;
+    color:#333;
+    margin:0 10px;
+    padding:2px 0;
+    margin-bottom:10px;
+    border-bottom:solid 1px #e6e6e6;
+}
+.party-task-finish{
+    font-size:12px;
+    line-height:16px;
+    float:right;
+    margin-right:5px;
+    padding:0 5px;
+    background:#ce2124;
+    color:white;
+    border-radius:3px;
+}
+.party-task-box{
+    position:relative;
+}
+.party-task-leader-finish{
+    display:none;
+    position:absolute;
+    right:0;
+    top:0;
+}
+.party-task-leader-finished{
+    display:block;
+}
+.party-task-time{
+    padding:0 10px;
+    font-size:12px;
+}
+.party-task-line{
+    height:1px;
+    background:#e6e6e6;
+}
+.party-task-content{
+    padding:10px;
+    font-size:14px;
+    line-height:20px;
+}
+.party-task-material-title{
+    width:120px;
+    margin:auto;
+    padding:15px 0 20px 0;
+}
+.party-task-material-title1{
+    float:left;
+    width:20px;
+    height:2px;
+    background:#e40001;
+    margin-top:9px;
+}
+.party-task-material-title2{
+    float:left;
+    width:80px;
+    height:20px;
+    font-size:15px;
+    line-height:20px;
+    text-align:center;
+    color:#e40001;
+}
+.party-task-material-content{
+    font-size:14px;
+    color:#666;
+    padding:10px
+}
+/*党建督查*/
+.party-inspection-title{
+    font-family:"微软雅黑";
+    font-size:15px;
+    color:#333;
+    padding:10px 10px;
+}
+.party-inspection-box{
+    padding:0 10px;
+    border-bottom:solid 1px #e6e6e6;
+}

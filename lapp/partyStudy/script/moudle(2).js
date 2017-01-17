@@ -195,7 +195,9 @@ function setMaterialSearchListIteam(searchtitle,planid){
 	}else{
 		flag_home = true;
 		page_home++;
-	}	
+	}
+	
+	
 }
 
 
@@ -254,7 +256,6 @@ function setContent(id){
 	// append() 向匹配元素集合中的每个元素结尾插入由参数指定的内容。 --fyq
 	// join() 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。 --fyq
 	$("#J_listGroup").append( html.join('') ); 
-	return getInfo.content.planid;
 }
 
 // 统计资料的阅读数量
@@ -276,23 +277,17 @@ function setCount(id,planid){
 			"type":"post"
 	};
 	
-	var getInfo = commonFunction.getJsonResult(arr);
-	
-//	for ( var i in getInfo) {
-//		console.log(JSON.stringify("返回信息"+getInfo[i]));
-//	}
-	
-	console.log(JSON.stringify(getInfo));
-	
+	var getInfo = getJsonResult(arr);
 	if( /error/.test(getInfo) ){
 		$.toast("有异常，请稍后再试", "cancel");
 		console.log("统计资料阅读人数返回getInfo报错："+getInfo);
 		return false;
 	}
+	console.log(typeof getInfo);
+	console.log(JSON.stringify(getInfo));
 	
-	
-	if(getInfo.status == "-1"){
-		$.toast("统计资料阅读数量失败", "cancel");
+	if(!getInfo["message"]=="sucess"){
+		$.toast("有异常，请稍后再试", "cancel");
 		console.log("统计资料阅读数量getInfo失败："+getInfo);
 		return false;
 	}	
