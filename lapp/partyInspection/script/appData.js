@@ -1,14 +1,99 @@
-//http://192.168.139.11/mycrm/frontend/web/index.php?r=api/mdview&id=44
+var SERVER_IP = sessionStorage.getItem("SERVER_IP"), // 获取url?后面的参数serverIp
+														// --fyq
+	NATIVE_UID = sessionStorage.getItem("NATIVE_UID");// 获取url后面的参数uid --fyq
+	NATIVE_AUTH_TOKEN = sessionStorage.getItem("NATIVE_AUTH_TOKEN"); // 获取url后面的参数auth_token
+																		// --fyq
 
-/*
- * @ getRequestList
- * @ 说明：获取意见反馈列表
- * @ parameter json参数说明：
- *  title	false	string	查询条件
-	date	false	string	查询条件
-	page	false	string	第几页
-	status	false	string	0未处理，1已处理
- */
+var urlbase = SERVER_IP+"/partyqingx/backend/web/index.php"
+var limit_home = 15,
+	limit_rank = 15; // 与服务器规定最多显示多少条，死的
+var page_home = 1,
+	page_rank = 1; // 翻页 第几页
+var flag_home = true,
+	flag_rank = true; // true 可以继续翻页； false 不能继续翻页
+var CURRCOUNT = 0,
+	END_CURRCOUNT = 0; // currcount 答题 End_currcount查看错题
+
+var bh = $(window).height();
+if(bh<480){
+    $('body').addClass('xs-screen');
+}
+
+function getJsonResult(arr){
+	var result =commonFunction.getJsonResult(arr);// 返回值为数组 --fyq
+	return result.d;
+}
+
+// 获取各个学习计划完成情况
+function getPlanComplete(){
+	
+	var info = {
+			"uid":NATIVE_UID,
+			"auth_token":NATIVE_AUTH_TOKEN
+	}
+	info = JSON.stringify(info);// 将参数字符串化 --fyq;
+
+	var arr = {
+		"url":urlbase+"?r=leaderinspection/api&method=LeaderInspection.plan.complete",
+		"arr":{"info":info},
+		"type":"post"
+	};
+	// 获取数据
+	var getPlans = commonFunction.getJsonResult(arr);// 返回值为数组 --fyq
+
+	console.log("getPlans:"+JSON.stringify(getPlans));
+	if( /error/.test(getPlans) ){
+		$.toast("有异常，请返回重试", "cancel");
+		console.log("获取专题getList报错："+getPlans);
+		return false;
+	}
+	if(getPlans.status == "-1"){
+		$.toast(getList.message,"cancel");
+		console.log("获取专题getList报错："+getPlans);
+		return false;
+	}
+//	console.log(getList.message); 
+	
+	return getPlans.message; //返回json格式的message信息
+	
+	
+}
+
+
+//获取各支部党员人数
+function getPartyMember(){
+	
+	var info = {
+			"uid":NATIVE_UID,
+			"auth_token":NATIVE_AUTH_TOKEN
+	}
+	info = JSON.stringify(info);// 将参数字符串化 --fyq;
+
+	var arr = {
+		"url":urlbase+"?r=leaderinspection/api&method=LeaderInspection.party.member",
+		"arr":{"info":info},
+		"type":"post"
+	};
+	// 获取数据
+	var getMember = commonFunction.getJsonResult(arr);// 返回值为数组 --fyq
+	
+	console.log("getMember:"+JSON.stringify(getMember));
+	
+	if(/erro/.test(getMember)){
+		$.toast("有异常，请返回重试","cancel");
+		console.log("获取专题getList报错："+getMember);
+		return false;
+	}
+	
+	if(getMember.status == "-1"){
+		$.toast(getMember.message,"cancel");
+		console.log("获取专题getList报错："+getMember);
+		return false;
+	}
+	
+	return getMember.message; //返回json格式的message信息
+}
+
 function getRequestList(parameter){
 	var arr = {
 		"auth_token":sessionStorage.getItem("NATIVE_AUTH_TOKEN"),
@@ -45,6 +130,9 @@ function getUserinfo(){
 		return results
 	}
 }
+
+
+
 //提交意见反馈
 function updateRequest(parameter){
 	var str_file = JSON.stringify(parameter.file);

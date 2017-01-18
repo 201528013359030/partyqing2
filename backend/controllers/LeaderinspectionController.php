@@ -1,8 +1,7 @@
 <?php
 namespace backend\controllers;
 use Yii;
-use common\models\lea\Leaquestions;
-use common\models\inspection\LeaderInspection;
+use common\models\inspection\LeaderInspections;
 
 class LeaderinspectionController extends \yii\rest\Controller
 {

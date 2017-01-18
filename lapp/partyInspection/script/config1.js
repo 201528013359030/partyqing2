@@ -1,31 +1,20 @@
-var commonTiptext = {
+var commonTxt = {
 	"nodata":"暂无数据",
 	"nodata_sub":"暂时没有相应的信息",
 	"noweb":"网络连接失败",
-	"noweb_sub":"网络链接失败，请价差您的网络设置！",
-	"exam_info":"答题结束后，必须点击交卷按钮才能保留成绩",
-	"exam_finish_one":"恭喜您获得[学霸] 亮闪闪称号！",
-	"confirm_restar_title":"是否确认重新开始",
-	"confirm_restar_con":"重新开始将删除上次未完成的答题记录",
-	"confirm_finish_half_title":"是否确认交卷",
-	"confirm_finish_half_con":"没有答完，注意交卷后不能继续答题",
-	"questionflag":["","判断题","单项选择题","多项选择题"],
-	"score1":"哇哦，一看您就是资深老党员啦！",
-	"score2":"还不错哦！您已经跨入优秀党员的行列啦！",
-	"score3":"您离优秀党员只有一步之遥啦！",
-	"score4":"真可惜，只差那么一点点您就合格了！",
-	"score5":"同志仍需努力，争当合格党员！",
+	"noweb_sub":"网络链接失败，请价差您的网络设置！"
 }
-var commonFunction = {
+var commonFun = {
 	load_page : function(ele){
+		// @ load_page 隐藏页面loading
 		$(".pageloading").hide();
-		$(ele).css("display","block");//display 属性规定元素应该生成的框的类型。block 此元素将显示为块级元素，此元素前后会带有换行符。 --fyq
+		$(ele).css("display","block");
 	},
 	get_url_param : function(){
-		var url = location.search; //获取url中"?"符后的字串 search 属性是一个可读可写的字符串，可设置或返回当前 URL 的查询部分（问号 ? 之后的部分,包括'?'）。
+		var url = location.search; //获取url中"?"符后的字串
 		var theRequest = new Object();
 		if (url.indexOf("?") != -1) {
-		   var str = url.substr(1); // substr() 的参数指定的是子串的开始位置和长度，因此它可以替代 substring() 和 slice() 来使用 --fyq
+		   var str = url.substr(1);
 		   strs = str.split("&");
 		   for(var i = 0; i < strs.length; i ++) {
 		      theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
@@ -42,7 +31,7 @@ var commonFunction = {
 		 * 
 		 */
 		
-		var theRequest = commonFunction.get_url_param();
+		var theRequest = commonFun.get_url_param();
 		return theRequest[name];
 	},
 	parseURL : function(url){
@@ -79,7 +68,7 @@ var commonFunction = {
 	getClientType : function(){
 		
 		/* @ getClientType
-		 * 判断当前是什么设备
+		 * 判断当前是什么设备 PC IOS AN
 		 * 已经存在sessionStroage  USER_AGENT  里
 		 */
 		
@@ -93,7 +82,7 @@ var commonFunction = {
 		return user_agent;
 	},
 	isOnline      : function(){
-		//@ 判断是否在线
+		//@ 判断是否在线 还是不要用了
 		if(navigator.onLine){
 			return true;
 		}else{
@@ -133,11 +122,33 @@ var commonFunction = {
 			show_size ="";
 		if(size>=1024){
 			var k =  (size - size%1024)/1024;
-			show_size = k+"m";
+			show_size = k+"MB";
 		}else{ 
-			show_size = size+"kb";
+			show_size = size+"KB";
 		}
 		return show_size;
+	},
+	getB : function(num){
+		/*
+		 * @ getMB 传入字节 返回 字节活MB
+		 * @ param - num 字节数
+		 */
+		var size = num,
+			show_size = "";
+		if(/KB/.test(size)){
+			var n = parseFloat(size);
+			show_size = n*1024;			
+		}
+		if(/MB/.test(size)){
+			var n = parseFloat(size);
+			show_size = n*1024*1024;			
+		}
+		if(/GB/.test(size)){
+			var n = parseFloat(size);
+			show_size = n*1024*1024*1024;			
+		}
+		
+		return String(show_size);
 	},
 	dataEmpty : function(icon,title,subTitle){
 		
@@ -158,7 +169,43 @@ var commonFunction = {
 		+'<p class="weui_msg_desc">'+subTitle+'</p></div></div>';
 		return html;
 	},
-	getJsonResult : function(setting){
+	dataEmptyError : function(icon,title,subTitle){
+		
+		/*@ dataEmpty		 * 
+		 * 生成暂无数据与暂无结果页面
+		 * 同上
+		 * 多了一个 "重新加载按钮" 调用native刷新方法
+		 */
+		
+		var html = '<div class="weui_msg"><div class="weui_icon_area"><img src="../images/'+icon+'.png" class="img-responsed" /></div><div class="weui_text_area"><h2 class="weui_msg_title">'+title+'</h2>'
+		+'<p class="weui_msg_desc">'+subTitle+'</p></div><div class="weui_opr_area"><p class="weui_btn_area"><a href="javascript:;" id="J_refresh" class="weui_btn weui_btn_default">重新加载</a></p></div></div>';
+		return html;
+	},
+	getInputCheck:function(name){
+		/* 名称：getInputCheck
+		 * 目的，获取多选的值，返回值为字符串逗号分割
+		 */		
+		var chk_value =[]; 
+		$('#page_innerContent input[name="'+name+'"]:checked').each(function(){
+		chk_value.push($(this).val()); 
+		}); 		
+		return chk_value.join(",");
+	},
+	getInputNotChecked:function(name){
+		/* 名称：getInputNotChecked
+		 * 目的，获取多选的未选的值，返回值为字符串逗号分割
+		 */
+		var chk_value =[]; 		
+		$('#page_innerContent input[name="'+name+'"]').each(function() {
+			var _notcheck = $(this).not("input:checked").val();			
+			if( _notcheck ){
+				chk_value.push( _notcheck );
+			}	       
+		});
+		
+		return chk_value.join(","); //返回字符串逗号隔开
+	},
+	getJsonResult : function(method,arr){
 		
 		/**
 		 * @ getJsonResult
@@ -169,35 +216,37 @@ var commonFunction = {
 		 */
 		
 		var value = "";
-//		alert(JSON.stringify(setting));
-		//var infos = {"info":JSON.stringify(arr)};
+		var SERVER_IP = sessionStorage.getItem("SERVER_IP")
+		var URL =SERVER_IP+ "/attendance/web/index.php?r=webService/main/api&method="+method;
+		var infos = {"info":JSON.stringify(arr)};
 		$.ajax({		
-			url:setting.url,
+			url:URL,
 			timeout:5000,
-			data:setting.arr,
-			type:setting.type||"get",//HTTP请求类型
+			data:infos,
+			type:"post",//HTTP请求类型setting.type||"get"
 			dataType:'json',  
 	        cache : false,  
 			async : false,  
 			success:function(data){
-//				console.log("result:" +JSON.stringify(data));
-//				alert("result:" +JSON.stringify(data));
-//				data=data.result;
-				//服务器返回响应	
-				if(data.status==0){				
+				//alert("result:"+JSON.stringify(data));
+				//服务器返回响应				
+				if(data.status==0){
 					value= data.result;
-					
 				}else{
-					value="error_"+data.m+"_"+data.c;	
+					//value="error_"+data.result;
+					var nolink = commonFun.dataEmptyError("nolink","访问页面出错","请返回重试");
+					$("#J_innerContent").html( nolink );
+					console.log("获取"+method+"报错："+results);
+					return false;
 				}
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				var nodata = commonFunction.dataEmpty("nodata","请求超时","页面已不存在，请返回刷新");
+				var nodata = commonFun.dataEmptyError("nodata","请求超时","页面已不存在，请点击按钮");
 				$("#J_innerContent").html( nodata );
 				
 				console.log("XMLHttpRequest"+JSON.stringify(XMLHttpRequest));
 				return false;
-				//alert("XMLHttpRequest:"+JSON.stringify(XMLHttpRequest));
+				
 			},
 			complete:function(XMLHttpRequest,status){
 				if(status=="timeout"){
@@ -206,23 +255,19 @@ var commonFunction = {
 				}
 			}
 		});
-//		alert("231");
-//		alert(JSON.stringify(value));
 		return value;
-	},
+	}
 };
-var PAGE_URL   = window.location.href,  //href 属性是一个可读可写的字符串，可设置或返回当前显示的文档的完整 URL。 --fyq
+var PAGE_URL   = window.location.href,
 	API_KEY    = "36116967d1ab95321b89df8223929b14207b72b1",
-	SERVER_IP  = commonFunction.get_param("serverIp"),
-	USER_AGENT = commonFunction.getClientType(),
-	NATIVE_UID = commonFunction.get_param("uid"),
-	NATIVE_EGUID = commonFunction.get_param("eguid"),
-	NATIVE_AUTH_TOKEN = commonFunction.get_param("auth_token"),
+	SERVER_IP  = commonFun.get_param("serverIp"),
+	USER_AGENT = commonFun.getClientType(),
+	NATIVE_UID = commonFun.get_param("uid"),
+	NATIVE_EGUID = commonFun.get_param("eguid"),
+	NATIVE_AUTH_TOKEN = commonFun.get_param("auth_token"),
 	monthNames = [ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" ],
 	dayNames= ["周日","周一","周二","周三","周四","周五","周六"];
 
-	NATIVE_PLANID = commonFunction.get_param("planid");// 将参数 planid 放到session中--fyq
-	sessionStorage.setItem("NATIVE_PLANID",NATIVE_PLANID);
 
 console.log("USER_AGENT:"+USER_AGENT);
 sessionStorage.setItem("API_KEY",API_KEY);
@@ -231,6 +276,28 @@ sessionStorage.setItem("SERVER_IP",SERVER_IP);
 sessionStorage.setItem("NATIVE_UID",NATIVE_UID);
 sessionStorage.setItem("NATIVE_EGUID",NATIVE_EGUID);
 sessionStorage.setItem("NATIVE_AUTH_TOKEN",NATIVE_AUTH_TOKEN);
+
+//判断页面宽度-高度进行控制
+var bh = $(window).height();
+if(bh<481){
+	//iphone4 
+    $('body').addClass('xs-screen');
+}else if(481<bh<737){
+	console.log(bh);
+	//大于4 - 6 plus
+    $('body').addClass('md-screen');
+}else{
+	$('body').addClass('lg-screen');
+}
+
+
+//调用重新刷新加载页面接口
+$(document).on("click","#J_refresh",function(){
+	NativeInteractive.refresh();
+});
+
+function OnRefreshCb(){	
+}
 
 /**
  * @param OnSGetAppVersionCb datas
