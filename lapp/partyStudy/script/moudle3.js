@@ -825,7 +825,8 @@ function setFinish(paperId){
 		console.log("交卷getEnd报错："+getEnd);
 	}
 	
-	console.log('交卷：'+getEnd);
+	console.log("交卷："+getEnd);
+	
 	// 生成页面
 	var tpl_finishTop = $("#tpl_finishTop").html();
 	var html = "";

@@ -202,12 +202,11 @@ partyLeaderInspection.init = function(){
     			 if(data6[data3[j]][data4[i]]!=0){
     				 data7[j] = data6[data3[j]][data4[i]];
     			 }else{
-    				 data7[j] = 10; //无任务
+    				 data7[j] = null; //无任务
     			 }
     		 }else{
-    			 data7[j] = 20; // 无学习计划
-    		 }
-    		 
+    			 data7[j] = null; // 无学习计划
+    		 }    		 
     	 }
     	    
     	series[i] ={
@@ -315,6 +314,6 @@ partyLeaderInspection.init = function(){
     chartBar.on('click', function (param){
         var name=param.name;
         alert(name);
-        window.location.href="main.html#partyStudyList";
+        window.location.href="main.html#partyStudyList_";
     });
 }

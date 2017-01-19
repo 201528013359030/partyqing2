@@ -115,6 +115,7 @@ class Leaquestions extends \common\models\WebService {
 				'paperID' => $paperid,
 				'answerCorrect' => 0
 		] )->count ();
+
 		$testInfo->correctNum = $correctNum;
 		$testInfo->falseNuM = $testInfo->questionNum - $correctNum;
 		$testInfo->finishflag = 1;
@@ -127,6 +128,8 @@ class Leaquestions extends \common\models\WebService {
 		$answerCount = DjleaquestionAnswer::find ()->where ( [
 				'paperID' => $paperid
 		] )->count ();
+
+
 		for($i = $answerCount; $i < $testInfo->questionNum; $i ++) {
 			$questionanswer = new DjleaquestionAnswer ();
 			$questionanswer->uid = ( string ) $uid;
@@ -517,7 +520,7 @@ class Leaquestions extends \common\models\WebService {
 
 		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
 		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
-		$id = isset ( $info ['id'] ) ? $info ['id'] : "1";
+		$id = isset ( $info ['id'] ) ? $info ['id'] : "1"; //题库id
 		// die('2');
 		// die($info);
 		// $uid = Yii::$app->session['user.id'];
@@ -633,7 +636,7 @@ class Leaquestions extends \common\models\WebService {
 
 		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
 		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
-		$id = isset ( $info ['id'] ) ? $info ['id'] : null; // 专题id
+		$id = isset ( $info ['id'] ) ? $info ['id'] : null; // 专题题库id
 		$new = isset ( $info ['new'] ) ? $info ['new'] : "0"; // 重新开始
 		                                           // die($id);
 
