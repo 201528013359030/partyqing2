@@ -19,14 +19,17 @@ partyStudyList.init = function(){
      * 否则js文件会越累计越多
      */
    // miniSPA.appendScript("../script/views/searchBar");
-}
-
-var partyStudyTasks= {};
-partyStudyTasks.partial = "../html/temp/partyStudyTasks.html";
-partyStudyTasks.init = function(){
-    miniSPA.render("partyStudyTasks");
+    miniSPA.render("partyStudyList");
+    
+    partyoid = partyStudyList.parame;
+    page_home=1;
+    setListIteamx(page_home,partyoid);
+	commonFunction.load_page("#page_innerContent");
+	
     if($("#page_innerContent")[0]) {
+
         var flag_home = true; //是否继续加载
+
         $("#tab1").pullToRefresh().on("pull-to-refresh", function() {
             var self = this;
             setTimeout(function() {
@@ -34,19 +37,94 @@ partyStudyTasks.init = function(){
                 $(self).pullToRefreshDone(); // 重置下拉刷新
             }, 2000);   //模拟延迟
         });
+
         $("#tab1").infinite().on("infinite", function() {
+
             console.log("infiniteScroll.html");
+
+            
             if(flag_home){
-                var self = this;
-                if(self.loading) return;
-                self.loading = true;
-                setTimeout(function() {
-                    $("#J_pullContent").append("<p>在此例子中，每一个tab都包含个字的代码块，在修改时，要对应修改例如#tab1, #tab2, #tab3等相关类，切记</p>")
-                    self.loading = false;
-                }, 2000);   //模拟延迟
-            }
+				var self = this;			    
+			    if(self.loading) return;
+			    self.loading = true;
+			    setTimeout(function() {
+			    	setListIteam(page_home);
+			        self.loading = false;
+			    }, 2000);   //模拟延迟
+			}
+
         });
     }
+}
+
+var partyStudyTasks= {};
+partyStudyTasks.partial = "../html/temp/partyStudyTasks.html";
+partyStudyTasks.init = function(){
+	 miniSPA.render("partyStudyTasks");   
+	    var planid = partyStudyTasks.parame;
+	   // alert(planid);
+	    tasklist(planid,1);
+	       $("#search_input").on("input",function(){
+	    	
+	    	//document.getElementById('search_input').addEventListener('input', function(e){
+	    	var searchtitle = $("#search_input").val();
+	    		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
+	    		$(".pageloading").show();
+	    		tasksearch(searchtitle,planid,1);
+	    		$(".pageloading").hide();  
+	    		$('#search_clear').css('display','none');
+	    		$('#search_cancel').css('display','none');
+	    	});
+	       //任务列表去掉“完成”设置
+//	       $(".party-task-finish").on("click",function(){		   	   
+//	    	   var obj = this;
+//	    	   var id=$(obj).attr("data");
+//	    	  // alert(id);
+//	    	   taskcomplete(id);
+//	   	   });
+	       //function finish(id){alert(8);}
+	       
+	    if($("#page_innerContent")[0]) {      
+	        $("#tab1").pullToRefresh().on("pull-to-refresh", function() {
+	            var self = this;
+	            setTimeout(function() {
+	                window.location.reload();
+	                $(self).pullToRefreshDone(); // 重置下拉刷新
+	            }, 2000);   //模拟延迟
+	        });
+
+	        $("#tab1").infinite().on("infinite", function() {
+
+	            console.log("infiniteScroll.html");
+	            //alert(flag_search);
+	  
+	            if(flag_home_tasklist){
+	                var self = this;
+	                if(self.loading) return;
+	                self.loading = true;
+	                setTimeout(function() {
+	                   // $("#J_pullContent").append("<p>在此例子中，每一个tab都包含个字的代码块，在修改时，要对应修改例如#tab1, #tab2, #tab3等相关类，切记</p>")
+	                	tasklist(planid,page_home);
+	                	self.loading = false;
+	                }, 2000);   //模拟延迟
+	            }else  if(flag_search_tasklist){            	
+	                var self = this;
+	                if(self.loading) return;
+	                self.loading = true;
+	                setTimeout(function() {
+	                   // $("#J_pullContent").append("<p>在此例子中，每一个tab都包含个字的代码块，在修改时，要对应修改例如#tab1, #tab2, #tab3等相关类，切记</p>")
+	                	var searchtitle = $("#search_input").val();
+	                	tasksearch(searchtitle,planid,page_search);
+	                	self.loading = false;
+	                }, 2000);   //模拟延迟
+	            }
+
+	        });
+	    }
+	    $('.party-task-finish').click(function(){
+	        $(this).css('display','none')
+	        $(this).parent().parent().children('.party-task-finish-img').css('display','block')
+	    })
 }
 
 var partyLeaderInspection = {};
@@ -57,8 +135,10 @@ partyLeaderInspection.init = function(){
    
     var members = getPartyMember();
    
-    var data1 = [];
-    var data2 = [];
+    var data1 = []; //党支部名称
+    var data2 = []; //党支部总人数
+    var dataGirls = [];
+    var dataBoys = [];
     for(var i=0;i<members.length;i++){
     	
     	data1.push(members[i].name);
@@ -66,6 +146,8 @@ partyLeaderInspection.init = function(){
     		"value": (members[i].girls -0) + (members[i].boys -0),
     		"name" : members[i].name
     	}
+    	dataBoys[i] =  members[i].boys;
+    	dataGirls[i] = members[i].girls;
     }   
     
     console.log("data2:"+JSON.stringify(data2));
@@ -76,7 +158,11 @@ partyLeaderInspection.init = function(){
     var pie = {
         tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b}: {c} ({d}%)"
+            formatter: function(e){
+                var index = e.dataIndex;
+                return data1[index]+'<br>'+'男：'+dataBoys[index]+' &nbsp;女:'+dataGirls[index];
+                console.log(e.dataIndex);
+            }
         },
         legend: {
             orient: 'horizontal',
@@ -133,7 +219,11 @@ partyLeaderInspection.init = function(){
                     normal: {
                         label:{
                             show:true,
-                            formatter: '{b}\n{d}'
+                            formatter: function(e){
+                                var index = e.dataIndex;
+                                return data1[index]+'\n'+'男：'+dataBoys[index]+'  女:'+dataGirls[index];
+                                console.log(e.dataIndex);
+                            }
                         },
                         labelLine:{
                             show:true,
@@ -173,7 +263,7 @@ partyLeaderInspection.init = function(){
     					data5[plans[i].plans[keys[j]].title] = plans[i].plans[keys[j]].completePercent ; //学习计划对应学习任务完成情况
     					
     				}else{
-    					data5[plans[i].plans[keys[j]].title] = 0 ; //学习计划无对应的任务
+    					data5[plans[i].plans[keys[j]].title] = -1 ; //学习计划无对应的任务
     				}
     			}
     			
@@ -193,21 +283,34 @@ partyLeaderInspection.init = function(){
 //    console.log(data4);
     
     var series = [];  
+   
+    var data9 = [];
     
     for(var i=0;i<data4.length;i++){
     	
-    	var data7 =[];
+    	var data7 =[]; //完成情况百分比
+    	 var data8 = [];//完成情况描述
+    	
     	 for(var j=0;j<data3.length;j++){
     		 if(data6[data3[j]]!=0){
-    			 if(data6[data3[j]][data4[i]]!=0){
+    			 if(data6[data3[j]][data4[i]]!= -1){
     				 data7[j] = data6[data3[j]][data4[i]];
+    				 if(data6[data3[j]][data4[i]]== 0){
+    					 data8[j] = '任务未开始';
+    				 }else{
+    					 data8[j] = data6[data3[j]][data4[i]];
+    				 }
     			 }else{
-    				 data7[j] = null; //无任务
+    				 data7[j] =0; 
+    				 data8[j] = "无任务" ;    				   				
     			 }
     		 }else{
-    			 data7[j] = null; // 无学习计划
+    			 data7[j] = 0; // 无学习计划
+    			 data8[j] = "无学习计划" ; 
+//    			 alert('33');
     		 }    		 
     	 }
+    	 data9[i] = data8; 
     	    
     	series[i] ={
             name: data4[i],
@@ -215,9 +318,14 @@ partyLeaderInspection.init = function(){
 //            data: [60, 43, 48, 48]
             data: data7
         }
+    	
+    	 console.log('data4['+i+'] '+data4[i]+" data8 "+data8);
     }
     
     console.log("series:"+JSON.stringify(series));
+    console.log(" data8 "+data8[0]);
+    console.log(" data9 "+data9);
+   
     
     //基于准备好的dom，初始化echarts实例
     var chartBar = echarts.init(document.getElementById('chartBar'));
@@ -255,7 +363,14 @@ partyLeaderInspection.init = function(){
         label:{
             normal:{
                 show:true,
-                position:'right'
+                position:'right',
+                formatter:function(e){
+                	 console.log("seriesIndex"+e.seriesIndex+"dataIndex"+e.dataIndex);
+                    var index = e.dataIndex;
+                    var ser = e.seriesIndex
+                    return data9[ser][index];
+                   
+                }
             }
         },
         yAxis: {
@@ -313,7 +428,19 @@ partyLeaderInspection.init = function(){
     chartBar.setOption(bar);
     chartBar.on('click', function (param){
         var name=param.name;
-        alert(name);
-        window.location.href="main.html#partyStudyList_";
+        var oid ="";
+//        alert(name);
+        for(var i=0;i<plans.length;i++){
+        	if(plans[i].name == name){
+        		oid = plans[i].oid;
+        		break;
+        	}
+        }
+//        alert(oid);
+        window.location.href="../html/main.html"+window.location.search+"#partyStudyList_"+oid;  
+//       url = (window.location.href).replace(/partyInspection/g,"partyStudy");
+//       console.log(url.replace(/partyInspection/g,"partyStudy"));
+//       window.location.href= url;
+        
     });
 }
