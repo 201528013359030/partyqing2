@@ -58,10 +58,11 @@ class Leamaterials extends \common\models\WebService {
 		// $id=\Yii::$app->request->get('id');
 		// $uid=\yii::$app->request->get('uid');
 		$info = json_decode ( $info, true ); // 将json字符串转换为数组--byfyq
-// 		$id = isset ( $info ["id"] ) ? $info ["id"] : "1";
+
+		$id = isset ( $info ["id"] ) ? $info ["id"] : "1";
 		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
 		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
-		$auto_planid = isset ( $info ['planid'] ) ? $info ['planid'] : null; // 学习计划id
+		$planid = isset ( $info ['planid'] ) ? $info ['planid'] : "2"; // 学习计划id
 		$p = isset ( $info ['p'] ) ? $info ['p'] : "1";
 
 		\Yii::$app->session ['user.uid'] = $uid;
@@ -70,6 +71,7 @@ class Leamaterials extends \common\models\WebService {
 		$return ['d'] = [ ];
 		$limit = 15;
 		$offset = ($p - 1) * $limit;
+
 		// $uid =\Yii::$app->session['user.uid'];
 		$connection = Yii::$app->db;
 		$connection->open ();
@@ -77,43 +79,49 @@ class Leamaterials extends \common\models\WebService {
 		$eid = explode ( '@', $uid );
 		$listtop = null;
 		$counttop = null;
-
-		if ($auto_planid == null) {
-			$return ['c'] = - 1;
-			$return ['m'] = "学习计划id为空";
-			return $return;
-		}
-
-		// 根据传入的planid查找planid对应的parentid=0 的计划id
-		$parentPlanid = $this->Getplanparentid ( $auto_planid );
-		if ($parentPlanid ['state'] == - 1) {
-			$return ['c'] = - 1;
-			$return ['m'] = "学习计划id=" . $parentPlanid ['planid'] . "不存在";
-			return $return;
-		}
-		$planid = $parentPlanid['planid'];
-		$condition = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "' and materid= '" . $planid . "' order by time desc limit " . $limit . " offset " . $offset ." ";
-// 		die($condition);
+		// 查询置顶的记录
+		// $condition="select * from djleamaterial where top=1 and eid='".$eid[1]."' and planid = '".$planid."' order by time desc limit 3";
+		// // die($condition);
+		// // $condition="select * from djdongtai where top=1 and eid='".$eid[1]."'order by time desc limit 3";
+		// $result = $connection->createCommand($condition);
+		// $listtop= $result->queryAll();
+		// $counttop=count($listtop);
+		// if(empty($listtop)){
+		// $listtop[0]['pic']="../web/img/banner1.png";
+		// $arr=getimagesize($listtop[0]['pic']);
+		// //$arr[0] //宽度$arr[1] //高度
+		// if($arr[0]/$arr[1]>1.789){$listtop[0]['pic2']="1";}else{$listtop[0]['pic2']="2";}
+		// $listtop[0]['id']="";
+		// }else{
+		// for($i=0;$i<$counttop;$i++){
+		// $UAvator=$listtop[$i]['pic'];
+		// $arr=getimagesize($UAvator);
+		// //$arr[0] //宽度$arr[1] //高度
+		// if($arr[0]/$arr[1]>1.789){$listtop[$i]['pic2']="1";}else{$listtop[$i]['pic2']="2";}
+		// $listtop[$i]['content'] = null;
+		// }
+		// }
+		// $a=$arr[0]/$arr[1];
+		// print_r($a);exit;
+		$condition = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "' and planid= '" . $planid . "' order by time desc limit " . $limit . " offset " . $offset;
+		// die($condition);
 		// $condition="select * from djdongtai where top=0 and eid='".$eid[1]."'order by time desc limit 15";
 		$result = $connection->createCommand ( $condition );
-		$list = $result->queryAll();
+		$list = $result->queryAll ();
 		$count = count ( $list );
-// 		var_dump($count);
-// 		die($condition);
 		for($i = 0; $i < $count; $i ++) {
-// 			$UAvator = $list [$i] ['pic'];
-// 			if ($UAvator) {
-// 			} else {
-// 				$list [$i] ['pic'] = "../web/img/pic2.png";
-// 				$UAvator = $list [$i] ['pic'];
-// 			}
-// 			$arr = getimagesize ( $UAvator );
-// 			// $arr[0] //宽度$arr[1] //高度
-// 			if ($arr [0] / $arr [1] > 1.789) {
-// 				$list [$i] ['pic2'] = "1";
-// 			} else {
-// 				$list [$i] ['pic2'] = "2";
-// 			}
+			$UAvator = $list [$i] ['pic'];
+			if ($UAvator) {
+			} else {
+				$list [$i] ['pic'] = "../web/img/pic2.png";
+			}
+			$arr = getimagesize ( $UAvator );
+			// $arr[0] //宽度$arr[1] //高度
+			if ($arr [0] / $arr [1] > 1.789) {
+				$list [$i] ['pic2'] = "1";
+			} else {
+				$list [$i] ['pic2'] = "2";
+			}
 			// print_r($list[$i]['pic2']);exit;
 			$a = $list [$i] ['content'];
 			if (strstr ( $a, "divvideocontent" )) {
@@ -136,7 +144,6 @@ class Leamaterials extends \common\models\WebService {
 		return $return;
 	}
 
-
 	/**
 	 *
 	 * @param unknown $info
@@ -149,54 +156,36 @@ class Leamaterials extends \common\models\WebService {
 		$info = json_decode ( $info, true );
 
 		$searchtitle = isset ( $info ["searchtitle"] ) ? $info ["searchtitle"] : null;
-		$auto_planid = isset ( $info ['planid'] ) ? $info ['planid'] : null; // 学习计划id
+		$planid = isset ( $info ['planid'] ) ? $info ['planid'] : null; // 学习计划id
 		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
 		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
-		$p = isset ( $info ['p'] ) ? $info ['p'] : "1";
 
-		$limit = 15;
-		$offset = ($p - 1) * $limit;
 		$connection = Yii::$app->db;
 		$connection->open (); // 初始化数据库
 
 		$return ['c'] = 0;
 		$return ['m'] = '';
 		$return ['d'] = [ ];
+
 		$eid = explode ( '@', $uid );
-
-		if ($auto_planid == null) {
-			$return ['c'] = - 1;
-			$return ['m'] = "学习计划id为空";
-			return $return;
-		}
-
-		// 根据传入的planid查找planid对应的parentid=0 的计划id
-
-		$parentPlanid = $this->Getplanparentid ( $auto_planid );
-		if ($parentPlanid ['state'] == - 1) {
-			$return ['c'] = - 1;
-			$return ['m'] = "学习计划id=" . $parentPlanid ['planid'] . "不存在";
-			return $return;
-		}
-		$planid = $parentPlanid['planid'];
-		$sq0 = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "' and materid= '" .$planid. "'and (title like '%" . $searchtitle . "%' or keywords like '%" . $searchtitle . "%') ORDER BY time desc LIMIT ". $limit . " offset " . $offset ." ";;
+		$sq0 = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "' and planid= '" . $planid . "'and (title like '%" . $searchtitle . "%' or keywords like '%" . $searchtitle . "%') ORDER BY time desc LIMIT 15";
 		// $sq0="select * from djdongtai where top=0 and eid='".$eid[1]."'and (title like '%".$searchtitle."%' or keywords like '%".$searchtitle."%') ORDER BY time desc LIMIT 15";
 		$command = $connection->createCommand ( $sq0 );
 		$state = $command->queryAll ();
 		$count = count ( $state );
 		for($i = 0; $i < $count; $i ++) {
-// 			$UAvator = $state [$i] ['pic'];
-// 			if ($UAvator) {
-// 			} else {
-// 				$state [$i] ['pic'] = "../web/img/pic2.png";
-// 			}
+			$UAvator = $state [$i] ['pic'];
+			if ($UAvator) {
+			} else {
+				$state [$i] ['pic'] = "../web/img/pic2.png";
+			}
 
-// 			$arr = getimagesize ( $UAvator );
-// 			if ($arr [0] / $arr [1] > 1.789) {
-// 				$state [$i] ['pic2'] = "1";
-// 			} else {
-// 				$state [$i] ['pic2'] = "2";
-// 			}
+			$arr = getimagesize ( $UAvator );
+			if ($arr [0] / $arr [1] > 1.789) {
+				$state [$i] ['pic2'] = "1";
+			} else {
+				$state [$i] ['pic2'] = "2";
+			}
 			// file_put_contents("D:\\wt1.txt","sum:".json_encode($state)."\n", FILE_APPEND);
 			$a = $state [$i] ['content'];
 			if (strstr ( $a, "divvideocontent" )) {
@@ -215,73 +204,73 @@ class Leamaterials extends \common\models\WebService {
 		return $return;
 	}
 
-// 	/**
-// 	 *
-// 	 * @param unknown $info
-// 	 * @return 返回下拉加载出的学习资料列表
-// 	 */
-// 	public function getLeamaterialmorelist($info) {
+	/**
+	 *
+	 * @param unknown $info
+	 * @return 返回下拉加载出的学习资料列表
+	 */
+	public function getLeamaterialmorelist($info) {
 
-// 		// $uid =\Yii::$app->session['user.uid'];
-// 		// \Yii::$app->session['public_count']="5";
+		// $uid =\Yii::$app->session['user.uid'];
+		// \Yii::$app->session['public_count']="5";
 
-// 		// $searchcontent=\yii::$app->request->get('searchcontent');
-// 		// $id=\yii::$app->request->get('id');
-// 		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
-// 		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
-// 		$searchcontent = isset ( $info ['searchcontent'] ) ? $info ['searchcontente'] : null;
-// 		$id = isset ( $info ['id'] ) ? $info ['id'] : null;
-// 		$planid = isset ( $info ['planid'] ) ? $info ['planid'] : null; // 学习计划id
+		// $searchcontent=\yii::$app->request->get('searchcontent');
+		// $id=\yii::$app->request->get('id');
+		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
+		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
+		$searchcontent = isset ( $info ['searchcontent'] ) ? $info ['searchcontente'] : null;
+		$id = isset ( $info ['id'] ) ? $info ['id'] : null;
+		$planid = isset ( $info ['planid'] ) ? $info ['planid'] : null; // 学习计划id
 
-// 		$connection = Yii::$app->db;
-// 		$connection->open (); // 初始化数据库
-// 		                     // $uid =\Yii::$app->session['user.uid'];
-// 		$eid = explode ( '@', $uid );
-// 		$public_count = \Yii::$app->session ['public_count'];
-// 		if (strlen ( $searchcontent ) > 0) {
-// 			$search_count = \Yii::$app->session ['search_count'];
-// 			$sq0 = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "' and planid = '" . $planid . "' and title like ('%" . $searchcontent . "%' or keywords like '%" . $searchcontent . "%') ORDER BY time desc LIMIT " . $search_count . ",15";
-// 			$search_count = $search_count + 15;
-// 			\Yii::$app->session ['search_count'] = $search_count;
-// 		} else {
-// 			$public_count = \Yii::$app->session ['public_count'];
-// 			$sq0 = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "'ORDER BY time desc LIMIT " . $public_count . ",15"; // 从第$public_count+1条开始取15条数据。
-// 			$public_count = $public_count + 15;
-// 			\Yii::$app->session ['public_count'] = $public_count;
-// 		}
-// 		$command = $connection->createCommand ( $sq0 );
-// 		$news = $command->queryAll ();
+		$connection = Yii::$app->db;
+		$connection->open (); // 初始化数据库
+		                     // $uid =\Yii::$app->session['user.uid'];
+		$eid = explode ( '@', $uid );
+		$public_count = \Yii::$app->session ['public_count'];
+		if (strlen ( $searchcontent ) > 0) {
+			$search_count = \Yii::$app->session ['search_count'];
+			$sq0 = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "' and planid = '" . $planid . "' and title like ('%" . $searchcontent . "%' or keywords like '%" . $searchcontent . "%') ORDER BY time desc LIMIT " . $search_count . ",15";
+			$search_count = $search_count + 15;
+			\Yii::$app->session ['search_count'] = $search_count;
+		} else {
+			$public_count = \Yii::$app->session ['public_count'];
+			$sq0 = "select * from djleamaterial where top=0 and eid='" . $eid [1] . "'ORDER BY time desc LIMIT " . $public_count . ",15"; // 从第$public_count+1条开始取15条数据。
+			$public_count = $public_count + 15;
+			\Yii::$app->session ['public_count'] = $public_count;
+		}
+		$command = $connection->createCommand ( $sq0 );
+		$news = $command->queryAll ();
 
-// 		// file_put_contents("D:\\wt1.txt","sum:".$sql."\n", FILE_APPEND);
-// 		\Yii::$app->session ['searchcontent'] = $searchcontent;
-// 		$count = count ( $news );
-// 		for($i = 0; $i < $count; $i ++) {
-// 			$UAvator = $news [$i] ['pic'];
-// 			if ($UAvator) {
-// 			} else {
-// 				$news [$i] ['pic'] = "../web/img/pic2.png";
-// 			}
-// 			// file_put_contents("D:\\wt1.txt","sum:".json_encode($news)."\n", FILE_APPEND);
-// 			$arr = getimagesize ( $UAvator );
-// 			if ($arr [0] / $arr [1] > 1.789) {
-// 				$news [$i] ['pic2'] = "1";
-// 			} else {
-// 				$news [$i] ['pic2'] = "2";
-// 			}
+		// file_put_contents("D:\\wt1.txt","sum:".$sql."\n", FILE_APPEND);
+		\Yii::$app->session ['searchcontent'] = $searchcontent;
+		$count = count ( $news );
+		for($i = 0; $i < $count; $i ++) {
+			$UAvator = $news [$i] ['pic'];
+			if ($UAvator) {
+			} else {
+				$news [$i] ['pic'] = "../web/img/pic2.png";
+			}
+			// file_put_contents("D:\\wt1.txt","sum:".json_encode($news)."\n", FILE_APPEND);
+			$arr = getimagesize ( $UAvator );
+			if ($arr [0] / $arr [1] > 1.789) {
+				$news [$i] ['pic2'] = "1";
+			} else {
+				$news [$i] ['pic2'] = "2";
+			}
 
-// 			$a = $news [$i] ['content'];
-// 			if (strstr ( $a, "divvideocontent" )) {
-// 				$news [$i] ['video'] = "1";
-// 			} else {
-// 				$news [$i] ['video'] = "0";
-// 			}
-// 			$news [$i] ['time'] = date ( "Y-m-d", strtotime ( $news [$i] ['time'] ) );
-// 		}
-// 		$return = $news;
-// 		return $return;
-// 		// echo json_encode($return);
-// 		exit ();
-// 	}
+			$a = $news [$i] ['content'];
+			if (strstr ( $a, "divvideocontent" )) {
+				$news [$i] ['video'] = "1";
+			} else {
+				$news [$i] ['video'] = "0";
+			}
+			$news [$i] ['time'] = date ( "Y-m-d", strtotime ( $news [$i] ['time'] ) );
+		}
+		$return = $news;
+		return $return;
+		// echo json_encode($return);
+		exit ();
+	}
 
 	/**
 	 *
@@ -329,33 +318,6 @@ class Leamaterials extends \common\models\WebService {
 		;
 		return $return;
 	}
-
-
-	// 查找父结点为 0 的学习计划id
-	public function Getplanparentid($planid) {
-		$sql = "select * from djleaplan where id='" . $planid . "';";
-		$connection = Yii::$app->db;
-		$connection->open ();
-
-		$sqlCommand = $connection->createCommand ( $sql );
-		$result = $sqlCommand->queryOne ();
-		if (! $result) {
-			return array (
-					'state' => - 1,
-					'planid' => $planid
-			);
-		}
-		if ($result ['parentid'] == '0') {
-			return array (
-					'state' => 0,
-					'planid' => $result ['id']
-			);
-		} else {
-			return $this->Getplanparentid ( $result ['parentid'] );
-		}
-	}
-
-
 	public function getEduList($info) {
 
 		// Yii::$app->response->format = Response::FORMAT_JSON;
@@ -433,8 +395,8 @@ class Leamaterials extends \common\models\WebService {
 		return $return;
 
 		$model = new ActionEs ();
-		$return = $model->getEsinfoList ( $info );
+		$return = $model->getEsinfoList($info);
 
-		return $return;
-	}
+        return  $return;
+    }
 }

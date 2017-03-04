@@ -28,18 +28,19 @@
 </style>
 <div id="tpl_list_iteam" style="display: none;">
  <div class="party-material-summary-list">
-                <a class="party-material-summary-box" href="#partyStudyMaterialContent_{id}">
+                <a class="party-material-summary-box" href="#partyStudyMaterialContent_{id}_{planid}">
                     <div class="party-material-summary-title">
                         <img class="party-material-summary-title1" src="../images/icon/icon_material_summary1.png">
                         <div class="party-material-summary-title2">{title}</div>
                     </div>
                     <div class="party-material-summary-foot">
                         <div class="party-material-summary-foot1">
-                            <img src="../images/icon/icon_clock.png">
+                            <span class="ui-icon-history" style="display:inline; font-size:14px; line-height:14px; color:#9e9e9e"></span>
                             <span>{time}</span>
                         </div>
                         <div class="party-material-summary-foot1">
-                            <img src="../images/icon/icon_eye.png">
+                            <!-- <img src="../images/icon/icon_eye.png"> -->
+                            <span class="fa_eyeOpen" style="display:inline; font-size:14px; line-height:14px; color:#9e9e9e"></span>
                             <span>{readd}</span>
                         </div>
                         <div class="party-material-summary-foot1" id = "icon_movie3" {display} >                        	
@@ -96,7 +97,7 @@
             正在加载...
         </div>
         <div class="resultEnd_nodata text_center ui-txt-muted" style="display:none;">
-            &nbsp;
+           没有更多了... &nbsp;
         </div>
 
     </div>

@@ -181,7 +181,7 @@ class Leaquestions extends \common\models\WebService {
 		// $top == DjleaquestionList::findBySql($sql);
 		$command = $connection->createCommand ( $sql );
 		$top = $command->queryAll ();
-
+		// return $top;
 		$count0 = count ( $top );
 		if ($count0 > 100) {
 			$top = "";
@@ -196,8 +196,7 @@ class Leaquestions extends \common\models\WebService {
 		] )->groupBy ( [
 				'uid'
 		] )->count ();
-
-
+		// return $top;
 		foreach ( $top as $key => $value ) {
 			$userInfo = Memberlist::findOne ( [
 					'guid' => $value ['uid']
@@ -205,9 +204,12 @@ class Leaquestions extends \common\models\WebService {
 			$top [$key] ['name'] = $userInfo ['name'];
 			$uids [] = $value ['uid'];
 		}
-
+		// return $top;
 		$ws = new IctWebService ();
+		// var_dump($uids);
 		$photo = $ws->getMemberPhoto ( $uids );
+		// var_dump($photo);
+		// die('3');
 		Yii::info ( $photo );
 
 		foreach ( $top as $key => $value ) {
@@ -468,10 +470,7 @@ class Leaquestions extends \common\models\WebService {
 		$auto_planid = isset ( $info ['planid'] ) ? $info ['planid'] : null; // 学习计划id
 		$uid = isset ( $info ['uid'] ) ? $info ['uid'] : null;
 		$auth_token = isset ( $info ['auth_token'] ) ? $info ['auth_token'] : null;
-		$p = isset ( $info ['p'] ) ? $info ['p'] : "1";
 
-		$limit = 15;
-		$offset = ($p - 1) * $limit;
 		$connection = Yii::$app->db;
 		$connection->open (); // 初始化数据库
 		                     // $uid =\Yii::$app->session['user.id'];
@@ -479,7 +478,7 @@ class Leaquestions extends \common\models\WebService {
 		$return ['c'] = 0;
 		$return ['m'] = '';
 		// die($uid);
-		if (!$uid) {
+		if (! $uid) {
 			$return ['c'] = - 1;
 			$return ['m'] = '无效用户';
 			return $return;
@@ -508,7 +507,7 @@ class Leaquestions extends \common\models\WebService {
 		] );
 
 		// 直接构造查询语句
-		$sq0 = "select * from djleaquestion_bank where deleteflag='0' and eid='" . $eid [1] . "' and bankflag ='0' and planid= '" . $planid . "'and (title like '%" . $searchtitle . "%' or bankid like '%" . $searchtitle . "%'  or sender like '%" . $searchtitle . "%' or orgid like '%" . $searchtitle . "%' ) ORDER BY createtime desc LIMIT ".$limit . " offset " . $offset ;
+		$sq0 = "select * from djleaquestion_bank where deleteflag='0' and eid='" . $eid [1] . "' and bankflag ='0' and planid= '" . $planid . "'and (title like '%" . $searchtitle . "%' or bankid like '%" . $searchtitle . "%'  or sender like '%" . $searchtitle . "%' or orgid like '%" . $searchtitle . "%' ) ORDER BY createtime desc LIMIT 15";
 		// die($sq0);
 		// $sq0="select count(*) from djleaquestion_bank where deleteflag='0' and eid='".$eid[1]."' and bankflag ='0' and planid= '".$planid."'and (title like '%".$searchtitle."%' or bankid like '%".$searchtitle."%' or creattime like '%".$searchtitle."%' or sender like '%".$searchtitle."%' or orgid like '%".$searchtitle."%' ) ORDER BY time desc LIMIT 15";
 		// $sq0="select * from djdongtai where top=0 and eid='".$eid[1]."'and (title like '%".$searchtitle."%' or keywords like '%".$searchtitle."%') ORDER BY time desc LIMIT 15";
@@ -584,7 +583,7 @@ class Leaquestions extends \common\models\WebService {
 			$connection = Yii::$app->db;
 			$connection->open ();
 			// 查询学习考试客户端抽题结果中已答完题目的得分前五名用户--by fyq
-			$sql = "select * from (SELECT distinct uid,`correctNum` FROM `djleaquestion_list` WHERE bankID='$id'   and finishflag='1'  order by  `correctNum` desc) t group by t.uid order by correctNum desc limit 0,5"; // 外层的查询语句对吗？？？返回集字段没有完全包含在groupby语句中
+			$sql = "select * from (SELECT distinct uid,`correctNum` FROM `djquestion_list` WHERE bankID='$id'   and finishflag='1'  order by  `correctNum` desc) t group by t.uid order by correctNum desc limit 0,5"; // 外层的查询语句对吗？？？返回集字段没有完全包含在groupby语句中
 			                                                                                                                                                                                                         // $top == DjleaquestionList::findBySql($sql);
 			$command = $connection->createCommand ( $sql );
 			$top = $command->queryAll ();
@@ -598,12 +597,6 @@ class Leaquestions extends \common\models\WebService {
 				$topname [] = $userInfo ['name'];
 				$topvalue [] = $value ['correctNum'];
 			}
-
-// 			var_dump($sql);
-// 			var_dump($top);
-// 			var_dump($topname);
-// 			var_dump($topvalue);
-// 			die('23');
 
 			// 前五名
 			$data ['top'] = [

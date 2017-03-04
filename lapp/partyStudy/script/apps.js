@@ -14,7 +14,7 @@ notfound.init = function(){
 var partyStudyMaterialSummary= {};
 partyStudyMaterialSummary.partial = "../html/temp/partyStudyMaterialSummary.html";
 partyStudyMaterialSummary.init = function(){
-	var planid = partyStudyMaterialSummary.parame;
+	 var planid = partyStudyMaterialSummary.parame;
    
 	$("#page-title").html("资料汇总");
     miniSPA.render("partyStudyMaterialSummary");
@@ -25,41 +25,53 @@ partyStudyMaterialSummary.init = function(){
 	commonFunction.load_page("#page_innerContent");
 	
 	//单击搜索按钮进行搜索
-	$("#search_bar").on("click","#search_clear",function(){
-		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
-		$(".pageloading").show();
-		var searchtitle = $("#search_input").val();
-//		alert(searchtitle);
-		setMaterialSearchListIteam(searchtitle,planid);
-		$(".pageloading").hide();
-	})
+//	$("#search_bar").on("click","#search_clear",function(){
+//		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
+//		$(".pageloading").show();
+//		var searchtitle = $("#search_input").val();
+////		alert(searchtitle);
+//		setMaterialSearchListIteam(searchtitle,planid);
+//		$(".pageloading").hide();
+//	})
 	
 	//输入内容实时搜索
 	$("#search_input").on("input",function(){
-		var searchtitle;		
+		
+		var searchtitle;
+		$(".resultEnd").show();
+		$(".resultEnd_nodata").hide();
+		page_home=1;
 		 searchtitle = $("#search_input").val();	
 		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
 //		alert(searchtitle);		
-		setMaterialSearchListIteam(searchtitle,planid);
+		setMaterialSearchListIteam(searchtitle,planid,page_home);
 	});
 	
 	
-	$('#search_input').focus(function(){
-		$('#search_clear').css('display','block');
-		$('#search_cancel').css('display','block');
-	})
-	
-	$('#search_clear').css('display','none');
-	$('#search_cancel').css('display','none');
+//	$('#search_input').focus(function(){
+//		$('#search_clear').css('display','block');
+//		$('#search_cancel').css('display','block');
+//	})
+//	
+//	$('#search_clear').css('display','none');
+//	$('#search_cancel').css('display','none');
 	
 	//焦点离开时自动搜索
 	$('#search_input').blur(function(){
+		
 	var searchtitle = $("#search_input").val();
+	page_home=1;
 	if(searchtitle){
+		$(".resultEnd").show();
+		$(".resultEnd_nodata").hide();
+		
 		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
 		$(".pageloading").show();
-		setMaterialSearchListIteam(searchtitle,planid);
+		setMaterialSearchListIteam(searchtitle,planid,page_home);
 		$(".pageloading").hide();
+	}else{
+		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
+		setMaterialListIteam(page_home,planid);
 	}
 		$('#search_clear').css('display','none');
 		$('#search_cancel').css('display','none');
@@ -74,7 +86,7 @@ partyStudyMaterialSummary.init = function(){
             setTimeout(function() {
                 window.location.reload();
                 $(self).pullToRefreshDone(); // 重置下拉刷新
-            }, 2000);   //模拟延迟
+            }, 1);   //模拟延迟
         });
 
         $("#tab1").infinite().on("infinite", function() {
@@ -87,10 +99,15 @@ partyStudyMaterialSummary.init = function(){
 				var self = this;			    
 			    if(self.loading) return;
 			    self.loading = true;
+			    var searchtitle = $("#search_input").val();
 			    setTimeout(function() {
-			    	setMaterialListIteam(page_home);
+			    	if(searchtitle){
+			    		setMaterialSearchListIteam(searchtitle,planid,page_home);
+			    	}else{
+			    		setMaterialListIteam(page_home,planid);
+			    	}
 			        self.loading = false;
-			    }, 2000);   //模拟延迟
+			    }, 1);   //模拟延迟
 			}
 //            if(flag_home){
 //                var self = this;
@@ -113,9 +130,40 @@ partyStudyMaterialContent.partial = "../html/temp/partyStudyMaterialContent.html
 partyStudyMaterialContent.init = function(){
 	$("#page-title").html("资料汇总");
     miniSPA.render("partyStudyMaterialContent");
-     var planid = setContent(partyStudyMaterialContent.parame);
+    setContent(partyStudyMaterialContent.parame);
     commonFunction.load_page("#page_innerContent");
-    setCount(partyStudyMaterialContent.parame,planid);
+    var id = partyStudyMaterialContent.parame;
+    var planid = partyStudyMaterialContent.parameCon;
+    setCount(id,planid); // 参数为资料id和资料所属的planid
+    
+    //js限制图片最大宽度
+    /*$(document).ready(function(){
+        var winWidth = $(window).width();
+        var a = $('#party-task-content').children('p').children('img').length,
+	        m = $('#party-task-content').children('p').children('img').length;
+	    $('img').load(function(){
+	        if(!--a){
+	            // 图片加载完成
+	            for(var n=0; n<m; n++){
+	                var b = $('#party-task-content').children('p').children('img').eq(n).width();
+	                if(b>300){
+	                    $('#party-task-content').children('p').children('img').eq(n).css('width','100%')
+	                }
+	            }
+	        }
+	    });
+
+        var a = $('.party-task-content').children('p').children('img').length;
+        for(var n=0; n<a; n++){
+            var b = $('.party-task-content').children('p').children('img').eq(n).width();
+            if(b>300){
+            	$('.party-task-content').children('p').children('img').eq(n).removeAttr('width').removeAttr('height');
+                $('.party-task-content').children('p').children('img').eq(n).css('width','100%').css('height','auto');
+            }
+        }
+    })*/
+
+
 
 }
 
@@ -124,7 +172,7 @@ var homeQuestion= {};
 homeQuestion.partial = "../html/tempQuestion/home.html";
 homeQuestion.init = function(){
 	var planid = homeQuestion.parame;
-	$("#page-title").html("答题测验");
+	$("#page-title").html("学习测评");
 //	$("#page-title").attr({"style":"display: block"});
 	miniSPA.render("homeQuestion");
 	page_home=1;
@@ -133,38 +181,52 @@ homeQuestion.init = function(){
 	commonFunction.load_page("#page_innerContent");
 	
 	//单击搜索按钮
-	$("#search_bar").on("click","#search_clear",function(){
-		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
-		$(".pageloading").show();
-		var searchtitle = $("#search_input").val();
-//		alert(searchtitle);		
-		setQuestionSearchListIteam(searchtitle,planid);
-		$(".pageloading").hide();
-	})
+//	$("#search_bar").on("click","#search_clear",function(){
+//		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
+//		$(".pageloading").show();
+//		var searchtitle = $("#search_input").val();
+////		alert(searchtitle);		
+//		setQuestionSearchListIteam(searchtitle,planid);
+//		$(".pageloading").hide();
+//	})
 	
 	//输入内容实时搜索
 	$("#search_input").on("input",function(){
-		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
-		$(".pageloading").show();
-		var searchtitle = $("#search_input").val();
+//		$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
+//		$(".pageloading").show();
+//		var searchtitle = $("#search_input").val();
+		$(".resultEnd").show();
+		$(".resultEnd_nodata").hide();
+		page_home=1;
+		var searchtitle;		
+		 searchtitle = $("#search_input").val();	
+		$("#J_listGroup").empty();
 //		alert(searchtitle);		
-		setQuestionSearchListIteam(searchtitle,planid);
-		$(".pageloading").hide();
+		setQuestionSearchListIteam(searchtitle,planid,page_home);
+//		$(".pageloading").hide();
 	});
-	$('#search_input').focus(function(){
-		$('#search_clear').css('display','block');
-		$('#search_cancel').css('display','block');
-	})
+//	$('#search_input').focus(function(){
+//		$('#search_clear').css('display','block');
+//		$('#search_cancel').css('display','block');
+//	})
 	
 	//焦点离开时自动搜索
 	$('#search_input').blur(function(){
 		var searchtitle = $("#search_input").val();
+		page_home=1;
+		
 		if(searchtitle){
+			$(".resultEnd").show();
+			$(".resultEnd_nodata").hide();
+			
 			$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
 			$(".pageloading").show();
-			setQuestionSearchListIteam(searchtitle,planid);
+			setQuestionSearchListIteam(searchtitle,planid,page_home);
 			$(".pageloading").hide();
 			
+		}else{
+			$("#J_listGroup").empty(); //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。 --fyq
+			setQuestionListIteam(page_home,planid);
 		}
 		$('#search_clear').css('display','none');
 		$('#search_cancel').css('display','none');
@@ -176,7 +238,7 @@ homeQuestion.init = function(){
 		    setTimeout(function() {
 		      	window.location.reload();
 		        $(self).pullToRefreshDone(); // 重置下拉刷新
-		    }, 2000);   //模拟延迟
+		    }, 1);   //模拟延迟
 	    });
 	    
 	    $("#tab1").infinite().on("infinite", function() { //无限加载 --fyq
@@ -187,10 +249,15 @@ homeQuestion.init = function(){
 				var self = this;			    
 			    if(self.loading) return;
 			    self.loading = true;
+			    var searchtitle = $("#search_input").val();
 			    setTimeout(function() {
-			    	setQuestionListIteam(page_home);
+			    	if(searchtitle){
+			    		setQuestionSearchListIteam(searchtitle,planid,page_home);
+			    	}else{
+			    		setQuestionListIteam(page_home,planid);
+			    	}
 			        self.loading = false;
-			    }, 2000);   //模拟延迟
+			    }, 1);   //模拟延迟
 			}
 			
 		    
@@ -202,7 +269,7 @@ homeQuestion.init = function(){
 var examine= {};
 examine.partial = "../html/tempQuestion/examine.html";
 examine.init = function(){
-	$("#page-title").html("答题测验");
+	$("#page-title").html("学习测评");
 	miniSPA.render("examine");
 	var bankid = examine.parame;
 	
@@ -230,7 +297,7 @@ examine.init = function(){
 var begin= {};
 begin.partial = "../html/tempQuestion/begin.html";
 begin.init = function(){
-	$("#page-title").html("答题测验");
+	$("#page-title").html("学习测评");
 	miniSPA.render("begin");
 	var setting = {};
 	var bankid = begin.parame,
@@ -300,7 +367,7 @@ begin.init = function(){
 var finish= {};
 finish.partial = "../html/tempQuestion/finish.html";
 finish.init = function(){
-	$("#page-title").html("答题测验");
+	$("#page-title").html("学习测评");
 	miniSPA.render("finish");
 	var paperId = finish.parame;
 	$("body").css("background-color","#FDFDFD");
@@ -323,7 +390,7 @@ finish.init = function(){
 var overview= {};
 overview.partial = "../html/tempQuestion/overview.html";
 overview.init = function(){
-	$("#page-title").html("答题测验");
+	$("#page-title").html("学习测评");
 	miniSPA.render("overview");
 	var bankid = overview.parame;
 	END_CURRCOUNT = 0;
@@ -361,7 +428,7 @@ overview.init = function(){
 var ranking= {};
 ranking.partial = "../html/tempQuestion/ranking.html";
 ranking.init = function(){
-	$("#page-title").html("答题测验");
+	$("#page-title").html("学习测评");
 	miniSPA.render("ranking");
 	
 	page_rank = 1;

@@ -1,5 +1,5 @@
 <div id="tpl_list_iteam" style="display: none;">
-<a href="#partyStudyTasks_{id}" class="party-study-list-box">
+<a href='#partyStudyTasks_{id}_{plan-title}' class="party-study-list-box">
 		            <div class="party-study-list">
 		                <div class="party-study-list1-box">
 		                    <img src="../images/temp/{pic1}">
@@ -8,7 +8,7 @@
 		                    <div class="party-study-list2-1 ">{title}</div>
 		                    <div class="party-study-list2-2">已有<span>{readd}</span>人参与学习</div>
 		                </div>
-		                <div class="party-study-list3 {pic2}"><span class="study-speed">{percent}</span>%</div>
+		                <div class="party-study-list3 {pic2}" ><span class="study-speed" >{percent}</span>%</div>
 		            </div>
 		        </a>
 </div>
@@ -29,7 +29,7 @@
 		        <img src="../images/temp/party-study1.png">
 		    </div>
 		    <div id="banner"></div>
-		    <!--  <div class="party-study-department">研发中心党支部</div>-->
+		    <div class="party-study-department" id = "party-study-department_id"></div>
 		    <div class="party-study-list-inner">
 		     <div id="J_listGroup" class="listGroup">
 		     		

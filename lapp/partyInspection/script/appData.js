@@ -41,7 +41,7 @@ function getPlanComplete(){
 	// 获取数据
 	var getPlans = commonFunction.getJsonResult(arr);// 返回值为数组 --fyq
 
-	console.log("getPlans:"+JSON.stringify(getPlans));
+//	console.log("getPlans:"+JSON.stringify(getPlans));
 	if( /error/.test(getPlans) ){
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("获取专题getList报错："+getPlans);
@@ -52,7 +52,6 @@ function getPlanComplete(){
 		console.log("获取专题getList报错："+getPlans);
 		return false;
 	}
-//	console.log(getList.message); 
 	
 	return getPlans.message; //返回json格式的message信息
 	
@@ -77,7 +76,7 @@ function getPartyMember(){
 	// 获取数据
 	var getMember = commonFunction.getJsonResult(arr);// 返回值为数组 --fyq
 	
-	console.log("getMember:"+JSON.stringify(getMember));
+//	console.log("getMember:"+JSON.stringify(getMember));
 	
 	if(/erro/.test(getMember)){
 		$.toast("有异常，请返回重试","cancel");
@@ -105,9 +104,7 @@ function setListIteamx(page,partyoid){
 			"partyoid":partyoid
 	}
 	info = JSON.stringify(info);//将参数字符串化 --fyq;
-//	alert(info);
 	var arr = {
-//		"url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=edu/api&method=edu.list.get",
 		"arr":{"info":info},
 		"type":"post"
@@ -120,14 +117,10 @@ function setListIteamx(page,partyoid){
 		console.log("获取专题getList报错："+getList);
 		return false;
 	}	
-	//console.log("moudle"+JSON.stringify(getList.list));
-//	return ;
-	//console.log(getList);	
 	//生成页面
 	var tpl_list = $("#tpl_list_iteam").html();
 	var html = [];
 	var display = " ";
-	//alert(getList.list.length);
 	if(getList.role == "1"){
 		var el, iteam;
 		el = document.getElementById('banner');
@@ -147,16 +140,17 @@ function setListIteamx(page,partyoid){
 		}else if(getList.list[i].flag == "3"){ //已结束
 			pic1 = "party-study-finished.png";
 			pic2 = "party-study-list3f";
-		}				
+		}
+		
+		getList.list[i].title = getList.list[i].title.replace(/\"/g,"&quot;");
 		var html_iteam = tpl_list
 			.replace( /\{id\}/g,getList.list[i].id )
+			.replace( /\{plan-title\}/g,encodeURI(getList.list[i].title) )
 			.replace( /\{title\}/g,getList.list[i].title )
 			.replace( /\{readd\}/g,getList.list[i].readd )
 			.replace( /\{percent\}/g,getList.list[i].percent)
 			.replace( /\{pic1\}/g,pic1)
 			.replace( /\{pic2\}/g,pic2);
-			//.replace( /\{matertype\}/g,getList.list[i].matertype||"学习材料" );		
-		//alert(html_iteam);
 		
 		html.push(html_iteam); //push()	向数组的末尾添加一个或更多元素，并返回新的长度。 --fyq
 	}
@@ -170,6 +164,11 @@ function setListIteamx(page,partyoid){
 	//$(selector).html(content) html() 方法返回或设置被选元素的内容 (inner HTML)。	如果该方法未设置参数，则返回被选元素的当前内容。
 	//当使用该方法返回一个值时，它会返回第一个匹配元素的内容。当使用该方法设置一个值时，它会覆盖所有匹配元素的内容
 	
+	console.log("getList.count:"+getList.count);
+	console.log("limit_home:"+limit_home);
+	console.log("getList.list.length:"+getList.list.length);
+	
+	
 	//判断显示是否可以继续加载下一页
 	//先算一下一共有几页
 	var totalpage = Math.ceil(getList.count/limit_home);
@@ -181,7 +180,9 @@ function setListIteamx(page,partyoid){
 	}else{
 		flag_home = true;
 		page_home++;
-	}		
+	}	
+	
+	console.log("flag_home:"+flag_home)
 }
 
 
@@ -194,23 +195,32 @@ function tasklist(planid,page){
 			//"limit":5,
 	}
 	info = JSON.stringify(info);//将参数字符串化 --fyq;
-	//alert(info);
 	/*************获取学习任务列表***************/
 	var arr = {
-//		"url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=edutask/api&method=edutask.list.get",
 		"arr":{"info":info},
 		"type":"post"
 	};
 	//获取数据
 	var getList = commonFunction.getJsonResult(arr);
+	
+	console.log("moudle：tasklist()："+JSON.stringify(getList));
+	
 	if( /error/.test(getList) ){
 //		alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("获取专题getList报错："+getList);
 		return false;
-	}	
-	//console.log("moudle"+JSON.stringify(getList));
+	}
+//	console.log("getList.list.length:"+getList.list.length);
+	if(getList.list.length==0){
+		$(".resultEnd").hide();
+		$(".resultEnd_nodata").show();
+		$("#J_listGroup").attr({"class":"empty"});
+		$("#J_listGroup").html("暂无");
+		return false;
+	}
+	
 	var tpl_list = $("#tpl_list_iteam").html();
 	var html = [];
 	var display="";
@@ -222,14 +232,11 @@ function tasklist(planid,page){
 			var time0=getList.list[i].time.split(" ");	
 		    time0=time0[0];
 		}else{var time0="";}	
-		
-		if(getList.list[i].isend=="1"){ 
+		if(getList.list[i].isend== 1){ 
 			finish="party-task-finished";
-			display="none";
 		}else{
 			finish="";
-			display="";}
-		if(getList.role=="3"){display="none";finish="";}
+			}
 		var html_iteam = tpl_list
 		.replace( /\{id\}/g,getList.list[i].id )
 		.replace( /\{title\}/g,getList.list[i].title )
@@ -239,17 +246,11 @@ function tasklist(planid,page){
 		.replace( /\{time\}/g,time0)
 		.replace( /\{finish\}/g,finish)
 		.replace( /\{display\}/g,display);
-		//.replace( /\{matertype\}/g,getList.list[i].matertype||"学习材料" );		
-	//alert(html_iteam);	
 	   html.push(html_iteam); 		
 	 }
 	$("#J_listGroup").append( html.join('') ); 
-//	var totalpage = Math.ceil(getList.count/limit_home);
-//	console.log(totalpage+" "+page_home);
 	//如果数据小于limit 则不能继续翻页 下拉加载
-	//if( getList.count<limit_home||getList.count==1||totalpage==page_home ){
 	flag_search_tasklist = false;
-	//if( getList.list.length<5){
 	if( getList.list.length<limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
@@ -265,19 +266,15 @@ function tasklist(planid,page){
 
 //首页列表页面中搜索
 function tasksearch(searchtitle,planid,page){
-//	var info ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
 			"token":NATIVE_AUTH_TOKEN,
 			"searchcontent":searchtitle,
 			"planid":planid,
 			"p":page,
-			//"limit":4,
 	}
 	info = JSON.stringify(info);//将参数字符串化 --fyq;
-//	alert(info);
 	var arr = {
-//		"url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=edutask/api&method=edutask.list.search",
 		"arr":{"info":info},
 		"type":"post"
@@ -306,7 +303,7 @@ function tasksearch(searchtitle,planid,page){
 		}else{
 			finish="";
 			display="";}
-		if(getList.role=="3"){display="none";finish="";}
+//		if(getList.role=="3"){display="none";finish="";}
 		if(getList.list[i].time){
 			var time0=getList.list[i].time.split(" ");	
 		    time0=time0[0];
@@ -353,16 +350,13 @@ function tasksearch(searchtitle,planid,page){
 
 //任务完成设置
 function taskcomplete(id){
-//	var info ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
 			"token":NATIVE_AUTH_TOKEN,
 			"taskid":id
 	}
 	info = JSON.stringify(info);
-	//alert(info);
 	var arr = {
-//		"url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=edutask/api&method=edutask.task.complete",
 		"arr":{"info":info},
 		"type":"post"
@@ -370,13 +364,11 @@ function taskcomplete(id){
 	//获取数据
 	var getList = commonFunction.getJsonResult(arr);//返回值为数组 --fyq
 	if( /error/.test(getList) ){
-//		alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("提交任务完成："+getList);
 		return false;
 	}
-	console.log("getList"+JSON.stringify(getList));
-//	return ;			
+//	console.log("getList"+JSON.stringify(getList));
 }
 
 

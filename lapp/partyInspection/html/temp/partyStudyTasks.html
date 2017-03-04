@@ -25,7 +25,6 @@
         white-space:nowrap;
         overflow:hidden;
         text-overflow:ellipsis;
-        width:180px;
         font-size:15px;
         color:#333;
         line-height:15px;
@@ -52,9 +51,46 @@
 display: inline-block;
 width: 72px;
 }
+.party-task-box{
+	position:relative;
+    width: 100%;
+}
+.party-task-finish-img{
+	display:block;
+	position:absolute;
+	top:6px;
+	right:14px;
+	display:none;
+}
 .party-task-finished{
 	display:block;
 }
+.party-task-list1{
+        overflow:hidden;
+    	padding-bottom:4px;
+    	border-bottom:solid 1px #e6e6e6;
+    	margin:0 10px 5px 10px;
+    }
+    .party-task-list-img{
+        background-size:cover;
+        background-position:center center;
+        background-repeat:no-repeat;
+        width:90px;
+        height:75px;
+        overflow:hidden;
+        margin-right:6px;
+        float:left;
+    }
+    .party-item-look a{
+        padding:0 2px;
+    }
+	.party-item-look .party-task-finish{
+		margin-right:2px;
+	}
+	.weui_cell_desc p{
+		
+	}
+
 </style>
 <div id="page_innerContent" class="page_innerContent">
     <div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active refresh-top">
@@ -80,35 +116,23 @@ width: 72px;
                         <span>请输入要搜索的关键字</span>
                     </label>
                 </form>
-                <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
+               <!--   <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a> -->
             </div>
             <div class="party-task-title-box">
-                <div class="party-task-title">研发中心“两学一做”学习计划进度</div>
+                <div class="party-task-title" ></div>
             </div>
             <!--栏目-->
             <div class="partyStudyTasksList">
               <div id="tpl_list_iteam" style="display: none;">
-                <div class="weui_cell">
-                    <div class="weui_cell_hd">
-                        <img src="{pic}" style="width:100px; height:75px; margin-right:14px;display:block">
-                    </div>
-                    <div class="weui_cell_bd party-task-box">
-                        <img class="party-task-finish-img {finish}" src="../images/temp/party-item-finish.png">
-                        <a href="#partyStudyTasksContent_{id}">
-                            <h4 class="weui_cell_title">{title}</h4>
-                            <p class="weui_cell_desc ui-nowrap-multi ui-whitespace" style="font-size:12px; line-height:15px; margin-bottom:4px;">
-                                {content}
-                            </p>
-                        </a>
-                        <div class="party-item-look">
-                            <span class="party-item-time">{time}</span>
-                            <img class="party-item-icon-eye" src="../images/icon/icon_eye.png">
-                            <span>{readd}</span>
-                            <a href="#partyStudyExperience_{id}" class="party-item-experience">心得</a>
-                           <!--   <a href="javascript:void(0);" class="party-task-finish" data="{id}" style="display:{display}">完成</a> -->                           
-                        </div>
-                    </div>
-                </div>                  
+              		<div class="party-task-list1">
+		            	<div id="src1" class="party-task-list-img" style="background-image:url({pic})"></div>
+		            	<div class="party-task-box">
+		            		<img class="party-task-finish-img {finish}" src="../images/temp/party-item-finish.png">
+		            		<div id="a1">
+		                    	<h4 class="weui_cell_title">{title}</h4>
+		                  	</div>
+		              	</div>
+		           	</div>
                </div>      
       <div id="J_listGroup" class="listGroup">		     				        
 	  </div>	

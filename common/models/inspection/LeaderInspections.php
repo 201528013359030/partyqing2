@@ -13,13 +13,15 @@ use yii\web\Response;
  * @author fang
  * @tutorial 学习教育轻应用中的学习测验类
  */
+
+header('Access-Control-Allow-Origin:*');
 class LeaderInspections extends \common\models\WebService {
 
 	/**
 	 *
 	 * @tutorial 构造函数，调用父类init()函数初始化数据，注册接口
 	 */
-	// header('Access-Control-Allow-Origin:*');
+
 	function __construct() {
 		parent::init ();
 		parent::registerApi ( "LeaderInspection.plan.complete", "planComplete", [
@@ -54,24 +56,75 @@ class LeaderInspections extends \common\models\WebService {
 
 	if(!$uid){
     		$return['status'] = -1;
-    		$return['message'] = '无效用户';
+    		$return['message'] = '无效用户，uid为空';
     		return $return;
     	}
 
 		$db = \Yii::$app->db;
 		$db->open();
 
+		$organ =null;
+		$organInfo = null;
+		$organParent = null;
+		$organChild = null;
+
 		$sql = "";
-		$command ="";
-		$sql = "select oid,name from organization where  level=2 and orgtype='1'"; //获取党组织信息
+		$command = "";
+		$sql = "select partyoid from djpartyuser where uid = '".$uid."'";
 		$command = $db->createCommand($sql);
-		$organ = $command->queryAll();
-		if(!$organ){
+		$oid = $command->queryOne();
+
+		if(!$oid){
 			$return['status'] = -1;
-			$return['message'] = '无组织信息';
+			$return['message'] = '无效用户，无对应的组织信息';
 			return $return;
 		}
 
+// 		var_dump($oid);
+// 		var_dump($oid['partyoid']);
+// 		die('3');
+		//获取当前用户对应的党组织信息
+		$organInfo = $this->getPartyParentOid($oid['partyoid']);
+
+		if($organInfo['state'] == '-1'){
+			$return['status'] = -1;
+			$return['message'] = '无id='.$organInfo['organ'].'的党组织信息';
+			return $return;
+		}
+		if($organInfo['state'] == '0'){
+			$organParent = $organInfo['organ'];
+		}
+
+		//查询支部信息
+		$sql = "";
+		$command ="";
+		$sql = "select oid,name from organization where parentID = '".$organParent['oid']."'"; //获取党组织信息
+		$command = $db->createCommand($sql);
+		$organChild = $command->queryAll();
+// 		if(!$organChild){
+// 			$return['status'] = -1;
+// 			$return['message'] = '无组织信息';
+// 			return $return;
+// 		}
+
+// 		$organChild[count($organChild)] = $organParent; //将上级党委加入支部列表
+
+
+/**********************v0 begin*********************************/
+
+// 		$sql = "";
+// 		$command ="";
+// 		$sql = "select oid,name from organization where  level=2 and orgtype='1'"; //获取党组织信息
+// 		$command = $db->createCommand($sql);
+// 		$organ = $command->queryAll();
+// 		if(!$organ){
+// 			$return['status'] = -1;
+// 			$return['message'] = '无组织信息';
+// 			return $return;
+// 		}
+
+/**********************v0 end*********************************/
+		$organ = $organChild;
 		//获取党组织对应学习计划信息
 		for($j=0;$j<count($organ);$j++){
 
@@ -109,7 +162,7 @@ class LeaderInspections extends \common\models\WebService {
 			$command = $db->createCommand($sql);
 			$countComplete = $command->query()->count();
 
-			$plans[$i]['completePercent'] =(($countComplete/$countAll)*100);
+			$plans[$i]['completePercent'] =ceil(($countComplete/$countAll)*100);
 		}
 		$organ[$j]['plans'] = $plans;
 		}
@@ -134,26 +187,79 @@ class LeaderInspections extends \common\models\WebService {
 			$return['status'] = "-1";
 			$return['message'] = "无效用户";
 		}
+
+// 		$db = \Yii::$app->db;
+// 		$db->open();
+
+// 		$sql = "";
+// 		$command = "";
+// 		$sql = "select oid,name from organization where level=2 and orgtype='1'";
+// // 		$sql = "select name,count(*) from organization a,memberlist b where a.oid=b.oid and b.sex = 0 group by oid";
+// 		$command =$db->createCommand($sql);
+// 		$organ = $command->queryAll();
+
+// 		if(!$organ){
+// 			$return['status'] = "-1";
+// 			$return['message'] = "无组织信息";
+// 		}
+
+
 		$db = \Yii::$app->db;
 		$db->open();
 
+		$organ =null;
+		$organInfo = null;
+		$organParent = null;
+		$organChild = null;
+
 		$sql = "";
 		$command = "";
-		$sql = "select oid,name from organization where level=2 and orgtype='1'";
-// 		$sql = "select name,count(*) from organization a,memberlist b where a.oid=b.oid and b.sex = 0 group by oid";
-		$command =$db->createCommand($sql);
-		$organ = $command->queryAll();
+		$sql = "select partyoid from djpartyuser where uid = '".$uid."'";
+		$command = $db->createCommand($sql);
+		$oid = $command->queryOne();
 
-		if(!$organ){
-			$return['status'] = "-1";
-			$return['message'] = "无组织信息";
+		if(!$oid){
+			$return['status'] = -1;
+			$return['message'] = '无效用户，无对应的组织信息';
+			return $return;
 		}
 
+		// 		var_dump($oid);
+		// 		var_dump($oid['partyoid']);
+		// 		die('3');
+		//获取当前用户对应的党组织信息
+		$organInfo = $this->getPartyParentOid($oid['partyoid']);
+
+		if($organInfo['state'] == '-1'){
+			$return['status'] = -1;
+			$return['message'] = '无id='.$organInfo['organ'].'的党组织信息';
+			return $return;
+		}
+		if($organInfo['state'] == '0'){
+			$organParent = $organInfo['organ'];
+		}
+
+		//查询支部信息
+		$sql = "";
+		$command ="";
+		$sql = "select oid,name from organization where parentID = '".$organParent['oid']."'"; //获取党组织信息
+		$command = $db->createCommand($sql);
+		$organChild = $command->queryAll();
+// 		if(!$organChild){
+// 			$return['status'] = -1;
+// 			$return['message'] = '无组织信息';
+// 			return $return;
+// 		}
+
+// 		$organChild[count($organChild)] = $organParent;
+
+		$organ = $organChild;
+		//查询党委和各支部人数
 		for($i=0;$i<count($organ);$i++){
 
 			$sql = "";
 			$command = "";
-			$sql = "select count(*) as count from memberlist where oid = '".$organ[$i]['oid']."' and sex = 1"; //查询女性人数
+			$sql = "select count(*) as count from djpartymem_view where partyoid = '".$organ[$i]['oid']."' and sex = 1 and istrue = 1"; //查询女性人数
 			$command = $db->createCommand($sql);
 			$girls = $command->queryOne();
 
@@ -162,7 +268,7 @@ class LeaderInspections extends \common\models\WebService {
 
 			$sql = "";
 			$command = "";
-			$sql = "select count(*) as count  from memberlist where oid = '".$organ[$i]['oid']."' and sex = 0";//查询男性人数
+			$sql = "select count(*) as count  from djpartymem_view where partyoid = '".$organ[$i]['oid']."' and sex = 0 and istrue = 1";//查询男性人数
 			$command = $db->createCommand($sql);
 			$boys = $command->queryOne();
 
@@ -172,5 +278,31 @@ class LeaderInspections extends \common\models\WebService {
 
 		$return ['message'] = $organ;
 		return $return;
+	}
+
+	//根据支部oid查找党委oid
+	 function getPartyParentOid($oid){
+
+		$connection = Yii::$app->db;
+		$connection->open ();
+
+		$sql = "select * from organization where oid='" . $oid . "'";
+		$sqlCommand = $connection->createCommand ( $sql );
+		$result = $sqlCommand->queryOne();
+		if (!$result) {
+			return array (
+					'state' => - 1,
+					'organ' => $oid
+			);
+		}
+		if ($result ['level'] == '2'&& $result ['orgtype'] == '1') {
+			return array (
+					'state' => 0,
+					'organ' => $result
+			);
+		} else {
+			return $this->getPartyParentOid($result['parentID']);
+		}
+
 	}
 }

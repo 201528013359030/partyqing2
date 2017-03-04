@@ -10,7 +10,7 @@ var urlbase = SERVER_IP+"/partyqingx/backend/web/index.php"
 var limit_home = 15,
 	limit_rank = 15; // 与服务器规定最多显示多少条，死的
 var page_home = 1,
-	page_rank = 1; // 模糊搜索时翻页 第几页
+	page_rank = 1; // 翻页 第几页
 var flag_home = true,
 	flag_rank = true; // true 可以继续翻页； false 不能继续翻页
 var CURRCOUNT = 0,
@@ -20,7 +20,6 @@ var bh = $(window).height();
 if(bh<480){
     $('body').addClass('xs-screen');
 }
-
 
 function getJsonResult(arr){
 	var result =commonFunction.getJsonResult(arr);// 返回值为数组 --fyq
@@ -39,41 +38,36 @@ function setMaterialListIteam(page,planid){
 			"id":"1"
 	}
 	info = JSON.stringify(info);// 将参数字符串化 --fyq;
-
+// alert(info);
 	var arr = {
+// "url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=leamaterial/api&method=Leamaterial.list.get",
 		"arr":{"info":info},
 		"type":"post"
 	};
-//	console.log("arr: "+JSON.stringify(arr));
 	// 获取数据
 	var getList = getJsonResult(arr);// 返回值为数组 --fyq
 
-//	console.log("moudle: "+JSON.stringify(getList));
-	
-	if(!JSON.stringify(getList)&& page == 1){
-//		commonFunction.load_page("#page_innerContent");
-		$(".resultEnd").hide();
-		$(".resultEnd_nodata").show();
-		$("#J_listGroup").attr({"style":"text-align:center;"});
-		$("#J_listGroup").attr({"class":"empty"});
-		$("#J_listGroup").html("暂无");
-		return false;
+	if(!JSON.stringify(getList).length){
+		commonFunction.load_page("#page_innerContent");
+		return ;
 	}
 	if( /error/.test(getList) ){
+// alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("获取专题getList报错："+getList);
 		return false;
 	}
 	
-//	console.log("moudle: "+JSON.stringify(getList));
+	console.log("moudle: "+JSON.stringify(getList));
+// return ;
 	
-	if(JSON.stringify(getList).length<=52 && page == 1){
+	if(JSON.stringify(getList).length<=52){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
-		$("#J_listGroup").attr({"style":"text-align:center;"});
+//		$("#J_listGroup").attr({"style":"text-align:center;"});
 		$("#J_listGroup").attr({"class":"empty"});
-		$("#J_listGroup").html("暂无");
+		$("#J_listGroup").html( "友情提示: 没有用户 "+NATIVE_UID+" 的相关数据!");
 		return false;
 	}
 	
@@ -89,13 +83,15 @@ function setMaterialListIteam(page,planid){
 		}
 		
 		var html_iteam = tpl_list
-			.replace( /\{planid\}/g,planid )
 			.replace( /\{id\}/g,getList.list[i].id )
 			.replace( /\{title\}/g,getList.list[i].title )
 			.replace( /\{time\}/g,getList.list[i].ytime )
 			.replace( /\{readd\}/g,getList.list[i].readd )
 			.replace( /\{display\}/g,display )
-			.replace( /\{matertype\}/g,getList.list[i].matertype||"" );
+			.replace( /\{matertype\}/g,getList.list[i].matertype||"学习材料" );
+		
+// alert(html_iteam);
+// alert(tpl_list);
 		
 		html.push(html_iteam); // push() 向数组的末尾添加一个或更多元素，并返回新的长度。 --fyq
 	}
@@ -127,19 +123,19 @@ function setMaterialListIteam(page,planid){
 
 
 // 首页列表页面中搜索
-function setMaterialSearchListIteam(searchtitle,planid,page){
+function setMaterialSearchListIteam(searchtitle,planid){
 // var info
 // ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
 			"auth_token":NATIVE_AUTH_TOKEN,
 			"searchtitle":searchtitle,
-			"planid":planid,
-			"p":page,
+			"planid":planid
 	}
 	info = JSON.stringify(info);// 将参数字符串化 --fyq;
-
+// alert(info);
 	var arr = {
+// "url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=leamaterial/api&method=Leamaterial.search.get",
 		"arr":{"info":info},
 		"type":"post"
@@ -147,12 +143,14 @@ function setMaterialSearchListIteam(searchtitle,planid,page){
 	// 获取数据
 	var getList = getJsonResult(arr);// 返回值为数组 --fyq
 	if( /error/.test(getList) ){
+// alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("获取资料列表getList报错："+getList);
 		return false;
 	}
 	
-//	console.log("getList"+JSON.stringify(getList));
+	console.log("getList"+JSON.stringify(getList));
+// return ;
 	
 			
 	// 生成页面
@@ -171,7 +169,7 @@ function setMaterialSearchListIteam(searchtitle,planid,page){
 			.replace( /\{time\}/g,getList[i].ytime )
 			.replace( /\{readd\}/g,getList[i].readd )
 			.replace(/\{display\}/g,display)
-			.replace( /\{matertype\}/g,getList[i].matertype||" " );
+			.replace( /\{matertype\}/g,getList[i].matertype||"学习材料" );
 				
 		html.push(html_iteam); // push() 向数组的末尾添加一个或更多元素，并返回新的长度。 --fyq
 	}
@@ -206,6 +204,8 @@ function setContent(id){
 	// 获取数据
 	var isFirst = false,
 		isContinue = false;
+// var bankid = id;
+// var info ="{\"id\":\""+bankid+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
 			"auth_token":NATIVE_AUTH_TOKEN,
@@ -214,6 +214,7 @@ function setContent(id){
 	info = JSON.stringify(info);
 	
 	var arr = {
+// "url":SERVER_IP+"/question/web/index.php?r=test/info&id="+bankid,
 			"url":urlbase+"?r=leamaterial/api&method=Leamaterial.data.get",
 			"arr":{"info":info},
 			"type":"post"
@@ -226,7 +227,7 @@ function setContent(id){
 		return false;
 	}
 	
-//	console.log(JSON.stringify(getInfo));
+	console.log(JSON.stringify(getInfo));
 	
 	if(getInfo.sum==0){
 		isFirst = true;
@@ -235,6 +236,8 @@ function setContent(id){
 		isContinue=true;
 	}
 	
+	// 生成页面
+// var top_first = $("#tpl_party-Material-content").html();
 	
 	// 生成页面
 	var tpl_content = $("#tpl_party-Material-content").html();
@@ -243,7 +246,7 @@ function setContent(id){
 	
 		var html_iteam = tpl_content
 			.replace( /\{title\}/g,getInfo.content.title )
-			.replace( /\{sender\}/g,getInfo.content.sender||" " )
+			.replace( /\{sender\}/g,getInfo.content.sender )
 			.replace( /\{time\}/g,getInfo.content.time )
 			.replace( /\{content\}/g,getInfo.content.content )
 		html.push(html_iteam); // push() 向数组的末尾添加一个或更多元素，并返回新的长度。 --fyq
@@ -252,18 +255,18 @@ function setContent(id){
 	// append() 向匹配元素集合中的每个元素结尾插入由参数指定的内容。 --fyq
 	// join() 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。 --fyq
 	$("#J_listGroup").append( html.join('') ); 
-	return getInfo.content.materid;//返回当前资料对应的计划id
+	return getInfo.content.planid;
 }
 
 // 统计资料的阅读数量
-function setCount(id,planId){
+function setCount(id,planid){
 	// 获取数据
 	
 	var info = {
 			"uid":NATIVE_UID,
 			"auth_token":NATIVE_AUTH_TOKEN,
 			"id":id,
-			"planid":planId
+			"planid":planid
 	}
 	info = JSON.stringify(info);
 	
@@ -276,14 +279,19 @@ function setCount(id,planId){
 	
 	var getInfo = commonFunction.getJsonResult(arr);
 	
-	console.log("统计资料阅读人数返回getInfo:"+JSON.stringify(getInfo));
+//	for ( var i in getInfo) {
+//		console.log(JSON.stringify("返回信息"+getInfo[i]));
+//	}
+	
+	console.log(JSON.stringify(getInfo));
 	
 	if( /error/.test(getInfo) ){
 		$.toast("有异常，请稍后再试", "cancel");
 		console.log("统计资料阅读人数返回getInfo报错："+getInfo);
 		return false;
 	}
-
+	
+	
 	if(getInfo.status == "-1"){
 		$.toast("统计资料阅读数量失败", "cancel");
 		console.log("统计资料阅读数量getInfo失败："+getInfo);
@@ -293,6 +301,8 @@ function setCount(id,planId){
 
 // 获取首页列表
 function setQuestionListIteam(page,planid){
+// var info
+// ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
 			"auth_token":NATIVE_AUTH_TOKEN,
@@ -300,7 +310,9 @@ function setQuestionListIteam(page,planid){
 			"planid":planid
 	}
 	info = JSON.stringify(info);// 将参数字符串化 --fyq;
+// alert(info);
 	var arr = {
+// "url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=leaquestion/api&method=Leaquestion.list.get",
 		"arr":{"info":info},
 		"type":"post"
@@ -308,22 +320,27 @@ function setQuestionListIteam(page,planid){
 	// 获取数据
 	var getList = getJsonResult(arr);// 返回值为数组 --fyq
 	if( /error/.test(getList) ){
+// alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("获取专题getList报错："+getList);
 		return false;
 	}
-//	console.log("moudle: "+JSON.stringify(getList));
+	console.log(JSON.stringify(getList).length);
 	
-	if(!JSON.stringify(getList)||JSON.stringify(getList).length==2 && page == 1){
+	if(JSON.stringify(getList).length==2){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
-		$("#J_listGroup").attr({"style":"text-align:center;"});
+//		$("#J_listGroup").attr({"style":"text-align:center;"});
 		$("#J_listGroup").attr({"class":"empty"});
-		$("#J_listGroup").html("暂无");
+		$("#J_listGroup").html("友情提示：没有用户 "+NATIVE_UID+" 的相关数据!");
+		return false;
 		return false;
 	}
 	
-//	console.log(JSON.stringify(getList));
+	console.log(JSON.stringify(getList));
+// return ;
+	
+			
 	// 生成页面
 	var tpl_list = $("#tpl_list_iteam").html();
 	var html = [];
@@ -338,6 +355,7 @@ function setQuestionListIteam(page,planid){
 																							// false。
 		var html_iteam = tpl_list
 			.replace( /\{bankid\}/g,getList[i].bankid )
+// .replace( /\{pic\}/g,"src='"+src+"'" )
 			.replace( /\{questionnum\}/g,getList[i].questionnum )
 			.replace( /\{title\}/g,getList[i].title )
 			.replace( /\{oname\}/g,getList[i].oname )
@@ -360,7 +378,7 @@ function setQuestionListIteam(page,planid){
 // var totalpage = Math.ceil(getList[0].count/limit_home);
 // //如果数据小于limit 则不能继续翻页 下拉加载
 // if( getList[0].count<limit_home||getList[0].count==1||totalpage==page_home ){
-	if( getList.length<limit_home){
+	if( getList[0].count<limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
 		flag_home = false;
@@ -374,30 +392,35 @@ function setQuestionListIteam(page,planid){
 
 
 // 首页列表页面中搜索
-function setQuestionSearchListIteam(searchtitle,planid,page){
+function setQuestionSearchListIteam(searchtitle,planid){
+// var info
+// ="{\"limit\":\"20\",\"offset\":\"0\",\"valid\":\"1\",\"uid\":\"6@3\",\"planid\":\"2\",\"p\":\""+page+"\"}";
 	var info = {
 			"uid":NATIVE_UID,
 			"auth_token":NATIVE_AUTH_TOKEN,
 			"searchtitle":searchtitle,
-			"planid":planid,
-			"p":page
+			"planid":planid
 	}
 	info = JSON.stringify(info);// 将参数字符串化 --fyq;
+// alert(info);
 	var arr = {
+// "url":SERVER_IP+"/question/web/index.php?r=test/list&uid="+NATIVE_UID+"&p="+page
 		"url":urlbase+"?r=leaquestion/api&method=Leaquestion.search.get",
 		"arr":{"info":info},
 		"type":"post"
 	};
-//	console.log("arr"+JSON.stringify(arr));
 	// 获取数据
 	var getList = getJsonResult(arr);// 返回值为数组 --fyq
 	if( /error/.test(getList) ){
+// alert("22"+getList);
 		$.toast("有异常，请返回重试", "cancel");
 		console.log("获取专题getList报错："+getList);
 		return false;
 	}
 	
-//	console.log("getList"+JSON.stringify(getList));
+	console.log(getList);
+// return ;
+	
 			
 	// 生成页面
 	var tpl_list = $("#tpl_list_iteam").html();
@@ -436,7 +459,7 @@ function setQuestionSearchListIteam(searchtitle,planid,page){
 // var totalpage = Math.ceil(getList[0].count/limit_home);
 // //如果数据小于limit 则不能继续翻页
 // if( getList.length<limit_home||getList[0].count==1||totalpage==page_home ){
-	if( getList.length<limit_home){
+	if( getList[0].count<limit_home){
 		$(".resultEnd").hide();
 		$(".resultEnd_nodata").show();
 		flag_home = false;
@@ -804,6 +827,7 @@ function setFinish(paperId){
 		console.log("交卷getEnd报错："+getEnd);
 	}
 	
+	console.log('交卷：'+getEnd);
 	// 生成页面
 	var tpl_finishTop = $("#tpl_finishTop").html();
 	var html = "";
@@ -996,7 +1020,7 @@ function setRanking(bankid,page){
 		console.log("获取列表getRank报错:"+getRank);
 		return false;
 	}
-	console.log(JSON.stringify(getRank));
+	console.log(getRank);
 	// 生成页面
 	var rankNums = getRank.length;
 	
@@ -1004,12 +1028,7 @@ function setRanking(bankid,page){
 	var html = [];
 	
 	for( var i=0;i<rankNums;i++ ){
-		var src =getRank[i].photo;
-		if(getRank[i].photo === " "){
-			src = "../images/icon_male.png";
-		}
-		
-//		var src = (getRank[i].photo ? getRank[i].photo : "../images/icon_male.png");
+		var src = getRank[i].photo?getRank[i].photo:"../images/icon_male.png";
 		var _html ="";
 		_html = tpl_rankIteam
 			.replace( /\{top\}/g,getRank[i].top )
@@ -1017,7 +1036,8 @@ function setRanking(bankid,page){
 			.replace( /\{name\}/g,getRank[i].name)
 			.replace( /\{correctNum\}/g,getRank[i].correctNum);
 		html.push(_html);
-	}	
+	}
+	
 	$("#page_innerContent #J_listGroup").append( html.join('') );
 	
 	// 判断显示是否可以继续加载下一页

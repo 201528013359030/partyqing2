@@ -16,16 +16,25 @@
         margin-top:12px;
         margin-bottom:10px;
     }
+    .party-task-content img{
+    	display:block;
+        margin:auto;
+        margin-top:12px;
+        margin-bottom:10px;
+    }
+    .party-task-content p img{
+    	max-width:100%;
+    }
 </style>
 <div id="tpl_party-Material-content" style="display: none;">
 <div class="party-Material-content-inner">
-    <h1 style="padding:6px 10px; font-size:18px; font-weight:normal; text-align:center ">{title}</h1>
-    <div class="party-task-time" style="color:#999; text-align:center">{time}  &nbsp {sender}</div>
+    <h1 style="padding:6px 10px; font-size:18px; font-weight:normal; text-align:left ">{title}</h1>
+    <div class="party-task-time" style="color:#999; text-align:left">{time}  &nbsp {sender}</div>
     <div class="party-task-line" style="margin:8px 10px; "></div>
     <div class="party-Material-content-title"><!-- 市领导开展“两学一做”学习教育集中学习 --></div>
     <div class="party-Material-content-title"><!--  郭金龙主持 王安顺杜德印吉林苟仲文参加学习--></div>
     <!-- <img class="party-Material-content-img" src="../images/temp/party-study-material-content.png">  -->
-    <div class="party-task-content" style="text-indent:2em;">
+    <div class="party-task-content" >
     {content}
     </div>
       <!--   昨天下午，市领导开展了“两学一做”学习教育集中学习研讨，学习贯彻习近平总书记“七一”重要讲话。市委书记郭金龙主持学习，市委副书记、市长王安顺，市人大常委会主任杜德印，市政协主席吉林，市委副书记苟仲文参加学习。

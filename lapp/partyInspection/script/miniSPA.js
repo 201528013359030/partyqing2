@@ -14,7 +14,7 @@ miniSPA.changeUrl = function(){
 	var str = hashs.split("_");	
 	var url = str[0],
 		attrID = str[1],
-		attrCon = str[2];
+		attrCon = decodeURI(str[2],"utf8"); //对url中文参数解码
 	if(url ===""){
 		url = "partyLeaderInspection";
 	}

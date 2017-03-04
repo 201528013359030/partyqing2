@@ -23,10 +23,10 @@ class IctWebService extends Model
 	function __construct(){
         //$enterprisId = Yii::$app->session['user.enterprisId'];
         //$einfo = Enterpris::find()->where(['enterpris_id'=>$enterprisId])->one();
-        //$this->ictIp = $einfo['ip'];
+//         $this->ictIp = $einfo['ip'];
         //$this->eid = $einfo['eid'];
-       $this->ictIp = '192.168.139.54';
-//         $this->ictIp = 'localhost';
+//        $this->ictIp = '192.168.139.54';
+        $this->ictIp = 'localhost';
         $eid = explode('@',Yii::$app->session['user.uid']);
         if(isset($eid[1])){
             $this->eid = $eid[1];

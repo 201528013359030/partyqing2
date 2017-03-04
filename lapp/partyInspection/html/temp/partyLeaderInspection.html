@@ -1,16 +1,21 @@
 <style>
+.chartBox{ padding:0 10px;}
 
-
-</style>
+label.legend{display:inline-block;font-weight: normal;margin-right: 5px;font-size: 12px;cursor: pointer;}
+label.legend.disabled{color: #d3d3d3 !important;}
+label.legend.disabled .label{background-color: #d3d3d3 !important;}
+label.legend .label{width: 12px;height: 8px;margin-right: 5px;vertical-align: middle;margin-bottom: 2px;}
+label.legend .label:empty{display: inline-block;}</style>
 <div class="party-inspection-title">
-    各支部2016年学习计划完成情况
+    各支部学习计划完成情况
     <span class="ui-txt-info" style="font-size:12px;">(点击部门柱状数据查看详情)</span>
 </div>
-<div class="party-inspection-box">
-    <div id="chartBar" style="width:100%; height:400px; background:#00c795;"></div>
+<div class="party-inspection-box" style="overflow-x:hidden;">
+    <div id="divCharts" style="width:100%; background:#fff;"></div>
 </div>
 
 <div class="party-inspection-title">各支部党员人数</div>
-<div class="party-inspection-box">
-    <div id="chartPie" style="width:100%; height:260px; background:#00c795;"></div>
+<div class="party-inspection-box" style="overflow-x:hidden;">
+	<div id="legendPie"></div>
+    <div id="divChartsP" style="width:100%; height:260px; background:#FFF;"></div>
 </div>

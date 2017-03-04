@@ -30,7 +30,7 @@ partyStudyList.init = function(){
 	
     if($("#page_innerContent")[0]) {
 
-//        var flag_home = true; //是否继续加载
+        var flag_home = true; //是否继续加载
 
         $("#tab1").pullToRefresh().on("pull-to-refresh", function() {
             var self = this;
@@ -40,7 +40,7 @@ partyStudyList.init = function(){
             }, 2000);   //模拟延迟
         });
 
-        $("#tab1").infinite().on("infinite", function() { //上拉加载
+        $("#tab1").infinite().on("infinite", function() {
 
             console.log("infiniteScroll.html");
 
@@ -50,7 +50,7 @@ partyStudyList.init = function(){
 			    if(self.loading) return;
 			    self.loading = true;
 			    setTimeout(function() {
-			    	setListIteamx(page_home);
+			    	setListIteam(page_home);
 			        self.loading = false;
 			    }, 2000);   //模拟延迟
 			}
@@ -139,12 +139,11 @@ partyLeaderInspection.init = function(){
     
    
     var members = getPartyMember();
-    console.log("data2:"+JSON.stringify(members));
    
     var data1 = []; //党支部名称
     var data2 = []; //党支部总人数
-    var dataGirls = {};
-    var dataBoys = {};
+    var dataGirls = [];
+    var dataBoys = [];
     for(var i=0;i<members.length;i++){
     	
     	data1.push(members[i].name);
@@ -152,33 +151,27 @@ partyLeaderInspection.init = function(){
     		"value": (members[i].girls -0) + (members[i].boys -0),
     		"name" : members[i].name
     	}
-    	dataBoys[members[i].name] =  members[i].boys;
-    	dataGirls[members[i].name] = members[i].girls;
+    	dataBoys[i] =  members[i].boys;
+    	dataGirls[i] = members[i].girls;
     }   
     
     console.log("data2:"+JSON.stringify(data2));
-    console.log("dataBoys:"+JSON.stringify(dataBoys));
-    console.log("dataGirls:"+JSON.stringify(dataGirls));
-
     
     //基于准备好的dom，初始化echarts实例
-    var chartPie = echarts.init(document.getElementById('divChartsP'));
+    var chartPie = echarts.init(document.getElementById('chartPie'));
     var I = 65;
-    var optionP = {
+    var pie = {
         tooltip: {
-        	show:false,
             trigger: 'item',
-//            formatter: function(e){
-//            	
-//                var index = e.dataIndex;
-//                return index+'<br>'+'男：'+dataBoys[index]+' &nbsp;女:'+dataGirls[index];
-//                
-//            }
-           
+            formatter: function(e){
+                var index = e.dataIndex;
+                return data1[index]+'<br>'+'男：'+dataBoys[index]+' &nbsp;女:'+dataGirls[index];
+                console.log(e.dataIndex);
+            }
         },
         legend: {
             orient: 'horizontal',
-            y: '100%',
+            x: 'left',
 //            data:['研发中心', '系统与软件', '智能控制与装备', '信息技术', '系统集成']
             data:data1
         },
@@ -188,24 +181,30 @@ partyLeaderInspection.init = function(){
                 type:'pie',
                 selectedMode: 'single',
                 radius: [0, '20%'],
+
+                label: {
+                    normal: {
+                        position: 'inner'
+                    }
+                },
+                label: {
+                    normal: {
+                        show: false
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
 //                data:[
 //                    {value:18, name:'研发中心'},
 //                    {value:20, name:'系统与软件'},
 //                    {value:24, name:'智能控制与装备'},
 //                    {value:9, name:'信息技术'},
 //                    {value:22, name:'系统集成'}
-//                ],
-                data:data2,
-                itemStyle: {
-                    normal: {
-                        label:{
-                            show:false
-                        },
-                        labelLine:{
-                            show:false
-                        }
-                    }
-                }
+//                ]
+                data:data2
             },
             {
                 name:'访问来源',
@@ -225,16 +224,10 @@ partyLeaderInspection.init = function(){
                     normal: {
                         label:{
                             show:true,
-                            formatter: 
-//                            	"{a} <\n>{b} : {c} ({d}%)"
-                            	function(a,b,c,d){
-                            	console.log("******************************************");
-                                console.log("a :"+a);
-                                console.log("b :"+b);
-                                console.log("******************************************");
-                               
-                                return b+'\n'+'男：'+dataBoys[b]+'  女:'+dataGirls[b];
-                               
+                            formatter: function(e){
+                                var index = e.dataIndex;
+                                return data1[index]+'\n'+'男：'+dataBoys[index]+'  女:'+dataGirls[index];
+                                console.log(e.dataIndex);
                             }
                         },
                         labelLine:{
@@ -247,48 +240,8 @@ partyLeaderInspection.init = function(){
         ]
     };
     //使用刚指定的配置项和数据显示图标。
-    chartPie.setOption(optionP);
-    
-    
-    //var divChartsP = $('#divChartsP');
-    var divLegendsP = $('#legendPie');
-    //$('<div class="chartP" id="chartPie" style="width:100%;"></div>').appendTo(divChartsP);
-    var winWidth = $(window).width();
-    //$('.chartP').css('height',100*data4.length).css('width',winWidth);
-    //var analyticChartP = echarts.init(document.getElementById('chartPie'));
-    //analyticChartP.setOption(optionP);
-//divLegends
+    chartPie.setOption(pie);
 
-    var legendP = chartPie.chart['pie'].component.legend;
-// data.legend ['legend1', 'legend2']
-    $(optionP.legend.data).each(function(i, l){
-        var color = legendP.getColor(l);
-        var labelLegendP = $('<label class="legend">' +
-            '<span class="label" style="background-color:'+color+'"></span>'+l+'</label>');
-        labelLegendP.mouseover(function(){
-            labelLegendP.css('color', color).css('font-weight', 'normal');
-        }).mouseout(function(){
-            labelLegendP.css('color', '#333').css('font-weight', 'normal');
-        }).click(function(){
-            labelLegendP.toggleClass('disabled');
-            legendP.setSelected(l, !labelLegendP.hasClass('disabled'));
-        });
-        divLegendsP.append(labelLegendP);
-    });
-
-//restore
-    chartPie.on('restore', function(param){
-        divLegendsP.children('.legend').each(function(i, labelLegendP){
-            $(labelLegendP).removeClass('disabled');
-        });
-    });
-    
-    
-    
-    
-    
-    
-    //柱状图
     var plans = getPlanComplete();
     var data3 =[];	//党支部 数组格式
     var data4 =[];	//学习计划
@@ -313,24 +266,16 @@ partyLeaderInspection.init = function(){
     				}
     				
     				if(plans[i].plans[keys[j]].status=="0"){
-    					
     					data5[plans[i].plans[keys[j]].title] = plans[i].plans[keys[j]].completePercent ; //学习计划对应学习任务完成情况
     					
-//    					console.log("--------------------------------");
-//    					console.log(plans[i].name);
-//    					console.log(plans[i].plans[keys[j]].title);
-//    					console.log(plans[i].plans[keys[j]].completePercent);
-//    					console.log("--------------------------------");
+    					console.log("--------------------------------");
+    					console.log(plans[i].name);
+    					console.log(plans[i].plans[keys[j]].title);
+    					console.log(plans[i].plans[keys[j]].completePercent);
+    					console.log("--------------------------------");
     					
     				}else{
-    					
     					data5[plans[i].plans[keys[j]].title] = -1 ; //统计特定支部的学习计划无对应的任务
-    					
-//    					console.log("**********************************");
-//    					console.log(plans[i].name);
-//    					console.log(plans[i].plans[keys[j]].title);
-////    					console.log(plans[i].plans[keys[j]].completePercent);
-//    					console.log("***********************************");
     				}
     			}
     		}
@@ -355,19 +300,13 @@ partyLeaderInspection.init = function(){
     
     for(var i=0;i<data4.length;i++){
     	
-    	var data7 =[0]; //完成情况百分比
+    	var data7 =[]; //完成情况百分比
     	 var data8 = [];//完成情况描述
     	
     	 for(var j=0;j<data3.length;j++){
     		 if(data6[data3[j]]!=0){
-    			 if(data6[data3[j]][data4[i]]!= -1 && data6[data3[j]][data4[i]]!= undefined){
+    			 if(data6[data3[j]][data4[i]]!= -1){
     				 data7[j] = data6[data3[j]][data4[i]];
-//    				 console.log("-------------------------------------------");
-//    				 
-//    				 console.log("data7["+j+"]="+data7[j]);
-//    				 console.log("data6[data3["+j+"]][data4["+i+"]]="+data6[data3[j]][data4[i]]);
-//    				 console.log("data6["+data3[j]+"]["+data4[i]+"]="+data6[data3[j]][data4[i]]);
-//    				 console.log("-------------------------------------------");
     				 if(data6[data3[j]][data4[i]]== 0){
     					 data8[j] = '任务未开始';
     				 }else{
@@ -384,59 +323,66 @@ partyLeaderInspection.init = function(){
     		 }    		 
     	 }
     	 data9[i] = data8; 
-    	 
-    	
+    	    
     	series[i] ={
             name: data4[i],
             type: 'bar',
 //            data: [60, 43, 48, 48]
-            data:data7
+            data: data7
         }
     	
-    	 console.log('data4['+i+'] '+data4[i]+" data7 "+data7);
+    	 console.log('data4['+i+'] '+data4[i]+" data8 "+data8);
     }
     
     console.log("series:"+JSON.stringify(series));
 //    console.log(" data8 "+data8[0]);
     console.log(" data9 "+data9);
     
-    
-    console.log("typeof(data3)"+typeof(data3));
-    console.log("typeof(data4)"+typeof(data4));
-    console.log("typeof(data7)"+typeof(data7));
-
+    //重新定义chartBar的高度
+    $(document).ready(function(){
+        var legendNum = data4.length;
+        var cH = 100+100*legendNum;
+//        alert(cH);
+        //document.getElementById('chartBar').style.height = cH;
+        $('#chartBar').css('height',cH);
+    })
     
     //基于准备好的dom，初始化echarts实例
-    //var chartBar = echarts.init(document.getElementById('chartBar'));
+    var chartBar = echarts.init(document.getElementById('chartBar'));
     //指定图标的配置项和数据
-    var option = {
+    var bar = {
         title: {
-            show:false
+            show:false,
+            text: 'ECharts 入门示例'
         },
         tooltip: {
             trigger: 'axis',
-            position:function(p){   //其中p为当前鼠标的位置
-                return [0, p[1] - 10];
-            },
             axisPointer: {
                 type: 'shadow'
             }
         },
         legend: {
-            y: '100%',
-//            data: ["两学一做","三严三实","四个全面","计划1","计划2","计划3","计划4","计划5","计划6"]
+            left: 0,
+            bottom: '0',
+//            data: ['两学一做','三严三实','四个全面']
             data: data4
-//             data:tmp4
         },
-        calculable : false,//拖拽重新计算功能是否开启
         grid: {
-            x:60,
+            left: '3%',
+            right: '4%',
+            top: '0',
             containLabel: true
         },
-        /*
+        xAxis: {
+            axisLabel:{
+                interval:0
+            },
+            type : 'value',
+            boundaryGap : [0, 0.01]
+        },
         label:{
             normal:{
-                show:false,
+                show:true,
                 position:'right',
                 formatter:function(e){
                 	 console.log("seriesIndex"+e.seriesIndex+"dataIndex"+e.dataIndex);
@@ -446,7 +392,7 @@ partyLeaderInspection.init = function(){
                    
                 }
             }
-        },*/
+        },
         yAxis: {
             type: 'category',
 //            data: ['信息技术实验室', '系统集成', '智能控制与设备' , '系统与软件','研发中心'],
@@ -482,13 +428,6 @@ partyLeaderInspection.init = function(){
 
             }
         },
-        xAxis: {
-            axisLabel:{
-                interval:0
-            },
-            type : 'value',
-            boundaryGap : [0, 0.01]
-        },
 //        series: [
 //            {
 //                name: '两学一做',
@@ -508,56 +447,9 @@ partyLeaderInspection.init = function(){
 //        ]
         series: series
     };
-    
-    
-    var divCharts = $('#divCharts');
-    var divLegends = $('<div style=" padding:0 10px; text-align:left;"></div>').appendTo(divCharts);
-    var divChart = $('<div class="chart" style="width:100%;" id="chart"></div>').appendTo(divCharts);
-    var winWidth = $(window).width();
-    var data4Length ;
-    if(data4.length==0){
-    	data4Length = 1;
-    }else {
-		data4Length = data4.length;
-	}
-    $('.chart').css('height',20*data3.length*data4Length).css('width',winWidth);
-    var analyticChart = echarts.init(divChart.get(0));
-    analyticChart.setOption(option);
-//divLegends
-
-    var legend = analyticChart.chart['bar'].component.legend;
-// data.legend ['legend1', 'legend2']
-    $(option.legend.data).each(function(i, l){
-        var color = legend.getColor(l);
-        var labelLegend = $('<label class="legend">' +
-            '<span class="label" style="background-color:'+color+'"></span>'+l+'</label>');
-        labelLegend.mouseover(function(){
-            labelLegend.css('color', color).css('font-weight', 'normal');
-        }).mouseout(function(){
-            labelLegend.css('color', '#333').css('font-weight', 'normal');
-        }).click(function(){
-            labelLegend.toggleClass('disabled');
-            legend.setSelected(l, !labelLegend.hasClass('disabled'));
-        });
-        divLegends.append(labelLegend);
-    });
-
-//restore
-    analyticChart.on('restore', function(param){
-        divLegends.children('.legend').each(function(i, labelLegend){
-            $(labelLegend).removeClass('disabled');
-        });
-    });
-    
-    
-    
-    
-    
-    
-    
     //使用刚指定的配置项和数据显示图标。
-    //chartBar.setOption(bar);
-    analyticChart.on('click', function (param){
+    chartBar.setOption(bar);
+    chartBar.on('click', function (param){
         var name=param.name;
         var oid ="";
 //        alert(name);
@@ -568,7 +460,7 @@ partyLeaderInspection.init = function(){
         	}
         }
 //        alert(oid);
-        window.location.href="../html/main.html"+window.location.search+"#partyStudyList_"+oid+"_"+encodeURI(name);  
+        window.location.href="../html/main.html"+window.location.search+"#partyStudyList_"+oid+"_"+name;  
 //       url = (window.location.href).replace(/partyInspection/g,"partyStudy");
 //       console.log(url.replace(/partyInspection/g,"partyStudy"));
 //       window.location.href= url;
