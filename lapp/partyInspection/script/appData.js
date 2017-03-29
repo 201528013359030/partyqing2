@@ -48,9 +48,12 @@ function getPlanComplete(){
 		return false;
 	}
 	if(getPlans.status == "-1"){
-		$.toast(getList.message,"cancel");
-		console.log("获取专题getList报错："+getPlans);
+		$("#divCharts").attr({"class":"empty"});
+		$("#divCharts").html("暂无");
 		return false;
+//		$.toast(getPlans.message,"cancel");
+//		console.log("获取专题getList报错："+getPlans);
+//		return false;
 	}
 	
 	return getPlans.message; //返回json格式的message信息
@@ -85,9 +88,12 @@ function getPartyMember(){
 	}
 	
 	if(getMember.status == "-1"){
-		$.toast(getMember.message,"cancel");
-		console.log("获取专题getList报错："+getMember);
+		$("#legendPie").attr({"class":"empty"});
+		$("#legendPie").html("暂无");
 		return false;
+//		$.toast(getMember.message,"cancel");
+//		console.log("获取专题getList报错："+getMember);
+//		return false;
 	}
 	
 	return getMember.message; //返回json格式的message信息

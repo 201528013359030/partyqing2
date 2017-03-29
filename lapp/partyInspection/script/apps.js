@@ -139,7 +139,6 @@ partyLeaderInspection.init = function(){
     
    
     var members = getPartyMember();
-    console.log("data2:"+JSON.stringify(members));
    
     var data1 = []; //党支部名称
     var data2 = []; //党支部总人数
@@ -156,9 +155,9 @@ partyLeaderInspection.init = function(){
     	dataGirls[members[i].name] = members[i].girls;
     }   
     
-    console.log("data2:"+JSON.stringify(data2));
-    console.log("dataBoys:"+JSON.stringify(dataBoys));
-    console.log("dataGirls:"+JSON.stringify(dataGirls));
+//    console.log("data2:"+JSON.stringify(data2));
+//    console.log("dataBoys:"+JSON.stringify(dataBoys));
+//    console.log("dataGirls:"+JSON.stringify(dataGirls));
 
     
     //基于准备好的dom，初始化echarts实例
@@ -168,18 +167,11 @@ partyLeaderInspection.init = function(){
         tooltip: {
         	show:false,
             trigger: 'item',
-//            formatter: function(e){
-//            	
-//                var index = e.dataIndex;
-//                return index+'<br>'+'男：'+dataBoys[index]+' &nbsp;女:'+dataGirls[index];
-//                
-//            }
            
         },
         legend: {
             orient: 'horizontal',
             y: '100%',
-//            data:['研发中心', '系统与软件', '智能控制与装备', '信息技术', '系统集成']
             data:data1
         },
         series: [
@@ -228,11 +220,6 @@ partyLeaderInspection.init = function(){
                             formatter: 
 //                            	"{a} <\n>{b} : {c} ({d}%)"
                             	function(a,b,c,d){
-                            	console.log("******************************************");
-                                console.log("a :"+a);
-                                console.log("b :"+b);
-                                console.log("******************************************");
-                               
                                 return b+'\n'+'男：'+dataBoys[b]+'  女:'+dataGirls[b];
                                
                             }
@@ -248,19 +235,10 @@ partyLeaderInspection.init = function(){
     };
     //使用刚指定的配置项和数据显示图标。
     chartPie.setOption(optionP);
-    
-    
-    //var divChartsP = $('#divChartsP');
     var divLegendsP = $('#legendPie');
-    //$('<div class="chartP" id="chartPie" style="width:100%;"></div>').appendTo(divChartsP);
     var winWidth = $(window).width();
-    //$('.chartP').css('height',100*data4.length).css('width',winWidth);
-    //var analyticChartP = echarts.init(document.getElementById('chartPie'));
-    //analyticChartP.setOption(optionP);
-//divLegends
 
     var legendP = chartPie.chart['pie'].component.legend;
-// data.legend ['legend1', 'legend2']
     $(optionP.legend.data).each(function(i, l){
         var color = legendP.getColor(l);
         var labelLegendP = $('<label class="legend">' +
@@ -283,9 +261,51 @@ partyLeaderInspection.init = function(){
         });
     });
     
-    
-    
-    
+  // 向数组array对象添加find()方法
+ // https://tc39.github.io/ecma262/#sec-array.prototype.find
+    if (!Array.prototype.find) {
+      Object.defineProperty(Array.prototype, 'find', {
+        value: function(predicate) {
+         // 1. Let O be ? ToObject(this value).
+          if (this == null) {
+            throw new TypeError('"this" is null or not defined');
+          }
+
+          var o = Object(this);
+
+          // 2. Let len be ? ToLength(? Get(O, "length")).
+          var len = o.length >>> 0;
+
+          // 3. If IsCallable(predicate) is false, throw a TypeError exception.
+          if (typeof predicate !== 'function') {
+            throw new TypeError('predicate must be a function');
+          }
+
+          // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
+          var thisArg = arguments[1];
+
+          // 5. Let k be 0.
+          var k = 0;
+
+          // 6. Repeat, while k < len
+          while (k < len) {
+            // a. Let Pk be ! ToString(k).
+            // b. Let kValue be ? Get(O, Pk).
+            // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
+            // d. If testResult is true, return kValue.
+            var kValue = o[k];
+            if (predicate.call(thisArg, kValue, k, o)) {
+              return kValue;
+            }
+            // e. Increase k by 1.
+            k++;
+          }
+
+          // 7. Return undefined.
+          return undefined;
+        }
+      });
+    }
     
     
     //柱状图
@@ -296,41 +316,23 @@ partyLeaderInspection.init = function(){
     var data6 ={};  //记录所有支部学习任务的信息
     var k=0;
     
-    console.log("2222"+JSON.stringify(plans[0].plans));
-    console.log("2222"+JSON.stringify(plans));
+//    console.log("2222"+JSON.stringify(plans[0].plans));
+//    console.log("2222"+JSON.stringify(plans));
     for(var i = 0; i<plans.length;i++){
     	data3[i] = plans[i].name; //提取支部的名称
     	if(plans[i].plans.status == "0"){
     		var keys = Object.keys(plans[i].plans); //提取学习计划信息的键值
-    		
     		for(var j=0;j<keys.length;j++){
-    		console.log("ssssss"+plans[i].plans);
     			if(keys[j]!="status"){
     				if(typeof (data4.find(function(title){
     							return title == plans[i].plans[keys[j]].title;
     					})) == 'undefined'){
     					data4[k++] = plans[i].plans[keys[j]].title; //不重复的记录学习计划的名称
     				}
-    				
     				if(plans[i].plans[keys[j]].status=="0"){
-    					
     					data5[plans[i].plans[keys[j]].title] = plans[i].plans[keys[j]].completePercent ; //学习计划对应学习任务完成情况
-    					
-//    					console.log("--------------------------------");
-//    					console.log(plans[i].name);
-//    					console.log(plans[i].plans[keys[j]].title);
-//    					console.log(plans[i].plans[keys[j]].completePercent);
-//    					console.log("--------------------------------");
-    					
     				}else{
-    					
     					data5[plans[i].plans[keys[j]].title] = -1 ; //统计特定支部的学习计划无对应的任务
-    					
-//    					console.log("**********************************");
-//    					console.log(plans[i].name);
-//    					console.log(plans[i].plans[keys[j]].title);
-////    					console.log(plans[i].plans[keys[j]].completePercent);
-//    					console.log("***********************************");
     				}
     			}
     		}
@@ -344,9 +346,10 @@ partyLeaderInspection.init = function(){
 		}
     }
     
-    console.log("党组织data3:"+data3);
-    console.log("学习计划data4:"+data4);
-    console.log("党组织学习任务完成情况data6："+JSON.stringify(data6));
+    
+//    console.log("党组织data3:"+data3);
+//    console.log("学习计划data4:"+data4);
+//    console.log("党组织学习任务完成情况data6："+JSON.stringify(data6));
 //    console.log(data4);
     
     var series = [];  
@@ -362,12 +365,6 @@ partyLeaderInspection.init = function(){
     		 if(data6[data3[j]]!=0){
     			 if(data6[data3[j]][data4[i]]!= -1 && data6[data3[j]][data4[i]]!= undefined){
     				 data7[j] = data6[data3[j]][data4[i]];
-//    				 console.log("-------------------------------------------");
-//    				 
-//    				 console.log("data7["+j+"]="+data7[j]);
-//    				 console.log("data6[data3["+j+"]][data4["+i+"]]="+data6[data3[j]][data4[i]]);
-//    				 console.log("data6["+data3[j]+"]["+data4[i]+"]="+data6[data3[j]][data4[i]]);
-//    				 console.log("-------------------------------------------");
     				 if(data6[data3[j]][data4[i]]== 0){
     					 data8[j] = '任务未开始';
     				 }else{
@@ -380,7 +377,6 @@ partyLeaderInspection.init = function(){
     		 }else{
     			 data7[j] = 0; // 无学习计划
     			 data8[j] = " ";//"无学习计划" ; //无学习计划时不显示 "无学习计划" 提示
-//    			 alert('33');
     		 }    		 
     	 }
     	 data9[i] = data8; 
@@ -393,17 +389,19 @@ partyLeaderInspection.init = function(){
             data:data7
         }
     	
-    	 console.log('data4['+i+'] '+data4[i]+" data7 "+data7);
+//    	 console.log('data4['+i+'] '+data4[i]+" data7 "+data7);
     }
     
-    console.log("series:"+JSON.stringify(series));
-//    console.log(" data8 "+data8[0]);
-    console.log(" data9 "+data9);
     
     
-    console.log("typeof(data3)"+typeof(data3));
-    console.log("typeof(data4)"+typeof(data4));
-    console.log("typeof(data7)"+typeof(data7));
+//    console.log("series:"+JSON.stringify(series));
+////    console.log(" data8 "+data8[0]);
+//    console.log(" data9 "+data9);
+//    
+//    
+//    console.log("typeof(data3)"+typeof(data3));
+//    console.log("typeof(data4)"+typeof(data4));
+//    console.log("typeof(data7)"+typeof(data7));
 
     
     //基于准备好的dom，初始化echarts实例
@@ -489,30 +487,18 @@ partyLeaderInspection.init = function(){
             type : 'value',
             boundaryGap : [0, 0.01]
         },
-//        series: [
-//            {
-//                name: '两学一做',
-//                type: 'bar',
-//                data: [60, 43, 48, 48, 70]
-//            },
-//            {
-//                name: '三严三实',
-//                type: 'bar',
-//                data: [48, 48, 60, 60, 100]
-//            },
-//            {
-//                name: '四个全面',
-//                type: 'bar',
-//                data: [58, 54, 65, 53, 80]
-//            }
-//        ]
         series: series
     };
-    
-    
-    var divCharts = $('#divCharts');
+
+    $(document).ready(function(){
+    	//FastClick.attach(document.body);
+    	 var divCharts = document.getElementById('#divCharts');
+    });
+ 
+//    var divCharts = $('#divCharts');
     var divLegends = $('<div style=" padding:0 10px; text-align:left;"></div>').appendTo(divCharts);
     var divChart = $('<div class="chart" style="width:100%;" id="chart"></div>').appendTo(divCharts);
+    
     var winWidth = $(window).width();
     var data4Length ;
     if(data4.length==0){
@@ -520,7 +506,12 @@ partyLeaderInspection.init = function(){
     }else {
 		data4Length = data4.length;
 	}
-    $('.chart').css('height',20*data3.length*data4Length).css('width',winWidth);
+    var height = 80*data3.length+10*data3.length*(data4Length-1);
+    if(height<200){
+    	height = 200;
+    }
+    $('.chart').css('height',height).css('width',winWidth);
+    //$('.chart').css('height','200').css('width',winWidth);
     var analyticChart = echarts.init(divChart.get(0));
     analyticChart.setOption(option);
 //divLegends
@@ -548,12 +539,7 @@ partyLeaderInspection.init = function(){
             $(labelLegend).removeClass('disabled');
         });
     });
-    
-    
-    
-    
-    
-    
+   
     
     //使用刚指定的配置项和数据显示图标。
     //chartBar.setOption(bar);
@@ -569,9 +555,7 @@ partyLeaderInspection.init = function(){
         }
 //        alert(oid);
         window.location.href="../html/main.html"+window.location.search+"#partyStudyList_"+oid+"_"+encodeURI(name);  
-//       url = (window.location.href).replace(/partyInspection/g,"partyStudy");
-//       console.log(url.replace(/partyInspection/g,"partyStudy"));
-//       window.location.href= url;
         
     });
+    
 }

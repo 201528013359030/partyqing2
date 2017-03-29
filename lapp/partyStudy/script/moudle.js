@@ -16,6 +16,15 @@ var flag_home = true,
 var CURRCOUNT = 0,
 	END_CURRCOUNT = 0; // currcount 答题 End_currcount查看错题
 
+var countmaterialid,
+	planid,
+	countid="",
+	intervalid,
+	isiOS = false,
+	isAndroid = false,
+	u = navigator.userAgent, app = navigator.appVersion;
+
+
 var bh = $(window).height();
 if(bh<480){
     $('body').addClass('xs-screen');
@@ -289,6 +298,95 @@ function setCount(id,planId){
 		console.log("统计资料阅读数量getInfo失败："+getInfo);
 		return false;
 	}	
+}
+
+//统计阅读时长
+function go(){
+	//alert(78);
+	
+	var info = {
+			"uid":NATIVE_UID,
+			"auth_token":NATIVE_AUTH_TOKEN,
+			"countid":countid,
+			"materialid":countmaterialid,
+			"planid":planid
+	}
+	info = JSON.stringify(info);
+	
+	var arr = {
+// "url":SERVER_IP+"/question/web/index.php?r=test/info&id="+bankid,
+			"url":urlbase+"?r=studymaterial/api&method=studymaterial.timecount",
+			"arr":{"info":info},
+			"type":"post"
+	};
+	
+	console.log("统计学习时长arr："+JSON.stringify(arr));
+	var getInfo = commonFunction.getJsonResult(arr);
+	
+	console.log("统计学习时长getInfo："+JSON.stringify(getInfo));
+	if( /error/.test(getInfo) ){
+		$.toast("有异常，请稍后再试", "cancel");
+		console.log("统计资料阅读时间返回getInfo报错："+getInfo);
+		return false;
+	}
+//	alert("getInfo"+JSON.stringify(getInfo));
+		countid = getInfo.countid;
+	
+	
+    /* var url = "index.php?r=admin/jiaoyu/time";
+    url = url + "&id=" + <?=$id?>+ "&countid=" + countid;
+    $.get(url, null, function callback(data,status){   	   
+        //console.log(data);
+               if(status=="success"){           	 
+                   countid=data;  
+               }
+    });*/
+}
+
+//setTimeout(function(){
+function  OnDidFinishLoadCb(data){
+	 var op = {
+		       "name": "StartSystemEventMonitor",
+		       "callback": "OnStartSystemEventMonitorCb",
+		       "params": {
+		           "systemEventType":"systemCall,screenLock,appBackground"       
+		        }
+		};
+		    //alert(JSON.stringify(op));
+		    API.send_tonative(op);
+}
+//},200);
+
+function OnStartSystemEventMonitorCb(param){
+//intervalid=clearInterval(intervalid);
+params = param.result.params; 
+//alert(JSON.stringify(params));
+if(params.systemEventType == 'systemCall'){
+/*	if(params.state=='systemCallStateConnected'||params.state=='systemCallStateIncoming'||params.state=='systemCallStateDialing'){    		
+		intervalid=clearInterval(intervalid);
+        }else if(params.state=='systemCallStateDisconnected'){
+        	countid="";
+        	alert(34);
+        	intervalid=setInterval("go()", 5000);
+	            }       */
+}else if(params.systemEventType == 'screenLock'){
+/*	if(params.state=='screenLockStateLocked'){  		    		
+		intervalid=clearInterval(intervalid);   		
+   	}else if(params.state=='screenLockStateUnlocked'){
+   		countid="";
+   		alert(11);
+   		intervalid=setInterval("go()", 5000);
+       }*/
+}else if(params.systemEventType == 'appBackground'){        
+	if(params.state=='appBackgroundStateBackground'){
+		go(); //记录离开屏幕的时间
+		intervalid=clearInterval(intervalid);
+   	}else if(params.state=='appBackgroundStateForeground'){
+   		countid="";
+   		//alert(countid);
+   		intervalid=setInterval("go()", 5000);
+       }
+}
 }
 
 // 获取首页列表

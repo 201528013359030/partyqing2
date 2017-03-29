@@ -132,9 +132,32 @@ partyStudyMaterialContent.init = function(){
     miniSPA.render("partyStudyMaterialContent");
     setContent(partyStudyMaterialContent.parame);
     commonFunction.load_page("#page_innerContent");
-    var id = partyStudyMaterialContent.parame;
-    var planid = partyStudyMaterialContent.parameCon;
-    setCount(id,planid); // 参数为资料id和资料所属的planid
+    countmaterialid = partyStudyMaterialContent.parame;
+    planid = partyStudyMaterialContent.parameCon;
+    setCount(countmaterialid,planid); // 参数为资料id和资料所属的planid
+    
+    //统计阅读时长
+    intervalid=clearInterval(intervalid);
+    intervalid=setInterval("go()", 5000);//1000=1s
+    isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 !!将对应的类型转换为Boolean，!!b指的是将b转换为boolea值  				//去两次非是因为将b转换位boolean值后取了一次非，所以得到的值正好相反，再取一次反回来
+    API.init();  
+    if(isAndroid==true){
+    	//alert(33);
+    	setTimeout(function(){
+    		//获取客户信息
+    		var op = {
+    			       "name": "StartSystemEventMonitor",
+    			       "callback": "OnStartSystemEventMonitorCb",
+    			       "params": {
+    			           "systemEventType":"systemCall,screenLock,appBackground"       
+    			        }
+    			};
+    			    //alert(JSON.stringify(op));
+    			    API.send_tonative(op);
+    	},200);
+    }
+    	
     
     //js限制图片最大宽度
     /*$(document).ready(function(){
